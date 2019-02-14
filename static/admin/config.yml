@@ -26,7 +26,7 @@ collections:
     slug: '{{name}}-{{slug}}'
     identifier_field: name
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speaker' }
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: Image, name: image, widget: image }
 
@@ -36,7 +36,7 @@ collections:
     create: true
     slug: '{{title}}-{{speaker}}-{{startDate}}-{{endDate}}}-{{slug}}'
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'event' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Starts at', name: 'startDate', widget: 'datetime', format: 'DD.MM hh:mm' }
       - { label: 'Ends at', name: 'endDate', widget: 'datetime', format: 'DD.MM hh:mm' }
