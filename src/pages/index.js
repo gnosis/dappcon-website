@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from 'components/Layout'
+import MainSection from 'components/IndexPage/MainSection'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <MainSection />
         <section className="section">
           <div className="container">
             <div className="content">

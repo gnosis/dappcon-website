@@ -1,80 +1,66 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import { DappconLogoSmall, TicketSVG } from 'components/Svg'
+import { colors } from 'theme'
+
+const Nav = styled.nav`
+  position: fixed;
+  width: 100vw;
+`
+
+const NavbarMenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-orient: vertical;
+  position: absolute;
+  top: 0;
+  right: 25px;
+`
+
+const StyledLink = styled(Link)`
+  writing-mode: vertical-lr;
+  margin-top: 25px;
+  font-size: 19px;
+  color: ${colors.white};
+`
+
+const StyledIconLink = styled(StyledLink)`
+  transform: rotate(-45deg);
+  margin-top: 40px;
+`
+
+const StyledLogoLink = styled(Link)`
+  position: absolute;
+  top: 22px;
+  left: 25px;
+`
 
 const Navbar = class extends React.Component {
-
-  componentDidMount() {
-    // Get all "navbar-burger" elements
-   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    // Check if there are any navbar burgers
-   if ($navbarBurgers.length > 0) {
- 
-     // Add a click event on each of them
-     $navbarBurgers.forEach( el => {
-       el.addEventListener('click', () => {
- 
-         // Get the target from the "data-target" attribute
-         const target = el.dataset.target;
-         const $target = document.getElementById(target);
- 
-         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-         el.classList.toggle('is-active');
-         $target.classList.toggle('is-active');
- 
-       });
-     });
-   }
- }
- 
- render() {
-   return (
-  
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item" title="Logo">
-          <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-        </Link>
+  render() {
+    return (
+      <Nav>
+        <StyledLogoLink to="/" title="Logo">
+          <DappconLogoSmall />
+        </StyledLogoLink>
+        <NavbarMenuContainer>
+          <StyledLink to="/about">About</StyledLink>
+          <StyledLink to="/products">Programm</StyledLink>
+          <StyledLink to="/contact">Speakers</StyledLink>
+          <StyledLink to="/contact/examples">Organizers</StyledLink>
+          <StyledLink to="/contact/examples">Sponsor</StyledLink>
+          <StyledIconLink to="/contact/examples" rotate="45deg"><TicketSVG /></StyledIconLink>
+        </NavbarMenuContainer>
         {/* Hamburger menu */}
-        <div className="navbar-burger burger" data-target="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div id="navMenu" className="navbar-menu">
-      <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-        <Link className="navbar-item" to="/contact">
-          Contact
-        </Link>
-        <Link className="navbar-item" to="/contact/examples">
-          Form Examples
-        </Link>
-      </div>
-      <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-      </div>
-    </div>
-  </nav>
-  )}
+        {/* <div className="navbar-burger burger" data-target="navMenu">
+              <span />
+              <span />
+              <span />
+            </div> */}
+      </Nav>
+    )
+  }
 }
 
 export default Navbar
