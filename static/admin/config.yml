@@ -24,6 +24,7 @@ collections:
     folder: 'src/pages/speakers'
     create: true
     slug: '{{name}}-{{slug}}'
+    identifier_field: name
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
       - { label: 'Name', name: 'name', widget: 'string' }
