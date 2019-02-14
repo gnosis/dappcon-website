@@ -23,7 +23,7 @@ collections:
     label: 'Speakers'
     folder: 'src/pages/speakers'
     create: true
-    slug: '{{firstName}}-{{lastName}}'
+    slug: '{{name}}-{{slug}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
       - { label: 'Name', name: 'name', widget: 'string' }
@@ -33,7 +33,7 @@ collections:
     label: 'Program Events'
     folder: 'src/pages/program'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{title}}-{{speaker}}-{{startDate}}-{{endDate}}}-{{slug}}'
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
       - { label: 'Title', name: 'title', widget: 'string' }
