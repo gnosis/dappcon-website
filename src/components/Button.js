@@ -10,10 +10,23 @@ const StyledButton = styled.button`
   font-weight: 800;
   color: ${colors.white};
   padding: 18px;
+  transition: color 0.2s, border-colors 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => props.hover};
+    border-color: ${props => props.hover};
+  }
 `
 
-const Button = ({ type = 'button', text, onClick = () => ({}) }) => (
-  <StyledButton type={type} onClick={onClick}>
+const Button = ({
+  type = 'button',
+  text,
+  onClick = () => ({}),
+  hover = colors.veryLightPink,
+  ...props
+}) => (
+  <StyledButton type={type} onClick={onClick} hover={hover} {...props}>
     {text}
   </StyledButton>
 )

@@ -50,6 +50,10 @@ const StyledDate = styled.span `
   line-height: normal;
 `
 
+const StyledButton = styled(Button)`
+  z-index: 2;
+`
+
 const MainSection = () => (
   <Wrapper>
     <StyledContentWrapper>
@@ -60,7 +64,7 @@ const MainSection = () => (
         Infrastructure
       </MainHeading>
       <ButtonDateContainer>
-        <Button text="BUY TICKETS" />
+        <StyledButton text="BUY TICKETS" />
         <StyledDate>
           21. - 23. August 2019
           <br />

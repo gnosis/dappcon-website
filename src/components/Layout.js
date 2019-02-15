@@ -3,7 +3,8 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Normalize } from 'styled-normalize'
 
-import Navbar from '../components/Navbar'
+import Navbar from 'components/Navbar'
+import NavLogo from 'components/NavLogo'
 import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
@@ -38,6 +39,7 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
+        <NavLogo />
         <Navbar />
         <div>{children}</div>
       </div>
