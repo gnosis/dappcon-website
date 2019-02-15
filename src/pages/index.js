@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from 'components/Layout'
 import MainSection from 'components/IndexPage/MainSection'
+import StatsSection from 'components/IndexPage/StatsSection'
+import PhotoSection from 'components/IndexPage/PhotoSection'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -12,6 +14,8 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <MainSection />
+        <StatsSection />
+        <PhotoSection />
         <section className="section">
           <div className="container">
             <div className="content">

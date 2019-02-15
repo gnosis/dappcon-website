@@ -7,6 +7,8 @@ import { colors } from 'theme'
 const Nav = styled.nav`
   position: fixed;
   width: 100vw;
+  height: 604px;
+  z-index: 1;
 `
 
 const NavbarMenuContainer = styled.div`
@@ -26,7 +28,7 @@ const StyledLink = styled(Link)`
   color: ${colors.white};
 `
 
-const StyledIconLink = styled(StyledLink)`
+const StyledIconLink = styled(Link)`
   transform: rotate(-45deg);
   margin-top: 40px;
 `

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 930px;
+  max-width: 840px;
 `
 
 const ContentWrapper = ({ children, className }) => (
