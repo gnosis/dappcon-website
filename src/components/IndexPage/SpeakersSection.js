@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import ContentWrapper from 'components/ContentWrapper'
+import { colors } from 'theme'
+import { Link } from 'gatsby';
 
 const Wrapper = styled.section`
   padding-top: 174px;
@@ -19,25 +21,35 @@ const SpeakerName = styled.span`
   margin-top: 16px;
   line-height: normal;
   letter-spacing: normal;
+
+  color: ${props => props.red && colors.reddishPink};
 `
+
+const StyledLink = styled(Link)`
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  color: ${colors.reddishPink};
+`
+
+const Speakers = Array(4).fill(4)
 
 const SpeakersSection = ({ speakerPhoto }) => (
   <Wrapper>
     <ContentWrapper>
       <SpeakersContainer>
-        {Array(4)
-          .fill(4)
-          .map((_, i) => (
-            <div key={i} >
-              <Img fixed={speakerPhoto} />
-              <SpeakerName>
-                Bernard
-                <br />
-                Lamanche
-              </SpeakerName>
-            </div>
-          ))}
+        {Speakers.map((_, i) => (
+          <div key={i}>
+            <Img fixed={speakerPhoto} />
+            <SpeakerName red={i === Speakers.length - 1}>
+              Bernard
+              <br />
+              Lamanche
+            </SpeakerName>
+          </div>
+        ))}
       </SpeakersContainer>
+      <StyledLink to="speakers">See all confirmed speakers...</StyledLink>
     </ContentWrapper>
   </Wrapper>
 )
