@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from 'components/Layout'
 import MainSection from 'components/IndexPage/MainSection'
 import StatsSection from 'components/IndexPage/StatsSection'
 import PhotoSection from 'components/IndexPage/PhotoSection'
@@ -13,14 +12,14 @@ export default class IndexPage extends React.Component {
     const { data: { speakerPhoto } } = this.props
 
     return (
-      <Layout>
+      <>
         <MainSection />
         <StatsSection />
         <PhotoSection />
         <SpeakersSection speakerPhoto={speakerPhoto.childImageSharp.fixed} />
         <GnosisSection />
         <SponsorsSection />
-      </Layout>
+      </>
     )
   }
 }
