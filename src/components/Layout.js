@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { Normalize } from 'styled-normalize'
 
 import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
@@ -21,7 +20,6 @@ const TemplateWrapper = ({ children }) => (
     `}
     render={data => (
       <div>
-        <Normalize />
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>
