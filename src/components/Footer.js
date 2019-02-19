@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from 'theme'
 import DappConLogoFull from 'img/dappcon-logo-full.svg'
-import ContentWrapper from 'components/ContentWrapper'
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};

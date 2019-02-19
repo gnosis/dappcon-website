@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import ContentWrapper from 'components/ContentWrapper'
 
 const Wrapper = styled.section`

@@ -6,21 +6,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
-
   - name: 'speakers'
     label: 'Speakers'
+    description: 'Speakers on the DappCon conference'
     folder: 'src/pages/speakers'
     create: true
     slug: '{{name}}-{{slug}}'
@@ -28,11 +16,13 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speaker' }
       - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Company', name: 'company', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'string' }
       - { label: Image, name: image, widget: image }
 
   - name: 'events'
     label: 'Program Events'
-    folder: 'src/pages/program'
+    folder: 'src/pages/events'
     create: true
     slug: '{{title}}-{{speaker}}-{{startDate}}-{{endDate}}}-{{slug}}'
     fields:
