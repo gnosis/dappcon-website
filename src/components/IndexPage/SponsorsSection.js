@@ -10,8 +10,7 @@ const Wrapper = styled.section`
 const SponsorContainer = styled.div`
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 61px 61px 61px 61px;
-  grid-template-rows: 65px 65px;
+  grid-template-columns: repeat(4, 61px);
   grid-row-gap: 94px;
 `
 

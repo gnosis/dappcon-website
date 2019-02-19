@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -64,8 +64,8 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <NavLogo />
-        <Navbar />
+        <NavLogo location={location} />
+        <Navbar location={location} />
         <div>{children}</div>
         <Footer />
       </div>

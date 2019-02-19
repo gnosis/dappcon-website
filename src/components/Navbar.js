@@ -17,12 +17,15 @@ const NavbarMenuContainer = styled.div`
   z-index: 1;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link).attrs(({ isBlack }) => ({
+  color: isBlack ? colors.black : colors.white,
+}))`
   writing-mode: vertical-lr;
   margin-top: 25px;
   font-size: 19px;
-  color: ${colors.white};
+  color: ${props => props.color};
   text-decoration: none;
+  font-weight: 800;
 `
 
 const StyledIconLink = styled(Link)`
@@ -43,13 +46,26 @@ const StyledIconLink = styled(Link)`
 
 const Navbar = class extends React.Component {
   render() {
+    const { location } = this.props
+    const isBlack = location.pathname !== '/'
+
     return (
       <NavbarMenuContainer>
-        <StyledLink to="/about">About</StyledLink>
-        <StyledLink to="/products">Programm</StyledLink>
-        <StyledLink to="/contact">Speakers</StyledLink>
-        <StyledLink to="/contact/examples">Organizers</StyledLink>
-        <StyledLink to="/contact/examples">Sponsor</StyledLink>
+        <StyledLink isBlack={isBlack} to="/about">
+          About
+        </StyledLink>
+        <StyledLink isBlack={isBlack} to="/products">
+          Programm
+        </StyledLink>
+        <StyledLink isBlack={isBlack} to="/speakers">
+          Speakers
+        </StyledLink>
+        <StyledLink isBlack={isBlack} to="/contact/examples">
+          Organizers
+        </StyledLink>
+        <StyledLink isBlack={isBlack} to="/contact/examples">
+          Sponsor
+        </StyledLink>
         <StyledIconLink to="/contact/examples" rotate="45deg">
           <TicketSVG />
         </StyledIconLink>
