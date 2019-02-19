@@ -33,6 +33,7 @@ const SvgContainer = styled.div`
   img {
     position: absolute;
     bottom: 0;
+    width: 100%;
   }
 `
 

@@ -22,6 +22,7 @@ const StyledLink = styled(Link)`
   margin-top: 25px;
   font-size: 19px;
   color: ${colors.white};
+  text-decoration: none;
 `
 
 const StyledIconLink = styled(Link)`

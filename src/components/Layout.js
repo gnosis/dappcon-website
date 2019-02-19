@@ -1,10 +1,36 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { createGlobalStyle } from 'styled-components'
+import { StaticQuery, graphql, withPrefix } from 'gatsby'
+import reset from 'styled-reset'
 
 import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
-import './all.sass'
+import Footer from 'components/Footer'
+
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+
+  @font-face {
+    font-family: "Averta";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Averta-Regular"), url(${withPrefix('/fonts/38C995_1_0.ttf')}) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Averta';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: local("Averta-Extrabold"), url(${withPrefix('/fonts/38C995_0_0.ttf')}) format('truetype');
+  }
+
+  body {
+    font-family: Averta, sans-serif;
+  }
+`
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
@@ -20,6 +46,7 @@ const TemplateWrapper = ({ children }) => (
     `}
     render={data => (
       <div>
+        <GlobalStyles />
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>
@@ -40,6 +67,7 @@ const TemplateWrapper = ({ children }) => (
         <NavLogo />
         <Navbar />
         <div>{children}</div>
+        <Footer />
       </div>
     )}
   />
