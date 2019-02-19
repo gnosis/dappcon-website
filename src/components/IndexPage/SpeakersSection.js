@@ -21,14 +21,16 @@ const StyledLink = styled(Link)`
   color: ${colors.reddishPink};
 `
 
-const Speakers = Array(4).fill(4)
-
-const SpeakersSection = ({ speakerPhoto }) => (
+const SpeakersSection = ({ speakers }) => (
   <Wrapper>
     <ContentWrapper>
       <SpeakersContainer>
-        {Speakers.map((_, i) => (
-          <Speaker key={i} speakerPhoto={speakerPhoto} red={i === Speakers.length - 1} />
+        {speakers.map(({ node: { frontmatter } }, i) => (
+          <Speaker
+            key={i}
+            speaker={frontmatter}
+            red={i === speakers.length - 1}
+          />
         ))}
       </SpeakersContainer>
       <StyledLink to="/speakers">See all confirmed speakers...</StyledLink>

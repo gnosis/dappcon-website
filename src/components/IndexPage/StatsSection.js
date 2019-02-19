@@ -4,7 +4,6 @@ import { colors } from 'theme'
 import ContentWrapper from 'components/ContentWrapper'
 
 const Wrapper = styled.section`
-  height: 732px;
   padding: 175px 0;
 `
 

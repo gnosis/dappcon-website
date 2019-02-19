@@ -9,14 +9,14 @@ import SponsorsSection from 'components/IndexPage/SponsorsSection';
 
 export default class IndexPage extends React.Component {
   render() {
-    const { data: { speakerPhoto } } = this.props
+    const { data: { speakers } } = this.props
 
     return (
       <>
         <MainSection />
         <StatsSection />
         <PhotoSection />
-        <SpeakersSection speakerPhoto={speakerPhoto.childImageSharp.fixed} />
+        <SpeakersSection speakers={speakers.edges} />
         <GnosisSection />
         <SponsorsSection />
       </>
@@ -36,6 +36,26 @@ export const pageQuery = graphql`
         # Makes it trivial to update as your page's design changes.
         fixed(width: 134, height: 134) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    speakers: allMarkdownRemark(limit: 4, filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            company
+            position
+            image {
+              childImageSharp {
+                # Specify the image processing specifications right in the query.
+                # Makes it trivial to update as your page's design changes.
+                fixed(width: 134, height: 134) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
         }
       }
     }
