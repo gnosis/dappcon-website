@@ -59,7 +59,6 @@ collections:
             }
           - {label: 'Main Title', name: mainTitle, widget: string}
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
-          - {label: 'Button Annotation', name: 'buttonAnnotation', widget: 'string'}
           - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
