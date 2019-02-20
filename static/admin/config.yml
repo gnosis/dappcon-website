@@ -76,7 +76,7 @@ collections:
           ]}
           - {label: 'Program Photo Text', name: 'programPhotoText', widget: object, fields: [
               { label: "Label", name: "label", widget: "string" },
-              { label: 'Should we make it a link?', name: 'isLink', widget: 'select', default: "No", options: ["Yes", "No"]},
+              { label: 'Should we make it a link?', name: 'isLink', widget: 'boolean', default: false},
               { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about)" }
             ]
           }

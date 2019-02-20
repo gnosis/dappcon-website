@@ -7,6 +7,25 @@ import SpeakersSection from 'components/IndexPage/SpeakersSection'
 import GnosisSection from 'components/IndexPage/GnosisSection'
 import SponsorsSection from 'components/IndexPage/SponsorsSection'
 
+const IndexPageTemplate = ({
+  mainTitle,
+  aboutDappcon,
+  aboutGnosis,
+  buttonText,
+  speakers: indexPageSpeakers,
+  stats,
+  programPhotoText,
+}) => (
+  <>
+    <MainSection mainTitle={mainTitle} buttonText={buttonText} />
+    <StatsSection dappconText={aboutDappcon} stats={stats} />
+    <PhotoSection text={programPhotoText} />
+    <SpeakersSection speakers={speakers.edges} displaySpeakers={indexPageSpeakers} />
+    <GnosisSection text={aboutGnosis} />
+    <SponsorsSection />
+  </>
+)
+
 export default class IndexPage extends React.Component {
   render() {
     const {
@@ -26,14 +45,13 @@ export default class IndexPage extends React.Component {
     } = pageData
 
     return (
-      <>
-        <MainSection mainTitle={mainTitle} buttonText={buttonText} />
-        <StatsSection dappconText={aboutDappcon} stats={stats} />
-        <PhotoSection text={programPhotoText} />
-        <SpeakersSection speakers={speakers.edges} displaySpeakers={indexPageSpeakers} />
-        <GnosisSection text={aboutGnosis} />
-        <SponsorsSection />
-      </>
+      <IndexPageTemplate
+        mainTitle={mainTitle}
+        aboutDappcon={aboutDappcon}
+        aboutGnosis={aboutGnosis}
+        buttonText={buttonText}
+        
+      />
     )
   }
 }
