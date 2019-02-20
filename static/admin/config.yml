@@ -51,7 +51,7 @@ collections:
         label: 'Landing Page'
         name: 'landingPage'
         fields:
-            - {
+          - {
               label: 'Template Key',
               name: 'templateKey',
               widget: 'hidden',
