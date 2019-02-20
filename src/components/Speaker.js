@@ -14,14 +14,29 @@ const SpeakerName = styled.span`
   color: ${props => props.red && colors.reddishPink};
 `
 
-const Speaker = ({ speakerPhoto, red = false }) => (
+const Info = styled.span`
+  display: block;
+  font-size: 14px;
+  line-height: normal;
+  margin-top: 12px;
+  white-space: nowrap;
+`
+
+const Speaker = ({ speaker: { name, image, position, company }, red = false, showInfo }) => (
   <div>
-    <Img fixed={speakerPhoto} />
+    <Img fixed={image.childImageSharp.fixed} />
     <SpeakerName red={red}>
-      Bernard
+      {name.substr(0, name.indexOf(' '))}
       <br />
-      Lamanche
+      {name.substr(name.indexOf(' ') + 1)}
     </SpeakerName>
+    {showInfo && (
+      <Info>
+        {position}
+        <br />
+        {company}
+      </Info>
+    )}
   </div>
 )
 
