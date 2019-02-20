@@ -35,13 +35,6 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
-      - file: 'src/pages/about/index.md'
-        label: 'About'
-        name: 'about'
-        fields:
-          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about-page' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
       - file: 'src/pages/privacy-policy/index.md'
         label: 'Privacy Policy'
         name: 'privacyPolicy'
@@ -54,110 +47,31 @@ collections:
             }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/products/index.md'
-        label: 'Products Page'
-        name: 'products'
+      - file: 'src/pages/index-page.md'
+        label: 'Landing Page'
+        name: 'landingPage'
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'product-page',
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
-              widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
-            }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        { label: Description, name: description, widget: string },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
-                ],
-            }
+          - {label: 'Main Title', name: mainTitle, widget: string}
+          - {label: 'Button Text', name: 'buttonText', widget: 'string'}
+          - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}
+          - {label: 'Stats', name: 'stats', widget: 'object', fields: [
+              {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
+                {label: 'Number', name: 'number', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'string'}
+              ]},
+              {label: 'Second Stat', name: 'secondStat', widget: 'object', fields: [
+                {label: 'Number', name: 'number', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'string'}
+              ]},
+              {label: 'Third Stat', name: 'thirdState', widget: 'object', fields: [
+                {label: 'Number', name: 'number', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'string'}
+              ]}
+          ]}
+          - {label: 'Program Photo Text', name: 'programPhotoText', widget: object, fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: 'Should we make it a link?', name: 'isLink', widget: 'select', default: "No", options: ["Yes", "No"]},
+              { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about)" }
+            ]
+          }
+          - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'text'}
