@@ -20,9 +20,9 @@ const Wrapper = styled.div`
   }
 `
 
-const PhotoSection = () => (
+const PhotoSection = ({ text }) => (
   <Wrapper>
-    <h3>Program coming soon</h3>
+    <h3>{text.label}</h3>
   </Wrapper>
 )
 

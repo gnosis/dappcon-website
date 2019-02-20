@@ -69,7 +69,7 @@ collections:
                 {label: 'Number', name: 'number', widget: 'string'},
                 {label: 'Description', name: 'description', widget: 'string'}
               ]},
-              {label: 'Third Stat', name: 'thirdState', widget: 'object', fields: [
+              {label: 'Third Stat', name: 'thirdStat', widget: 'object', fields: [
                 {label: 'Number', name: 'number', widget: 'string'},
                 {label: 'Description', name: 'description', widget: 'string'}
               ]}
