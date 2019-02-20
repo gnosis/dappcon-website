@@ -1,7 +1,8 @@
 ---
-templateKey: 'index-page'
+templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
+buttonAnnotation: .
 aboutDappcon: >-
   After having successfully brought together more than 600 Ethereum developers,
   researchers and enthusiasts in summer 2018, DappCon will take place for a
@@ -22,6 +23,11 @@ programPhotoText:
   isLink: 'No'
   label: Program coming soon
   linkURL: /speakers
+speakers:
+  speaker1: Alex Van de Sande
+  speaker2: Jorge Izquierdo
+  speaker3: Matan Field
+  speaker4: Stefan George
 aboutGnosis: >-
   DappCon is organized by Gnosis, one of Ethereum’s early dApps. Gnosis launched
   in August 2015, one week after Frontier went live, as the first major dapp on
