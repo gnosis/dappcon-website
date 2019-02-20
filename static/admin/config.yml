@@ -51,6 +51,12 @@ collections:
         label: 'Landing Page'
         name: 'landingPage'
         fields:
+            - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'index-page',
+            }
           - {label: 'Main Title', name: mainTitle, widget: string}
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
           - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}

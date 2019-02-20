@@ -1,4 +1,5 @@
 ---
+templateKey: 'index-page'
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
 aboutDappcon: >-
