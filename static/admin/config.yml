@@ -30,7 +30,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Starts at', name: 'startDate', widget: 'datetime', format: 'DD.MM hh:mm' }
       - { label: 'Ends at', name: 'endDate', widget: 'datetime', format: 'DD.MM hh:mm' }
-      - { label: 'Speaker', name: 'speaker', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
+      - { label: 'Speaker', name: 'speaker', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
 
   - name: 'pages'
     label: 'Pages'
@@ -59,6 +59,7 @@ collections:
             }
           - {label: 'Main Title', name: mainTitle, widget: string}
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
+          - {label: 'Button Annotation', name: 'buttonAnnotation', widget: 'string'}
           - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
@@ -80,4 +81,10 @@ collections:
               { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about)" }
             ]
           }
+          - {label: 'Speakers', name: 'speakers', widget: object, fields: [
+            { label: 'Speaker 1', name: 'speaker1', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
+            { label: 'Speaker 2', name: 'speaker2', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
+            { label: 'Speaker 3', name: 'speaker3', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
+            { label: 'Speaker 4', name: 'speaker4', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
+          ]}
           - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'text'}
