@@ -19,13 +19,20 @@ const NavbarMenuContainer = styled.div`
 
 const StyledLink = styled(Link).attrs(({ isBlack }) => ({
   color: isBlack ? colors.black : colors.white,
+  hoverColor: isBlack ? colors.reddishPink : colors.black
 }))`
   writing-mode: vertical-lr;
   margin-top: 25px;
   font-size: 19px;
   color: ${props => props.color};
   text-decoration: none;
+  padding-right: 10px;
   font-weight: 800;
+  transition: color .3s ease-out;
+
+  &:hover {
+    color: ${props => props.hoverColor};
+  }
 `
 
 const StyledIconLink = styled(Link)`
@@ -51,21 +58,21 @@ const Navbar = class extends React.Component {
 
     return (
       <NavbarMenuContainer>
-        <StyledLink isBlack={isBlack} to="/about">
+        <StyledLink isBlack={isBlack} to="/#about">
           About
         </StyledLink>
-        <StyledLink isBlack={isBlack} to="/products">
+        {/* <StyledLink isBlack={isBlack} to="/program">
           Programm
-        </StyledLink>
+        </StyledLink> */}
         <StyledLink isBlack={isBlack} to="/speakers">
           Speakers
         </StyledLink>
-        <StyledLink isBlack={isBlack} to="/contact/examples">
-          Organizers
+        <StyledLink isBlack={isBlack} to="/#gnosis">
+          Organizer
         </StyledLink>
-        <StyledLink isBlack={isBlack} to="/contact/examples">
-          Sponsor
-        </StyledLink>
+        {/* <StyledLink isBlack={isBlack} to="/#sponsors">
+          Sponsors
+        </StyledLink> */}
         <StyledIconLink to="/contact/examples" rotate="45deg">
           <TicketSVG />
         </StyledIconLink>

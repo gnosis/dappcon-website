@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { colors } from 'theme'
 import photo from 'img/photo@2x.jpg'
@@ -20,9 +21,21 @@ const Wrapper = styled.div`
   }
 `
 
+const StyledLink = styled(Link)`
+  font-size: 49px;
+  font-weight: 800;
+  color: ${colors.white};
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: ${colors.veryLightPink};
+  }
+`
+
 const PhotoSection = ({ text }) => (
   <Wrapper>
-    <h3>{text.label}</h3>
+    {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
   </Wrapper>
 )
 
