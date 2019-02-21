@@ -22,6 +22,7 @@ const MainHeading = styled.h1`
   font-size: 49px;
   color: ${colors.white};
   line-height: normal;
+  max-width: 505px;
 `
 
 const SvgContainer = styled.div`
@@ -43,7 +44,7 @@ const ButtonDateContainer = styled.div`
   margin-top: 20px;
 `
 
-const StyledDate = styled.span `
+const StyledDate = styled.span`
   margin-left: 25px;
   color: ${colors.white};
   font-size: 20px;
@@ -55,21 +56,16 @@ const StyledButton = styled(Button)`
   z-index: 2;
 `
 
-const MainSection = () => (
+const MainSection = ({ mainTitle, buttonText }) => (
   <Wrapper>
     <StyledContentWrapper>
-      <MainHeading>
-        Developer Conference
-        <br />
-        for Ethereum Dapps &<br />
-        Infrastructure
-      </MainHeading>
+      <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
-        <StyledButton text="BUY TICKETS" />
+        <StyledButton text={buttonText} />
         <StyledDate>
           21. - 23. August 2019
           <br />
-          in Berlin,
+          in Berlin, Kreuzberg
         </StyledDate>
       </ButtonDateContainer>
     </StyledContentWrapper>

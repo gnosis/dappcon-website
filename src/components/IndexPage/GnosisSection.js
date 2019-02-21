@@ -16,15 +16,10 @@ const Text = styled.p`
   display: inline-block;
 `
 
-const GnosisSection = () => (
+const GnosisSection = ({ text }) => (
   <Wrapper>
     <StyledContentWrapper>
-      <Text>
-        DappCon is organized by Gnosis, one of Ethereum’s early dApps. Gnosis launched in August
-        2015, one week after Frontier went live, as the first major dapp on Ethereum. Today, Gnosis
-        is building four major Ethereum-based dapps and works towards the development and continuous
-        growth of Ethereum—both its infrastructure and ecosystem.
-      </Text>
+      <Text>{text}</Text>
     </StyledContentWrapper>
   </Wrapper>
 )

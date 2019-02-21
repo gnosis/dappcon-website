@@ -40,7 +40,7 @@ const StatTitle = styled.span`
   font-weight: 800;
 `
 
-const StatsSection = () => (
+const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => (
   <Wrapper>
     <ContentWrapper>
       <Paragraph>
@@ -51,16 +51,16 @@ const StatsSection = () => (
       </Paragraph>
       <StatsContainer>
         <Stat>
-          <StatNumber>3</StatNumber>
-          <StatTitle>days</StatTitle>
+          <StatNumber>{firstStat.number}</StatNumber>
+          <StatTitle>{firstStat.description}</StatTitle>
         </Stat>
         <Stat>
-          <StatNumber>20+</StatNumber>
-          <StatTitle>speakers</StatTitle>
+          <StatNumber>{secondStat.number}</StatNumber>
+          <StatTitle>{secondStat.description}</StatTitle>
         </Stat>
         <Stat>
-          <StatNumber>24+</StatNumber>
-          <StatTitle>workshops</StatTitle>
+          <StatNumber>{thirdStat.number}</StatNumber>
+          <StatTitle>{thirdStat.description}</StatTitle>
         </Stat>
       </StatsContainer>
     </ContentWrapper>

@@ -32,7 +32,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const TemplateWrapper = ({ children, location }) => (
+export const LayoutTemplate = ({ children, location }) => (
+  <>
+    <GlobalStyles />
+    <NavLogo location={location} />
+    <Navbar location={location} />
+    <div>{children}</div>
+    <Footer />
+  </>
+)
+
+const TemplateWrapper = (props) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -46,7 +56,6 @@ const TemplateWrapper = ({ children, location }) => (
     `}
     render={data => (
       <div>
-        <GlobalStyles />
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>
@@ -64,10 +73,7 @@ const TemplateWrapper = ({ children, location }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <NavLogo location={location} />
-        <Navbar location={location} />
-        <div>{children}</div>
-        <Footer />
+        <LayoutTemplate {...props} />
       </div>
     )}
   />

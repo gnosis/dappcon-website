@@ -59,7 +59,6 @@ collections:
             }
           - {label: 'Main Title', name: mainTitle, widget: string}
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
-          - {label: 'Button Annotation', name: 'buttonAnnotation', widget: 'string'}
           - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
@@ -70,14 +69,14 @@ collections:
                 {label: 'Number', name: 'number', widget: 'string'},
                 {label: 'Description', name: 'description', widget: 'string'}
               ]},
-              {label: 'Third Stat', name: 'thirdState', widget: 'object', fields: [
+              {label: 'Third Stat', name: 'thirdStat', widget: 'object', fields: [
                 {label: 'Number', name: 'number', widget: 'string'},
                 {label: 'Description', name: 'description', widget: 'string'}
               ]}
           ]}
           - {label: 'Program Photo Text', name: 'programPhotoText', widget: object, fields: [
               { label: "Label", name: "label", widget: "string" },
-              { label: 'Should we make it a link?', name: 'isLink', widget: 'select', default: "No", options: ["Yes", "No"]},
+              { label: 'Should we make it a link?', name: 'isLink', widget: 'boolean', default: false},
               { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about)" }
             ]
           }
