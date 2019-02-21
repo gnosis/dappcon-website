@@ -2,7 +2,6 @@
 templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
-buttonAnnotation: .
 aboutDappcon: >-
   After having successfully brought together more than 600 Ethereum developers,
   researchers and enthusiasts in summer 2018, DappCon will take place for a
@@ -16,7 +15,7 @@ stats:
   secondStat:
     description: speakers
     number: 20+
-  thirdState:
+  thirdStat:
     description: workshops
     number: 24+
 programPhotoText:
