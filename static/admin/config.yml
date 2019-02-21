@@ -48,7 +48,7 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
-      - file: 'src/pages/privacy-policy/index.md'
+      - file: 'src/pages/privacy-policy.md'
         label: 'Privacy Policy'
         name: 'privacyPolicy'
         fields:
