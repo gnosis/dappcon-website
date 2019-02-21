@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import PreviewCompatibleImage from 'components/PreviewCompatibleImage'
 import { colors } from 'theme'
 
 const SpeakerName = styled.span`
@@ -24,7 +24,7 @@ const Info = styled.span`
 
 const Speaker = ({ speaker: { name, image, position, company }, red = false, showInfo }) => (
   <div>
-    <Img fixed={image.childImageSharp.fixed} />
+    <PreviewCompatibleImage image={image} style={{ width: 134, height: 134 }} />
     <SpeakerName red={red}>
       {name.substr(0, name.indexOf(' '))}
       <br />
