@@ -7,12 +7,12 @@ import SpeakersSection from 'components/IndexPage/SpeakersSection'
 import GnosisSection from 'components/IndexPage/GnosisSection'
 import SponsorsSection from 'components/IndexPage/SponsorsSection'
 
-const IndexPageTemplate = ({
+export const IndexPageTemplate = ({
   mainTitle,
   aboutDappcon,
   aboutGnosis,
   buttonText,
-  speakers: indexPageSpeakers,
+  speakers,
   stats,
   programPhotoText,
 }) => (
@@ -20,7 +20,7 @@ const IndexPageTemplate = ({
     <MainSection mainTitle={mainTitle} buttonText={buttonText} />
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
-    <SpeakersSection speakers={speakers.edges} displaySpeakers={indexPageSpeakers} />
+    <SpeakersSection speakers={speakers.edges} />
     <GnosisSection text={aboutGnosis} />
     <SponsorsSection />
   </>
@@ -44,13 +44,18 @@ export default class IndexPage extends React.Component {
       programPhotoText,
     } = pageData
 
+    const displayedSpeakers = Object.values(indexPageSpeakers)
+    speakers.edges = speakers.edges.filter(({ node }) => displayedSpeakers.includes(node.frontmatter.name))
+
     return (
       <IndexPageTemplate
         mainTitle={mainTitle}
         aboutDappcon={aboutDappcon}
         aboutGnosis={aboutGnosis}
         buttonText={buttonText}
-        
+        stats={stats}
+        programPhotoText={programPhotoText}
+        speakers={speakers}
       />
     )
   }
@@ -94,7 +99,6 @@ export const pageQuery = graphql`
       }
     }
     speakers: allMarkdownRemark(
-      limit: 4
       filter: { frontmatter: { templateKey: { eq: "speaker" } } }
     ) {
       edges {
