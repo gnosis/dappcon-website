@@ -19,7 +19,7 @@ stats:
     description: workshops
     number: 24+
 programPhotoText:
-  isLink: 'No'
+  isLink: false
   label: Program coming soon
   linkURL: /speakers
 speakers:
