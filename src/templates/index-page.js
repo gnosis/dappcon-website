@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
     <MainSection mainTitle={mainTitle} buttonText={buttonText} />
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
-    <SpeakersSection speakers={speakers.edges} />
+    {speakers && <SpeakersSection speakers={speakers.edges} />}
     <GnosisSection text={aboutGnosis} />
     <SponsorsSection />
   </>
@@ -45,7 +45,9 @@ export default class IndexPage extends React.Component {
     } = pageData
 
     const displayedSpeakers = Object.values(indexPageSpeakers)
-    speakers.edges = speakers.edges.filter(({ node }) => displayedSpeakers.includes(node.frontmatter.name))
+    speakers.edges = speakers.edges.filter(({ node }) =>
+      displayedSpeakers.includes(node.frontmatter.name),
+    )
 
     return (
       <IndexPageTemplate
@@ -98,9 +100,7 @@ export const pageQuery = graphql`
         aboutGnosis
       }
     }
-    speakers: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "speaker" } } }
-    ) {
+    speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
       edges {
         node {
           frontmatter {

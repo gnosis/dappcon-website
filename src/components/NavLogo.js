@@ -11,7 +11,7 @@ const StyledLogoLink = styled(Link)`
   z-index: 1;
 `
 
-const Navbar = ({ location: { pathname } }) => (
+const Navbar = ({ location: { pathname } = {} }) => (
   <StyledLogoLink to="/" title="Logo">
     <DappconLogoSmall fill={pathname === '/' ? colors.bgWhite : colors.black} />
   </StyledLogoLink>

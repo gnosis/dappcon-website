@@ -46,7 +46,7 @@ const StyledIconLink = styled(Link)`
 
 const Navbar = class extends React.Component {
   render() {
-    const { location } = this.props
+    const { location = {} } = this.props
     const isBlack = location.pathname !== '/'
 
     return (
