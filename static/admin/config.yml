@@ -20,6 +20,19 @@ collections:
       - { label: 'Position', name: 'position', widget: 'string' }
       - { label: Image, name: image, widget: image }
 
+  - name: 'sponsors'
+    label: 'Sponsors'
+    description: 'Sponsors of the DappCon conference'
+    folder: 'src/pages/speakers'
+    create: true
+    slug: '{{name}}-{{slug}}'
+    identifier_field: name
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'sponsor' }
+      - { label: 'Company', name: 'company', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: image }
+      - { label: 'Website URL', name: url, widget: 'string' }
+
   - name: 'events'
     label: 'Program Events'
     folder: 'src/pages/events'
@@ -35,7 +48,7 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
-      - file: 'src/pages/privacy-policy/index.md'
+      - file: 'src/pages/privacy-policy.md'
         label: 'Privacy Policy'
         name: 'privacyPolicy'
         fields:

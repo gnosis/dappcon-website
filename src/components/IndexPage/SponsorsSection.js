@@ -24,7 +24,7 @@ const Placeholder = styled.div`
 `
 
 const SponsorsSection = () => (
-  <Wrapper>
+  <Wrapper id="sponsors">
     <ContentWrapper>
       <SponsorContainer>
         {Array(8)

@@ -17,7 +17,7 @@ const Text = styled.p`
 `
 
 const GnosisSection = ({ text }) => (
-  <Wrapper>
+  <Wrapper id="gnosis">
     <StyledContentWrapper>
       <Text>{text}</Text>
     </StyledContentWrapper>

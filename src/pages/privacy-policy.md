@@ -1,0 +1,4 @@
+---
+templateKey: privacy-policy-page
+---
+

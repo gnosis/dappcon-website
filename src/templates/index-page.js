@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <GnosisSection text={aboutGnosis} />
-    <SponsorsSection />
+    {/* <SponsorsSection /> */}
   </>
 )
 

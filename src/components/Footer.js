@@ -25,15 +25,26 @@ const FooterColumn = styled.div`
   font-size: 14px;
 `
 
+const StyledLink = styled.a`
+  color: ${colors.reddishPink};
+  text-decoration: none;
+`
 const Footer = () => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn extended>
-        <a href="mailto:info@dappcon.io">info@dappcon.io</a> |{' '}
-        <a href="https://twitter.com/dappcon_berlin" target="_blank" rel="noopener noreferrer">
+        <StyledLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
+          info@dappcon.io
+        </StyledLink>{' '}
+        |{' '}
+        <StyledLink
+          href="https://twitter.com/dappcon_berlin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Twitter
-        </a>
+        </StyledLink>
         <br />
         <br />
         <span>{new Date().getFullYear()} DAPPCON.</span> Imprint. Privacy Policy.
@@ -41,7 +52,13 @@ const Footer = () => (
       <FooterColumn>
         Do you want to become a speaker?
         <br />
-        Apply
+        <StyledLink
+          href="https://gnosis1.typeform.com/to/ZNV6Wf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Apply
+        </StyledLink>
       </FooterColumn>
       <FooterColumn>
         Do you want to become a sponsor? Find more info here and apply here
