@@ -23,27 +23,25 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
-    const filterByPages = result.data.allMarkdownRemark.edges.filter(({ node }) =>
+    const filteredByPages = result.data.allMarkdownRemark.edges.filter(({ node }) =>
       node.frontmatter.templateKey.includes('page'),
     )
 
-    console.log(JSON.stringify(filterByPages, null, 2))
+    console.log(JSON.stringify(filteredByPages, null, 2))
 
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
 
-    filterByPages.forEach(({ node }) => {
-      if (node.frontmatter.templateKey.includes('index')) {
-        createPage({
-          path: '/',
-          component: path.resolve(`src/templates/${node.frontmatter.templateKey}.js`),
-          context: {
-            id: node.id,
-          },
-        })
-      }
+    filteredByPages.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug.includes('index') ? '/' : node.fields.slug,
+        component: path.resolve(`src/templates/${node.frontmatter.templateKey}.js`),
+        context: {
+          id: node.id,
+        },
+      })
     })
   })
 }

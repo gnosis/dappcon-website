@@ -29,6 +29,7 @@ const StyledLink = styled.a`
   color: ${colors.reddishPink};
   text-decoration: none;
 `
+
 const Footer = () => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
