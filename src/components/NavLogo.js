@@ -9,6 +9,10 @@ const StyledLogoLink = styled(Link)`
   top: 22px;
   left: 25px;
   z-index: 1;
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+  }
 `
 
 const Navbar = ({ location: { pathname } = {} }) => (

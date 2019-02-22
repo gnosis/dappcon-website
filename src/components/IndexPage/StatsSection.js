@@ -46,10 +46,18 @@ const Stat = styled.div`
 const StatNumber = styled.span`
   font-size: 69px;
   font-weight: 800;
+
+  @media screen and (max-width: 767px) {
+    font-size: 37px;
+  }
 `
 
 const StatTitle = styled.span`
   font-weight: 800;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 `
 
 const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => (
