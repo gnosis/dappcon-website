@@ -1,8 +1,9 @@
 import React from 'react'
 import CMS from 'netlify-cms'
 import { StyleSheetManager } from 'styled-components'
-import IndexPagePreview from './preview-templates/IndexPagePreview'
 import { LayoutTemplate } from 'components/Layout'
+import IndexPagePreview from './preview-templates/IndexPagePreview'
+import PrivacyPolicyPagePreview from './preview-templates/PrivacyPolicyPagePreview'
 
 // Component used to Enable netlify CMS to apply the styles added through styled-components
 // https://github.com/netlify/netlify-cms/issues/1408
@@ -37,5 +38,11 @@ class CSSInjector extends React.Component {
 CMS.registerPreviewTemplate('landingPage', props => (
   <CSSInjector>
     <IndexPagePreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('privacyPolicy', props => (
+  <CSSInjector>
+    <PrivacyPolicyPagePreview {...props} />
   </CSSInjector>
 ))
