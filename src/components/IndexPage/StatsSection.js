@@ -5,6 +5,10 @@ import ContentWrapper from 'components/ContentWrapper'
 
 const Wrapper = styled.section`
   padding: 175px 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 70px 0;
+  }
 `
 
 const Paragraph = styled.p`
@@ -15,6 +19,10 @@ const Paragraph = styled.p`
   display: block;
   margin: 0 auto;
   color: ${colors.secondaryBlack};
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 `
 
 const StatsContainer = styled.div`
@@ -22,6 +30,10 @@ const StatsContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 174px;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
 `
 
 const Stat = styled.div`

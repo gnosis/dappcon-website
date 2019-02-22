@@ -15,6 +15,10 @@ const NavbarMenuContainer = styled.div`
   width: 50px;
   height: 604px;
   z-index: 1;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `
 
 const StyledLink = styled(Link).attrs(({ isBlack }) => ({

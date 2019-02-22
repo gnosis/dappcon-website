@@ -3,6 +3,14 @@ import styled from 'styled-components'
 import PreviewCompatibleImage from 'components/PreviewCompatibleImage'
 import { colors } from 'theme'
 
+const Div = styled.div`
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: ${colors.reddishPink};
+  }
+`
+
 const SpeakerName = styled.span`
   display: block;
   font-size: 19px;
@@ -22,22 +30,20 @@ const Info = styled.span`
   white-space: nowrap;
 `
 
-const Speaker = ({ speaker: { name, image, position, company }, red = false, showInfo }) => (
-  <div>
+const Speaker = ({ speaker: { name, image, position, company }, showInfo }) => (
+  <Div>
     <PreviewCompatibleImage image={image} style={{ width: 134, height: 134 }} />
-    <SpeakerName red={red}>
+    <SpeakerName>
       {name.substr(0, name.indexOf(' '))}
       <br />
       {name.substr(name.indexOf(' ') + 1)}
     </SpeakerName>
-    {showInfo && (
-      <Info>
-        {position}
-        <br />
-        {company}
-      </Info>
-    )}
-  </div>
+    <Info>
+      {position}
+      <br />
+      {company}
+    </Info>
+  </Div>
 )
 
 export default Speaker

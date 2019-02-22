@@ -6,7 +6,7 @@ import ContentWrapper from 'components/ContentWrapper'
 import BerlinLandscapeSvg from 'img/berlin-cityscape.svg'
 
 const Wrapper = styled.section`
-  height: 604px;
+  height: 100vh;
   position: relative;
   background-color: ${colors.reddishPink};
 `
@@ -22,7 +22,13 @@ const MainHeading = styled.h1`
   font-size: 49px;
   color: ${colors.white};
   line-height: normal;
+  font-weight: 800;
   max-width: 505px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 30px;
+    max-width: 279px;
+  }
 `
 
 const SvgContainer = styled.div`
@@ -36,12 +42,20 @@ const SvgContainer = styled.div`
     bottom: 0;
     width: 100%;
   }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `
 
 const ButtonDateContainer = styled.div`
   display: flex;
   align-items: flex-start;
   margin-top: 20px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const StyledDate = styled.span`
@@ -50,10 +64,20 @@ const StyledDate = styled.span`
   font-size: 20px;
   font-weight: 800;
   line-height: normal;
+
+  @media screen and (max-width: 767px) {
+    margin: 31px 0;
+    order: -1;
+  }
 `
 
 const StyledButton = styled(Button)`
   z-index: 2;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    padding: 14px;
+  }
 `
 
 const MainSection = ({ mainTitle, buttonText }) => (

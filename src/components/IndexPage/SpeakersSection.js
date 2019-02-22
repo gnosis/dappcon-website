@@ -19,6 +19,11 @@ const StyledLink = styled(Link)`
   text-align: center;
   margin-top: 40px;
   color: ${colors.reddishPink};
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const SpeakersSection = ({ speakers }) => (
@@ -29,7 +34,6 @@ const SpeakersSection = ({ speakers }) => (
           <Speaker
             key={i}
             speaker={frontmatter}
-            red={i === speakers.length - 1}
           />
         ))}
       </SpeakersContainer>
