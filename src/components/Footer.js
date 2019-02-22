@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors } from 'theme'
 import DappConLogoFull from 'img/dappcon-logo-full.svg'
+import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};
@@ -25,9 +26,17 @@ const FooterColumn = styled.div`
   font-size: 14px;
 `
 
-const StyledLink = styled.a`
+const LinksCSS = css`
   color: ${colors.reddishPink};
   text-decoration: none;
+`
+
+const StyledLink = styled(Link)`
+  ${LinksCSS}
+`
+
+const StyledExternalLink = styled.a`
+  ${LinksCSS}
 `
 
 const Footer = () => (
@@ -35,31 +44,32 @@ const Footer = () => (
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn extended>
-        <StyledLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
+        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
           info@dappcon.io
-        </StyledLink>{' '}
+        </StyledExternalLink>{' '}
         |{' '}
-        <StyledLink
+        <StyledExternalLink
           href="https://twitter.com/dappcon_berlin"
           target="_blank"
           rel="noopener noreferrer"
         >
           Twitter
-        </StyledLink>
+        </StyledExternalLink>
         <br />
         <br />
-        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint. Privacy Policy.
+        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
+        <StyledLink to="/privacy-policy">Privacy Policy.</StyledLink>
       </FooterColumn>
       <FooterColumn>
         Do you want to become a speaker?
         <br />
-        <StyledLink
+        <StyledExternalLink
           href="https://gnosis1.typeform.com/to/ZNV6Wf"
           target="_blank"
           rel="noopener noreferrer"
         >
           Apply
-        </StyledLink>
+        </StyledExternalLink>
       </FooterColumn>
       <FooterColumn>
         Do you want to become a sponsor? Find more info here and apply here
