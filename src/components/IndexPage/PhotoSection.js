@@ -13,16 +13,20 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 49px;
 
   h3 {
-    font-size: 49px;
     font-weight: 800;
     color: ${colors.white};
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 167px;
+    font-size: 20px;
   }
 `
 
 const StyledLink = styled(Link)`
-  font-size: 49px;
   font-weight: 800;
   color: ${colors.white};
   text-decoration: none;

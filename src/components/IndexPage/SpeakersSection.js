@@ -7,11 +7,21 @@ import Speaker from '../Speaker'
 
 const Wrapper = styled.section`
   padding-top: 174px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 62px;
+  }
 `
 
 const SpeakersContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    & > div:last-child {
+      display: none;
+    }
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -19,6 +29,11 @@ const StyledLink = styled(Link)`
   text-align: center;
   margin-top: 40px;
   color: ${colors.reddishPink};
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const SpeakersSection = ({ speakers }) => (
@@ -26,14 +41,10 @@ const SpeakersSection = ({ speakers }) => (
     <ContentWrapper>
       <SpeakersContainer>
         {speakers.map(({ node: { frontmatter } }, i) => (
-          <Speaker
-            key={i}
-            speaker={frontmatter}
-            red={i === speakers.length - 1}
-          />
+          <Speaker key={i} speaker={frontmatter} />
         ))}
       </SpeakersContainer>
-      <StyledLink to="/speakers">See all confirmed speakers...</StyledLink>
+      <StyledLink to="/speakers">See all confirmed speakers -></StyledLink>
     </ContentWrapper>
   </Wrapper>
 )
