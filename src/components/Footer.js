@@ -1,53 +1,108 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import { colors } from 'theme'
-import DappConLogoFull from 'img/dappcon-logo-full.svg'
-import { Link } from 'gatsby'
+import React from "react";
+import styled, { css } from "styled-components";
+import { colors } from "theme";
+import DappConLogoFull from "img/dappcon-logo-full.svg";
+import { Link } from "gatsby";
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};
-  padding: 29px 56px 40px 30px;
-`
+  padding: 29px 15px 40px 30px;
+`;
 
 const StyledLogo = styled.img`
   display: block;
   margin-bottom: 35px;
-`
+
+  @media screen and (max-width: 767px) {
+    width: 50%;
+    margin-bottom: 29px;
+  }
+`;
+
+const LinksCSS = css`
+  color: ${props => (props.red ? colors.reddishPink : colors.secondaryBlack)};
+  text-decoration: none;
+`;
+
+const StyledLink = styled(Link)`
+  ${LinksCSS}
+`;
+
+const StyledExternalLink = styled.a`
+  ${LinksCSS}
+`;
 
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 const FooterColumn = styled.div`
-  flex-basis: ${props => (props.extended ? '40%' : '30%')};
+  flex-basis: 40%;
   line-height: normal;
   color: ${colors.secondaryBlack};
   font-size: 14px;
-`
 
-const LinksCSS = css`
-  color: ${colors.reddishPink};
-  text-decoration: none;
-`
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+    flex-basis: 35%;
+  }
+`;
 
-const StyledLink = styled(Link)`
-  ${LinksCSS}
-`
+const ApplyColumn = styled(FooterColumn)`
+  flex-basis: 60%;
+  display: flex;
 
-const StyledExternalLink = styled.a`
-  ${LinksCSS}
-`
+  @media screen and (max-width: 767px) {
+    flex-basis: 52%;
+    line-height: 1;
+  }
+`;
+
+const Splitter = styled.span`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const SpeakerText = styled.div`
+  display: inline-block;
+`;
+
+const SponsorText = styled.div`
+  display: inline-block;
+  margin-left: auto;
+  max-width: 263px;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
+  }
+`;
+
+const MobileSplitter = styled.div`
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: inherit;
+  }
+`;
 
 const Footer = () => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
-      <FooterColumn extended>
-        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
+      <FooterColumn>
+        <StyledExternalLink
+          href="mailto:info@dappcon.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           info@dappcon.io
-        </StyledExternalLink>{' '}
-        |{' '}
+        </StyledExternalLink>
+        <Splitter> | </Splitter>
         <StyledExternalLink
           href="https://twitter.com/dappcon_berlin"
           target="_blank"
@@ -57,25 +112,39 @@ const Footer = () => (
         </StyledExternalLink>
         <br />
         <br />
-        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
+        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{" "}
         <StyledLink to="/privacy-policy">Privacy Policy.</StyledLink>
       </FooterColumn>
-      <FooterColumn>
-        Do you want to become a speaker?
-        <br />
-        <StyledExternalLink
-          href="https://gnosis1.typeform.com/to/ZNV6Wf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply
-        </StyledExternalLink>
-      </FooterColumn>
-      <FooterColumn>
-        Do you want to become a sponsor? Find more info here and apply here
-      </FooterColumn>
+      <ApplyColumn>
+        <SpeakerText>
+          Do you want to become a speaker?
+          <br />
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          <StyledExternalLink
+            href="https://gnosis1.typeform.com/to/ZNV6Wf"
+            target="_blank"
+            rel="noopener noreferrer"
+            red
+          >
+            Apply
+          </StyledExternalLink>
+        </SpeakerText>
+        <SponsorText>
+          Do you want to become a sponsor?{" "}
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          Find more info here{" "}
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          and apply here
+        </SponsorText>
+      </ApplyColumn>
     </ColumnsContainer>
   </StyledFooter>
-)
+);
 
-export default Footer
+export default Footer;
