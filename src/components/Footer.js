@@ -82,6 +82,18 @@ const SponsorText = styled.div`
   }
 `;
 
+const HideOnMobile = styled.span`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const CapitalizeOnMobile = styled.span`
+  @media screen and (max-width: 767px) {
+    text-transform: capitalize;
+  }
+`;
+
 const MobileSplitter = styled.div`
   display: none;
 
@@ -140,7 +152,8 @@ const Footer = () => (
           <MobileSplitter>
             <br />
           </MobileSplitter>
-          and apply here
+          <HideOnMobile>and </HideOnMobile>
+          <CapitalizeOnMobile>apply here</CapitalizeOnMobile>
         </SponsorText>
       </ApplyColumn>
     </ColumnsContainer>
