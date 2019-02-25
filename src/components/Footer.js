@@ -1,13 +1,13 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { colors } from "theme";
-import DappConLogoFull from "img/dappcon-logo-full.svg";
-import { Link } from "gatsby";
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { colors } from 'theme'
+import DappConLogoFull from 'img/dappcon-logo-full.svg'
+import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};
   padding: 29px 15px 40px 30px;
-`;
+`
 
 const StyledLogo = styled.img`
   display: block;
@@ -17,25 +17,25 @@ const StyledLogo = styled.img`
     width: 50%;
     margin-bottom: 29px;
   }
-`;
+`
 
 const LinksCSS = css`
   color: ${props => (props.red ? colors.reddishPink : colors.secondaryBlack)};
   text-decoration: none;
-`;
+`
 
 const StyledLink = styled(Link)`
   ${LinksCSS}
-`;
+`
 
 const StyledExternalLink = styled.a`
   ${LinksCSS}
-`;
+`
 
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const FooterColumn = styled.div`
   flex-basis: 40%;
@@ -50,7 +50,7 @@ const FooterColumn = styled.div`
     line-height: 2;
     flex-basis: 35%;
   }
-`;
+`
 
 const ApplyColumn = styled(FooterColumn)`
   flex-basis: 60%;
@@ -60,17 +60,17 @@ const ApplyColumn = styled(FooterColumn)`
     flex-basis: 52%;
     line-height: 1;
   }
-`;
+`
 
 const Splitter = styled.span`
   @media screen and (max-width: 767px) {
     display: none;
   }
-`;
+`
 
 const SpeakerText = styled.div`
   display: inline-block;
-`;
+`
 
 const SponsorText = styled.div`
   display: inline-block;
@@ -80,19 +80,19 @@ const SponsorText = styled.div`
   @media screen and (max-width: 767px) {
     margin-top: 50px;
   }
-`;
+`
 
 const HideOnMobile = styled.span`
   @media screen and (max-width: 767px) {
     display: none;
   }
-`;
+`
 
 const CapitalizeOnMobile = styled.span`
   @media screen and (max-width: 767px) {
     text-transform: capitalize;
   }
-`;
+`
 
 const MobileSplitter = styled.div`
   display: none;
@@ -100,31 +100,23 @@ const MobileSplitter = styled.div`
   @media screen and (max-width: 767px) {
     display: inherit;
   }
-`;
+`
 
 const Footer = () => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn>
-        <StyledExternalLink
-          href="mailto:info@dappcon.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
           info@dappcon.io
         </StyledExternalLink>
         <Splitter> | </Splitter>
-        <StyledExternalLink
-          href="https://twitter.com/dappcon_berlin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <StyledExternalLink href="https://twitter.com/dappcon_berlin" target="_blank" rel="noopener noreferrer">
           Twitter
         </StyledExternalLink>
         <br />
         <br />
-        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{" "}
+        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
         <StyledLink to="/privacy-policy">Privacy Policy.</StyledLink>
       </FooterColumn>
       <ApplyColumn>
@@ -144,11 +136,11 @@ const Footer = () => (
           </StyledExternalLink>
         </SpeakerText>
         <SponsorText>
-          Do you want to become a sponsor?{" "}
+          Do you want to become a sponsor?{' '}
           <MobileSplitter>
             <br />
           </MobileSplitter>
-          Find more info here{" "}
+          Find more info here{' '}
           <MobileSplitter>
             <br />
           </MobileSplitter>
@@ -158,6 +150,6 @@ const Footer = () => (
       </ApplyColumn>
     </ColumnsContainer>
   </StyledFooter>
-);
+)
 
-export default Footer;
+export default Footer
