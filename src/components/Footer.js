@@ -6,28 +6,21 @@ import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};
-  padding: 29px 56px 40px 30px;
+  padding: 29px 15px 40px 30px;
 `
 
 const StyledLogo = styled.img`
   display: block;
   margin-bottom: 35px;
-`
 
-const ColumnsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const FooterColumn = styled.div`
-  flex-basis: ${props => (props.extended ? '40%' : '30%')};
-  line-height: normal;
-  color: ${colors.secondaryBlack};
-  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    width: 50%;
+    margin-bottom: 29px;
+  }
 `
 
 const LinksCSS = css`
-  color: ${colors.reddishPink};
+  color: ${props => (props.red ? colors.reddishPink : colors.secondaryBlack)};
   text-decoration: none;
 `
 
@@ -39,20 +32,86 @@ const StyledExternalLink = styled.a`
   ${LinksCSS}
 `
 
+const ColumnsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const FooterColumn = styled.div`
+  flex-basis: 40%;
+  line-height: normal;
+  color: ${colors.secondaryBlack};
+  font-size: 14px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+    flex-basis: 35%;
+  }
+`
+
+const ApplyColumn = styled(FooterColumn)`
+  flex-basis: 60%;
+  display: flex;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: 52%;
+    line-height: 1;
+  }
+`
+
+const Splitter = styled.span`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`
+
+const SpeakerText = styled.div`
+  display: inline-block;
+`
+
+const SponsorText = styled.div`
+  display: inline-block;
+  margin-left: auto;
+  max-width: 263px;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
+  }
+`
+
+const HideOnMobile = styled.span`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`
+
+const CapitalizeOnMobile = styled.span`
+  @media screen and (max-width: 767px) {
+    text-transform: capitalize;
+  }
+`
+
+const MobileSplitter = styled.div`
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: inherit;
+  }
+`
+
 const Footer = () => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
-      <FooterColumn extended>
+      <FooterColumn>
         <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
           info@dappcon.io
-        </StyledExternalLink>{' '}
-        |{' '}
-        <StyledExternalLink
-          href="https://twitter.com/dappcon_berlin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </StyledExternalLink>
+        <Splitter> | </Splitter>
+        <StyledExternalLink href="https://twitter.com/dappcon_berlin" target="_blank" rel="noopener noreferrer">
           Twitter
         </StyledExternalLink>
         <br />
@@ -60,20 +119,35 @@ const Footer = () => (
         <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
         <StyledLink to="/privacy-policy">Privacy Policy.</StyledLink>
       </FooterColumn>
-      <FooterColumn>
-        Do you want to become a speaker?
-        <br />
-        <StyledExternalLink
-          href="https://gnosis1.typeform.com/to/ZNV6Wf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply
-        </StyledExternalLink>
-      </FooterColumn>
-      <FooterColumn>
-        Do you want to become a sponsor? Find more info here and apply here
-      </FooterColumn>
+      <ApplyColumn>
+        <SpeakerText>
+          Do you want to become a speaker?
+          <br />
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          <StyledExternalLink
+            href="https://gnosis1.typeform.com/to/ZNV6Wf"
+            target="_blank"
+            rel="noopener noreferrer"
+            red
+          >
+            Apply
+          </StyledExternalLink>
+        </SpeakerText>
+        <SponsorText>
+          Do you want to become a sponsor?{' '}
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          Find more info here{' '}
+          <MobileSplitter>
+            <br />
+          </MobileSplitter>
+          <HideOnMobile>and </HideOnMobile>
+          <CapitalizeOnMobile>apply here</CapitalizeOnMobile>
+        </SponsorText>
+      </ApplyColumn>
     </ColumnsContainer>
   </StyledFooter>
 )
