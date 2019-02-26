@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'gatsby'
-import { MobileMenuIcon } from 'components/Svg'
-import NavLogo from 'components/NavLogo'
+import { MobileMenuIcon, DappconLogoSmall } from 'components/Svg'
+import Button from 'components/Button'
 import { colors } from 'theme'
 
 const burgerMenuStyle = css`
@@ -67,19 +67,72 @@ const IconWrapper = styled.div`
   padding: 15px;
   top: 10px;
   right: 0;
+  z-index: 1;
 `
 
-const MobileHeader = () => {
+const NavigationWrapper = styled.div`
+  /* important because react-burger-menu adds display: block style attr */
+  display: flex !important;
+  width: 100%;
+  padding: 22px 25px 35px;
+  box-sizing: border-box;
+`
+
+const Close = styled.button`
+  padding: 10px;
+  font-weight: 800;
+  margin-left: auto;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  color: ${colors.bgWhite};
+`
+
+const StyledLink = styled(Link)`
+  font-size: 19px;
+  padding: 25px 0;
+  text-align: center;
+  color: ${colors.bgWhite};
+  text-decoration: none;
+  font-weight: 800;
+`
+
+const StyledButton = styled(Button)`
+  padding: 17px 88px;
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  border-width: 3px;
+  margin-top: 25px;
+`
+
+const MobileHeader = ({ location: { pathname } }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
     <Wrapper>
       <IconWrapper onClick={() => toggleMenu(!isMenuOpen)}>
-        <MobileMenuIcon />
+        <MobileMenuIcon fill={pathname === '/' ? colors.bgWhite : colors.reddishPink} />
       </IconWrapper>
       <Menu isOpen={isMenuOpen} right customBurgerIcon={false} customCrossIcon={false}>
-        <NavLogo fill={colors.bgWhite} />
-        <Link to="/">Boo</Link>
+        <NavigationWrapper>
+          <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
+            <DappconLogoSmall fill={colors.bgWhite} />
+          </Link>
+          <Close type="button" onClick={() => toggleMenu(!isMenuOpen)}>
+            ->
+          </Close>
+        </NavigationWrapper>
+        <StyledLink to="/#about" onClick={() => toggleMenu(!isMenuOpen)}>
+          About
+        </StyledLink>
+        <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
+          Speakers
+        </StyledLink>
+        <StyledLink to="/#gnosis" onClick={() => toggleMenu(!isMenuOpen)}>
+          Organizer
+        </StyledLink>
+        <StyledButton text="Buy tickets" />
       </Menu>
     </Wrapper>
   )
