@@ -4,6 +4,7 @@ import { StyleSheetManager } from 'styled-components'
 import { LayoutTemplate } from 'components/Layout'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import PrivacyPolicyPagePreview from './preview-templates/PrivacyPolicyPagePreview'
+import ImprintPagePreview from './preview-templates/ImprintPagePreview'
 
 // Component used to Enable netlify CMS to apply the styles added through styled-components
 // https://github.com/netlify/netlify-cms/issues/1408
@@ -12,7 +13,7 @@ class CSSInjector extends React.Component {
     super(props)
 
     this.state = {
-      iframeRef: '',
+      iframeRef: ''
     }
   }
 
@@ -44,5 +45,11 @@ CMS.registerPreviewTemplate('landingPage', props => (
 CMS.registerPreviewTemplate('privacyPolicy', props => (
   <CSSInjector>
     <PrivacyPolicyPagePreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('imprint', props => (
+  <CSSInjector>
+    <ImprintPagePreview {...props} />
   </CSSInjector>
 ))

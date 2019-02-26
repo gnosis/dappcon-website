@@ -5,11 +5,11 @@ import Img from 'gatsby-image'
 const PreviewCompatibleImage = ({ image, style }) => {
   const { alt = '' } = image
 
-  if (!!image && !!image.childImageSharp.fixed) {
+  if (!!image && !!image.childImageSharp && !!image.childImageSharp.fixed) {
     return <Img fixed={image.childImageSharp.fixed} alt={alt} />
   }
 
-  if (!!image && !!image.childImageSharp.fluid) {
+  if (!!image && !!image.childImageSharp && !!image.childImageSharp.fluid) {
     return <Img fluid={image.childImageSharp.fluid} alt={alt} />
   }
 
@@ -25,10 +25,10 @@ PreviewCompatibleImage.propTypes = {
       alt: PropTypes.string,
       childImageSharp: PropTypes.object,
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      style: PropTypes.object,
-    }),
+      style: PropTypes.object
+    })
   ]).isRequired,
-  style: PropTypes.object,
+  style: PropTypes.object
 }
 
 export default PreviewCompatibleImage
