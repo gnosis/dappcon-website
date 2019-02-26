@@ -5,6 +5,7 @@ import { colors } from 'theme'
 
 const Wrapper = styled.div`
   display: none;
+  font-weight: 800;
 
   @media screen and (max-width: 767px) {
     display: flex;
@@ -16,7 +17,6 @@ const Wrapper = styled.div`
 
 const Heading = styled.h4`
   margin-left: auto;
-  font-weight: 800;
 `
 
 const StyledLink = styled(Link)`
@@ -24,8 +24,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
-const MobilePageHeading = ({ text }) => (
-  <Wrapper>
+const MobilePageHeading = ({ text, ...props }) => (
+  <Wrapper {...props}>
     <StyledLink to="/">&lt;-</StyledLink>
     <Heading>{text}</Heading>
   </Wrapper>

@@ -61,7 +61,7 @@ const markdownRenderers = {
   )
 }
 
-export const PrivacyPolicyPageTemplate = ({ title, body }) => (
+export const ImprintPageTemplate = ({ title, body }) => (
   <ContentWrapper>
     <PageHeading>{title}</PageHeading>
     <StyledMobileHeading text={title} />
@@ -74,7 +74,7 @@ export const PrivacyPolicyPageTemplate = ({ title, body }) => (
   </ContentWrapper>
 )
 
-export default class PrivacyPolicyPage extends React.Component {
+export default class ImprintPage extends React.Component {
   render() {
     const {
       data: {
@@ -83,13 +83,13 @@ export default class PrivacyPolicyPage extends React.Component {
     } = this.props
     const { title } = pageData
 
-    return <PrivacyPolicyPageTemplate title={title} body={rawMarkdownBody} />
+    return <ImprintPageTemplate title={title} body={rawMarkdownBody} />
   }
 }
 
 export const pageQuery = graphql`
   query {
-    pageData: markdownRemark(frontmatter: { templateKey: { eq: "privacy-policy-page" } }) {
+    pageData: markdownRemark(frontmatter: { templateKey: { eq: "imprint-page" } }) {
       rawMarkdownBody
       frontmatter {
         title
