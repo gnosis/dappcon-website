@@ -6,11 +6,21 @@ import MobilePageHeading from 'components/MobilePageHeading'
 import Markdown from 'react-markdown'
 import { colors } from 'theme'
 
+const PageWrapper = styled.div`
+  min-height: calc(100vh - 410px);
+  padding: 132px 0 84px;
+  background: ${colors.bgWhite};
+
+  @media screen and (max-width: 767px) {
+    padding: 83px 0 30px;
+  }
+`
+
 const PageHeading = styled.h1`
   font-size: 69px;
   font-weight: 800;
   color: ${colors.reddishPink};
-  margin: 132px 0 71px;
+  margin-bottom: 71px;
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -19,7 +29,7 @@ const PageHeading = styled.h1`
 
 const StyledLink = styled(Link)`
   display: block;
-  margin: 76px 0 84px;
+  margin-top: 76px;
   color: ${colors.reddishPink};
   text-decoration: none;
   font-size: 19px;
@@ -49,10 +59,6 @@ const MarkdownContainer = styled.div`
   }
 `
 
-const StyledMobileHeading = styled(MobilePageHeading)`
-  margin-top: 83px;
-`
-
 const markdownRenderers = {
   link: props => (
     <StyledMdLink href={props.href} target="_blank" rel="noopener noreferrer">
@@ -62,16 +68,18 @@ const markdownRenderers = {
 }
 
 export const ImprintPageTemplate = ({ title, body }) => (
-  <ContentWrapper>
-    <PageHeading>{title}</PageHeading>
-    <StyledMobileHeading text={title} />
-    <MarkdownContainer>
-      <Markdown source={body} renderers={markdownRenderers} />
-    </MarkdownContainer>
-    <StyledLink to="/">
-      &lt;- <HideOnMobile>back to homepage</HideOnMobile>
-    </StyledLink>
-  </ContentWrapper>
+  <PageWrapper>
+    <ContentWrapper>
+      <PageHeading>{title}</PageHeading>
+      <MobilePageHeading text={title} />
+      <MarkdownContainer>
+        <Markdown source={body} renderers={markdownRenderers} />
+      </MarkdownContainer>
+      <StyledLink to="/">
+        &lt;- <HideOnMobile>back to homepage</HideOnMobile>
+      </StyledLink>
+    </ContentWrapper>
+  </PageWrapper>
 )
 
 export default class ImprintPage extends React.Component {

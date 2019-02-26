@@ -7,6 +7,7 @@ import Speaker from '../Speaker'
 
 const Wrapper = styled.section`
   padding-top: 174px;
+  background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
     padding-top: 62px;

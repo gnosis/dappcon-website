@@ -121,7 +121,10 @@ const Footer = () => (
         </StyledExternalLink>
         <br />
         <br />
-        <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
+        <span>{new Date().getFullYear()} DAPPCON.</span>{' '}
+        <StyledLink to="/imprint" underline>
+          Imprint.
+        </StyledLink>{' '}
         <StyledLink to="/privacy-policy" underline>
           Privacy Policy.
         </StyledLink>

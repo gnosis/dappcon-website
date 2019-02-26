@@ -15,10 +15,10 @@ const StyledLogoLink = styled(Link)`
   }
 `
 
-const Navbar = ({ location: { pathname } = {} }) => (
+const NavLogo = ({ location: { pathname } = {} }) => (
   <StyledLogoLink to="/" title="Logo">
     <DappconLogoSmall fill={pathname === '/' ? colors.bgWhite : colors.reddishPink} />
   </StyledLogoLink>
 )
 
-export default Navbar
+export default NavLogo
