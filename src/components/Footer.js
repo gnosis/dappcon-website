@@ -21,7 +21,7 @@ const StyledLogo = styled.img`
 
 const LinksCSS = css`
   color: ${props => (props.red ? colors.reddishPink : colors.secondaryBlack)};
-  text-decoration: none;
+  text-decoration: ${props => (props.underline ? 'underline' : 'none')};
 `
 
 const StyledLink = styled(Link)`
@@ -107,17 +107,24 @@ const Footer = () => (
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn>
-        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer">
+        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer" underline>
           info@dappcon.io
         </StyledExternalLink>
         <Splitter> | </Splitter>
-        <StyledExternalLink href="https://twitter.com/dappcon_berlin" target="_blank" rel="noopener noreferrer">
+        <StyledExternalLink
+          href="https://twitter.com/dappcon_berlin"
+          target="_blank"
+          rel="noopener noreferrer"
+          underline
+        >
           Twitter
         </StyledExternalLink>
         <br />
         <br />
         <span>{new Date().getFullYear()} DAPPCON.</span> Imprint.{' '}
-        <StyledLink to="/privacy-policy">Privacy Policy.</StyledLink>
+        <StyledLink to="/privacy-policy" underline>
+          Privacy Policy.
+        </StyledLink>
       </FooterColumn>
       <ApplyColumn>
         <SpeakerText>
