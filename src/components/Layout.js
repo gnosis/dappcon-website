@@ -7,6 +7,7 @@ import reset from 'styled-reset'
 import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
 import Footer from 'components/Footer'
+import MobileHeader from 'components/MobileHeader'
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -37,6 +38,7 @@ export const LayoutTemplate = ({ children, location }) => (
     <GlobalStyles />
     <NavLogo location={location} />
     <Navbar location={location} />
+    <MobileHeader location={location} />
     <div>{children}</div>
     <Footer />
   </>
