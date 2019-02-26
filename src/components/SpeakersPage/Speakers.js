@@ -8,6 +8,7 @@ import Speaker from 'components/Speaker'
 
 const StyledSection = styled.section`
   padding: 141px 0 71px;
+  background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
     padding: 106px 0 46px;

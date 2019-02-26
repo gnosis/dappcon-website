@@ -32,7 +32,7 @@ const StyledLink = styled(Link).attrs(({ isBlack }) => ({
   text-decoration: none;
   padding-right: 10px;
   font-weight: 800;
-  transition: color .3s ease-out;
+  transition: color 0.3s ease-out;
 
   &:hover {
     color: ${props => props.hoverColor};
@@ -78,7 +78,7 @@ const Navbar = class extends React.Component {
           Sponsors
         </StyledLink> */}
         <StyledIconLink to="/contact/examples" rotate="45deg">
-          <TicketSVG />
+          <TicketSVG fill={isBlack ? colors.black : colors.bgWhite} />
         </StyledIconLink>
       </NavbarMenuContainer>
     )

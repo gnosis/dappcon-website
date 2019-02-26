@@ -5,6 +5,7 @@ import ContentWrapper from 'components/ContentWrapper'
 
 const Wrapper = styled.section`
   padding: 175px 0;
+  background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
     padding: 70px 0;
@@ -64,10 +65,9 @@ const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => (
   <Wrapper id="#about">
     <ContentWrapper>
       <Paragraph>
-        After having successfully brought together more than 600 Ethereum developers, researchers
-        and enthusiasts in summer 2018, DappCon will take place for a second time this summer!
-        DappCon is a nonprofit global developer conference focusing on decentralized applications,
-        tooling, and foundational infrastructure on Ethereum.
+        After having successfully brought together more than 600 Ethereum developers, researchers and enthusiasts in
+        summer 2018, DappCon will take place for a second time this summer! DappCon is a nonprofit global developer
+        conference focusing on decentralized applications, tooling, and foundational infrastructure on Ethereum.
       </Paragraph>
       <StatsContainer>
         <Stat>
