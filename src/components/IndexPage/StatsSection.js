@@ -62,7 +62,7 @@ const StatTitle = styled.span`
 `
 
 const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => (
-  <Wrapper id="#about">
+  <Wrapper id="about">
     <ContentWrapper>
       <Paragraph>
         After having successfully brought together more than 600 Ethereum developers, researchers and enthusiasts in
