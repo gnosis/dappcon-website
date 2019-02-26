@@ -42,7 +42,7 @@ export const LayoutTemplate = ({ children, location }) => (
   </>
 )
 
-const TemplateWrapper = (props) => (
+const TemplateWrapper = props => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -71,7 +71,7 @@ const TemplateWrapper = (props) => (
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/og-image.jpg" />
+          <meta property="og:image" content="/img/og-image.svg" />
         </Helmet>
         <LayoutTemplate {...props} />
       </div>
