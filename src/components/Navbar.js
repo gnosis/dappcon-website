@@ -44,17 +44,6 @@ const StyledIconLink = styled(Link)`
   margin-top: 40px;
 `
 
-{
-  /* Hamburger menu */
-}
-{
-  /* <div className="navbar-burger burger" data-target="navMenu">
-              <span />
-              <span />
-              <span />
-            </div> */
-}
-
 const Navbar = class extends React.Component {
   render() {
     const { location = {} } = this.props
