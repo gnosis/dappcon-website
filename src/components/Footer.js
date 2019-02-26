@@ -44,7 +44,7 @@ const FooterColumn = styled.div`
   font-size: 14px;
 
   @media screen and (max-width: 767px) {
-    font-size: 12px;
+    font-size: 13px;
     display: flex;
     flex-direction: column;
     line-height: 2;
