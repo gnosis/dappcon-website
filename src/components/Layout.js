@@ -71,7 +71,7 @@ const TemplateWrapper = props => (
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/og-image.svg" />
+          <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
         <LayoutTemplate {...props} />
       </div>
