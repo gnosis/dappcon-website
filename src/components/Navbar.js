@@ -45,135 +45,29 @@ const StyledIconLink = styled(Link)`
   margin-right: -10px;
 `
 
-const idToColor = {
-  main: colors.white,
-  about: colors.black,
-  photo: colors.white,
-  speakers: colors.black
-}
-
-const LinkIds = ['aboutLink', 'speakersLink', 'organizersLink', 'buyLink']
-
-let breakPointsToColor = {}
-
 const Navbar = class extends React.Component {
-  initListeners = () => {
-    this.getBreakpointsPos()
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', this.getBreakpointsPos)
-      window.addEventListener('scroll', this.changeColorOnScroll)
-    }
-  }
-
-  removeListenersAndResetAttrs = () => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.getBreakpointsPos)
-      window.removeEventListener('scroll', this.changeColorOnScroll)
-
-      LinkIds.forEach(id => {
-        if (id === 'buyLink') {
-          this[id].children[0].children[0].setAttribute('stroke', colors.black)
-        } else {
-          this[id].style.color = null
-        }
-      })
-    }
-  }
-
-  componentDidMount() {
-    const {
-      location: { pathname }
-    } = this.props
-
-    if (pathname === '/') {
-      this.initListeners()
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      location: { pathname }
-    } = this.props
-    const {
-      location: { pathname: prevPath }
-    } = prevProps
-
-    if (pathname === '/') {
-      this.initListeners()
-    } else if (prevPath === '/' && pathname !== '/') {
-      this.removeListenersAndResetAttrs()
-    }
-  }
-
-  componentWillUnmount() {
-    const {
-      location: { pathname }
-    } = this.props
-
-    if (pathname === '/') {
-      this.removeListenersAndResetAttrs()
-    }
-  }
-
-  setLinkRef = e => {
-    this[e.id] = e
-  }
-
-  getBreakpointsPos() {
-    breakPointsToColor = {}
-    Object.keys(idToColor).forEach(id => {
-      const elem = document.getElementById(id)
-      if (elem) {
-        breakPointsToColor[elem.offsetTop] = idToColor[id]
-      }
-    })
-  }
-
-  changeColorOnScroll = e => {
-    if (typeof window !== 'undefined') {
-      LinkIds.forEach(id => {
-        if (this[id]) {
-          Object.keys(breakPointsToColor).forEach(point => {
-            if (
-              parseInt(window.scrollY) >
-              parseInt(point) - parseInt(this[id].offsetTop) - 0.5 * parseInt(this[id].clientHeight)
-            ) {
-              if (id === 'buyLink') {
-                this[id].children[0].children[0].setAttribute('stroke', breakPointsToColor[point])
-              } else {
-                this[id].style.color = breakPointsToColor[point]
-              }
-            }
-          })
-        }
-      })
-    }
-  }
-
   render() {
-    const { location = {} } = this.props
-    const isBlack = location.pathname !== '/'
+    const { isBlack, setLinkRef } = this.props
 
     return (
       <NavbarMenuContainer>
-        <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={this.setLinkRef}>
+        <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={setLinkRef}>
           About
         </StyledLink>
         {/* <StyledLink isBlack={isBlack} to="/program">
           Programm
         </StyledLink> */}
-        <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={this.setLinkRef}>
+        <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
           Speakers
         </StyledLink>
-        <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={this.setLinkRef}>
+        <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={setLinkRef}>
           Organizer
         </StyledLink>
         {/* <StyledLink isBlack={isBlack} to="/#sponsors">
           Sponsors
         </StyledLink> */}
-        <StyledIconLink id="buyLink" to="/contact/examples" rotate="45deg" innerRef={this.setLinkRef}>
-          <TicketSVG fill={isBlack ? colors.black : colors.white} />
+        <StyledIconLink id="buyLink" to="/contact/examples" rotate="45deg" innerRef={setLinkRef}>
+          <TicketSVG fill={isBlack ? colors.black : colors.white} gStyle={{ transition: 'stroke 0.3s ease-out' }} />
         </StyledIconLink>
       </NavbarMenuContainer>
     )
