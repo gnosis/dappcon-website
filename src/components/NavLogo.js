@@ -15,8 +15,8 @@ const StyledLogoLink = styled(Link)`
   }
 `
 
-const NavLogo = ({ fill, location: { pathname } = {} }) => (
-  <StyledLogoLink to="/" title="Logo">
+const NavLogo = ({ fill, location: { pathname } = {}, setLinkRef }) => (
+  <StyledLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
     <DappconLogoSmall fill={fill || (pathname === '/' ? colors.bgWhite : colors.reddishPink)} />
   </StyledLogoLink>
 )
