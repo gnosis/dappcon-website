@@ -106,7 +106,7 @@ const StyledButton = styled(Button)`
   margin-top: 25px;
 `
 
-const MobileHeader = ({ location: { pathname } }) => {
+const MobileHeader = ({ location: { pathname } = {} }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (

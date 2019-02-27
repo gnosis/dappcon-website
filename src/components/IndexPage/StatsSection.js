@@ -74,23 +74,23 @@ const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => {
           summer 2018, DappCon will take place for a second time this summer! DappCon is a nonprofit global developer
           conference focusing on decentralized applications, tooling, and foundational infrastructure on Ethereum.
         </Paragraph>
-        <VisibilitySensor>
+        <VisibilitySensor onChange={isVisible => setStatsVisibility(isVisible)} active={!statsVisible}>
           <StatsContainer>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={firstStat.number} />
+                <CountUp start="0" end={statsVisible ? firstStat.number : 0} />
               </StatNumber>
               <StatTitle>{firstStat.description}</StatTitle>
             </Stat>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={secondStat.number} />
+                <CountUp start="0" end={statsVisible ? secondStat.number : 0} suffix="+" />
               </StatNumber>
               <StatTitle>{secondStat.description}</StatTitle>
             </Stat>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={thirdStat.number} />
+                <CountUp start="0" end={statsVisible ? thirdStat.number : 0} suffix="+" />
               </StatNumber>
               <StatTitle>{thirdStat.description}</StatTitle>
             </Stat>
