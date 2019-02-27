@@ -14,10 +14,10 @@ stats:
     number: '3'
   secondStat:
     description: speakers
-    number: 20+
+    number: '20'
   thirdStat:
     description: workshops
-    number: 24+
+    number: '24'
 programPhotoText:
   isLink: false
   label: Program coming soon
