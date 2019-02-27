@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
 `
 
 const PhotoSection = ({ text }) => (
-  <Wrapper>
+  <Wrapper id="photo">
     {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
   </Wrapper>
 )

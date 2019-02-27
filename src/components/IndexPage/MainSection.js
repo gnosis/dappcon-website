@@ -81,7 +81,7 @@ const StyledButton = styled(Button)`
 `
 
 const MainSection = ({ mainTitle, buttonText }) => (
-  <Wrapper>
+  <Wrapper id="main">
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
