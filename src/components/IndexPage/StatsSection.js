@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { colors } from 'theme'
 import ContentWrapper from 'components/ContentWrapper'
+import VisibilitySensor from 'react-visibility-sensor'
 
 const Wrapper = styled.section`
   padding: 175px 0;
@@ -61,30 +63,42 @@ const StatTitle = styled.span`
   }
 `
 
-const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => (
-  <Wrapper id="about">
-    <ContentWrapper>
-      <Paragraph>
-        After having successfully brought together more than 600 Ethereum developers, researchers and enthusiasts in
-        summer 2018, DappCon will take place for a second time this summer! DappCon is a nonprofit global developer
-        conference focusing on decentralized applications, tooling, and foundational infrastructure on Ethereum.
-      </Paragraph>
-      <StatsContainer>
-        <Stat>
-          <StatNumber>{firstStat.number}</StatNumber>
-          <StatTitle>{firstStat.description}</StatTitle>
-        </Stat>
-        <Stat>
-          <StatNumber>{secondStat.number}</StatNumber>
-          <StatTitle>{secondStat.description}</StatTitle>
-        </Stat>
-        <Stat>
-          <StatNumber>{thirdStat.number}</StatNumber>
-          <StatTitle>{thirdStat.description}</StatTitle>
-        </Stat>
-      </StatsContainer>
-    </ContentWrapper>
-  </Wrapper>
-)
+const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => {
+  const [statsVisible, setStatsVisibility] = useState(false)
+
+  return (
+    <Wrapper id="about">
+      <ContentWrapper>
+        <Paragraph>
+          After having successfully brought together more than 600 Ethereum developers, researchers and enthusiasts in
+          summer 2018, DappCon will take place for a second time this summer! DappCon is a nonprofit global developer
+          conference focusing on decentralized applications, tooling, and foundational infrastructure on Ethereum.
+        </Paragraph>
+        <VisibilitySensor>
+          <StatsContainer>
+            <Stat>
+              <StatNumber>
+                <CountUp start="0" end={firstStat.number} />
+              </StatNumber>
+              <StatTitle>{firstStat.description}</StatTitle>
+            </Stat>
+            <Stat>
+              <StatNumber>
+                <CountUp start="0" end={secondStat.number} />
+              </StatNumber>
+              <StatTitle>{secondStat.description}</StatTitle>
+            </Stat>
+            <Stat>
+              <StatNumber>
+                <CountUp start="0" end={thirdStat.number} />
+              </StatNumber>
+              <StatTitle>{thirdStat.description}</StatTitle>
+            </Stat>
+          </StatsContainer>
+        </VisibilitySensor>
+      </ContentWrapper>
+    </Wrapper>
+  )
+}
 
 export default StatsSection
