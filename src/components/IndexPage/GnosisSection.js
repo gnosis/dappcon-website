@@ -16,6 +16,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
   text-align: center;
 `
 
+const StyledLink = styled.a`
+  color: ${colors.red};
+  text-decoration: none;
+`
+
 const Text = styled.p`
   max-width: 689px;
   text-align: center;

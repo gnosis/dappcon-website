@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
 `
 
 const SpeakersSection = ({ speakers }) => (
-  <Wrapper>
+  <Wrapper id="speakers">
     <ContentWrapper>
       <SpeakersContainer>
         {speakers.map(({ node: { frontmatter } }, i) => (
