@@ -17,8 +17,12 @@ const StyledContentWrapper = styled(ContentWrapper)`
 `
 
 const StyledLink = styled.a`
-  color: ${colors.red};
+  color: ${colors.reddishPink};
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const Text = styled.p`
@@ -33,12 +37,29 @@ const Text = styled.p`
   }
 `
 
-const GnosisSection = ({ text }) => (
-  <Wrapper id="gnosis">
-    <StyledContentWrapper>
-      <Text>{text}</Text>
-    </StyledContentWrapper>
-  </Wrapper>
-)
+const GnosisSection = ({ text = '' }) => {
+  const splitText = text.split('Gnosis')
+  const textWithLinks = splitText.reduce(
+    (arr, b, i) =>
+      i === 0
+        ? [...arr, b]
+        : [
+            ...arr,
+            <StyledLink key={i} href="https://gnosis.io" target="_blank" rel="noopener noreferreras">
+              Gnosis
+            </StyledLink>,
+            b
+          ],
+    []
+  )
+
+  return (
+    <Wrapper id="gnosis">
+      <StyledContentWrapper>
+        <Text>{textWithLinks}</Text>
+      </StyledContentWrapper>
+    </Wrapper>
+  )
+}
 
 export default GnosisSection

@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   buttonText,
   speakers,
   stats,
-  programPhotoText,
+  programPhotoText
 }) => (
   <>
     <MainSection mainTitle={mainTitle} buttonText={buttonText} />
@@ -31,8 +31,8 @@ export default class IndexPage extends React.Component {
     const {
       data: {
         speakers,
-        pageData: { frontmatter: pageData },
-      },
+        pageData: { frontmatter: pageData }
+      }
     } = this.props
     const {
       mainTitle,
@@ -41,13 +41,11 @@ export default class IndexPage extends React.Component {
       buttonText,
       speakers: indexPageSpeakers,
       stats,
-      programPhotoText,
+      programPhotoText
     } = pageData
 
     const displayedSpeakers = Object.values(indexPageSpeakers)
-    speakers.edges = speakers.edges.filter(({ node }) =>
-      displayedSpeakers.includes(node.frontmatter.name),
-    )
+    speakers.edges = speakers.edges.filter(({ node }) => displayedSpeakers.includes(node.frontmatter.name))
 
     return (
       <IndexPageTemplate
@@ -112,7 +110,7 @@ export const pageQuery = graphql`
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
                 fluid(maxWidth: 134) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

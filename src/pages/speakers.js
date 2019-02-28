@@ -5,7 +5,7 @@ import Speakers from 'components/SpeakersPage/Speakers'
 export default class SpeakersPage extends React.Component {
   render() {
     const {
-      data: { speakers },
+      data: { speakers }
     } = this.props
 
     return (
@@ -30,7 +30,7 @@ export const pageQuery = graphql`
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
                 fluid(maxWidth: 134) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
