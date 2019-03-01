@@ -57,7 +57,7 @@ class Invaders extends Component {
     const { width, height } = this.state
 
     this.invaderInterval = setInterval(() => {
-      if (this.state.invadersAmount >= 150) {
+      if (this.state.invaders.length >= 150) {
         clearInterval(this.invaderInterval)
       }
 
