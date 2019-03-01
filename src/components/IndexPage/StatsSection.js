@@ -78,19 +78,19 @@ const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => {
           <StatsContainer>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={statsVisible ? +firstStat.number : 0} />
+                <CountUp start={0} end={statsVisible ? +firstStat.number : 0} />
               </StatNumber>
               <StatTitle>{firstStat.description}</StatTitle>
             </Stat>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={statsVisible ? +secondStat.number : 0} suffix="+" />
+                <CountUp start={0} end={statsVisible ? +secondStat.number : 0} suffix="+" />
               </StatNumber>
               <StatTitle>{secondStat.description}</StatTitle>
             </Stat>
             <Stat>
               <StatNumber>
-                <CountUp start="0" end={statsVisible ? +thirdStat.number : 0} suffix="+" />
+                <CountUp start={0} end={statsVisible ? +thirdStat.number : 0} suffix="+" />
               </StatNumber>
               <StatTitle>{thirdStat.description}</StatTitle>
             </Stat>
