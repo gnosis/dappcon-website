@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Spring } from 'react-spring/renderprops'
 import IdleTimer from 'react-idle-timer'
-import { EthInvader, DappconInvader } from 'components/Svg'
+import { EthInvader, DappconInvader, EthLinesInvader } from 'components/Svg'
 
-const InvaderIcons = [EthInvader, DappconInvader]
+const InvaderIcons = [EthInvader, DappconInvader, EthLinesInvader]
 
 const colors = ['#ff294e', '#f7834e', '#f3c132']
 
@@ -31,7 +30,6 @@ const Invader = styled.div.attrs(({ top, left, ...props }) => ({
 
 class Invaders extends Component {
   state = {
-    showInvaders: false,
     invadersAmount: 30,
     width: 1600,
     height: 900
@@ -50,9 +48,21 @@ class Invaders extends Component {
       this.setState({
         width: window.innerWidth,
         height: window.innerHeight,
-        invadersAmount: Math.round(window.innerWidth / 40)
+        invadersAmount: 0
       })
     }
+  }
+
+  startInvading = () => {
+    this.invaderInterval = setInterval(() => {
+      if (this.state.invadersAmount >= 150) {
+        clearInterval(this.invaderInterval)
+      }
+
+      this.setState(prevState => ({
+        invadersAmount: prevState.invadersAmount + 1
+      }))
+    }, 800)
   }
 
   componentWillUnmount = () => {
@@ -62,52 +72,44 @@ class Invaders extends Component {
   }
 
   render() {
-    const { showInvaders, invadersAmount, width, height } = this.state
+    const { invadersAmount, width, height } = this.state
 
     return (
-      <Container visible={showInvaders}>
+      <Container visible={invadersAmount > 0}>
         <IdleTimer
           ref={ref => {
             this.idleTimer = ref
           }}
-          onActive={() =>
+          onActive={() => {
             this.setState({
-              showInvaders: false
+              invadersAmount: 0
             })
-          }
-          onIdle={() =>
-            this.setState({
-              showInvaders: true
-            })
-          }
+            clearInterval(this.invaderInterval)
+          }}
+          onIdle={this.startInvading}
           timeout={2000}
           startOnLoad
         />
-        {showInvaders &&
-          Array(invadersAmount)
-            .fill(invadersAmount)
-            .map((_, i) => {
-              const Icon = InvaderIcons[Math.round(getRandomArbitrary(0, InvaderIcons.length - 1))]
-              const top = getRandomArbitrary(20, height - 60)
-              const left = getRandomArbitrary(20, width - 60)
-              const fillColor = colors[Math.round(getRandomArbitrary(0, colors.length - 1))]
-              return (
-                <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-                  {props => (
-                    <Invader
-                      key={i}
-                      style={{
-                        top,
-                        left,
-                        ...props
-                      }}
-                    >
-                      <Icon fill={fillColor} />
-                    </Invader>
-                  )}
-                </Spring>
-              )
-            })}
+        {Array(invadersAmount)
+          .fill(invadersAmount)
+          .map((_, i) => {
+            const Icon = InvaderIcons[Math.round(getRandomArbitrary(0, InvaderIcons.length - 1))]
+            const top = getRandomArbitrary(20, height - 60)
+            const left = getRandomArbitrary(20, width - 60)
+            const fillColor = colors[Math.round(getRandomArbitrary(0, colors.length - 1))]
+
+            return (
+              <Invader
+                key={i}
+                style={{
+                  top,
+                  left
+                }}
+              >
+                <Icon fill={fillColor} />
+              </Invader>
+            )
+          })}
       </Container>
     )
   }
