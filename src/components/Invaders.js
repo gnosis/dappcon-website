@@ -18,7 +18,7 @@ const Container = styled.div`
   z-index: ${props => (props.visible ? 2 : 0)};
 `
 
-const Invader = styled.div.attrs(({ top, left, ...props }) => ({
+const InvaderContainer = styled.div.attrs(({ top, left, ...props }) => ({
   style: {
     top: `${top}px`,
     left: `${left}px`,
@@ -30,7 +30,7 @@ const Invader = styled.div.attrs(({ top, left, ...props }) => ({
 
 class Invaders extends Component {
   state = {
-    invadersAmount: 30,
+    invaders: [],
     width: 1600,
     height: 900
   }
@@ -48,19 +48,29 @@ class Invaders extends Component {
       this.setState({
         width: window.innerWidth,
         height: window.innerHeight,
-        invadersAmount: 0
+        invaders: []
       })
     }
   }
 
   startInvading = () => {
+    const { width, height } = this.state
+
     this.invaderInterval = setInterval(() => {
       if (this.state.invadersAmount >= 150) {
         clearInterval(this.invaderInterval)
       }
 
       this.setState(prevState => ({
-        invadersAmount: prevState.invadersAmount + 1
+        invaders: [
+          ...prevState.invaders,
+          {
+            icon: InvaderIcons[Math.round(getRandomArbitrary(0, InvaderIcons.length - 1))],
+            top: getRandomArbitrary(20, height - 60),
+            left: getRandomArbitrary(20, width - 60),
+            color: colors[Math.round(getRandomArbitrary(0, colors.length - 1))]
+          }
+        ]
       }))
     }, 800)
   }
@@ -72,17 +82,15 @@ class Invaders extends Component {
   }
 
   render() {
-    const { invadersAmount, width, height } = this.state
+    const { invaders } = this.state
+    console.log(invaders)
 
     return (
-      <Container visible={invadersAmount > 0}>
+      <Container visible={invaders.length > 0}>
         <IdleTimer
-          ref={ref => {
-            this.idleTimer = ref
-          }}
           onActive={() => {
             this.setState({
-              invadersAmount: 0
+              invaders: []
             })
             clearInterval(this.invaderInterval)
           }}
@@ -90,26 +98,19 @@ class Invaders extends Component {
           timeout={2000}
           startOnLoad
         />
-        {Array(invadersAmount)
-          .fill(invadersAmount)
-          .map((_, i) => {
-            const Icon = InvaderIcons[Math.round(getRandomArbitrary(0, InvaderIcons.length - 1))]
-            const top = getRandomArbitrary(20, height - 60)
-            const left = getRandomArbitrary(20, width - 60)
-            const fillColor = colors[Math.round(getRandomArbitrary(0, colors.length - 1))]
-
-            return (
-              <Invader
-                key={i}
-                style={{
-                  top,
-                  left
-                }}
-              >
-                <Icon fill={fillColor} />
-              </Invader>
-            )
-          })}
+        {invaders.map((Invader, i) => {
+          return (
+            <InvaderContainer
+              key={i}
+              style={{
+                top: Invader.top,
+                left: Invader.left
+              }}
+            >
+              <Invader.icon fill={Invader.color} />
+            </InvaderContainer>
+          )
+        })}
       </Container>
     )
   }

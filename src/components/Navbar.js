@@ -21,21 +21,18 @@ const NavbarMenuContainer = styled.div`
   }
 `
 
-const StyledLink = styled(Link).attrs(({ isBlack }) => ({
-  color: isBlack ? colors.black : colors.white,
-  hoverColor: isBlack ? colors.reddishPink : colors.black
-}))`
+const StyledLink = styled(Link)`
   writing-mode: vertical-lr;
   margin-top: 25px;
   font-size: 19px;
-  color: ${props => props.color};
+  color: ${props => (props.isBlack ? colors.black : colors.white)};
   text-decoration: none;
   padding-right: 10px;
   font-weight: 800;
   transition: color 0.3s ease-out;
 
   &:hover {
-    color: ${props => props.hoverColor};
+    color: ${props => (props.isBlack ? colors.reddishPink : colors.black)};
   }
 `
 
