@@ -83,7 +83,6 @@ class Invaders extends Component {
 
   render() {
     const { invaders } = this.state
-    console.log(invaders)
 
     return (
       <Container visible={invaders.length > 0}>
