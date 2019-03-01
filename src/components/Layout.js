@@ -7,6 +7,7 @@ import reset from 'styled-reset'
 import DesktopNav from 'components/DesktopNav'
 import Footer from 'components/Footer'
 import MobileHeader from 'components/MobileHeader'
+import Invaders from 'components/Invaders'
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -37,6 +38,7 @@ export const LayoutTemplate = ({ children, location }) => (
     <GlobalStyles />
     <DesktopNav location={location} />
     <MobileHeader location={location} />
+    <Invaders />
     <div>{children}</div>
     <Footer />
   </>
