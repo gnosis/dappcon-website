@@ -84,6 +84,7 @@ collections:
             }
           - {label: 'Main Title', name: mainTitle, widget: string}
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
+          - {label: 'Buy Tickets Link', name: 'buyTicketsLink', widget: 'string'}
           - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'text'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
@@ -112,3 +113,6 @@ collections:
             { label: 'Speaker 4', name: 'speaker4', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
           ]}
           - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'text'}
+          - {label: 'Speaker Apply Link', name: 'speakerApplyLink', widget: 'string'}
+          - {label: 'Sponsor Apply Link', name: 'sponsorApplyLink', widget: 'string'}
+          - {label: 'Sponsor Info Link', name: 'sponsorInfoLink', widget: 'string'}
