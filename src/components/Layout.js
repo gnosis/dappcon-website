@@ -38,7 +38,7 @@ export const LayoutTemplate = ({ children, location, headerFooterData }) => (
     <GlobalStyles />
     <DesktopNav location={location} />
     <MobileHeader location={location} data={headerFooterData.frontmatter} />
-    {/* <Invaders /> */}
+    <Invaders />
     <div>{children}</div>
     <Footer data={headerFooterData.frontmatter} />
   </>
