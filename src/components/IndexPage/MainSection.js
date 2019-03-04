@@ -66,20 +66,20 @@ const StyledDate = styled.span`
 `
 
 const StyledButton = styled(Button)`
-  z-index: 2;
-
   @media screen and (max-width: 767px) {
     font-size: 12px;
     padding: 14px;
   }
 `
 
-const MainSection = ({ mainTitle, buttonText }) => (
+const MainSection = ({ mainTitle, buttonText, buyTicketsLink }) => (
   <Wrapper id="main">
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
-        <StyledButton text={buttonText} />
+        <a href={buyTicketsLink} target="_blank" rel="noopener noreferrer" style={{ zIndex: 2 }}>
+          <StyledButton text={buttonText} />
+        </a>
         <StyledDate>
           21. - 23. August 2019
           <br />

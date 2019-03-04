@@ -114,5 +114,4 @@ collections:
           ]}
           - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'text'}
           - {label: 'Speaker Apply Link', name: 'speakerApplyLink', widget: 'string'}
-          - {label: 'Sponsor Apply Link', name: 'sponsorApplyLink', widget: 'string'}
           - {label: 'Sponsor Info Link', name: 'sponsorInfoLink', widget: 'string'}
