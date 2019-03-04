@@ -1,15 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 import { colors } from 'theme'
-import photo from 'img/photo@2x.jpg'
 
-const Wrapper = styled.div`
+const Wrapper = styled(BackgroundImage)`
   height: 420px;
-  background: url(${photo});
-  background-size: cover;
-  background-repeat: no-repeat;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,9 +34,25 @@ const StyledLink = styled(Link)`
 `
 
 const PhotoSection = ({ text }) => (
-  <Wrapper id="photo">
-    {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
-  </Wrapper>
+  <StaticQuery
+    query={graphql`
+      query {
+        bg: file(relativePath: { eq: "photo@2x.jpg" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+  >
+    {data => (
+      <Wrapper fluid={data.bg.childImageSharp.fluid} id="photo">
+        {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
+      </Wrapper>
+    )}
+  </StaticQuery>
 )
 
 export default PhotoSection

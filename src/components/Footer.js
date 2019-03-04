@@ -102,7 +102,7 @@ const MobileSplitter = styled.div`
   }
 `
 
-const Footer = () => (
+const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
   <StyledFooter>
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
@@ -136,12 +136,7 @@ const Footer = () => (
           <MobileSplitter>
             <br />
           </MobileSplitter>
-          <StyledExternalLink
-            href="https://gnosis1.typeform.com/to/ZNV6Wf"
-            target="_blank"
-            rel="noopener noreferrer"
-            red
-          >
+          <StyledExternalLink href={speakerApplyLink} target="_blank" rel="noopener noreferrer" red>
             Apply
           </StyledExternalLink>
         </SpeakerText>
@@ -150,12 +145,18 @@ const Footer = () => (
           <MobileSplitter>
             <br />
           </MobileSplitter>
-          Find more info here{' '}
+          <StyledExternalLink href={sponsorInfoLink} target="_blank" rel="noopener noreferrer" red>
+            Find more info here{' '}
+          </StyledExternalLink>
           <MobileSplitter>
             <br />
           </MobileSplitter>
           <HideOnMobile>and </HideOnMobile>
-          <CapitalizeOnMobile>apply here</CapitalizeOnMobile>
+          <CapitalizeOnMobile>
+            <StyledExternalLink href="mailto:sponsor@dappcon.io" target="_blank" rel="noopener noreferrer" red>
+              apply here
+            </StyledExternalLink>
+          </CapitalizeOnMobile>
         </SponsorText>
       </ApplyColumn>
     </ColumnsContainer>

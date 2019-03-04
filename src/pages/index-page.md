@@ -35,7 +35,5 @@ aboutGnosis: >-
   towards the development and continuous growth of Ethereum—both its
   infrastructure and ecosystem.
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
-sponsorApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://en.wikipedia.org/wiki/To_be_announced'
 ---
-

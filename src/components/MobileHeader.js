@@ -104,9 +104,10 @@ const StyledButton = styled(Button)`
   font-size: 12px;
   border-width: 3px;
   margin-top: 25px;
+  text-transform: uppercase;
 `
 
-const MobileHeader = ({ location: { pathname } = {} }) => {
+const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
@@ -132,7 +133,9 @@ const MobileHeader = ({ location: { pathname } = {} }) => {
         <StyledLink to="/#gnosis" onClick={() => toggleMenu(!isMenuOpen)}>
           Organizer
         </StyledLink>
-        <StyledButton text="Buy tickets" />
+        <a href={buyTicketsLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <StyledButton text="Buy tickets" />
+        </a>
       </Menu>
     </Wrapper>
   )

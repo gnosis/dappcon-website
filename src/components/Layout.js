@@ -33,25 +33,32 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export const LayoutTemplate = ({ children, location }) => (
+export const LayoutTemplate = ({ children, location, headerFooterData }) => (
   <>
     <GlobalStyles />
     <DesktopNav location={location} />
-    <MobileHeader location={location} />
+    <MobileHeader location={location} data={headerFooterData.frontmatter} />
     <Invaders />
     <div>{children}</div>
-    <Footer />
+    <Footer data={headerFooterData.frontmatter} />
   </>
 )
 
 const TemplateWrapper = props => (
   <StaticQuery
     query={graphql`
-      query HeadingQuery {
+      query {
         site {
           siteMetadata {
             title
             description
+          }
+        }
+        headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+          frontmatter {
+            speakerApplyLink
+            sponsorInfoLink
+            buyTicketsLink
           }
         }
       }
@@ -72,7 +79,7 @@ const TemplateWrapper = props => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
-        <LayoutTemplate {...props} />
+        <LayoutTemplate {...props} headerFooterData={data.headerFooterData} />
       </div>
     )}
   />
