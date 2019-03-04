@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { colors } from 'theme'
 import Button from 'components/Button'
 import ContentWrapper from 'components/ContentWrapper'
-import BerlinLandscapeSvg from 'img/berlin-cityscape.svg'
+import BerlinLandscapeSvg from 'img/berlin_cityscape.svg'
 
 const Wrapper = styled.section`
   height: 100vh;
@@ -31,17 +31,11 @@ const MainHeading = styled.h1`
   }
 `
 
-const SvgContainer = styled.div`
+const BerlinImg = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100%;
-
-  img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
+  width: 220%;
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -93,9 +87,7 @@ const MainSection = ({ mainTitle, buttonText }) => (
         </StyledDate>
       </ButtonDateContainer>
     </StyledContentWrapper>
-    <SvgContainer>
-      <img src={BerlinLandscapeSvg} alt="cityscape" />
-    </SvgContainer>
+    <BerlinImg src={BerlinLandscapeSvg} alt="cityscape" />
   </Wrapper>
 )
 
