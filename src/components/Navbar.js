@@ -36,39 +36,40 @@ const StyledLink = styled(Link)`
   }
 `
 
-const StyledIconLink = styled(Link)`
+const StyledIconLink = styled.a`
   transform: rotate(-45deg);
   margin-top: 40px;
   margin-right: -10px;
 `
 
-const Navbar = class extends React.Component {
-  render() {
-    const { isBlack, setLinkRef } = this.props
-
-    return (
-      <NavbarMenuContainer>
-        <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={setLinkRef}>
-          About
-        </StyledLink>
-        {/* <StyledLink isBlack={isBlack} to="/program">
+const Navbar = ({ isBlack, setLinkRef, data }) => (
+  <NavbarMenuContainer>
+    <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={setLinkRef}>
+      About
+    </StyledLink>
+    {/* <StyledLink isBlack={isBlack} to="/program">
           Programm
         </StyledLink> */}
-        <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
-          Speakers
-        </StyledLink>
-        <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={setLinkRef}>
-          Organizer
-        </StyledLink>
-        {/* <StyledLink isBlack={isBlack} to="/#sponsors">
+    <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
+      Speakers
+    </StyledLink>
+    <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={setLinkRef}>
+      Organizer
+    </StyledLink>
+    {/* <StyledLink isBlack={isBlack} to="/#sponsors">
           Sponsors
         </StyledLink> */}
-        <StyledIconLink id="buyLink" to="/contact/examples" rotate="45deg" innerRef={setLinkRef}>
-          <TicketSVG fill={isBlack ? colors.black : colors.white} gStyle={{ transition: 'stroke 0.3s ease-out' }} />
-        </StyledIconLink>
-      </NavbarMenuContainer>
-    )
-  }
-}
+    <StyledIconLink
+      id="buyLink"
+      href={data.buyTicketsLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      rotate="45deg"
+      ref={setLinkRef}
+    >
+      <TicketSVG fill={isBlack ? colors.black : colors.white} gStyle={{ transition: 'stroke 0.3s ease-out' }} />
+    </StyledIconLink>
+  </NavbarMenuContainer>
+)
 
 export default Navbar

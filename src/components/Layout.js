@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 export const LayoutTemplate = ({ children, location, headerFooterData }) => (
   <>
     <GlobalStyles />
-    <DesktopNav location={location} />
+    <DesktopNav location={location} data={headerFooterData.frontmatter} />
     <MobileHeader location={location} data={headerFooterData.frontmatter} />
     <Invaders />
     <div>{children}</div>

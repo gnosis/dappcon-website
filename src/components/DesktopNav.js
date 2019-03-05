@@ -122,14 +122,14 @@ const DesktopNav = class extends React.Component {
   }
 
   render() {
-    const { location = {} } = this.props
+    const { location = {}, data } = this.props
     const { navLogoColor } = this.state
     const isBlack = location.pathname !== '/'
 
     return (
       <>
         <NavLogo fill={navLogoColor} location={location} setLinkRef={this.setLinkRef} />
-        <Navbar isBlack={isBlack} setLinkRef={this.setLinkRef} />
+        <Navbar isBlack={isBlack} setLinkRef={this.setLinkRef} data={data} />
       </>
     )
   }

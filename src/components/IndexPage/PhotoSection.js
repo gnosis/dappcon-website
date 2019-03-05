@@ -48,9 +48,11 @@ const PhotoSection = ({ text }) => (
     `}
   >
     {data => (
-      <Wrapper fluid={data.bg.childImageSharp.fluid} id="photo">
-        {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
-      </Wrapper>
+      <div id="photo">
+        <Wrapper fluid={data.bg.childImageSharp.fluid}>
+          {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
+        </Wrapper>
+      </div>
     )}
   </StaticQuery>
 )
