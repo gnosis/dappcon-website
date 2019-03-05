@@ -44,6 +44,11 @@ const Stat = styled.div`
   flex-direction: column;
   align-items: center;
   color: ${colors.black};
+  min-width: 120px;
+
+  @media screen and (max-width: 767px) {
+    min-width: 63px;
+  }
 `
 
 const StatNumber = styled.span`

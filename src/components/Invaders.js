@@ -15,15 +15,15 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: ${props => (props.visible ? 2 : 0)};
+  z-index: ${props => (props.visible ? 2 : -1)};
 `
 
 const InvaderContainer = styled.div.attrs(({ top, left, ...props }) => ({
   style: {
     top: `${top}px`,
     left: `${left}px`,
-    ...props
-  }
+    ...props,
+  },
 }))`
   position: absolute;
 `
@@ -32,7 +32,7 @@ class Invaders extends Component {
   state = {
     invaders: [],
     width: 1600,
-    height: 900
+    height: 900,
   }
 
   componentDidMount = () => {
@@ -48,7 +48,7 @@ class Invaders extends Component {
       this.setState({
         width: window.innerWidth,
         height: window.innerHeight,
-        invaders: []
+        invaders: [],
       })
     }
   }
@@ -68,9 +68,9 @@ class Invaders extends Component {
             icon: InvaderIcons[Math.round(getRandomArbitrary(0, InvaderIcons.length - 1))],
             top: getRandomArbitrary(20, height - 60),
             left: getRandomArbitrary(20, width - 60),
-            color: colors[Math.round(getRandomArbitrary(0, colors.length - 1))]
-          }
-        ]
+            color: colors[Math.round(getRandomArbitrary(0, colors.length - 1))],
+          },
+        ],
       }))
     }, 800)
   }
@@ -89,7 +89,7 @@ class Invaders extends Component {
         <IdleTimer
           onActive={() => {
             this.setState({
-              invaders: []
+              invaders: [],
             })
             clearInterval(this.invaderInterval)
           }}
@@ -103,7 +103,7 @@ class Invaders extends Component {
               key={i}
               style={{
                 top: Invader.top,
-                left: Invader.left
+                left: Invader.left,
               }}
             >
               <Invader.icon fill={Invader.color} />
