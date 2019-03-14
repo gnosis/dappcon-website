@@ -78,6 +78,7 @@ const SponsorText = styled.div`
   max-width: 263px;
 
   @media screen and (max-width: 767px) {
+    margin-left: 0;
     margin-top: 50px;
   }
 `
