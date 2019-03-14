@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   background-color: ${colors.veryLightPink};
-  padding: 29px 15px 40px 30px;
+  padding: 29px 30px 40px 30px;
 `
 
 const StyledLogo = styled.img`
@@ -141,7 +141,8 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           </StyledExternalLink>
         </SpeakerText>
         <SponsorText>
-          Do you want to become a sponsor?{' '}
+          Do you want to become a sponsor?
+          <br />
           <MobileSplitter>
             <br />
           </MobileSplitter>
