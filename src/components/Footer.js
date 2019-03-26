@@ -68,7 +68,7 @@ const Splitter = styled.span`
   }
 `
 
-const SpeakerText = styled.div`
+const SpeakerText = styled.p`
   display: inline-block;
 `
 
@@ -95,7 +95,7 @@ const CapitalizeOnMobile = styled.span`
   }
 `
 
-const MobileSplitter = styled.div`
+const MobileSplitter = styled.br`
   display: none;
 
   @media screen and (max-width: 767px) {
@@ -108,35 +108,41 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
     <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn>
-        <StyledExternalLink href="mailto:info@dappcon.io" target="_blank" rel="noopener noreferrer" underline>
-          info@dappcon.io
-        </StyledExternalLink>
-        <Splitter> | </Splitter>
-        <StyledExternalLink
-          href="https://twitter.com/dappcon_berlin"
-          target="_blank"
-          rel="noopener noreferrer"
-          underline
-        >
-          Twitter
-        </StyledExternalLink>
-        <br />
-        <br />
-        <span>{new Date().getFullYear()} DAPPCON.</span>{' '}
-        <StyledLink to="/imprint" underline>
-          Imprint.
-        </StyledLink>{' '}
-        <StyledLink to="/privacy-policy" underline>
-          Privacy Policy.
-        </StyledLink>
+        <p>
+          <StyledExternalLink
+            href="mailto:info@dappcon.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline
+          >
+            info@dappcon.io
+          </StyledExternalLink>
+          <Splitter> | </Splitter>
+          <MobileSplitter />
+          <StyledExternalLink
+            href="https://twitter.com/dappcon_berlin"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline
+          >
+            Twitter
+          </StyledExternalLink>
+          <br />
+          <br />
+          <span>{new Date().getFullYear()} DAPPCON.</span>{' '}
+          <StyledLink to="/imprint" underline>
+            Imprint.
+          </StyledLink>{' '}
+          <StyledLink to="/privacy-policy" underline>
+            Privacy Policy.
+          </StyledLink>
+        </p>
       </FooterColumn>
       <ApplyColumn>
         <SpeakerText>
           Do you want to become a speaker?
           <br />
-          <MobileSplitter>
-            <br />
-          </MobileSplitter>
+          <br />
           <StyledExternalLink href={speakerApplyLink} target="_blank" rel="noopener noreferrer" red>
             Apply
           </StyledExternalLink>
@@ -144,18 +150,19 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
         <SponsorText>
           Do you want to become a sponsor?
           <br />
-          <MobileSplitter>
-            <br />
-          </MobileSplitter>
+          <br />
           <StyledExternalLink href={sponsorInfoLink} target="_blank" rel="noopener noreferrer" red>
             Find more info here{' '}
           </StyledExternalLink>
-          <MobileSplitter>
-            <br />
-          </MobileSplitter>
+          <MobileSplitter />
           <HideOnMobile>and </HideOnMobile>
           <CapitalizeOnMobile>
-            <StyledExternalLink href="mailto:sponsor@dappcon.io" target="_blank" rel="noopener noreferrer" red>
+            <StyledExternalLink
+              href="mailto:sponsor@dappcon.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              red
+            >
               apply here
             </StyledExternalLink>
           </CapitalizeOnMobile>
