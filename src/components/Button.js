@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   font-size: 20px;
   font-weight: 800;
   color: ${colors.white};
-  padding: 18px;
+  padding: 10px 18px;
   transition: color 0.2s, border-color 0.2s;
   cursor: pointer;
 

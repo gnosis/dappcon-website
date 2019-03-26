@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 import { colors } from 'theme'
 import Button from 'components/Button'
 import ContentWrapper from 'components/ContentWrapper'
@@ -44,7 +45,7 @@ const BerlinImg = styled.img`
 
 const ButtonDateContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 20px;
 
   @media screen and (max-width: 767px) {
@@ -52,7 +53,7 @@ const ButtonDateContainer = styled.div`
   }
 `
 
-const StyledDate = styled.span`
+const StyledDate = styled(Markdown)`
   margin-left: 25px;
   color: ${colors.white};
   font-size: 20px;
@@ -72,7 +73,7 @@ const StyledButton = styled(Button)`
   }
 `
 
-const MainSection = ({ mainTitle, buttonText, buyTicketsLink }) => (
+const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
   <Wrapper id="main">
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
@@ -80,11 +81,7 @@ const MainSection = ({ mainTitle, buttonText, buyTicketsLink }) => (
         <a href={buyTicketsLink} target="_blank" rel="noopener noreferrer" style={{ zIndex: 2 }}>
           <StyledButton text={buttonText} />
         </a>
-        <StyledDate>
-          21. - 23. August 2019
-          <br />
-          at the Berlin Institute of Technology
-        </StyledDate>
+        <StyledDate source={locationAndDate} />
       </ButtonDateContainer>
     </StyledContentWrapper>
     <BerlinImg src={BerlinLandscapeSvg} alt="cityscape" />
