@@ -2,13 +2,20 @@
 templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
+locationAndDate: |-
+  21. - 23. August 2019 
+
+  Berlin Institute of Technology
 buyTicketsLink: 'https://pretix.eu/gnosis/dappcon/'
 aboutDappcon: >-
-  After having successfully brought together more than 600 Ethereum developers,
-  researchers and enthusiasts in summer 2018, DappCon will take place for a
-  second time this summer! DappCon is a nonprofit global developer conference
-  focusing on decentralized applications, tooling, and foundational
-  infrastructure on Ethereum.
+  DappCon is a nonprofit global developer conference focusing on decentralized
+  applications, tooling, and foundational infrastructure on Ethereum. Last year
+  DappCon 2018 brought together more than 600 Ethereum developers, researchers
+  and enthusiasts. We’re giving it another go this summer and encourage anyone
+  interested in the ecosystem or networking with dapp developers to attend.
+  We’ll be working closely with
+  [EthBerlin](https://ethberlinzwei.com/index.html) to make sure your Berlin
+  Blockchain week is a success!
 stats:
   firstStat:
     description: days
@@ -29,11 +36,12 @@ speakers:
   speaker3: Matan Field
   speaker4: Stefan George
 aboutGnosis: >-
-  DappCon is organized by Gnosis, one of Ethereum’s early dApps. Gnosis launched
-  in August 2015, one week after Frontier went live, as the first major dapp on
-  Ethereum. Today, Gnosis is building four major Ethereum-based dapps and works
-  towards the development and continuous growth of Ethereum—both its
-  infrastructure and ecosystem.
+  DappCon is organized by [Gnosis](https://gnosis.io), one of Ethereum’s early
+  dApps. Gnosis launched in August 2015, one week after Frontier went live, as
+  the first major dapp on Ethereum. Today, Gnosis is building four major
+  Ethereum-based dapps and works towards the development and continuous growth
+  of Ethereum—both its infrastructure and ecosystem.
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://en.wikipedia.org/wiki/To_be_announced'
 ---
+
