@@ -68,18 +68,14 @@ const StatTitle = styled.span`
   }
 `
 
-const StatsSection = ({ stats: { firstStat, secondStat, thirdStat } }) => {
+const StatsSection = ({ stats: { firstStat, secondStat, thirdStat }, dappconText }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
 
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <Paragraph>
-          After having successfully brought together more than 600 Ethereum developers, researchers and enthusiasts in
-          summer 2018, DappCon will take place for a second time this summer! DappCon is a nonprofit global developer
-          conference focusing on decentralized applications, tooling, and foundational infrastructure on Ethereum.
-        </Paragraph>
-        <VisibilitySensor onChange={isVisible => setStatsVisibility(isVisible)} active={!statsVisible}>
+        <Paragraph>{dappconText}</Paragraph>
+        <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
           <StatsContainer>
             <Stat>
               <StatNumber>
