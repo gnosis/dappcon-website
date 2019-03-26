@@ -56,7 +56,7 @@ const ButtonDateContainer = styled.div`
 const StyledDate = styled(Markdown)`
   margin-left: 25px;
   color: ${colors.white};
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   line-height: normal;
 
