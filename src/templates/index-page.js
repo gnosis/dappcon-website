@@ -15,10 +15,11 @@ export const IndexPageTemplate = ({
   buyTicketsLink,
   speakers,
   stats,
-  programPhotoText
+  programPhotoText,
+  locationAndDate
 }) => (
   <>
-    <MainSection mainTitle={mainTitle} buttonText={buttonText} buyTicketsLink={buyTicketsLink} />
+    <MainSection mainTitle={mainTitle} buttonText={buttonText} buyTicketsLink={buyTicketsLink} locationAndDate={locationAndDate} />
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
@@ -43,7 +44,8 @@ export default class IndexPage extends React.Component {
       speakers: indexPageSpeakers,
       stats,
       programPhotoText,
-      buyTicketsLink
+      buyTicketsLink,
+      locationAndDate
     } = pageData
 
     const displayedSpeakers = Object.values(indexPageSpeakers)
@@ -59,6 +61,7 @@ export default class IndexPage extends React.Component {
         stats={stats}
         programPhotoText={programPhotoText}
         speakers={speakers}
+        locationAndDate={locationAndDate}
       />
     )
   }
@@ -74,6 +77,7 @@ export const pageQuery = graphql`
         buttonText
         buyTicketsLink
         aboutDappcon
+        locationAndDate
         stats {
           firstStat {
             description

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 import { colors } from 'theme'
+import MdRenderers from 'markdownRenderers'
 import ContentWrapper from 'components/ContentWrapper'
 import VisibilitySensor from 'react-visibility-sensor'
 
@@ -14,7 +16,7 @@ const Wrapper = styled.section`
   }
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled(Markdown)`
   max-width: 688px;
   text-align: center;
   font-size: 19px;
@@ -74,7 +76,7 @@ const StatsSection = ({ stats: { firstStat, secondStat, thirdStat }, dappconText
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <Paragraph>{dappconText}</Paragraph>
+        <Paragraph source={dappconText} renderers={MdRenderers} />
         <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
           <StatsContainer>
             <Stat>
