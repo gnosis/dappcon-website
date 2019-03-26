@@ -33,14 +33,14 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export const LayoutTemplate = ({ children, location, headerFooterData }) => (
+export const LayoutTemplate = ({ children, location, headerFooterData = {} }) => (
   <>
     <GlobalStyles />
-    <DesktopNav location={location} data={headerFooterData.frontmatter} />
-    <MobileHeader location={location} data={headerFooterData.frontmatter} />
+    <DesktopNav location={location} data={headerFooterData} />
+    <MobileHeader location={location} data={headerFooterData} />
     <Invaders />
     <div>{children}</div>
-    <Footer data={headerFooterData.frontmatter} />
+    <Footer data={headerFooterData} />
   </>
 )
 
@@ -79,7 +79,7 @@ const TemplateWrapper = props => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
-        <LayoutTemplate {...props} headerFooterData={data.headerFooterData} />
+        <LayoutTemplate {...props} headerFooterData={data.headerFooterData.frontmatter} />
       </div>
     )}
   />
