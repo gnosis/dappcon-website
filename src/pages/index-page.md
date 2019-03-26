@@ -3,9 +3,9 @@ templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
 locationAndDate: |-
-  21. - 23. August 2019 
+  21. * 23. August 2019 
 
-  Berlin Institute of Technology
+  at the Berlin Institute of Technology
 buyTicketsLink: 'https://pretix.eu/gnosis/dappcon/'
 aboutDappcon: >-
   DappCon is a nonprofit global developer conference focusing on decentralized
