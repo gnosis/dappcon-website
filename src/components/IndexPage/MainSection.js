@@ -83,7 +83,7 @@ const MainSection = ({ mainTitle, buttonText, buyTicketsLink }) => (
         <StyledDate>
           21. - 23. August 2019
           <br />
-          in Berlin, Kreuzberg
+          in Berlin Institute of Technology
         </StyledDate>
       </ButtonDateContainer>
     </StyledContentWrapper>

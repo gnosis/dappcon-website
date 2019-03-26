@@ -38,25 +38,20 @@ const Text = styled.p`
 `
 
 const GnosisSection = ({ text = '' }) => {
-  const splitText = text.split('Gnosis')
-  const textWithLinks = splitText.reduce(
-    (arr, b, i) =>
-      i === 0
-        ? [...arr, b]
-        : [
-            ...arr,
-            <StyledLink key={i} href="https://gnosis.io" target="_blank" rel="noopener noreferreras">
-              Gnosis
-            </StyledLink>,
-            b
-          ],
-    []
-  )
+  const firstPart = text.substr(0, text.indexOf('Gnosis'))
+  const secondPart = text.substr(text.indexOf('Gnosis') + 6)
+  const textWithLink = [
+    firstPart,
+    <StyledLink href="https://gnosis.io" target="_blank" rel="noopener noreferrer">
+      Gnosis
+    </StyledLink>,
+    secondPart,
+  ]
 
   return (
     <Wrapper id="gnosis">
       <StyledContentWrapper>
-        <Text>{textWithLinks}</Text>
+        <Text>{textWithLink}</Text>
       </StyledContentWrapper>
     </Wrapper>
   )
