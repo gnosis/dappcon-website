@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export const LayoutTemplate = ({ children, location, headerFooterData: {} }) => (
+export const LayoutTemplate = ({ children, location, headerFooterData = {} }) => (
   <>
     <GlobalStyles />
     <DesktopNav location={location} data={headerFooterData} />
