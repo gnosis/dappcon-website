@@ -156,6 +156,7 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           </StyledExternalLink>
           <MobileSplitter />
           <HideOnMobile>and </HideOnMobile>
+          <MobileSplitter />
           <CapitalizeOnMobile>
             <StyledExternalLink
               href="mailto:sponsor@dappcon.io"
