@@ -5,7 +5,7 @@ buttonText: BUY TICKETS
 locationAndDate: |-
   21-23 August 2019 \
   Berlin Institute of Technology
-buyTicketsLink: 'https://pretix.eu/gnosis/dappcon/'
+buyTicketsLink: 'https://www.weezevent.com/dappcon-2'
 aboutDappcon: >-
   DappCon is a nonprofit global developer conference focusing on decentralized
   applications, tooling, and foundational infrastructure on Ethereum. Last year
