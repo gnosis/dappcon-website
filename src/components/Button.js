@@ -19,7 +19,13 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = ({ type = 'button', text, onClick = () => ({}), hover = colors.veryLightPink, ...props }) => (
+const Button = ({
+  type = 'button',
+  text,
+  onClick = () => ({}),
+  hover = colors.veryLightPink,
+  ...props
+}) => (
   <StyledButton type={type} onClick={onClick} hover={hover} {...props}>
     {text}
   </StyledButton>

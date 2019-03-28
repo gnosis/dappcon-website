@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, Link } from 'gatsby'
+import Markdown from 'react-markdown'
+import HideOnMobile from 'components/HideOnMobile'
 import ContentWrapper from 'components/ContentWrapper'
 import MobilePageHeading from 'components/MobilePageHeading'
-import Markdown from 'react-markdown'
+import MdRenderers from 'markdownRenderers'
 import { colors } from 'theme'
 
 const PageWrapper = styled.div`
@@ -40,17 +42,6 @@ const StyledLink = styled(Link)`
   }
 `
 
-const HideOnMobile = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-`
-
-const StyledMdLink = styled.a`
-  color: ${colors.reddishPink};
-  text-decoration: none;
-`
-
 const MarkdownContainer = styled.div`
   font-size: 14px;
 
@@ -59,21 +50,13 @@ const MarkdownContainer = styled.div`
   }
 `
 
-const markdownRenderers = {
-  link: props => (
-    <StyledMdLink href={props.href} target="_blank" rel="noopener noreferrer">
-      {props.children}
-    </StyledMdLink>
-  )
-}
-
 export const ImprintPageTemplate = ({ title, body }) => (
   <PageWrapper>
     <ContentWrapper>
       <PageHeading>{title}</PageHeading>
       <MobilePageHeading text={title} />
       <MarkdownContainer>
-        <Markdown source={body} renderers={markdownRenderers} />
+        <Markdown source={body} renderers={MdRenderers} />
       </MarkdownContainer>
       <StyledLink to="/">
         &lt;- <HideOnMobile>back to homepage</HideOnMobile>
@@ -82,18 +65,18 @@ export const ImprintPageTemplate = ({ title, body }) => (
   </PageWrapper>
 )
 
-export default class ImprintPage extends React.Component {
-  render() {
-    const {
-      data: {
-        pageData: { rawMarkdownBody, frontmatter: pageData }
-      }
-    } = this.props
-    const { title } = pageData
+const ImprintPage = props => {
+  const {
+    data: {
+      pageData: { rawMarkdownBody, frontmatter: pageData },
+    },
+  } = props
+  const { title } = pageData
 
-    return <ImprintPageTemplate title={title} body={rawMarkdownBody} />
-  }
+  return <ImprintPageTemplate title={title} body={rawMarkdownBody} />
 }
+
+export default ImprintPage
 
 export const pageQuery = graphql`
   query {

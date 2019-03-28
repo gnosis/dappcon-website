@@ -7,7 +7,7 @@ const idToColor = {
   main: colors.white,
   about: colors.black,
   photo: colors.white,
-  speakers: colors.black
+  speakers: colors.black,
 }
 
 const LinkIds = ['aboutLink', 'speakersLink', 'organizersLink', 'buyLink', 'navLogo']
@@ -16,7 +16,7 @@ let breakPointsToColor = {}
 
 const DesktopNav = class extends React.Component {
   state = {
-    navLogoColor: ''
+    navLogoColor: '',
   }
 
   initListeners = () => {
@@ -38,7 +38,7 @@ const DesktopNav = class extends React.Component {
           this[id].children[0].children[0].setAttribute('stroke', colors.black)
         } else if (id === 'navLogo') {
           this.setState({
-            navLogoColor: ''
+            navLogoColor: '',
           })
         } else {
           this[id].style.color = null
@@ -49,7 +49,7 @@ const DesktopNav = class extends React.Component {
 
   componentDidMount() {
     const {
-      location: { pathname }
+      location: { pathname },
     } = this.props
 
     if (pathname === '/') {
@@ -59,10 +59,10 @@ const DesktopNav = class extends React.Component {
 
   componentDidUpdate(prevProps) {
     const {
-      location: { pathname }
+      location: { pathname },
     } = this.props
     const {
-      location: { pathname: prevPath }
+      location: { pathname: prevPath },
     } = prevProps
 
     if (pathname === '/') {
@@ -74,7 +74,7 @@ const DesktopNav = class extends React.Component {
 
   componentWillUnmount() {
     const {
-      location: { pathname }
+      location: { pathname },
     } = this.props
 
     if (pathname === '/') {
@@ -109,7 +109,7 @@ const DesktopNav = class extends React.Component {
                 this[id].children[0].children[0].setAttribute('stroke', breakPointsToColor[point])
               } else if (id === 'navLogo') {
                 this.setState({
-                  navLogoColor: breakPointsToColor[point]
+                  navLogoColor: breakPointsToColor[point],
                 })
               } else {
                 this[id].style.color = breakPointsToColor[point]

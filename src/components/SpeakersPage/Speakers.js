@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { colors } from 'theme'
+import HideOnMobile from 'components/HideOnMobile'
 import ContentWrapper from 'components/ContentWrapper'
 import MobilePageHeading from 'components/MobilePageHeading'
 import Speaker from 'components/Speaker'
@@ -37,12 +38,6 @@ const StyledLink = styled(Link)`
 
   @media screen and (max-width: 767px) {
     margin-top: 25px;
-  }
-`
-
-const HideOnMobile = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
   }
 `
 

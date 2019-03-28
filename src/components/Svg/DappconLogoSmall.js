@@ -6,7 +6,10 @@ const DappconLogoSmall = ({ width = 31, height = 41, fill = '#F7F5F5' }) => (
       <path id="a" d="M.626.52H13.14v13.47H.626z" />
     </defs>
     <g fill="none" fillRule="evenodd">
-      <path fill={fill} d="M5.84 25L0 28.539l1.95 2.822 3.02-1.82v8.056H1.533V41H12v-3.403H9.092V25z" />
+      <path
+        fill={fill}
+        d="M5.84 25L0 28.539l1.95 2.822 3.02-1.82v8.056H1.533V41H12v-3.403H9.092V25z"
+      />
       <g transform="translate(17.913)">
         <mask id="b" fill="#fff">
           <use xlinkHref="#a" />
