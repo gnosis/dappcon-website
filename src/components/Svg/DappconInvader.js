@@ -1,7 +1,13 @@
 import React from 'react'
 
 const DappconInvader = ({ width = 41, height = 43, fill = '#000', ...props }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 41 43" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 41 43"
+    {...props}
+  >
     <path
       fill={fill}
       fillRule="evenodd"
