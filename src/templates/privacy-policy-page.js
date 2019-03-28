@@ -64,7 +64,7 @@ const markdownRenderers = {
     <StyledMdLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledMdLink>
-  )
+  ),
 }
 
 export const PrivacyPolicyPageTemplate = ({ title, body }) => (
@@ -81,19 +81,18 @@ export const PrivacyPolicyPageTemplate = ({ title, body }) => (
     </ContentWrapper>
   </PageWrapper>
 )
+const PrivacyPolicyPage = props => {
+  const {
+    data: {
+      pageData: { rawMarkdownBody, frontmatter: pageData },
+    },
+  } = props
+  const { title } = pageData
 
-export default class PrivacyPolicyPage extends React.Component {
-  render() {
-    const {
-      data: {
-        pageData: { rawMarkdownBody, frontmatter: pageData }
-      }
-    } = this.props
-    const { title } = pageData
-
-    return <PrivacyPolicyPageTemplate title={title} body={rawMarkdownBody} />
-  }
+  return <PrivacyPolicyPageTemplate title={title} body={rawMarkdownBody} />
 }
+
+export default PrivacyPolicyPage
 
 export const pageQuery = graphql`
   query {

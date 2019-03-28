@@ -16,10 +16,15 @@ export const IndexPageTemplate = ({
   speakers,
   stats,
   programPhotoText,
-  locationAndDate
+  locationAndDate,
 }) => (
   <>
-    <MainSection mainTitle={mainTitle} buttonText={buttonText} buyTicketsLink={buyTicketsLink} locationAndDate={locationAndDate} />
+    <MainSection
+      mainTitle={mainTitle}
+      buttonText={buttonText}
+      buyTicketsLink={buyTicketsLink}
+      locationAndDate={locationAndDate}
+    />
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
@@ -28,46 +33,48 @@ export const IndexPageTemplate = ({
   </>
 )
 
-export default class IndexPage extends React.Component {
-  render() {
-    const {
-      data: {
-        speakers,
-        pageData: { frontmatter: pageData }
-      }
-    } = this.props
-    const {
-      mainTitle,
-      aboutDappcon,
-      aboutGnosis,
-      buttonText,
-      speakers: indexPageSpeakers,
-      stats,
-      programPhotoText,
-      buyTicketsLink,
-      locationAndDate
-    } = pageData
+const IndexPage = props => {
+  const {
+    data: {
+      speakers,
+      pageData: { frontmatter: pageData },
+    },
+  } = props
+  const {
+    mainTitle,
+    aboutDappcon,
+    aboutGnosis,
+    buttonText,
+    speakers: indexPageSpeakers,
+    stats,
+    programPhotoText,
+    buyTicketsLink,
+    locationAndDate,
+  } = pageData
 
-    const displayedSpeakers = Object.values(indexPageSpeakers)
-    speakers.edges = speakers.edges.filter(({ node }) => displayedSpeakers.includes(node.frontmatter.name))
+  const displayedSpeakers = Object.values(indexPageSpeakers)
+  speakers.edges = speakers.edges.filter(({ node }) =>
+    displayedSpeakers.includes(node.frontmatter.name),
+  )
 
-    return (
-      <IndexPageTemplate
-        mainTitle={mainTitle}
-        aboutDappcon={aboutDappcon}
-        aboutGnosis={aboutGnosis}
-        buyTicketsLink={buyTicketsLink}
-        buttonText={buttonText}
-        stats={stats}
-        programPhotoText={programPhotoText}
-        speakers={speakers}
-        locationAndDate={locationAndDate}
-      />
-    )
-  }
+  return (
+    <IndexPageTemplate
+      mainTitle={mainTitle}
+      aboutDappcon={aboutDappcon}
+      aboutGnosis={aboutGnosis}
+      buyTicketsLink={buyTicketsLink}
+      buttonText={buttonText}
+      stats={stats}
+      programPhotoText={programPhotoText}
+      speakers={speakers}
+      locationAndDate={locationAndDate}
+    />
+  )
 }
 
 IndexPage.propTypes = {}
+
+export default IndexPage
 
 export const pageQuery = graphql`
   query {

@@ -64,7 +64,7 @@ const markdownRenderers = {
     <StyledMdLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledMdLink>
-  )
+  ),
 }
 
 export const ImprintPageTemplate = ({ title, body }) => (
@@ -82,18 +82,18 @@ export const ImprintPageTemplate = ({ title, body }) => (
   </PageWrapper>
 )
 
-export default class ImprintPage extends React.Component {
-  render() {
-    const {
-      data: {
-        pageData: { rawMarkdownBody, frontmatter: pageData }
-      }
-    } = this.props
-    const { title } = pageData
+const ImprintPage = props => {
+  const {
+    data: {
+      pageData: { rawMarkdownBody, frontmatter: pageData },
+    },
+  } = props
+  const { title } = pageData
 
-    return <ImprintPageTemplate title={title} body={rawMarkdownBody} />
-  }
+  return <ImprintPageTemplate title={title} body={rawMarkdownBody} />
 }
+
+export default ImprintPage
 
 export const pageQuery = graphql`
   query {
