@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { colors } from 'theme'
+import HideOnMobile from 'components/HideOnMobile'
 import DappConLogoFull from 'img/dappcon-logo-full.svg'
 import { Link } from 'gatsby'
 
@@ -79,13 +80,7 @@ const SponsorText = styled.div`
 
   @media screen and (max-width: 767px) {
     margin-left: 0;
-    margin-top: 50px;
-  }
-`
-
-const HideOnMobile = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
+    margin-top: 30px;
   }
 `
 
