@@ -50,6 +50,7 @@ const ButtonDateContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `
 
