@@ -36,7 +36,7 @@ const BerlinImg = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 220%;
+  width: 100%;
 
   @media screen and (max-width: 767px) {
     display: none;
