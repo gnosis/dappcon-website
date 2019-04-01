@@ -37,10 +37,10 @@ speakers:
   speaker4: Stefan George
 aboutGnosis: >-
   DappCon is organized by [Gnosis](https://gnosis.io), one of Ethereum’s early
-  dApps. Gnosis launched in August 2015, one week after Frontier went live, as
-  the first major dapp on Ethereum. Today, Gnosis is building four major
-  Ethereum-based dapps and works towards the development and continuous growth
-  of Ethereum—both its infrastructure and ecosystem.
+  dapps. Gnosis launched in August 2015, one week after Frontier went live, as
+  the first major dapp on Ethereum. Today, we are building four Ethereum-based
+  dapps and are working towards the development and continuous growth of
+  Ethereum—both its infrastructure and the ecosystem.
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://en.wikipedia.org/wiki/To_be_announced'
 ---
