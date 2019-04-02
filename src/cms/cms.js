@@ -5,6 +5,7 @@ import { LayoutTemplate } from 'components/Layout'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import PrivacyPolicyPagePreview from './preview-templates/PrivacyPolicyPagePreview'
 import ImprintPagePreview from './preview-templates/ImprintPagePreview'
+import CookiePolicyPagePreview from './preview-templates/CookiePolicyPagePreview'
 
 // Component used to Enable netlify CMS to apply the styles added through styled-components
 // https://github.com/netlify/netlify-cms/issues/1408
@@ -45,6 +46,12 @@ CMS.registerPreviewTemplate('landingPage', props => (
 CMS.registerPreviewTemplate('privacyPolicy', props => (
   <CSSInjector>
     <PrivacyPolicyPagePreview {...props} />
+  </CSSInjector>
+))
+
+CMS.registerPreviewTemplate('cookiePolicy', props => (
+  <CSSInjector>
+    <CookiePolicyPagePreview {...props} />
   </CSSInjector>
 ))
 
