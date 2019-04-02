@@ -11,13 +11,6 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
 }
 
-const Container = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: ${props => (props.visible ? 2 : -1)};
-`
-
 const InvaderContainer = styled.div.attrs(({ top, left, ...props }) => ({
   style: {
     top: `${top}px`,
@@ -26,6 +19,7 @@ const InvaderContainer = styled.div.attrs(({ top, left, ...props }) => ({
   },
 }))`
   position: absolute;
+  z-index: 2;
 `
 
 class Invaders extends Component {
@@ -85,7 +79,7 @@ class Invaders extends Component {
     const { invaders } = this.state
 
     return (
-      <Container visible={invaders.length > 0}>
+      <>
         <IdleTimer
           onActive={() => {
             this.setState({
@@ -110,7 +104,7 @@ class Invaders extends Component {
             </InvaderContainer>
           )
         })}
-      </Container>
+      </>
     )
   }
 }

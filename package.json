@@ -22,6 +22,7 @@
     "gatsby-source-filesystem": "2.0.28",
     "gatsby-transformer-remark": "2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "js-cookie": "^2.2.0",
     "netlify-cms": "^2.9.0",
     "node-sass": "^4.11.0",
     "parcel-bundler": "1.12.3",
@@ -33,6 +34,7 @@
     "react-helmet": "^5.2.0",
     "react-idle-timer": "^4.2.5",
     "react-markdown": "^4.0.6",
+    "react-transition-group": "^2.7.1",
     "react-visibility-sensor": "^5.0.2",
     "styled-components": "^4.2.0",
     "styled-reset": "^2.0.5"

@@ -30,10 +30,15 @@ const StyledLink = styled(Link)`
   text-align: center;
   margin-top: 40px;
   color: ${colors.reddishPink};
+  font-size: 19px;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
   }
 `
 
