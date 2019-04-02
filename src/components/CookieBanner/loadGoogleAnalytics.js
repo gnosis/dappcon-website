@@ -1,5 +1,5 @@
 const GOOGLE_ANALYTICS_URL = 'https://www.google-analytics.com/analytics.js'
-const GOOGLE_ANALYTICS_ID = 'UA-83220550-12'
+const GOOGLE_ANALYTICS_ID = 'UA-83220550-13'
 
 export const ga = (
   ...args // eslint-disable-next-line
