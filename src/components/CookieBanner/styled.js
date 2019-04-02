@@ -20,7 +20,7 @@ const BannerContainer = styled.div`
   align-items: center;
   padding: 30px 0 40px;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 2;
 
   &.${TRANSITION_NAME}-enter {
     bottom: -200px;
