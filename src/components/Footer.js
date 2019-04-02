@@ -128,6 +128,7 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           <StyledLink to="/imprint" underline>
             Imprint.
           </StyledLink>{' '}
+          <MobileSplitter />
           <StyledLink to="/privacy-policy" underline>
             Privacy Policy.
           </StyledLink>
