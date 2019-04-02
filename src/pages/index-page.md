@@ -34,7 +34,7 @@ speakers:
   speaker1: Alex Van de Sande
   speaker2: Jorge Izquierdo
   speaker3: Matan Field
-  speaker4: Stefan George
+  speaker4: Pedro Gomes
 aboutGnosis: >-
   DappCon is organized by [Gnosis](https://gnosis.pm), one of Ethereum’s early
   dapps. Gnosis launched in August 2015, one week after Frontier went live, as
