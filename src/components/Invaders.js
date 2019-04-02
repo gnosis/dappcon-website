@@ -18,7 +18,7 @@ const InvaderContainer = styled.div.attrs(({ top, left, ...props }) => ({
     ...props,
   },
 }))`
-  position: absolute;
+  position: fixed;
   z-index: 2;
 `
 
