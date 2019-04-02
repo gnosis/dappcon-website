@@ -13,7 +13,7 @@ const NavbarMenuContainer = styled.div`
   right: 30px;
   position: fixed;
   width: 50px;
-  height: 604px;
+  height: 404px;
   z-index: 1;
 
   @media screen and (max-width: 767px) {
