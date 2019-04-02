@@ -42,6 +42,6 @@ aboutGnosis: >-
   dapps and are working towards the development and continuous growth of
   Ethereum—both its infrastructure and the ecosystem.
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
-sponsorInfoLink: 'https://en.wikipedia.org/wiki/To_be_announced'
+sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
 ---
 
