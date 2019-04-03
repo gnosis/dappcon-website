@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 import PreviewCompatibleImage from 'components/PreviewCompatibleImage'
 import { colors } from 'theme'
 
@@ -68,7 +69,7 @@ const Speaker = ({ speaker: { name, image, position, company }, showInfo }) => (
     <Info>
       {position}
       <br />
-      {company}
+      <Markdown source={company} />
     </Info>
   </Div>
 )
