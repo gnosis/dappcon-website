@@ -68,7 +68,6 @@ const Speaker = ({ speaker: { name, image, position, company }, showInfo }) => (
     </SpeakerName>
     <Info>
       <Markdown source={position} />
-      <br />
       <Markdown source={company} />
     </Info>
   </Div>
