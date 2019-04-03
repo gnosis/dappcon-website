@@ -6,6 +6,7 @@ import reset from 'styled-reset'
 
 import DesktopNav from 'components/DesktopNav'
 import Footer from 'components/Footer'
+import CookieBanner from 'components/CookieBanner'
 import MobileHeader from 'components/MobileHeader'
 import Invaders from 'components/Invaders'
 
@@ -82,6 +83,7 @@ const TemplateWrapper = props => (
           <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
         <LayoutTemplate {...props} headerFooterData={data.headerFooterData.frontmatter} />
+        <CookieBanner />
       </div>
     )}
   />

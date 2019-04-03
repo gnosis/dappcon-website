@@ -17,7 +17,7 @@ collections:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speaker' }
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Company', name: 'company', widget: 'markdown', hint: 'Format used here will be displayed on the website. Please dont use long lines' }
-      - { label: 'Position', name: 'position', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'markdown', hint: 'Format used here will be displayed on the website. Please dont use long lines' }
       - { label: Image, name: image, widget: image }
 
   - name: 'sponsors'
