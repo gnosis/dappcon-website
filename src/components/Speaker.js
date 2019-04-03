@@ -67,7 +67,7 @@ const Speaker = ({ speaker: { name, image, position, company }, showInfo }) => (
       {name.substr(name.indexOf(' ') + 1)}
     </SpeakerName>
     <Info>
-      {position}
+      <Markdown source={position} />
       <br />
       <Markdown source={company} />
     </Info>

@@ -24,7 +24,7 @@ const SpeakersContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     grid-template-columns: repeat(3, 64px);
-    grid-row-gap: 20px;
+    grid-row-gap: 41px;
   }
 `
 
