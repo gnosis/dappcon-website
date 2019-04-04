@@ -47,6 +47,10 @@ const CloseButton = styled.button`
   cursor: pointer;
   color: ${colors.reddishPink};
   font-size: 20px;
+
+  &:focus {
+    outline-color: ${colors.secondaryBlack}
+  }
 `
 
 const Text = styled.p`
@@ -82,6 +86,10 @@ const CheckboxContainer = styled.div`
   @media screen and (max-width: 767px) {
     flex-basis: 50%;
     text-align: center;
+  }
+
+  &:first-child {
+    pointer-events: none;
   }
 
   /* Base for label styling */
