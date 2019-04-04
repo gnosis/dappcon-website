@@ -31,7 +31,7 @@ const SpeakerName = styled.span`
   display: block;
   font-size: 19px;
   font-weight: 800;
-  margin-top: 16px;
+  margin-top: 12px;
   line-height: normal;
   letter-spacing: normal;
   white-space: nowrap;
@@ -39,7 +39,7 @@ const SpeakerName = styled.span`
   color: ${props => props.red && colors.reddishPink};
 
   @media screen and (max-width: 767px) {
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 12px;
   }
 `
@@ -52,6 +52,7 @@ const Info = styled.span`
   white-space: nowrap;
 
   @media screen and (max-width: 767px) {
+    margin-top: 4px;
     font-size: 10px;
   }
 `
