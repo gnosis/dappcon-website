@@ -54,6 +54,7 @@ const DesktopNav = class extends React.Component {
 
     if (pathname === '/') {
       this.initListeners()
+      this.changeColorOnScroll()
     }
   }
 
