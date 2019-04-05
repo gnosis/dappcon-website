@@ -36,7 +36,7 @@ speakers:
   speaker3: Matan Field
   speaker4: Pedro Gomes
 aboutGnosis: >-
-  DappCon is organized by [Gnosis](https://gnosis.pm), one of Ethereum’s early
+  DappCon is organized by [Gnosis](https://gnosis.io/), one of Ethereum’s early
   dapps. Gnosis launched in August 2015, one week after Frontier went live, as
   the first major dapp on Ethereum. Today, we are building four Ethereum-based
   dapps and are working towards the development and continuous growth of
