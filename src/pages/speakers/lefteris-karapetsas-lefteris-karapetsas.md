@@ -1,12 +1,7 @@
 ---
 templateKey: speaker
 name: Lefteris Karapetsas
-company: |-
-  Brainbot
-
-  Technologies
-
-  (Raiden Network)
+company: Raiden Network
 position: |-
   Development
 
