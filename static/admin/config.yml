@@ -23,15 +23,24 @@ collections:
   - name: 'sponsors'
     label: 'Sponsors'
     description: 'Sponsors of the DappCon conference'
-    folder: 'src/pages/speakers'
+    folder: 'src/pages/sponsors'
     create: true
     slug: '{{name}}-{{slug}}'
     identifier_field: name
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'sponsor' }
-      - { label: 'Company', name: 'company', widget: 'string' }
+      - { label: 'Sponsor Name', name: 'name', widget: 'string' }
       - { label: 'Image', name: 'image', widget: image }
       - { label: 'Website URL', name: url, widget: 'string' }
+      - label: "Sponsorship package type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Gold", value: 4 }
+          - { label: "Silver", value: 3 }
+          - { label: "Bronze", value: 2 }
+          - { label: "Iron", value: 1 }
+          - { label: "Become a sponsor image", value: 0 }
 
   - name: 'events'
     label: 'Program Events'
