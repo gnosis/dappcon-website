@@ -41,7 +41,7 @@ export const LayoutTemplate = ({ children, location, headerFooterData = {} }) =>
     <GlobalStyles />
     <DesktopNav location={location} data={headerFooterData} />
     <MobileHeader location={location} data={headerFooterData} />
-    {!disabledInvadersPages.includes(location.pathname) && <Invaders />}
+    {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
     <div>{children}</div>
     <Footer data={headerFooterData} />
   </>

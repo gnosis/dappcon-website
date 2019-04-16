@@ -15,12 +15,11 @@ const Wrapper = styled.section`
 const SponsorContainer = styled.ul`
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 230px);
+  grid-auto-flow: column;
   grid-gap: 70px;
 
   @media screen and (max-width: 767px) {
-    grid-template-columns: repeat(2, 100px);
-    grid-row-gap: 20px;
+    grid-gap: 20px;
   }
 `
 
