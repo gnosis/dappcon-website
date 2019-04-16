@@ -2,19 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IndexPageTemplate } from 'templates/index-page'
 
-const IndexPagePreview = ({ entry, fieldsMetaData }) => {
-  const speakers = { edges: [] }
+const getPropWithGraphQLStructure = propName => {
+  const values = { edges: [] }
+  const unformatted = fieldsMetaData.getIn([propName]).toJS()
 
-  if (fieldsMetaData.getIn(['speakers'])) {
-    const speakersUnformatted = fieldsMetaData.getIn(['speakers']).toJS()
-    speakers.edges = Object.values(speakersUnformatted).map(({ speakers }) => ({
+  if (unformatted) {
+    values.edges = Object.values(unformatted).map(edges => ({
       node: {
         frontmatter: {
-          ...Object.values(speakers)[0],
+          ...Object.values(edges[propName])[0],
         },
       },
     }))
   }
+
+  return values
+}
+
+const IndexPagePreview = ({ entry, fieldsMetaData }) => {
+  const speakers = getPropWithGraphQLStructure('speakers')
+  const sponsors = getPropWithGraphQLStructure('sponsors')
 
   return (
     <IndexPageTemplate
@@ -25,6 +32,7 @@ const IndexPagePreview = ({ entry, fieldsMetaData }) => {
       stats={entry.getIn(['data', 'stats']).toJS()}
       programPhotoText={entry.getIn(['data', 'programPhotoText'])}
       speakers={speakers}
+      sponsors={sponsors}
     />
   )
 }
