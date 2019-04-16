@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IndexPageTemplate } from 'templates/index-page'
 
-const getPropWithGraphQLStructure = propName => {
+const getPropWithGraphQLStructure = (propName, fieldsMetaData) => {
   const values = { edges: [] }
   const unformatted = fieldsMetaData.getIn([propName]).toJS()
 
@@ -20,8 +20,8 @@ const getPropWithGraphQLStructure = propName => {
 }
 
 const IndexPagePreview = ({ entry, fieldsMetaData }) => {
-  const speakers = getPropWithGraphQLStructure('speakers')
-  const sponsors = getPropWithGraphQLStructure('sponsors')
+  const speakers = getPropWithGraphQLStructure('speakers', fieldsMetaData)
+  const sponsors = getPropWithGraphQLStructure('sponsors', fieldsMetaData)
 
   return (
     <IndexPageTemplate
