@@ -1,39 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import ContentWrapper from 'components/ContentWrapper'
+import ImgComponent from 'components/PreviewCompatibleImage'
+import { colors } from 'theme'
 
 const Wrapper = styled.section`
-  padding-bottom: 175px;
+  padding-bottom: 194px;
+  background: ${colors.bgWhite};
 `
 
-const SponsorContainer = styled.div`
+const SponsorContainer = styled.ul`
   display: grid;
-  justify-content: space-between;
-  grid-template-columns: repeat(4, 61px);
-  grid-row-gap: 94px;
+  justify-content: center;
+  grid-template-columns: repeat(2, 230px);
+  grid-gap: 30px;
 `
 
-const Sponsor = styled.div`
+const Img = styled.img`
+  max-width: 230px;
+  width: auto;
+  height: 80px;
 `
 
-const Placeholder = styled.div`
-  width: 61px;
-  height: 65px;
-  background-color: rgba(109, 109, 109, 0.5);
-`
+const Sponsor = styled.li``
 
-const SponsorsSection = () => (
-  <Wrapper id="sponsors">
+const SponsorsSection = ({ sponsors }) => (
+  <Wrapper id="conferenceSponsors">
     <ContentWrapper>
       <SponsorContainer>
-        {Array(8)
-          .fill(8)
-          .map((_, i) => (
-            <Sponsor key={i}>
-              <Placeholder />
-            </Sponsor>
-          ))}
+        {sponsors.map(sponsor => (
+          <Sponsor key={sponsor.name}>
+            <a href={sponsor.url} target="_blank">
+              <Img src={sponsor.image.publicURL} alt={sponsor.name} />
+            </a>
+          </Sponsor>
+        ))}
       </SponsorContainer>
     </ContentWrapper>
   </Wrapper>
