@@ -26,7 +26,7 @@ const cookies = [
 
 var cookieConfig = {
   domain: 'dappcon.io',
-  accept_expiration: 10000,
+  accept_expiration: 365,
   deny_expiration: 7,
   policyUrl: '/cookie-policy',
 }
