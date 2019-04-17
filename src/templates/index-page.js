@@ -17,6 +17,7 @@ export const IndexPageTemplate = ({
   stats,
   programPhotoText,
   locationAndDate,
+  sponsors,
 }) => (
   <>
     <MainSection
@@ -29,7 +30,7 @@ export const IndexPageTemplate = ({
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <GnosisSection text={aboutGnosis} />
-    {/* <SponsorsSection /> */}
+    <SponsorsSection sponsors={sponsors} />
   </>
 )
 
@@ -38,6 +39,7 @@ const IndexPage = props => {
     data: {
       speakers,
       pageData: { frontmatter: pageData },
+      sponsors,
     },
   } = props
   const {
@@ -56,6 +58,9 @@ const IndexPage = props => {
   speakers.edges = speakers.edges.filter(({ node }) =>
     displayedSpeakers.includes(node.frontmatter.name),
   )
+  const sortedSponsors = sponsors.edges
+    .map(sponsor => sponsor.node.frontmatter)
+    .sort((a, b) => b.type - a.type)
 
   return (
     <IndexPageTemplate
@@ -68,6 +73,7 @@ const IndexPage = props => {
       programPhotoText={programPhotoText}
       speakers={speakers}
       locationAndDate={locationAndDate}
+      sponsors={sortedSponsors}
     />
   )
 }
@@ -128,6 +134,20 @@ export const pageQuery = graphql`
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
+            }
+          }
+        }
+      }
+    }
+    sponsors: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "sponsor" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            type
+            url
+            image {
+              publicURL
             }
           }
         }
