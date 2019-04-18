@@ -5,8 +5,8 @@
   "author": "Gnosis",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "2.3.23",
-    "gatsby-background-image": "0.3.3",
+    "gatsby": "2.3.24",
+    "gatsby-background-image": "0.3.5",
     "gatsby-image": "2.0.39",
     "gatsby-plugin-layout": "^1.0.14",
     "gatsby-plugin-netlify": "2.0.13",
@@ -14,7 +14,7 @@
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-resolve-src": "^2.0.0",
     "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "2.0.34",
+    "gatsby-plugin-sharp": "2.0.35",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-remark-copy-linked-files": "2.0.11",
     "gatsby-remark-images": "3.0.10",
@@ -34,7 +34,7 @@
     "react-helmet": "^5.2.0",
     "react-idle-timer": "^4.2.5",
     "react-markdown": "4.0.8",
-    "react-transition-group": "3.0.0",
+    "react-transition-group": "4.0.0",
     "react-visibility-sensor": "^5.0.2",
     "styled-components": "^4.2.0",
     "styled-reset": "2.0.6"

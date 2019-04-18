@@ -29,7 +29,7 @@ const Img = styled.img`
   height: 80px;
 
   @media screen and (max-width: 767px) {
-    max-width: 100px;
+    max-width: 88px;
     height: 50px
   }
 `
