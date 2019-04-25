@@ -76,14 +76,6 @@ const StyledButtonLink = styled(ButtonLink)`
   }
 `
 
-const StyledLink = styled.a`
-  &:focus {
-    outline: 0;
-    color: ${colors.black};
-    border-color: ${colors.black};
-  }
-`
-
 const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
   <Wrapper id="main">
     <StyledContentWrapper>

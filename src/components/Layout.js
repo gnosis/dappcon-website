@@ -60,8 +60,6 @@ const TemplateWrapper = props => (
         headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
           frontmatter {
             speakerApplyLink
-            sponsorInfoLink
-            buyTicketsLink
           }
         }
       }

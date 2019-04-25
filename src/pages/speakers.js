@@ -2,19 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Speakers from 'components/SpeakersPage/Speakers'
 
-export default class SpeakersPage extends React.Component {
-  render() {
-    const {
-      data: { speakers }
-    } = this.props
+const SpeakersPage = props => {
+  const {
+    data: { speakers, headerFooterData },
+  } = props
 
-    return (
-      <>
-        <Speakers speakers={speakers.edges} />
-      </>
-    )
-  }
+  return <Speakers speakers={speakers.edges} speakerApplyLink={headerFooterData.frontmatter.speakerApplyLink} />
 }
+
+export default SpeakersPage
 
 export const pageQuery = graphql`
   query {
@@ -36,6 +32,11 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
+        speakerApplyLink
       }
     }
   }
