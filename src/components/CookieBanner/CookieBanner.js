@@ -35,7 +35,7 @@ const CookieBanner = () => {
   const [visible, setVisibility] = useState(false)
   const [acceptedCookies, setAcceptedCookies] = useState({
     consentCookie: true,
-    consentCookie_analytics: false,
+    consentCookie_analytics: true,
   })
 
   useEffect(() => {
@@ -103,6 +103,7 @@ const CookieBanner = () => {
               name="consentCookie_analytics"
               type="checkbox"
               onClick={handleCheckboxClick}
+              checked={acceptedCookies.consentCookie_analytics}
             />
             <label htmlFor="cb-2">Analytics</label>
           </CheckboxContainer>
