@@ -94,7 +94,7 @@ const CookieBanner = () => {
         </Text>
         <Options>
           <CheckboxContainer>
-            <input id="cb-1" name="consentCookie" type="checkbox" disabled="disabled" checked readOnly />
+            <input readOnly id="cb-1" name="consentCookie" type="checkbox" checked />
             <label htmlFor="cb-1">Necessary</label>
           </CheckboxContainer>
           <CheckboxContainer>
@@ -102,7 +102,7 @@ const CookieBanner = () => {
               id="cb-2"
               name="consentCookie_analytics"
               type="checkbox"
-              onClick={handleCheckboxClick}
+              onChange={handleCheckboxClick}
               checked={acceptedCookies.consentCookie_analytics}
             />
             <label htmlFor="cb-2">Analytics</label>
