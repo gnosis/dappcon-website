@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from 'components/Button'
+import ButtonLink from 'components/ButtonLink'
 import ContentWrapper from 'components/ContentWrapper'
 import { colors } from 'theme'
 
@@ -48,26 +48,21 @@ const Img = styled.img`
     height: 60px;
   }
 `
-const ButtonLink = styled.a`
-  display: block;
-  width: 232px;
-  margin: 0 auto;
 
-  @media screen and (max-width: 767px) {
-    width: 190px;
-  }
-`
-
-const StyledButton = styled(Button)`
+const StyledButtonLink = styled(ButtonLink)`
   margin: 0 auto;
   border: 3px solid ${colors.reddishPink};
   color: ${colors.reddishPink};
   font-size: 19px;
   padding: 6px 13px;
+  display: block;
+  width: 232px;
+  margin: 0 auto;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
     padding: 13px 26px;
+    width: 190px;
   }
 `
 
@@ -120,9 +115,11 @@ const SponsorsSection = ({ sponsors }) => {
         <SponsorsListByType type="Silver" sponsors={silverSponsors} />
         <SponsorsListByType type="Bronze" sponsors={bronzeSponsors} />
         <SponsorsListByType type="Iron" sponsors={ironSponsors} />
-        <ButtonLink href="mailto:sponsor@dappcon.io" rel="noopener noreferrer" style={{ zIndex: 2 }}>
-          <StyledButton text="BECOME A SPONSOR" hover={colors.secondaryBlack} />
-        </ButtonLink>
+        <StyledButtonLink
+          href="mailto:sponsor@dappcon.io"
+          text="BECOME A SPONSOR"
+          hover={colors.secondaryBlack}
+        />
       </ContentWrapper>
     </Wrapper>
   )

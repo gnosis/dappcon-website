@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from 'theme'
 
-const StyledButton = styled.button`
+const ButtonLinkStyled = styled.a`
   background: transparent;
   border-radius: 8px;
   border: 2px solid ${colors.white};
@@ -12,6 +12,8 @@ const StyledButton = styled.button`
   padding: 10px 18px;
   transition: color 0.2s, border-color 0.2s;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 
   &:hover {
     color: ${props => props.hover};
@@ -25,16 +27,18 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = ({
-  type = 'button',
+const ButtonLink = ({
   text,
+  href = '',
   onClick = () => ({}),
   hover = colors.veryLightPink,
+  rel = 'noopener noreferrer',
+  target = '',
   ...props
 }) => (
-  <StyledButton type={type} onClick={onClick} hover={hover} {...props}>
+  <ButtonLinkStyled href={href} hover={hover} {...props}>
     {text}
-  </StyledButton>
+  </ButtonLinkStyled>
 )
 
-export default Button
+export default ButtonLink
