@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'gatsby'
 import { MobileMenuIcon, DappconLogoSmall } from 'components/Svg'
-import Button from 'components/Button'
+import ButtonLink from 'components/ButtonLink'
 import { colors } from 'theme'
 
 const burgerMenuStyle = css`
@@ -97,13 +97,15 @@ const StyledLink = styled(Link)`
   font-weight: 800;
 `
 
-const StyledButton = styled(Button)`
-  padding: 17px 88px;
+const StyledButtonLink = styled(ButtonLink)`
+  padding: 17px 73px;
   display: block;
   margin: 0 auto;
   font-size: 12px;
   border-width: 3px;
   margin-top: 25px;
+  box-sizing: border-box;
+  width: 230px;
   text-transform: uppercase;
 `
 
@@ -133,9 +135,10 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
         <StyledLink to="/#gnosis" onClick={() => toggleMenu(!isMenuOpen)}>
           Organizer
         </StyledLink>
-        <a href={buyTicketsLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-          <StyledButton text="Buy tickets" />
-        </a>
+        <StyledLink to="/#conferenceSponsors" onClick={() => toggleMenu(!isMenuOpen)}>
+          About
+        </StyledLink>
+        <StyledButtonLink href={buyTicketsLink} target="_blank" text="Buy tickets" />
       </Menu>
     </Wrapper>
   )

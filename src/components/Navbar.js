@@ -56,9 +56,9 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
     <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={setLinkRef}>
       Organizer
     </StyledLink>
-    {/* <StyledLink isBlack={isBlack} to="/#sponsors">
-          Sponsors
-        </StyledLink> */}
+    <StyledLink id="sponsorsLink" isBlack={isBlack} to="/#conferenceSponsors" innerRef={setLinkRef}>
+      Sponsors
+    </StyledLink>
     <StyledIconLink
       id="buyLink"
       href={data.buyTicketsLink}
@@ -67,7 +67,10 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
       rotate="45deg"
       ref={setLinkRef}
     >
-      <TicketSVG fill={isBlack ? colors.black : colors.white} gStyle={{ transition: 'stroke 0.3s ease-out' }} />
+      <TicketSVG
+        fill={isBlack ? colors.black : colors.white}
+        gStyle={{ transition: 'stroke 0.3s ease-out' }}
+      />
     </StyledIconLink>
   </NavbarMenuContainer>
 )

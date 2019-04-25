@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Markdown from 'react-markdown'
 import { colors } from 'theme'
-import Button from 'components/Button'
+import ButtonLink from 'components/ButtonLink'
 import ContentWrapper from 'components/ContentWrapper'
 import BerlinLandscapeSvg from 'img/berlin_cityscape.svg'
 
@@ -67,10 +67,20 @@ const StyledDate = styled(Markdown)`
   }
 `
 
-const StyledButton = styled(Button)`
+const StyledButtonLink = styled(ButtonLink)`
+  z-index: 2;
+
   @media screen and (max-width: 767px) {
     font-size: 12px;
     padding: 14px;
+  }
+`
+
+const StyledLink = styled.a`
+  &:focus {
+    outline: 0;
+    color: ${colors.black};
+    border-color: ${colors.black};
   }
 `
 
@@ -79,9 +89,7 @@ const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate })
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
-        <a href={buyTicketsLink} target="_blank" rel="noopener noreferrer" style={{ zIndex: 2 }}>
-          <StyledButton text={buttonText} />
-        </a>
+        <StyledButtonLink href={buyTicketsLink} target="_blank" text={buttonText} />
         <StyledDate source={locationAndDate} />
       </ButtonDateContainer>
     </StyledContentWrapper>
