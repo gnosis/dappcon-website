@@ -119,6 +119,7 @@ const SponsorsSection = ({ sponsors }) => {
           href="mailto:sponsor@dappcon.io"
           text="BECOME A SPONSOR"
           hover={colors.secondaryBlack}
+          target="_blank"
         />
       </ContentWrapper>
     </Wrapper>
