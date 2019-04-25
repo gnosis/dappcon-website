@@ -8,9 +8,10 @@ const idToColor = {
   about: colors.black,
   photo: colors.white,
   speakers: colors.black,
+  conferenceSponsors: colors.black,
 }
 
-const LinkIds = ['aboutLink', 'speakersLink', 'organizersLink', 'buyLink', 'navLogo']
+const LinkIds = ['aboutLink', 'speakersLink', 'organizersLink', 'buyLink', 'navLogo', 'sponsorsLink']
 
 let breakPointsToColor = {}
 
