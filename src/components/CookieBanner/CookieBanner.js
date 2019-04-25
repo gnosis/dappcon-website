@@ -94,7 +94,7 @@ const CookieBanner = () => {
         </Text>
         <Options>
           <CheckboxContainer>
-            <input id="cb-1" name="consentCookie" type="checkbox" disabled="disabled" checked />
+            <input id="cb-1" name="consentCookie" type="checkbox" disabled="disabled" checked readOnly />
             <label htmlFor="cb-1">Necessary</label>
           </CheckboxContainer>
           <CheckboxContainer>

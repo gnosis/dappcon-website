@@ -65,7 +65,7 @@ const StyledButtonLink = styled(ButtonLink)`
   }
 `
 
-const Speakers = ({ speakers }) => (
+const Speakers = ({ speakers, speakerApplyLink }) => (
   <StyledSection>
     <ContentWrapper>
       <MobilePageHeading text="Speakers" />
@@ -75,8 +75,9 @@ const Speakers = ({ speakers }) => (
         ))}
       </SpeakersContainer>
       <StyledButtonLink
-        href="mailto:sponsor@dappcon.io"
+        href={speakerApplyLink}
         text="BECOME A SPEAKER"
+        target="_blank"
         hover={colors.secondaryBlack}
         style={{ zIndex: 2 }}
       />
