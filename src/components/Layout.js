@@ -80,7 +80,7 @@ const TemplateWrapper = props => (
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/og-image.png" />
+          <meta property="og:image" content="https://dappcon.io/img/og-image.png" />
         </Helmet>
         <LayoutTemplate {...props} headerFooterData={data.headerFooterData.frontmatter} />
         <CookieBanner />
