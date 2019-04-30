@@ -77,10 +77,11 @@ const TemplateWrapper = props => (
           <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
           <meta name="theme-color" content="#fff" />
 
-          <meta property="og:type" content="business.business" />
+          <meta property="og:type" content="website" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
-          <meta property="og:url" content="/" />
-          <meta property="og:image" content="https://dappcon.io/img/og-image.png" />
+          <meta property="og:description" content={data.site.siteMetadata.description} />
+          <meta property="og:url" content="https://dappcon.io" />
+          <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
         <LayoutTemplate {...props} headerFooterData={data.headerFooterData.frontmatter} />
         <CookieBanner />
