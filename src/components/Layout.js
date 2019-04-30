@@ -81,7 +81,15 @@ const TemplateWrapper = props => (
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:description" content={data.site.siteMetadata.description} />
           <meta property="og:url" content="https://dappcon.io" />
-          <meta property="og:image" content="/img/og-image.png" />
+          <meta property="og:image" content="https://dappcon.io/img/og-image.png" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@dappcon_berlin" />
+          <meta name="twitter:title" content="DAPPCON" />
+          <meta name="twitter:description" content={data.site.siteMetadata.description} />
+          <meta name="twitter:creator" content="@dappcon_berlin" />
+          <meta name="twitter:image:alt" content={data.site.siteMetadata.description} />
+          <meta name="twitter:image" content="https://dappcon.io/img/og-image.png" />
         </Helmet>
         <LayoutTemplate {...props} headerFooterData={data.headerFooterData.frontmatter} />
         <CookieBanner />
