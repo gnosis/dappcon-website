@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
     />
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
-    {speakers && <SpeakersSection speakers={speakers.edges} />}
+    //{speakers && <SpeakersSection speakers={speakers.edges} />}
     <GnosisSection text={aboutGnosis} />
     <SponsorsSection sponsors={sponsors} />
   </>
