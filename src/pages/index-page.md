@@ -32,7 +32,7 @@ programPhotoText:
   linkURL: /speakers
 speakers:
   speaker1: Speakers will be announced soon!
-  speaker2: Jorge Izquierdo
+  speaker2: Speakers announced soon
   speaker3: Matan Field
   speaker4: Pedro Gomes
 aboutGnosis: >-
