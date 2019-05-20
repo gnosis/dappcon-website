@@ -7,11 +7,19 @@ const idToColor = {
   main: colors.white,
   about: colors.black,
   photo: colors.white,
+  gnosis: colors.black,
   speakers: colors.black,
   conferenceSponsors: colors.black,
 }
 
-const LinkIds = ['aboutLink', 'speakersLink', 'organizersLink', 'buyLink', 'navLogo', 'sponsorsLink']
+const LinkIds = [
+  'aboutLink',
+  'speakersLink',
+  'organizersLink',
+  'buyLink',
+  'navLogo',
+  'sponsorsLink',
+]
 
 let breakPointsToColor = {}
 
@@ -103,10 +111,10 @@ const DesktopNav = class extends React.Component {
       LinkIds.forEach(id => {
         if (this[id]) {
           Object.keys(breakPointsToColor).forEach(point => {
-            if (
+            const isIntersected =
               parseInt(window.scrollY) >
               parseInt(point) - parseInt(this[id].offsetTop) - 0.5 * parseInt(this[id].clientHeight)
-            ) {
+            if (isIntersected) {
               if (id === 'buyLink') {
                 this[id].children[0].children[0].setAttribute('stroke', breakPointsToColor[point])
               } else if (id === 'navLogo') {
