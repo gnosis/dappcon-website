@@ -116,7 +116,7 @@ const SponsorsSection = ({ sponsors }) => {
         <SponsorsListByType type="Bronze" sponsors={bronzeSponsors} />
         <SponsorsListByType type="Iron" sponsors={ironSponsors} />
         <StyledButtonLink
-          href="mailto:sponsor@dappcon.io"
+          href="https://drive.google.com/drive/u/0/folders/13vkoRWkmjJdy3oJnG_iAnsRuYRSAe1NF"
           text="BECOME A SPONSOR"
           hover={colors.secondaryBlack}
           target="_blank"
