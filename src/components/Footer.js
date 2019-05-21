@@ -155,7 +155,7 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           <MobileSplitter />
           <CapitalizeOnMobile>
             <StyledExternalLink
-              href="mailto:sponsor@dappcon.io"
+              href="https://drive.google.com/drive/u/0/folders/13vkoRWkmjJdy3oJnG_iAnsRuYRSAe1NF"
               target="_blank"
               rel="noopener noreferrer"
               red
