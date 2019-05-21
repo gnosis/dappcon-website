@@ -31,7 +31,7 @@ programPhotoText:
   label: Program coming soon
   linkURL: /speakers
 speakers:
-  speaker1: Speakers will be announced soon!
+  speaker1: Alex Van de Sande
   speaker2: Jorge Izquierdo
   speaker3: Matan Field
   speaker4: Pedro Gomes
