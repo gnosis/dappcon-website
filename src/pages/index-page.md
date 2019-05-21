@@ -14,8 +14,8 @@ aboutDappcon: >-
   and enthusiasts. We’re giving it another go this summer and encourage anyone
   interested in the ecosystem or networking with dapp developers to attend.
   We’ll be working closely with
-  [EthBerlin](https://ethberlinzwei.com/index.html) to make sure your Berlin
-  Blockchain week is a success!
+  [EthBerlin](https://ethberlinzwei.com/index.html) to make sure your [Berlin
+  Blockchain week](https://blockchainweek.berlin/calendar/) is a success!
 stats:
   firstStat:
     description: days
