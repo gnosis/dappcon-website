@@ -155,7 +155,7 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           <MobileSplitter />
           <CapitalizeOnMobile>
             <StyledExternalLink
-              href="https://drive.google.com/drive/u/0/folders/13vkoRWkmjJdy3oJnG_iAnsRuYRSAe1NF"
+              href="https://drive.google.com/file/u/2/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view?usp=drive_open"
               target="_blank"
               rel="noopener noreferrer"
               red
