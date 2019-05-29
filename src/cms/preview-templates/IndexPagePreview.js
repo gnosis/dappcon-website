@@ -4,10 +4,11 @@ import { IndexPageTemplate } from 'templates/index-page'
 
 const getPropWithGraphQLStructure = (propName, fieldsMetaData) => {
   const values = { edges: [] }
-  const unformatted = fieldsMetaData.getIn([propName]).toJS()
+  const unformatted = fieldsMetaData.getIn([propName])
 
   if (unformatted) {
-    values.edges = Object.values(unformatted).map(edges => ({
+    const unformattedObject = unformatted.toJS()
+    values.edges = Object.values(unformattedObject).map(edges => ({
       node: {
         frontmatter: {
           ...Object.values(edges[propName])[0],
@@ -21,7 +22,7 @@ const getPropWithGraphQLStructure = (propName, fieldsMetaData) => {
 
 const IndexPagePreview = ({ entry, fieldsMetaData }) => {
   const speakers = getPropWithGraphQLStructure('speakers', fieldsMetaData)
-  const sponsors = getPropWithGraphQLStructure('sponsors', fieldsMetaData)
+  const sponsors = []
 
   return (
     <IndexPageTemplate
