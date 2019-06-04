@@ -1,8 +1,8 @@
 ---
 templateKey: speaker
-name: Silke Noa Elrifai
+name: Silke Elrifai
 company: Gnosis
-position: General Counsel / CLO
+position: General Counsel/CLO
 image: /img/silke-2019.jpg
 ---
 
