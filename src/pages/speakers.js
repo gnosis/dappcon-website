@@ -4,10 +4,10 @@ import Speakers from 'components/SpeakersPage/Speakers'
 
 const SpeakersPage = props => {
   const {
-    data: { speakers, headerFooterData },
+    data: { speakers },
   } = props
 
-  return <Speakers speakers={speakers.edges} speakerApplyLink={headerFooterData.frontmatter.speakerApplyLink} />
+  return <Speakers speakers={speakers.edges} />
 }
 
 export default SpeakersPage
@@ -32,11 +32,6 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
-    }
-    headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        speakerApplyLink
       }
     }
   }

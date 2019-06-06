@@ -4,13 +4,11 @@ import MainSection from 'components/IndexPage/MainSection'
 import StatsSection from 'components/IndexPage/StatsSection'
 import PhotoSection from 'components/IndexPage/PhotoSection'
 import SpeakersSection from 'components/IndexPage/SpeakersSection'
-import GnosisSection from 'components/IndexPage/GnosisSection'
 import SponsorsSection from 'components/IndexPage/SponsorsSection'
 
 export const IndexPageTemplate = ({
   mainTitle,
   aboutDappcon,
-  aboutGnosis,
   buttonText,
   buyTicketsLink,
   speakers,
@@ -29,7 +27,6 @@ export const IndexPageTemplate = ({
     <StatsSection dappconText={aboutDappcon} stats={stats} />
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
-    <GnosisSection text={aboutGnosis} />
     <SponsorsSection sponsors={sponsors} />
   </>
 )
@@ -45,7 +42,6 @@ const IndexPage = props => {
   const {
     mainTitle,
     aboutDappcon,
-    aboutGnosis,
     buttonText,
     speakers: indexPageSpeakers,
     stats,
@@ -66,7 +62,6 @@ const IndexPage = props => {
     <IndexPageTemplate
       mainTitle={mainTitle}
       aboutDappcon={aboutDappcon}
-      aboutGnosis={aboutGnosis}
       buyTicketsLink={buyTicketsLink}
       buttonText={buttonText}
       stats={stats}
@@ -116,7 +111,6 @@ export const pageQuery = graphql`
           speaker3
           speaker4
         }
-        aboutGnosis
       }
     }
     speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {

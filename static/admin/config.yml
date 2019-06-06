@@ -134,6 +134,5 @@ collections:
             { label: 'Speaker 3', name: 'speaker3', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
             { label: 'Speaker 4', name: 'speaker4', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
           ]}
-          - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'markdown'}
           - {label: 'Speaker Apply Link', name: 'speakerApplyLink', widget: 'string'}
           - {label: 'Sponsor Info Link', name: 'sponsorInfoLink', widget: 'string'}

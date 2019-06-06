@@ -7,7 +7,6 @@ const idToColor = {
   main: colors.white,
   about: colors.black,
   photo: colors.white,
-  gnosis: colors.black,
   speakers: colors.black,
   conferenceSponsors: colors.black,
 }
@@ -15,7 +14,6 @@ const idToColor = {
 const LinkIds = [
   'aboutLink',
   'speakersLink',
-  'organizersLink',
   'buyLink',
   'navLogo',
   'sponsorsLink',

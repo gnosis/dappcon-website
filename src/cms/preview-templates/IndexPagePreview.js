@@ -28,7 +28,6 @@ const IndexPagePreview = ({ entry, fieldsMetaData }) => {
     <IndexPageTemplate
       mainTitle={entry.getIn(['data', 'mainTitle'])}
       aboutDappcon={entry.getIn(['data', 'aboutDappcon'])}
-      aboutGnosis={entry.getIn(['data', 'aboutGnosis'])}
       buttonText={entry.getIn(['data', 'buttonText'])}
       stats={entry.getIn(['data', 'stats']).toJS()}
       programPhotoText={entry.getIn(['data', 'programPhotoText'])}
