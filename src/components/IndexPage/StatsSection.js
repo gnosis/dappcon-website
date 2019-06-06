@@ -16,6 +16,12 @@ const Wrapper = styled.section`
   }
 `
 
+const DesktopTextContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
 const Paragraph = styled(Markdown)`
   max-width: 688px;
   text-align: center;
@@ -27,6 +33,20 @@ const Paragraph = styled(Markdown)`
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
+  }
+`
+
+const MobileParagraph = styled(Markdown)`
+  max-width: 688px;
+  text-align: center;
+  font-size: 12;
+  line-height: normal;
+  display: block;
+  margin: 0 auto;
+  color: ${colors.secondaryBlack};
+
+  @media screen and (min-width: 767px) {
+    display: none;
   }
 `
 
@@ -76,7 +96,10 @@ const StatsSection = ({ stats: { firstStat, secondStat, thirdStat }, dappconText
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <Paragraph source={dappconText} renderers={MdRenderers} />
+        <DesktopTextContainer>
+          <Paragraph source={dappconText} renderers={MdRenderers} />
+        </DesktopTextContainer>
+        <MobileParagraph source={dappconText} renderers={MdRenderers} />
         <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
           <StatsContainer>
             <Stat>
