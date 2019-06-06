@@ -5,7 +5,7 @@ buttonText: BUY TICKETS
 locationAndDate: |-
   21-23 August 2019 
 
-  Berlin Institute of Technology
+  [Technical University Berlin](https://goo.gl/maps/pfWLb43gLgyzPgFk6)
 buyTicketsLink: 'https://www.weezevent.com/dappcon-2'
 aboutDappcon: >-
   DappCon is a nonprofit global developer conference focusing on decentralized
