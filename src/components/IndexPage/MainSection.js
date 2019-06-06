@@ -80,7 +80,9 @@ const StyledButtonLink = styled(ButtonLink)`
 const StyledLink = styled.a`
   color: ${colors.white};
 
-  &:focus {
+  &:focus,
+  &:hover,
+  &:active {
     color: ${colors.black};
     outline: none;
   }
@@ -91,7 +93,7 @@ const mdRenderers = {
     <StyledLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledLink>
-  )
+  ),
 }
 
 const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
