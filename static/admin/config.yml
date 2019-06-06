@@ -36,10 +36,10 @@ collections:
         name: "type"
         widget: "select"
         options:
-          - { label: "Gold", value: 4 }
-          - { label: "Silver", value: 3 }
-          - { label: "Bronze", value: 2 }
-          - { label: "Iron", value: 1 }
+          - { label: "Gold (Unicorn)", value: 4 }
+          - { label: "Silver (Whale)", value: 3 }
+          - { label: "Bronze (Kitty)", value: 2 }
+          - { label: "Iron (Knut)", value: 1 }
           # ^ netlify won't let you select an option with value: 0
 
   - name: 'events'
@@ -107,7 +107,8 @@ collections:
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
           - {label: 'Location and Date', name: 'locationAndDate', widget: 'markdown'}
           - {label: 'Buy Tickets Link', name: 'buyTicketsLink', widget: 'string'}
-          - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'markdown'}
+          - {label: 'About Dappcon (Left Column)', name: 'aboutDappconLeftCol', widget: 'markdown'}
+          - {label: 'About Dappcon (Right Column)', name: 'aboutDappconRightCol', widget: 'markdown'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
                 {label: 'Number', name: 'number', widget: 'string'},
@@ -134,6 +135,5 @@ collections:
             { label: 'Speaker 3', name: 'speaker3', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
             { label: 'Speaker 4', name: 'speaker4', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
           ]}
-          - {label: 'About Gnosis', name: 'aboutGnosis', widget: 'markdown'}
           - {label: 'Speaker Apply Link', name: 'speakerApplyLink', widget: 'string'}
           - {label: 'Sponsor Info Link', name: 'sponsorInfoLink', widget: 'string'}

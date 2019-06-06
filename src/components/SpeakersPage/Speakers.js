@@ -42,29 +42,6 @@ const StyledLink = styled(Link)`
   }
 `
 
-const StyledButtonLink = styled(ButtonLink)`
-  margin: 0 auto;
-  border: 3px solid ${colors.reddishPink};
-  color: ${colors.reddishPink};
-  font-size: 19px;
-  padding: 6px 13px;
-  display: block;
-  width: 232px;
-  margin: 116px auto 0;
-
-  &:focus {
-    color: ${colors.black};
-    border-color: ${colors.black};
-  }
-
-  @media screen and (max-width: 767px) {
-    font-size: 12px;
-    padding: 13px 26px;
-    margin-top: 50px;
-    width: 190px;
-  }
-`
-
 const Speakers = ({ speakers, speakerApplyLink }) => (
   <StyledSection>
     <ContentWrapper>
@@ -74,13 +51,6 @@ const Speakers = ({ speakers, speakerApplyLink }) => (
           <Speaker key={i} speaker={frontmatter} showInfo />
         ))}
       </SpeakersContainer>
-      <StyledButtonLink
-        href={speakerApplyLink}
-        text="BECOME A SPEAKER"
-        target="_blank"
-        hover={colors.secondaryBlack}
-        style={{ zIndex: 2 }}
-      />
       <StyledLink to="/">
         &lt;- <HideOnMobile>back to homepage</HideOnMobile>
       </StyledLink>

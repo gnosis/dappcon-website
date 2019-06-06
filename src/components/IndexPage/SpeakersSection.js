@@ -30,8 +30,9 @@ const StyledLink = styled(Link)`
   text-align: center;
   margin-top: 40px;
   color: ${colors.reddishPink};
-  font-size: 19px;
+  font-size: 39px;
   text-decoration: none;
+  letter-spacing: normal;
 
   &:hover {
     text-decoration: underline;
@@ -50,7 +51,7 @@ const SpeakersSection = ({ speakers }) => (
           <Speaker key={i} speaker={frontmatter} />
         ))}
       </SpeakersContainer>
-      <StyledLink to="/speakers">See all confirmed speakers -></StyledLink>
+      <StyledLink to="/speakers">...</StyledLink>
     </ContentWrapper>
   </Wrapper>
 )
