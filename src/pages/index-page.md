@@ -45,4 +45,3 @@ speakers:
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
 ---
-
