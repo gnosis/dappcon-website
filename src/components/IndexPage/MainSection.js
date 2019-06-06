@@ -60,6 +60,7 @@ const StyledDate = styled(Markdown)`
   font-size: 19px;
   font-weight: 800;
   line-height: normal;
+  z-index: 2;
 
   @media screen and (max-width: 767px) {
     margin: 31px 0;
@@ -76,13 +77,32 @@ const StyledButtonLink = styled(ButtonLink)`
   }
 `
 
+const StyledLink = styled.a`
+  color: ${colors.white};
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: ${colors.black};
+    outline: none;
+  }
+`
+
+const mdRenderers = {
+  link: props => (
+    <StyledLink href={props.href} target="_blank" rel="noopener noreferrer">
+      {props.children}
+    </StyledLink>
+  ),
+}
+
 const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
   <Wrapper id="main">
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
         <StyledButtonLink href={buyTicketsLink} target="_blank" text={buttonText} />
-        <StyledDate source={locationAndDate} />
+        <StyledDate source={locationAndDate} renderers={mdRenderers} />
       </ButtonDateContainer>
     </StyledContentWrapper>
     <BerlinImg src={BerlinLandscapeSvg} alt="cityscape" />
