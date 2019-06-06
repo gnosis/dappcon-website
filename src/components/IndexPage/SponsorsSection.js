@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonLink from 'components/ButtonLink'
 import ContentWrapper from 'components/ContentWrapper'
 import { colors } from 'theme'
 
@@ -59,23 +58,6 @@ const Img = styled.img`
   @media screen and (max-width: 767px) {
     max-width: 88px;
     height: 60px;
-  }
-`
-
-const StyledButtonLink = styled(ButtonLink)`
-  margin: 0 auto;
-  border: 3px solid ${colors.reddishPink};
-  color: ${colors.reddishPink};
-  font-size: 19px;
-  padding: 6px 13px;
-  display: block;
-  width: 232px;
-  margin: 0 auto;
-
-  @media screen and (max-width: 767px) {
-    font-size: 12px;
-    padding: 13px 26px;
-    width: 190px;
   }
 `
 
