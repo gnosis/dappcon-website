@@ -107,7 +107,8 @@ collections:
           - {label: 'Button Text', name: 'buttonText', widget: 'string'}
           - {label: 'Location and Date', name: 'locationAndDate', widget: 'markdown'}
           - {label: 'Buy Tickets Link', name: 'buyTicketsLink', widget: 'string'}
-          - {label: 'About Dappcon', name: 'aboutDappcon', widget: 'markdown'}
+          - {label: 'About Dappcon (Left Column)', name: 'aboutDappconLeftCol', widget: 'markdown'}
+          - {label: 'About Dappcon (Right Column)', name: 'aboutDappconRightCol', widget: 'markdown'}
           - {label: 'Stats', name: 'stats', widget: 'object', fields: [
               {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
                 {label: 'Number', name: 'number', widget: 'string'},

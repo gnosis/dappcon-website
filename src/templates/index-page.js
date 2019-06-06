@@ -11,6 +11,8 @@ export const IndexPageTemplate = ({
   aboutDappcon,
   buttonText,
   buyTicketsLink,
+  aboutDappconLeftCol,
+  aboutDappconRightCol,
   speakers,
   stats,
   programPhotoText,
@@ -24,7 +26,11 @@ export const IndexPageTemplate = ({
       buyTicketsLink={buyTicketsLink}
       locationAndDate={locationAndDate}
     />
-    <StatsSection dappconText={aboutDappcon} stats={stats} />
+    <StatsSection
+      aboutDappconLeftCol={aboutDappconLeftCol}
+      aboutDappconRightCol={aboutDappconRightCol}
+      stats={stats}
+    />
     <PhotoSection text={programPhotoText} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <SponsorsSection sponsors={sponsors} />
@@ -41,7 +47,8 @@ const IndexPage = props => {
   } = props
   const {
     mainTitle,
-    aboutDappcon,
+    aboutDappconRightCol,
+    aboutDappconLeftCol,
     buttonText,
     speakers: indexPageSpeakers,
     stats,
@@ -61,7 +68,8 @@ const IndexPage = props => {
   return (
     <IndexPageTemplate
       mainTitle={mainTitle}
-      aboutDappcon={aboutDappcon}
+      aboutDappconLeftCol={aboutDappconLeftCol}
+      aboutDappconRightCol={aboutDappconRightCol}
       buyTicketsLink={buyTicketsLink}
       buttonText={buttonText}
       stats={stats}
@@ -84,7 +92,8 @@ export const pageQuery = graphql`
         mainTitle
         buttonText
         buyTicketsLink
-        aboutDappcon
+        aboutDappconLeftCol
+        aboutDappconRightCol
         locationAndDate
         stats {
           firstStat {
