@@ -36,10 +36,10 @@ collections:
         name: "type"
         widget: "select"
         options:
-          - { label: "Gold", value: 4 }
-          - { label: "Silver", value: 3 }
-          - { label: "Bronze", value: 2 }
-          - { label: "Iron", value: 1 }
+          - { label: "Gold (Unicorn)", value: 4 }
+          - { label: "Silver (Whale)", value: 3 }
+          - { label: "Bronze (Kitty)", value: 2 }
+          - { label: "Iron (Knut)", value: 1 }
           # ^ netlify won't let you select an option with value: 0
 
   - name: 'events'

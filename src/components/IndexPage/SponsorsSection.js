@@ -124,10 +124,10 @@ const SponsorsSection = ({ sponsors }) => {
   return (
     <Wrapper id="conferenceSponsors">
       <ContentWrapper>
-        <SponsorsListByType type="Gold" sponsors={goldSponsors} />
-        <SponsorsListByType type="Silver" sponsors={silverSponsors} />
-        <SponsorsListByType type="Bronze" sponsors={bronzeSponsors} />
-        <SponsorsListByType type="Iron" sponsors={ironSponsors} />
+        <SponsorsListByType type="Unicorns" sponsors={goldSponsors} />
+        <SponsorsListByType type="Whales" sponsors={silverSponsors} />
+        <SponsorsListByType type="Kitties" sponsors={bronzeSponsors} />
+        <SponsorsListByType type="Knuts" sponsors={ironSponsors} />
       </ContentWrapper>
     </Wrapper>
   )
