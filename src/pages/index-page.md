@@ -19,6 +19,8 @@ aboutDappconRightCol: >-
   enthusiasts.
 
 
+
+
   We’re giving it another go this summer and encourage anyone interested in the
   ecosystem or networking with dapp developers to attend.
 stats:
