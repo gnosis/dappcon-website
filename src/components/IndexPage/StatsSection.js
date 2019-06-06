@@ -16,17 +16,42 @@ const Wrapper = styled.section`
   }
 `
 
+const DesktopTextContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`
+
 const Paragraph = styled(Markdown)`
-  max-width: 688px;
-  text-align: center;
+  text-align: left;
   font-size: 19px;
   line-height: normal;
   display: block;
   margin: 0 auto;
   color: ${colors.secondaryBlack};
+  flex-basis: 47%;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
+  }
+`
+
+const EnlargedParagraph = styled(Paragraph)`
+  font-size: 29px;
+  letter-spacing: -0.4px;
+`
+
+const MobileParagraph = styled(Paragraph)`
+  max-width: 688px;
+  text-align: center;
+  font-size: 12px;
+
+  @media screen and (min-width: 767px) {
+    display: none;
   }
 `
 
@@ -70,13 +95,22 @@ const StatTitle = styled.span`
   }
 `
 
-const StatsSection = ({ stats: { firstStat, secondStat, thirdStat }, dappconText }) => {
+const StatsSection = ({
+  stats: { firstStat, secondStat, thirdStat },
+  aboutDappconLeftCol,
+  aboutDappconRightCol,
+}) => {
   const [statsVisible, setStatsVisibility] = useState(false)
+  const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
 
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <Paragraph source={dappconText} renderers={MdRenderers} />
+        <DesktopTextContainer>
+          <EnlargedParagraph source={aboutDappconLeftCol} renderers={MdRenderers} />
+          <Paragraph source={aboutDappconRightCol} renderers={MdRenderers} />
+        </DesktopTextContainer>
+        <MobileParagraph source={mobileText} renderers={MdRenderers} />
         <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
           <StatsContainer>
             <Stat>

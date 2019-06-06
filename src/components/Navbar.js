@@ -53,9 +53,6 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
     <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
       Speakers
     </StyledLink>
-    <StyledLink id="organizersLink" isBlack={isBlack} to="/#gnosis" innerRef={setLinkRef}>
-      Organizer
-    </StyledLink>
     <StyledLink id="sponsorsLink" isBlack={isBlack} to="/#conferenceSponsors" innerRef={setLinkRef}>
       Sponsors
     </StyledLink>
