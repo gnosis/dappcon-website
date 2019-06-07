@@ -14,7 +14,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   justify-content: space-between;
 
   @media screen and (max-width: 767px) {
-    flex-direction:column;
+    flex-direction: column;
 
     & > * {
       margin-bottom: 60px;
@@ -30,7 +30,7 @@ const ApplySection = ({ columns }) => (
   <Wrapper>
     <StyledContentWrapper>
       {columns.map(col => (
-        <ApplyCol key={col.title} heading={col.title} desc={col.description} />
+        <ApplyCol key={col.title} heading={col.title} desc={col.description} link={col.URL} />
       ))}
     </StyledContentWrapper>
   </Wrapper>
