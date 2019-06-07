@@ -4,12 +4,6 @@ import ContentWrapper from 'components/ContentWrapper'
 import { colors } from 'theme'
 import ApplyCol from './ApplyCol'
 
-const cols = [
-  { heading: 'Sponsor', desc: 'To give a talk or to organise a workshop, apply here.', link: '/' },
-  { heading: 'Sponsor', desc: 'To give a talk or to organise a workshop, apply here.', link: '/' },
-  { heading: 'Sponsor', desc: 'To give a talk or to organise a workshop, apply here.', link: '/' },
-]
-
 const Wrapper = styled.div`
   background-color: ${colors.reddishPink};
   padding-bottom: 33vh;
@@ -32,11 +26,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const ApplySection = () => (
+const ApplySection = ({ columns }) => (
   <Wrapper>
     <StyledContentWrapper>
-      {cols.map(col => (
-        <ApplyCol heading={col.heading} desc={col.desc} />
+      {columns.map(col => (
+        <ApplyCol key={col.title} heading={col.title} desc={col.description} />
       ))}
     </StyledContentWrapper>
   </Wrapper>

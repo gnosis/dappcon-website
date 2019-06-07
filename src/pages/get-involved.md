@@ -1,6 +1,9 @@
 ---
 templateKey: get-involved-page
-title: Get Involved
+title: |-
+  It’s Dappening!
+  Be part of
+  Dappcon 2019
 columns:
   firstCol:
     title: Sponsor
@@ -13,5 +16,5 @@ columns:
   thirdCol:
     title: Volunteer
     description: To volunteer at our event apply here. Contact us for more information.
-    URL: /
+    URL: https://gnosis1.typeform.com/to/y3taxr
 ---

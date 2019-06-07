@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import { colors } from 'theme'
@@ -18,7 +19,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   justify-content: center;
 `
 
-const Heading = styled.h1`
+const Heading = styled(Markdown)`
   font-size: 49px;
   color: ${colors.white};
   line-height: normal;
@@ -45,7 +46,7 @@ const Image = styled(BackgroundImage)`
   }
 `
 
-const MainSection = () => (
+const MainSection = ({ title }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -62,13 +63,7 @@ const MainSection = () => (
     {data => (
       <Wrapper>
         <StyledContentWrapper>
-          <Heading>
-            It’s Dappening!
-            <br />
-            Be part of
-            <br />
-            Dappcon 2019
-          </Heading>
+          <Heading source={title}></Heading>
         </StyledContentWrapper>
         <Image fluid={data.bg.childImageSharp.fluid} style={{ position: 'absolute' }} />
       </Wrapper>
