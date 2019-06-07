@@ -50,7 +50,11 @@ const PhotoSection = ({ text }) => (
     {data => (
       <div id="photo">
         <Wrapper fluid={data.bg.childImageSharp.fluid}>
-          {text.isLink ? <StyledLink to={text.linkURL}>{text.label}</StyledLink> : <h3>{text.label}</h3>}
+          {text.isLink ? (
+            <StyledLink to={text.linkURL}>{text.label}</StyledLink>
+          ) : (
+            <h3>{text.label}</h3>
+          )}
         </Wrapper>
       </div>
     )}

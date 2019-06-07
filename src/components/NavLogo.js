@@ -15,9 +15,15 @@ const StyledLogoLink = styled(Link)`
   }
 `
 
+const whiteColorSchemePages = ['/', '/get-involved']
+
 const NavLogo = ({ fill, location: { pathname } = {}, setLinkRef }) => (
   <StyledLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
-    <DappconLogoSmall fill={fill || (pathname === '/' ? colors.bgWhite : colors.reddishPink)} />
+    <DappconLogoSmall
+      fill={
+        fill || (whiteColorSchemePages.includes(pathname) ? colors.bgWhite : colors.reddishPink)
+      }
+    />
   </StyledLogoLink>
 )
 

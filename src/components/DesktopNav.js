@@ -19,6 +19,8 @@ const LinkIds = [
   'sponsorsLink',
 ]
 
+const whiteColorSchemePages = ['/', '/get-involved']
+
 let breakPointsToColor = {}
 
 const DesktopNav = class extends React.Component {
@@ -90,8 +92,8 @@ const DesktopNav = class extends React.Component {
     }
   }
 
-  setLinkRef = e => {
-    this[e.id] = e
+  setLinkRef = el => {
+    this[el.id] = el
   }
 
   getBreakpointsPos() {
@@ -130,9 +132,9 @@ const DesktopNav = class extends React.Component {
   }
 
   render() {
-    const { location = {}, data } = this.props
+    const { location, data } = this.props
     const { navLogoColor } = this.state
-    const isBlack = location.pathname !== '/'
+    const isBlack = !whiteColorSchemePages.includes(location.pathname)
 
     return (
       <>
@@ -141,6 +143,10 @@ const DesktopNav = class extends React.Component {
       </>
     )
   }
+}
+
+DesktopNav.defaultProps = {
+  location: {},
 }
 
 export default DesktopNav

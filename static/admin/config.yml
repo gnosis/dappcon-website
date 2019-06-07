@@ -57,6 +57,34 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
+      - file: 'src/pages/get-involved.md'
+        label: 'Get involved Page'
+        name: 'getInvolved'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'get-involved-page',
+            }
+          - { label: 'Main Heading', name: 'heading', widget: 'markdown' }
+          - {label: 'Columns', name: 'columns', widget: 'object', fields: [
+              {label: 'Column 1', name: 'firstCol', widget: 'object', fields: [
+                {label: 'Title', name: 'title', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'markdown'},
+                {label: 'URL', name: 'url', widget: 'string'}
+              ]},
+              {label: 'Column 2', name: 'secondCol', widget: 'object', fields: [
+                {label: 'Title', name: 'title', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'markdown'},
+                {label: 'URL', name: 'url', widget: 'string'}
+              ]},
+              {label: 'Column 3', name: 'thirdCol', widget: 'object', fields: [
+                {label: 'Title', name: 'title', widget: 'string'},
+                {label: 'Description', name: 'description', widget: 'markdown'},
+                {label: 'URL', name: 'url', widget: 'string'}
+              ]}
+          ]}
       - file: 'src/pages/privacy-policy.md'
         label: 'Privacy Policy'
         name: 'privacyPolicy'
