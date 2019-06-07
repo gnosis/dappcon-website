@@ -54,6 +54,8 @@ const burgerMenuStyle = css`
   }
 `
 
+const whiteColorSchemePages = ['/', '/get-involved']
+
 const Wrapper = styled.div`
   ${burgerMenuStyle}
 
@@ -115,7 +117,9 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
   return (
     <Wrapper>
       <IconWrapper onClick={() => toggleMenu(!isMenuOpen)}>
-        <MobileMenuIcon fill={pathname === '/' ? colors.bgWhite : colors.reddishPink} />
+        <MobileMenuIcon
+          fill={whiteColorSchemePages.includes(pathname) ? colors.bgWhite : colors.reddishPink}
+        />
       </IconWrapper>
       <Menu isOpen={isMenuOpen} right customBurgerIcon={false} customCrossIcon={false}>
         <NavigationWrapper>
