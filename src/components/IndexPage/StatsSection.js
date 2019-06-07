@@ -108,7 +108,7 @@ const StatsSection = ({
       <ContentWrapper>
         <DesktopTextContainer>
           <EnlargedParagraph source={aboutDappconLeftCol} renderers={MdRenderers} />
-          <Paragraph source={aboutDappconRightCol} renderers={MdRenderers} />
+          <Paragraph source={aboutDappconRightCol} escapeHtml={false} renderers={MdRenderers} />
         </DesktopTextContainer>
         <MobileParagraph source={mobileText} renderers={MdRenderers} />
         <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
