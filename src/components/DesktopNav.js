@@ -19,7 +19,7 @@ const LinkIds = [
   'sponsorsLink',
 ]
 
-const whiteColorSchemePages = ['/', '/get-involved']
+const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 let breakPointsToColor = {}
 

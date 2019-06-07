@@ -15,7 +15,7 @@ const StyledLogoLink = styled(Link)`
   }
 `
 
-const whiteColorSchemePages = ['/', '/get-involved']
+const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 const NavLogo = ({ fill, location: { pathname } = {}, setLinkRef }) => (
   <StyledLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
