@@ -2,27 +2,12 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { colors } from 'theme'
 import HideOnMobile from 'components/HideOnMobile'
-import DappConLogoFull from 'img/dappcon-logo-full.svg'
 import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
-  background-color: ${colors.reddishPink};
-  padding: 29px 30px 40px 30px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-`
-
-const StyledLogo = styled.img`
-  display: block;
-  margin-bottom: 35px;
-
-  @media screen and (max-width: 767px) {
-    width: 50%;
-    margin-bottom: 29px;
-  }
+  position: absolute;
+  left: 12px;
+  bottom: 14px;
 `
 
 const LinksCSS = css`
@@ -55,16 +40,6 @@ const FooterColumn = styled.div`
     flex-direction: column;
     line-height: 2;
     flex-basis: 35%;
-  }
-`
-
-const ApplyColumn = styled(FooterColumn)`
-  flex-basis: 60%;
-  display: flex;
-
-  @media screen and (max-width: 767px) {
-    flex-basis: 52%;
-    line-height: 1;
   }
 `
 
@@ -103,9 +78,8 @@ const MobileSplitter = styled.br`
   }
 `
 
-const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
+const Footer = () => (
   <StyledFooter>
-    <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
       <FooterColumn>
         <p>
@@ -139,37 +113,6 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           </StyledLink>
         </p>
       </FooterColumn>
-      <ApplyColumn>
-        <SpeakerText>
-          Do you want to become a speaker?
-          <br />
-          <br />
-          <StyledExternalLink href={speakerApplyLink} target="_blank" rel="noopener noreferrer" red>
-            Apply
-          </StyledExternalLink>
-        </SpeakerText>
-        <SponsorText>
-          Do you want to become a sponsor?
-          <br />
-          <br />
-          <StyledExternalLink href={sponsorInfoLink} target="_blank" rel="noopener noreferrer" red>
-            Find more info here{' '}
-          </StyledExternalLink>
-          <MobileSplitter />
-          <HideOnMobile>and </HideOnMobile>
-          <MobileSplitter />
-          <CapitalizeOnMobile>
-            <StyledExternalLink
-              href="https://drive.google.com/file/u/2/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view?usp=drive_open"
-              target="_blank"
-              rel="noopener noreferrer"
-              red
-            >
-              apply here
-            </StyledExternalLink>
-          </CapitalizeOnMobile>
-        </SponsorText>
-      </ApplyColumn>
     </ColumnsContainer>
   </StyledFooter>
 )

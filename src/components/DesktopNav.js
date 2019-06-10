@@ -9,15 +9,10 @@ const idToColor = {
   photo: colors.white,
   speakers: colors.black,
   conferenceSponsors: colors.black,
+  pageEnd: colors.white,
 }
 
-const LinkIds = [
-  'aboutLink',
-  'speakersLink',
-  'buyLink',
-  'navLogo',
-  'sponsorsLink',
-]
+const LinkIds = ['aboutLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'pageEnd']
 
 const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
@@ -43,14 +38,16 @@ const DesktopNav = class extends React.Component {
       window.removeEventListener('scroll', this.changeColorOnScroll)
 
       LinkIds.forEach(id => {
-        if (id === 'buyLink') {
-          this[id].children[0].children[0].setAttribute('stroke', colors.black)
-        } else if (id === 'navLogo') {
-          this.setState({
-            navLogoColor: '',
-          })
-        } else {
-          this[id].style.color = null
+        if (this[id]) {
+          if (id === 'buyLink') {
+            this[id].children[0].children[0].setAttribute('stroke', colors.black)
+          } else if (id === 'navLogo') {
+            this.setState({
+              navLogoColor: '',
+            })
+          } else {
+            this[id].style.color = null
+          }
         }
       })
     }
@@ -93,7 +90,9 @@ const DesktopNav = class extends React.Component {
   }
 
   setLinkRef = el => {
-    this[el.id] = el
+    if (el) {
+      this[el.id] = el
+    }
   }
 
   getBreakpointsPos() {

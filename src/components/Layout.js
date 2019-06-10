@@ -43,7 +43,11 @@ export const LayoutTemplate = ({ children, location = {}, headerFooterData = {} 
     <DesktopNav location={location} data={headerFooterData} />
     <MobileHeader location={location || {}} data={headerFooterData} />
     {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
-    <div style={{ marginBottom: '100vh' }}>{children}</div>
+    <div style={!/get-involved/.test(location.pathname) && { marginBottom: '100vh' }}>
+      {children}
+      <div id="pageEnd"></div>
+      {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
+    </div>
     <GetInvolvedSection />
     {/* <Footer data={headerFooterData} /> */}
   </>

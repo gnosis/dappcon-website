@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from 'components/Footer'
 import { colors } from 'theme'
 import { Link } from 'gatsby'
 
@@ -31,6 +32,7 @@ const StyledLink = styled(Link)`
 const GetInvolvedSection = () => (
   <Wrapper>
     <StyledLink to="/get-involved">Get Involved</StyledLink>
+    <Footer />
   </Wrapper>
 )
 
