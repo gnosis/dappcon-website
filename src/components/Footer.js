@@ -29,6 +29,10 @@ const ColumnsContainer = styled.div`
   justify-content: space-between;
   color: ${colors.secondaryBlack};
   font-size: 14px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const FooterColumn = styled.div`
@@ -42,13 +46,11 @@ const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 2;
-    flex-basis: 35%;
-  }
-`
+    flex-basis: 100%;
 
-const Splitter = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
+    &:last-child {
+      order: -1;
+    }
   }
 `
 
@@ -64,15 +66,20 @@ const Footer = () => (
   <StyledFooter>
     <ColumnsContainer>
       <FooterColumn>
-        <span>{new Date().getFullYear()} DAPPCON</span>
-        <Splitter> | </Splitter>
-        <StyledLink to="/imprint" underline>
-          Imprint
-        </StyledLink>
-        <Splitter> | </Splitter>
-        <StyledLink to="/privacy-policy" underline>
-          Privacy Policy
-        </StyledLink>
+        <p>
+          <span>{new Date().getFullYear()} DAPPCON</span>
+          <span> | </span>
+          <StyledLink to="/imprint" underline>
+            Imprint
+          </StyledLink>
+          <MobileSplitter />
+          <HideOnMobile>
+            <span> | </span>
+          </HideOnMobile>
+          <StyledLink to="/privacy-policy" underline>
+            Privacy Policy
+          </StyledLink>
+        </p>
       </FooterColumn>
       <FooterColumn>
         <p>
@@ -84,8 +91,7 @@ const Footer = () => (
           >
             info@dappcon.io
           </StyledExternalLink>
-          <Splitter> | </Splitter>
-          <MobileSplitter />
+          <span> | </span>
           <StyledExternalLink
             href="https://twitter.com/dappcon_berlin"
             target="_blank"
@@ -94,7 +100,7 @@ const Footer = () => (
           >
             Twitter
           </StyledExternalLink>
-          <Splitter> | </Splitter>
+          <span> | </span>
           <StyledExternalLink
             href="https://t.me/joinchat/EcVRsUPKJRZA9WXXtUeVbQ"
             target="_blank"
@@ -103,7 +109,6 @@ const Footer = () => (
           >
             Telegram
           </StyledExternalLink>
-          <MobileSplitter />
         </p>
       </FooterColumn>
     </ColumnsContainer>
