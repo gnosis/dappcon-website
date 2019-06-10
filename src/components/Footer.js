@@ -5,6 +5,7 @@ import HideOnMobile from 'components/HideOnMobile'
 import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
+  width: 100%;
   position: absolute;
   left: 12px;
   bottom: 14px;
@@ -26,6 +27,8 @@ const StyledExternalLink = styled.a`
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  color: ${colors.secondaryBlack};
+  font-size: 14px;
 `
 
 const FooterColumn = styled.div`
@@ -49,27 +52,6 @@ const Splitter = styled.span`
   }
 `
 
-const SpeakerText = styled.p`
-  display: inline-block;
-`
-
-const SponsorText = styled.div`
-  display: inline-block;
-  margin-left: auto;
-  max-width: 263px;
-
-  @media screen and (max-width: 767px) {
-    margin-left: 0;
-    margin-top: 30px;
-  }
-`
-
-const CapitalizeOnMobile = styled.span`
-  @media screen and (max-width: 767px) {
-    text-transform: capitalize;
-  }
-`
-
 const MobileSplitter = styled.br`
   display: none;
 
@@ -81,6 +63,17 @@ const MobileSplitter = styled.br`
 const Footer = () => (
   <StyledFooter>
     <ColumnsContainer>
+      <FooterColumn>
+        <span>{new Date().getFullYear()} DAPPCON</span>
+        <Splitter> | </Splitter>
+        <StyledLink to="/imprint" underline>
+          Imprint
+        </StyledLink>
+        <Splitter> | </Splitter>
+        <StyledLink to="/privacy-policy" underline>
+          Privacy Policy
+        </StyledLink>
+      </FooterColumn>
       <FooterColumn>
         <p>
           <StyledExternalLink
@@ -101,16 +94,16 @@ const Footer = () => (
           >
             Twitter
           </StyledExternalLink>
-          <br />
-          <br />
-          <span>{new Date().getFullYear()} DAPPCON.</span>{' '}
-          <StyledLink to="/imprint" underline>
-            Imprint.
-          </StyledLink>{' '}
+          <Splitter> | </Splitter>
+          <StyledExternalLink
+            href="https://t.me/joinchat/EcVRsUPKJRZA9WXXtUeVbQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline
+          >
+            Telegram
+          </StyledExternalLink>
           <MobileSplitter />
-          <StyledLink to="/privacy-policy" underline>
-            Privacy Policy.
-          </StyledLink>
         </p>
       </FooterColumn>
     </ColumnsContainer>
