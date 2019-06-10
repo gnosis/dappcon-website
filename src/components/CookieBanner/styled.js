@@ -21,7 +21,7 @@ const BannerContainer = styled.div`
   align-items: center;
   padding: 30px;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 5;
 
   &.${TRANSITION_NAME}-enter {
     bottom: -200px;
@@ -36,21 +36,6 @@ const BannerContainer = styled.div`
   &.${TRANSITION_NAME}-exit-active {
     bottom: -200px;
     transition: all 300ms ease-out;
-  }
-`
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  color: ${colors.reddishPink};
-  font-size: 20px;
-
-  &:focus {
-    outline-color: ${colors.secondaryBlack};
   }
 `
 
@@ -75,10 +60,12 @@ const StyledLink = styled(Link)`
 `
 
 const AcceptButton = styled(Button)`
-  padding: 6px 10px;
+  padding: 6px 0;
+  width: 120px;
   font-size: 16px;
-  border: 2px solid ${colors.black};
-  color: ${colors.black};
+  border: 2px solid ${colors.reddishPink};
+  color: ${colors.reddishPink};
+  margin-left: auto;
 
   @media screen and (max-width: 767px) {
     margin-top: 30px;
@@ -87,6 +74,22 @@ const AcceptButton = styled(Button)`
 
 const CheckboxContainer = styled.div`
   display: flex;
+  margin-bottom: 10px;
+`
+
+const CookieName = styled.p`
+  flex-basis: 30%;
+  font-weight: bold;
+  font-size: 19px;
+  font-weight: 800;
+  margin-top: -3px;
+`
+
+const Options = styled.div`
+  margin-top: 27px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
   /* The switch - the box around the slider */
   .switch {
@@ -133,6 +136,10 @@ const CheckboxContainer = styled.div`
     background-color: #f5bebe;
   }
 
+  input:disabled + .slider {
+    background-color: #d8d8d8;
+  }
+
   input:focus + .slider {
     box-shadow: 0 0 1px #2196f3;
   }
@@ -142,6 +149,10 @@ const CheckboxContainer = styled.div`
     -ms-transform: translateX(35px);
     transform: translateX(35px);
     background-color: #eb2547;
+  }
+
+  input:disabled + .slider:before {
+    background-color: #a0a0a0;
   }
 
   /* Rounded sliders */
@@ -154,20 +165,26 @@ const CheckboxContainer = styled.div`
   }
 `
 
-const CookieName = styled.p`
-  flex-basis: 30%;
+const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 4, 4, 0.2);
+  z-index: 4;
+  pointer-events: none;
 `
 
-const Options = styled.div`
-  margin-top: 27px;
+const LinksBtnContainer = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100%;
+  align-items: flex-end;
+  font-size: 11px;
 `
 
 export {
   BannerContainer,
-  CloseButton,
   Text,
   StyledLink,
   AcceptButton,
@@ -175,4 +192,6 @@ export {
   Options,
   TRANSITION_NAME,
   CookieName,
+  Overlay,
+  LinksBtnContainer,
 }

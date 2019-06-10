@@ -5,14 +5,15 @@ import { colors } from 'theme'
 import loadGoogleAnalytics from './loadGoogleAnalytics'
 import {
   BannerContainer,
-  CloseButton,
   Text,
   StyledLink,
   AcceptButton,
   CheckboxContainer,
   Options,
   TRANSITION_NAME,
+  LinksBtnContainer,
   CookieName,
+  Overlay,
 } from './styled'
 
 const cookies = [
@@ -32,26 +33,24 @@ var cookieConfig = {
   policyUrl: '/cookie-policy',
 }
 
-const CookieBanner = () => {
-  const [visible, setVisibility] = useState(false)
+const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
   const [acceptedCookies, setAcceptedCookies] = useState({
     consentCookie: true,
     consentCookie_analytics: true,
   })
 
   useEffect(() => {
-    setVisibility(true)
-    // for (let cookie of cookies) {
-    //   const cookieValue = Cookies.get(cookie.name)
+    for (let cookie of cookies) {
+      const cookieValue = Cookies.get(cookie.name)
 
-    //   if (!cookieValue) {
-    //     setVisibility(true)
-    //   }
+      if (!cookieValue) {
+        setCookieBannerOpen(true)
+      }
 
-    //   if (cookieValue === 'yes') {
-    //     cookie.onAccept()
-    //   }
-    // }
+      if (cookieValue === 'yes') {
+        cookie.onAccept()
+      }
+    }
   }, [])
 
   const handleCheckboxClick = ({ target: { name, checked } }) => {
@@ -61,7 +60,7 @@ const CookieBanner = () => {
     })
   }
 
-  const hideBanner = () => setVisibility(false)
+  const hideBanner = () => setCookieBannerOpen(false)
 
   const handleAccept = () => {
     cookies.forEach(({ name, onAccept }) => {
@@ -76,31 +75,47 @@ const CookieBanner = () => {
     hideBanner()
   }
 
+  const buttonText = acceptedCookies.consentCookie_analytics ? 'AGREE' : 'ALRIGHT'
+
   return (
-    <CSSTransition in={visible} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
-      <BannerContainer>
-        <Text>
-          <b>This site uses cookies</b>. Some of them are necessary while other help us improve your
-          experience.
-        </Text>
-        <Options>
-          <CheckboxContainer>
-            <CookieName>Necessary</CookieName>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </CheckboxContainer>
-          <CheckboxContainer>
-            <CookieName>Analytics</CookieName>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </CheckboxContainer>
-          <AcceptButton text="Agree" onClick={handleAccept} hover={colors.reddishPink} />
-        </Options>
-      </BannerContainer>
+    <CSSTransition in={isCookieBannerOpen} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
+      <>
+        <BannerContainer>
+          <Text>
+            <b>This site uses cookies</b>. Some of them are necessary while other help us improve
+            your experience.
+          </Text>
+          <Options>
+            <CheckboxContainer>
+              <CookieName>Necessary</CookieName>
+              <label class="switch">
+                <input type="checkbox" checked disabled />
+                <span class="slider round"></span>
+              </label>
+            </CheckboxContainer>
+            <CheckboxContainer>
+              <CookieName>Analytics</CookieName>
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  name="consentCookie_analytics"
+                  checked={acceptedCookies.consentCookie_analytics}
+                  onChange={handleCheckboxClick}
+                />
+                <span class="slider round"></span>
+              </label>
+            </CheckboxContainer>
+          </Options>
+          <LinksBtnContainer>
+            <p>
+              <StyledLink to="/privacy-policy">Privacy Policy</StyledLink> |{' '}
+              <StyledLink to="/cookie-policy">Cookie Policy</StyledLink>
+            </p>
+            <AcceptButton text={buttonText} onClick={handleAccept} hover={colors.reddishPink} />
+          </LinksBtnContainer>
+        </BannerContainer>
+        <Overlay></Overlay>
+      </>
     </CSSTransition>
   )
 }

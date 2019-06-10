@@ -29,10 +29,10 @@ const StyledLink = styled(Link)`
   }
 `
 
-const GetInvolvedSection = () => (
+const GetInvolvedSection = ({ setCookieBannerOpen }) => (
   <Wrapper>
     <StyledLink to="/get-involved">Get Involved</StyledLink>
-    <Footer />
+    <Footer setCookieBannerOpen={setCookieBannerOpen} />
   </Wrapper>
 )
 

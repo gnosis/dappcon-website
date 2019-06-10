@@ -24,6 +24,16 @@ const StyledExternalLink = styled.a`
   ${LinksCSS}
 `
 
+const CookieSettingsBtn = styled.button`
+  background: none;
+  border: none;
+  color: ${colors.secondaryBlack};
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+`
+
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -62,7 +72,7 @@ const MobileSplitter = styled.br`
   }
 `
 
-const Footer = () => (
+const Footer = ({ setCookieBannerOpen }) => (
   <StyledFooter>
     <ColumnsContainer>
       <FooterColumn>
@@ -79,6 +89,16 @@ const Footer = () => (
           <StyledLink to="/privacy-policy" underline>
             Privacy Policy
           </StyledLink>
+          <HideOnMobile>
+            <span> | </span>
+          </HideOnMobile>
+          <CookieSettingsBtn
+            onClick={() => {
+              setCookieBannerOpen(true)
+            }}
+          >
+            Cookie settings
+          </CookieSettingsBtn>
         </p>
       </FooterColumn>
       <FooterColumn>
