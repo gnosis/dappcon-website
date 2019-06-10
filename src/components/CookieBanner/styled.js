@@ -9,16 +9,17 @@ const BannerContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  border-top: 2px solid ${colors.black};
-  bottom: 0;
-  width: 100vw;
+  bottom: 30px;
+  left: 30px;
+  width: 410px;
+  border-radius: 10px;
   justify-content: center;
   background-color: ${colors.bgWhite};
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
   flex-wrap: wrap;
   align-items: center;
-  padding: 30px 0 40px;
+  padding: 30px;
   box-sizing: border-box;
   z-index: 2;
 
@@ -49,21 +50,23 @@ const CloseButton = styled.button`
   font-size: 20px;
 
   &:focus {
-    outline-color: ${colors.secondaryBlack}
+    outline-color: ${colors.secondaryBlack};
   }
 `
 
 const Text = styled.p`
   color: ${colors.black};
-  text-align: center;
-  font-size: 16px;
+  text-align: left;
+  font-size: 19px;
   line-height: normal;
-  max-width: 822px;
   margin: 0;
   flex-basis: 100%;
-  letter-spacing: 1px;
+  letter-spacing: normal;
   font-weight: 300;
-  padding: 0 15px;
+
+  b {
+    font-weight: 700;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -83,101 +86,83 @@ const AcceptButton = styled(Button)`
 `
 
 const CheckboxContainer = styled.div`
-  @media screen and (max-width: 767px) {
-    flex-basis: 50%;
-    text-align: center;
-  }
+  display: flex;
 
-  &:first-child {
-    pointer-events: none;
-  }
-
-  /* Base for label styling */
-  [type='checkbox']:not(:checked),
-  [type='checkbox']:checked {
-    position: absolute;
-    left: -9999px;
-  }
-  [type='checkbox']:not(:checked) + label,
-  [type='checkbox']:checked + label {
+  /* The switch - the box around the slider */
+  .switch {
     position: relative;
-    padding-left: 50px;
-    padding-top: 7px;
-    cursor: pointer;
-    margin-bottom: 3px;
     display: inline-block;
-    font-size: 16px;
-    color: ${colors.black};
+    width: 60px;
+    height: 34px;
   }
-  /* checkbox aspect */
-  [type='checkbox']:not(:checked) + label:before,
-  [type='checkbox']:checked + label:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid ${colors.black};
-    background: transparent;
-    border-radius: 5px;
-  }
-  /* checked mark aspect */
-  [type='checkbox']:not(:checked) + label:after,
-  [type='checkbox']:checked + label:after {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 9px;
-    display: block;
-    transform: rotate(45deg);
-    height: 24px;
-    width: 9px;
-    border-bottom: 5px solid ${colors.black};
-    border-right: 5px solid ${colors.black};
-    transition: opacity 0.2s;
-  }
-  /* checked mark aspect changes */
-  [type='checkbox']:not(:checked) + label:after {
+
+  /* Hide default HTML checkbox */
+  .switch input {
     opacity: 0;
+    width: 0;
+    height: 0;
   }
-  [type='checkbox']:checked + label:after {
-    opacity: 1;
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px;
+    background-color: #d8d8d8;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
-  /* disabled checkbox */
-  [type='checkbox']:disabled:not(:checked) + label:before,
-  [type='checkbox']:disabled:checked + label:before {
-    opacity: 0.8;
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 0;
+    bottom: -4px;
+    background-color: #000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
-  [type='checkbox']:disabled:checked + label:after {
-    opacity: 0.8;
+
+  input:checked + .slider {
+    background-color: #f5bebe;
   }
-  [type='checkbox']:disabled + label {
-    opacity: 0.8;
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
   }
-  /* accessibility */
-  [type='checkbox']:checked:focus + label:before,
-  [type='checkbox']:not(:checked):focus + label:before {
-    border: 2px solid ${colors.black};
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+    background-color: #eb2547;
   }
-  /* hover style just for information */
-  label:hover:before {
-    border: 2px solid ${colors.black} !important;
-    background: #ffffff;
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
   }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+`
+
+const CookieName = styled.p`
+  flex-basis: 30%;
 `
 
 const Options = styled.div`
   margin-top: 27px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 60%;
-  flex-wrap: wrap;
-
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
+  flex-direction: column;
+  width: 100%;
 `
 
 export {
@@ -189,4 +174,5 @@ export {
   CheckboxContainer,
   Options,
   TRANSITION_NAME,
+  CookieName,
 }

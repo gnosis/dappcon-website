@@ -12,6 +12,7 @@ import {
   CheckboxContainer,
   Options,
   TRANSITION_NAME,
+  CookieName,
 } from './styled'
 
 const cookies = [
@@ -39,17 +40,18 @@ const CookieBanner = () => {
   })
 
   useEffect(() => {
-    for (let cookie of cookies) {
-      const cookieValue = Cookies.get(cookie.name)
+    setVisibility(true)
+    // for (let cookie of cookies) {
+    //   const cookieValue = Cookies.get(cookie.name)
 
-      if (!cookieValue) {
-        setVisibility(true)
-      }
+    //   if (!cookieValue) {
+    //     setVisibility(true)
+    //   }
 
-      if (cookieValue === 'yes') {
-        cookie.onAccept()
-      }
-    }
+    //   if (cookieValue === 'yes') {
+    //     cookie.onAccept()
+    //   }
+    // }
   }, [])
 
   const handleCheckboxClick = ({ target: { name, checked } }) => {
@@ -74,40 +76,29 @@ const CookieBanner = () => {
     hideBanner()
   }
 
-  const handleDecline = () => {
-    cookies.forEach(({ name }) => {
-      Cookies.set(name, 'no', { expires: cookieConfig.deny_expiration })
-    })
-
-    hideBanner()
-  }
-
   return (
     <CSSTransition in={visible} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
       <BannerContainer>
-        <CloseButton onClick={handleDecline}>X</CloseButton>
         <Text>
-          We use cookies to give you the best experience and to help improve our website. Please
-          read our <StyledLink to={cookieConfig.policyUrl}>Cookie Policy</StyledLink> for more
-          information. By clicking “Accept Cookies,” you agree to the storing of cookies on your
-          device to enhance site navigation and analyze site usage.
+          <b>This site uses cookies</b>. Some of them are necessary while other help us improve your
+          experience.
         </Text>
         <Options>
           <CheckboxContainer>
-            <input readOnly id="cb-1" name="consentCookie" type="checkbox" checked />
-            <label htmlFor="cb-1">Necessary</label>
+            <CookieName>Necessary</CookieName>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
           </CheckboxContainer>
           <CheckboxContainer>
-            <input
-              id="cb-2"
-              name="consentCookie_analytics"
-              type="checkbox"
-              onChange={handleCheckboxClick}
-              checked={acceptedCookies.consentCookie_analytics}
-            />
-            <label htmlFor="cb-2">Analytics</label>
+            <CookieName>Analytics</CookieName>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
           </CheckboxContainer>
-          <AcceptButton text="Accept Cookies" onClick={handleAccept} hover={colors.reddishPink} />
+          <AcceptButton text="Agree" onClick={handleAccept} hover={colors.reddishPink} />
         </Options>
       </BannerContainer>
     </CSSTransition>
