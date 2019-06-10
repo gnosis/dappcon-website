@@ -4,11 +4,11 @@ import Footer from 'components/Footer'
 import MainSection from 'components/GetInvolvedPage/MainSection'
 import ApplySection from 'components/GetInvolvedPage/ApplySection'
 
-export const GetInvolvedPageTemplate = ({ title, columns }) => (
+export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
   <>
     <MainSection title={title} />
     <ApplySection columns={columns} />
-    <Footer />
+    <Footer setCookieBannerOpen={setCookieBannerOpen} />
   </>
 )
 
@@ -17,10 +17,17 @@ const GetInvolvedPage = props => {
     data: {
       pageData: { frontmatter: data },
     },
+    setCookieBannerOpen,
   } = props
   const { title, columns } = data
 
-  return <GetInvolvedPageTemplate title={title} columns={Object.values(columns)} />
+  return (
+    <GetInvolvedPageTemplate
+      title={title}
+      columns={Object.values(columns)}
+      setCookieBannerOpen={setCookieBannerOpen}
+    />
+  )
 }
 
 export default GetInvolvedPage

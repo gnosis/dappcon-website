@@ -47,20 +47,26 @@ export const LayoutTemplate = ({
   location = {},
   headerFooterData = {},
   setCookieBannerOpen,
-}) => (
-  <>
+}) => {
+  const childrenWithProp = React.Children.map(children, (child) => {
+    return React.cloneElement(child, {
+      setCookieBannerOpen
+    });
+  })
+
+  return <>
     <GlobalStyles />
     <DesktopNav location={location} data={headerFooterData} />
     <MobileHeader location={location || {}} data={headerFooterData} />
     {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
     <ChildrenContainer isGetInvolvedPage={/get-involved/.test(location.pathname)}>
-      {children}
+      {childrenWithProp}
       <div id="pageEnd"></div>
       {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
     </ChildrenContainer>
     <GetInvolvedSection setCookieBannerOpen={setCookieBannerOpen} />
   </>
-)
+}
 
 const TemplateWrapper = props => {
   const [isCookieBannerOpen, setCookieBannerOpen] = useState(false)
