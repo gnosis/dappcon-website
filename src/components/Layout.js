@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import reset from 'styled-reset'
 
@@ -35,6 +35,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
+const ChildrenContainer = styled.div`
+  position: relative;
+  margin-bottom: ${props => (props.isGetInvolvedPage ? 'inherit' : '100vh')};
+`
+
 const disabledInvadersPages = ['/imprint', '/cookie-policy', '/privacy-policy']
 
 export const LayoutTemplate = ({ children, location = {}, headerFooterData = {} }) => (
@@ -43,11 +48,11 @@ export const LayoutTemplate = ({ children, location = {}, headerFooterData = {} 
     <DesktopNav location={location} data={headerFooterData} />
     <MobileHeader location={location || {}} data={headerFooterData} />
     {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
-    <div style={!/get-involved/.test(location.pathname) && { marginBottom: '100vh' }}>
+    <ChildrenContainer isGetInvolvedPage={/get-involved/.test(location.pathname)}>
       {children}
       <div id="pageEnd"></div>
       {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
-    </div>
+    </ChildrenContainer>
     <GetInvolvedSection />
     {/* <Footer data={headerFooterData} /> */}
   </>

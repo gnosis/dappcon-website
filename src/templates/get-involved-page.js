@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Footer from 'components/Footer'
 import MainSection from 'components/GetInvolvedPage/MainSection'
 import ApplySection from 'components/GetInvolvedPage/ApplySection'
 
@@ -7,6 +8,7 @@ export const GetInvolvedPageTemplate = ({ title, columns }) => (
   <>
     <MainSection title={title} />
     <ApplySection columns={columns} />
+    <Footer />
   </>
 )
 
