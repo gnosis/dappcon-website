@@ -9,6 +9,7 @@ import Footer from 'components/Footer'
 import CookieBanner from 'components/CookieBanner'
 import MobileHeader from 'components/MobileHeader'
 import Invaders from 'components/Invaders'
+import GetInvolvedSection from 'components/GetInvolvedSection'
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -42,8 +43,9 @@ export const LayoutTemplate = ({ children, location = {}, headerFooterData = {} 
     <DesktopNav location={location} data={headerFooterData} />
     <MobileHeader location={location || {}} data={headerFooterData} />
     {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
-    <div>{children}</div>
-    <Footer data={headerFooterData} />
+    <div style={{ marginBottom: '100vh' }}>{children}</div>
+    <GetInvolvedSection />
+    {/* <Footer data={headerFooterData} /> */}
   </>
 )
 

@@ -6,8 +6,13 @@ import DappConLogoFull from 'img/dappcon-logo-full.svg'
 import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
-  background-color: ${colors.veryLightPink};
+  background-color: ${colors.reddishPink};
   padding: 29px 30px 40px 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 `
 
 const StyledLogo = styled.img`

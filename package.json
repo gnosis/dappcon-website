@@ -5,7 +5,7 @@
   "author": "Gnosis",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "2.8.5",
+    "gatsby": "2.8.6",
     "gatsby-background-image": "0.7.0",
     "gatsby-image": "2.1.2",
     "gatsby-plugin-layout": "1.0.15",
@@ -37,7 +37,7 @@
     "react-transition-group": "4.1.0",
     "react-visibility-sensor": "^5.0.2",
     "styled-components": "4.3.1",
-    "styled-reset": "2.0.14"
+    "styled-reset": "2.0.15"
   },
   "keywords": [
     "gatsby"
@@ -54,7 +54,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "1.18.0",
+    "prettier": "1.18.2",
     "rimraf": "^2.6.2"
   }
 }
