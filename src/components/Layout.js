@@ -54,7 +54,6 @@ export const LayoutTemplate = ({ children, location = {}, headerFooterData = {} 
       {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
     </ChildrenContainer>
     <GetInvolvedSection />
-    {/* <Footer data={headerFooterData} /> */}
   </>
 )
 
