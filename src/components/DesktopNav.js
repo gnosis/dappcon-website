@@ -72,7 +72,7 @@ const DesktopNav = class extends React.Component {
       location: { pathname: prevPath },
     } = prevProps
 
-    if (pathname === '/') {
+    if (pathname === '/' && prevPath !== '/') {
       this.initListeners()
     } else if (prevPath === '/' && pathname !== '/') {
       this.removeListenersAndResetAttrs()
