@@ -1,167 +1,397 @@
 backend:
   name: git-gateway
   branch: master
-
 media_folder: static/img
 public_folder: /img
-
 collections:
-  - name: 'speakers'
-    label: 'Speakers'
+  -
+    name: speakers
+    label: Speakers
     description: 'Speakers on the DappCon conference'
-    folder: 'src/pages/speakers'
+    folder: src/pages/speakers
     create: true
     slug: '{{name}}-{{slug}}'
     identifier_field: name
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'speaker' }
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Company', name: 'company', widget: 'markdown', hint: 'Format used here will be displayed on the website. Please dont use long lines' }
-      - { label: 'Position', name: 'position', widget: 'markdown', hint: 'Format used here will be displayed on the website. Please dont use long lines' }
-      - { label: Image, name: image, widget: image }
-
-  - name: 'sponsors'
-    label: 'Sponsors'
+      -
+        label: 'Template Key'
+        name: templateKey
+        widget: hidden
+        default: speaker
+      -
+        label: Name
+        name: name
+        widget: string
+      -
+        label: Company
+        name: company
+        widget: markdown
+        hint: 'Format used here will be displayed on the website. Please dont use long lines'
+      -
+        label: Position
+        name: position
+        widget: markdown
+        hint: 'Format used here will be displayed on the website. Please dont use long lines'
+      -
+        label: Image
+        name: image
+        widget: image
+  -
+    name: sponsors
+    label: Sponsors
     description: 'Sponsors of the DappCon conference'
-    folder: 'src/pages/sponsors'
+    folder: src/pages/sponsors
     create: true
     slug: '{{name}}-{{slug}}'
     identifier_field: name
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'sponsor' }
-      - { label: 'Sponsor Name', name: 'name', widget: 'string' }
-      - { label: 'Image', name: 'image', widget: image }
-      - { label: 'Website URL', name: url, widget: 'string' }
-      - label: "Sponsorship package type"
-        name: "type"
-        widget: "select"
+      -
+        label: 'Template Key'
+        name: templateKey
+        widget: hidden
+        default: sponsor
+      -
+        label: 'Sponsor Name'
+        name: name
+        widget: string
+      -
+        label: Image
+        name: image
+        widget: image
+      -
+        label: 'Website URL'
+        name: url
+        widget: string
+      -
+        label: 'Sponsorship package type'
+        name: type
+        widget: select
         options:
-          - { label: "Gold (Unicorn)", value: 4 }
-          - { label: "Silver (Whale)", value: 3 }
-          - { label: "Bronze (Kitty)", value: 2 }
-          - { label: "Iron (Knut)", value: 1 }
-          # ^ netlify won't let you select an option with value: 0
-
-  - name: 'events'
+          -
+            label: 'Gold (Unicorn)'
+            value: 4
+          -
+            label: 'Silver (Whale)'
+            value: 3
+          -
+            label: 'Bronze (Kitty)'
+            value: 2
+          -
+            label: 'Iron (Knut)'
+            value: 1
+  -
+    name: events
     label: 'Program Events'
-    folder: 'src/pages/events'
+    folder: src/pages/events
     create: true
     slug: '{{title}}-{{speaker}}-{{startDate}}-{{endDate}}}-{{slug}}'
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'event' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Starts at', name: 'startDate', widget: 'datetime', format: 'DD.MM hh:mm' }
-      - { label: 'Ends at', name: 'endDate', widget: 'datetime', format: 'DD.MM hh:mm' }
-      - { label: 'Speaker', name: 'speaker', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
-
-  - name: 'pages'
-    label: 'Pages'
+      -
+        label: 'Template Key'
+        name: templateKey
+        widget: hidden
+        default: event
+      -
+        label: Title
+        name: title
+        widget: string
+      -
+        label: 'Starts at'
+        name: startDate
+        widget: datetime
+        format: 'DD.MM hh:mm'
+      -
+        label: 'Ends at'
+        name: endDate
+        widget: datetime
+        format: 'DD.MM hh:mm'
+      -
+        label: Speaker
+        name: speaker
+        widget: relation
+        collection: speakers
+        searchFields:
+          - name
+        valueField: name
+  -
+    name: pages
+    label: Pages
     files:
-      - file: 'src/pages/get-involved.md'
+      -
+        file: src/pages/get-involved.md
         label: 'Get involved Page'
-        name: 'getInvolved'
+        name: getInvolved
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'get-involved-page',
-            }
-          - { label: 'Main Heading', name: 'heading', widget: 'markdown' }
-          - {label: 'Columns', name: 'columns', widget: 'object', fields: [
-              {label: 'Column 1', name: 'firstCol', widget: 'object', fields: [
-                {label: 'Title', name: 'title', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'markdown'},
-                {label: 'URL', name: 'url', widget: 'string'}
-              ]},
-              {label: 'Column 2', name: 'secondCol', widget: 'object', fields: [
-                {label: 'Title', name: 'title', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'markdown'},
-                {label: 'URL', name: 'url', widget: 'string'}
-              ]},
-              {label: 'Column 3', name: 'thirdCol', widget: 'object', fields: [
-                {label: 'Title', name: 'title', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'markdown'},
-                {label: 'URL', name: 'url', widget: 'string'}
-              ]}
-          ]}
-      - file: 'src/pages/privacy-policy.md'
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: get-involved-page
+          -
+            label: 'Main Heading'
+            name: heading
+            widget: markdown
+          -
+            label: Columns
+            name: columns
+            widget: object
+            fields:
+              -
+                label: 'Column 1'
+                name: firstCol
+                widget: object
+                fields:
+                  -
+                    label: Title
+                    name: title
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: markdown
+                  -
+                    label: URL
+                    name: url
+                    widget: string
+                  -
+                    label: Image
+                    name: iconBtnImg
+                    widget: image
+              -
+                label: 'Column 2'
+                name: secondCol
+                widget: object
+                fields:
+                  -
+                    label: Title
+                    name: title
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: markdown
+                  -
+                    label: URL
+                    name: url
+                    widget: string
+                  -
+                    label: Image
+                    name: iconBtnImg
+                    widget: image
+              -
+                label: 'Column 3'
+                name: thirdCol
+                widget: object
+                fields:
+                  -
+                    label: Title
+                    name: title
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: markdown
+                  -
+                    label: URL
+                    name: url
+                    widget: string
+                  -
+                    label: Image
+                    name: iconBtnImg
+                    widget: image
+      -
+        file: src/pages/privacy-policy.md
         label: 'Privacy Policy'
-        name: 'privacyPolicy'
+        name: privacyPolicy
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'privacy-policy-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/cookie-policy.md'
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: privacy-policy-page
+          -
+            label: Title
+            name: title
+            widget: string
+          -
+            label: Body
+            name: body
+            widget: markdown
+      -
+        file: src/pages/cookie-policy.md
         label: 'Cookie Policy'
-        name: 'cookiePolicy'
+        name: cookiePolicy
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'cookie-policy-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/imprint.md'
-        label: 'Imprint'
-        name: 'imprint'
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: cookie-policy-page
+          -
+            label: Title
+            name: title
+            widget: string
+          -
+            label: Body
+            name: body
+            widget: markdown
+      -
+        file: src/pages/imprint.md
+        label: Imprint
+        name: imprint
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'imprint-page',
-            }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/index-page.md'
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: imprint-page
+          -
+            label: Title
+            name: title
+            widget: string
+          -
+            label: Body
+            name: body
+            widget: markdown
+      -
+        file: src/pages/index-page.md
         label: 'Landing Page'
-        name: 'landingPage'
+        name: landingPage
         fields:
-          - {
-              label: 'Template Key',
-              name: 'templateKey',
-              widget: 'hidden',
-              default: 'index-page',
-            }
-          - {label: 'Main Title', name: mainTitle, widget: string}
-          - {label: 'Button Text', name: 'buttonText', widget: 'string'}
-          - {label: 'Location and Date', name: 'locationAndDate', widget: 'markdown'}
-          - {label: 'Buy Tickets Link', name: 'buyTicketsLink', widget: 'string'}
-          - {label: 'About Dappcon (Left Column)', name: 'aboutDappconLeftCol', widget: 'markdown'}
-          - {label: 'About Dappcon (Right Column)', name: 'aboutDappconRightCol', widget: 'markdown'}
-          - {label: 'Stats', name: 'stats', widget: 'object', fields: [
-              {label: 'First Stat', name: 'firstStat', widget: 'object', fields: [
-                {label: 'Number', name: 'number', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'string'}
-              ]},
-              {label: 'Second Stat', name: 'secondStat', widget: 'object', fields: [
-                {label: 'Number', name: 'number', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'string'}
-              ]},
-              {label: 'Third Stat', name: 'thirdStat', widget: 'object', fields: [
-                {label: 'Number', name: 'number', widget: 'string'},
-                {label: 'Description', name: 'description', widget: 'string'}
-              ]}
-          ]}
-          - {label: 'Program Photo Text', name: 'programPhotoText', widget: object, fields: [
-              { label: "Label", name: "label", widget: "string" },
-              { label: 'Should we make it a link?', name: 'isLink', widget: 'boolean', default: false},
-              { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about)" }
-            ]
-          }
-          - {label: 'Speakers', name: 'speakers', widget: object, fields: [
-            { label: 'Speaker 1', name: 'speaker1', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
-            { label: 'Speaker 2', name: 'speaker2', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
-            { label: 'Speaker 3', name: 'speaker3', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' },
-            { label: 'Speaker 4', name: 'speaker4', widget: 'relation', collection: 'speakers', searchFields: ['name'], valueField: 'name' }
-          ]}
-          - {label: 'Speaker Apply Link', name: 'speakerApplyLink', widget: 'string'}
-          - {label: 'Sponsor Info Link', name: 'sponsorInfoLink', widget: 'string'}
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: index-page
+          -
+            label: 'Main Title'
+            name: mainTitle
+            widget: string
+          -
+            label: 'Button Text'
+            name: buttonText
+            widget: string
+          -
+            label: 'Location and Date'
+            name: locationAndDate
+            widget: markdown
+          -
+            label: 'Buy Tickets Link'
+            name: buyTicketsLink
+            widget: string
+          -
+            label: 'About Dappcon (Left Column)'
+            name: aboutDappconLeftCol
+            widget: markdown
+          -
+            label: 'About Dappcon (Right Column)'
+            name: aboutDappconRightCol
+            widget: markdown
+          -
+            label: Stats
+            name: stats
+            widget: object
+            fields:
+              -
+                label: 'First Stat'
+                name: firstStat
+                widget: object
+                fields:
+                  -
+                    label: Number
+                    name: number
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: string
+              -
+                label: 'Second Stat'
+                name: secondStat
+                widget: object
+                fields:
+                  -
+                    label: Number
+                    name: number
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: string
+              -
+                label: 'Third Stat'
+                name: thirdStat
+                widget: object
+                fields:
+                  -
+                    label: Number
+                    name: number
+                    widget: string
+                  -
+                    label: Description
+                    name: description
+                    widget: string
+          -
+            label: 'Program Photo Text'
+            name: programPhotoText
+            widget: object
+            fields:
+              -
+                label: Label
+                name: label
+                widget: string
+              -
+                label: 'Should we make it a link?'
+                name: isLink
+                widget: boolean
+                default: false
+              -
+                label: 'Link URL'
+                name: linkURL
+                widget: string
+                hint: 'Use a relative URL (e.g. /about)'
+          -
+            label: Speakers
+            name: speakers
+            widget: object
+            fields:
+              -
+                label: 'Speaker 1'
+                name: speaker1
+                widget: relation
+                collection: speakers
+                searchFields:
+                  - name
+                valueField: name
+              -
+                label: 'Speaker 2'
+                name: speaker2
+                widget: relation
+                collection: speakers
+                searchFields:
+                  - name
+                valueField: name
+              -
+                label: 'Speaker 3'
+                name: speaker3
+                widget: relation
+                collection: speakers
+                searchFields:
+                  - name
+                valueField: name
+              -
+                label: 'Speaker 4'
+                name: speaker4
+                widget: relation
+                collection: speakers
+                searchFields:
+                  - name
+                valueField: name
+          -
+            label: 'Speaker Apply Link'
+            name: speakerApplyLink
+            widget: string
+          -
+            label: 'Sponsor Info Link'
+            name: sponsorInfoLink
+            widget: string
