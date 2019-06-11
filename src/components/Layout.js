@@ -5,7 +5,6 @@ import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import reset from 'styled-reset'
 
 import DesktopNav from 'components/DesktopNav'
-import Footer from 'components/Footer'
 import CookieBanner from 'components/CookieBanner'
 import MobileHeader from 'components/MobileHeader'
 import Invaders from 'components/Invaders'
@@ -65,7 +64,7 @@ export const LayoutTemplate = ({
       <GlobalStyles />
       <DesktopNav location={location} data={headerFooterData} />
       <MobileHeader location={location || {}} data={headerFooterData} />
-      {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
+      {!disabledInvadersPages.includes(location.pathname) && <Invaders />}
       <ChildrenContainer isGetInvolvedPage={isGetInvolvedPage}>
         {childElements}
         <div id="pageEnd"></div>

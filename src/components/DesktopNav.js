@@ -13,7 +13,7 @@ const idToColor = {
   pageEnd: colors.white,
 }
 
-const LinkIds = ['aboutLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'pageEnd']
+const LinkIds = ['aboutLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
 
 const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
@@ -76,10 +76,6 @@ const DesktopNav = class extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    const {
-      location: { pathname },
-    } = this.props
-
     this.removeListenersAndResetAttrs()
   }
 
