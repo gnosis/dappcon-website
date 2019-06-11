@@ -51,6 +51,11 @@ const FooterColumn = styled.div`
   color: ${colors.secondaryBlack};
   font-size: 14px;
 
+  &:last-child {
+    flex-basis: auto;
+    margin-right: 30px;
+  }
+
   @media screen and (max-width: 767px) {
     font-size: 13px;
     display: flex;
@@ -89,9 +94,7 @@ const Footer = ({ setCookieBannerOpen }) => (
           <StyledLink to="/privacy-policy" underline>
             Privacy Policy
           </StyledLink>
-          <HideOnMobile>
-            <span> | </span>
-          </HideOnMobile>
+          <span> | </span>
           <CookieSettingsBtn
             onClick={() => {
               setCookieBannerOpen(true)
