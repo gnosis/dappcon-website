@@ -5,7 +5,7 @@ import { colors } from 'theme'
 const StyledButton = styled.button`
   background: transparent;
   border-radius: 8px;
-  border: 2px solid ${colors.white};
+  border: 3px solid ${colors.white};
   font-size: 20px;
   font-weight: 800;
   color: ${colors.white};
