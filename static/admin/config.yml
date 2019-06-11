@@ -153,10 +153,6 @@ collections:
                     label: URL
                     name: url
                     widget: string
-                  -
-                    label: Image
-                    name: iconBtnImg
-                    widget: image
               -
                 label: 'Column 2'
                 name: secondCol
@@ -174,10 +170,6 @@ collections:
                     label: URL
                     name: url
                     widget: string
-                  -
-                    label: Image
-                    name: iconBtnImg
-                    widget: image
               -
                 label: 'Column 3'
                 name: thirdCol
@@ -195,10 +187,6 @@ collections:
                     label: URL
                     name: url
                     widget: string
-                  -
-                    label: Image
-                    name: iconBtnImg
-                    widget: image
       -
         file: src/pages/privacy-policy.md
         label: 'Privacy Policy'

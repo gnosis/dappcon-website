@@ -37,6 +37,13 @@ const BannerContainer = styled.div`
     bottom: -200px;
     transition: all 300ms ease-out;
   }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+  }
 `
 
 const Text = styled.p`
@@ -51,6 +58,10 @@ const Text = styled.p`
 
   b {
     font-weight: 700;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
   }
 `
 
@@ -75,6 +86,10 @@ const AcceptButton = styled(Button)`
 const CheckboxContainer = styled.div`
   display: flex;
   margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 const CookieName = styled.p`
@@ -83,6 +98,11 @@ const CookieName = styled.p`
   font-size: 19px;
   font-weight: 800;
   margin-top: -3px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    margin-top: 3px;
+  }
 `
 
 const Options = styled.div`
