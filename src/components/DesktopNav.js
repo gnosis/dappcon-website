@@ -7,6 +7,7 @@ const idToColor = {
   main: colors.white,
   about: colors.black,
   photo: colors.white,
+  policy: colors.black,
   speakers: colors.black,
   conferenceSponsors: colors.black,
   pageEnd: colors.white,
@@ -127,7 +128,6 @@ const DesktopNav = class extends React.PureComponent {
     const { location, data } = this.props
     const { navLogoColor } = this.state
     const isBlack = !whiteColorSchemePages.includes(location.pathname)
-    console.log(breakPointsToColor)
 
     return (
       <>

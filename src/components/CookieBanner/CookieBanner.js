@@ -88,21 +88,21 @@ const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
           <Options>
             <CheckboxContainer>
               <CookieName>Necessary</CookieName>
-              <label class="switch">
+              <label className="switch">
                 <input type="checkbox" checked disabled />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
               </label>
             </CheckboxContainer>
             <CheckboxContainer>
               <CookieName>Analytics</CookieName>
-              <label class="switch">
+              <label className="switch">
                 <input
                   type="checkbox"
                   name="consentCookie_analytics"
                   checked={acceptedCookies.consentCookie_analytics}
                   onChange={handleCheckboxClick}
                 />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
               </label>
             </CheckboxContainer>
           </Options>
