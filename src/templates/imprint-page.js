@@ -51,7 +51,7 @@ const MarkdownContainer = styled.div`
 `
 
 export const ImprintPageTemplate = ({ title, body }) => (
-  <PageWrapper>
+  <PageWrapper id="policy">
     <ContentWrapper>
       <PageHeading>{title}</PageHeading>
       <MobilePageHeading text={title} />

@@ -7,23 +7,19 @@ const idToColor = {
   main: colors.white,
   about: colors.black,
   photo: colors.white,
+  policy: colors.black,
   speakers: colors.black,
   conferenceSponsors: colors.black,
+  pageEnd: colors.white,
 }
 
-const LinkIds = [
-  'aboutLink',
-  'speakersLink',
-  'buyLink',
-  'navLogo',
-  'sponsorsLink',
-]
+const LinkIds = ['aboutLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
 
 const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 let breakPointsToColor = {}
 
-const DesktopNav = class extends React.Component {
+const DesktopNav = class extends React.PureComponent {
   state = {
     navLogoColor: '',
   }
@@ -43,28 +39,24 @@ const DesktopNav = class extends React.Component {
       window.removeEventListener('scroll', this.changeColorOnScroll)
 
       LinkIds.forEach(id => {
-        if (id === 'buyLink') {
-          this[id].children[0].children[0].setAttribute('stroke', colors.black)
-        } else if (id === 'navLogo') {
-          this.setState({
-            navLogoColor: '',
-          })
-        } else {
-          this[id].style.color = null
+        if (this[id]) {
+          if (id === 'buyLink') {
+            this[id].children[0].children[0].setAttribute('stroke', colors.black)
+          } else if (id === 'navLogo') {
+            this.setState({
+              navLogoColor: '',
+            })
+          } else {
+            this[id].style.color = null
+          }
         }
       })
     }
   }
 
   componentDidMount() {
-    const {
-      location: { pathname },
-    } = this.props
-
-    if (pathname === '/') {
-      this.initListeners()
-      this.changeColorOnScroll()
-    }
+    this.initListeners()
+    this.changeColorOnScroll()
   }
 
   componentDidUpdate(prevProps) {
@@ -75,25 +67,22 @@ const DesktopNav = class extends React.Component {
       location: { pathname: prevPath },
     } = prevProps
 
-    if (pathname === '/') {
-      this.initListeners()
-    } else if (prevPath === '/' && pathname !== '/') {
+    if (pathname !== prevPath) {
+      this.getBreakpointsPos()
+      this.changeColorOnScroll()
+    } else if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
       this.removeListenersAndResetAttrs()
     }
   }
 
   componentWillUnmount() {
-    const {
-      location: { pathname },
-    } = this.props
-
-    if (pathname === '/') {
-      this.removeListenersAndResetAttrs()
-    }
+    this.removeListenersAndResetAttrs()
   }
 
   setLinkRef = el => {
-    this[el.id] = el
+    if (el) {
+      this[el.id] = el
+    }
   }
 
   getBreakpointsPos() {

@@ -5,13 +5,15 @@ import { colors } from 'theme'
 import loadGoogleAnalytics from './loadGoogleAnalytics'
 import {
   BannerContainer,
-  CloseButton,
   Text,
   StyledLink,
   AcceptButton,
   CheckboxContainer,
   Options,
   TRANSITION_NAME,
+  LinksBtnContainer,
+  CookieName,
+  Overlay,
 } from './styled'
 
 const cookies = [
@@ -31,8 +33,7 @@ var cookieConfig = {
   policyUrl: '/cookie-policy',
 }
 
-const CookieBanner = () => {
-  const [visible, setVisibility] = useState(false)
+const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
   const [acceptedCookies, setAcceptedCookies] = useState({
     consentCookie: true,
     consentCookie_analytics: true,
@@ -43,7 +44,7 @@ const CookieBanner = () => {
       const cookieValue = Cookies.get(cookie.name)
 
       if (!cookieValue) {
-        setVisibility(true)
+        setCookieBannerOpen(true)
       }
 
       if (cookieValue === 'yes') {
@@ -59,7 +60,7 @@ const CookieBanner = () => {
     })
   }
 
-  const hideBanner = () => setVisibility(false)
+  const hideBanner = () => setCookieBannerOpen(false)
 
   const handleAccept = () => {
     cookies.forEach(({ name, onAccept }) => {
@@ -74,42 +75,47 @@ const CookieBanner = () => {
     hideBanner()
   }
 
-  const handleDecline = () => {
-    cookies.forEach(({ name }) => {
-      Cookies.set(name, 'no', { expires: cookieConfig.deny_expiration })
-    })
-
-    hideBanner()
-  }
+  const buttonText = acceptedCookies.consentCookie_analytics ? 'AGREE' : 'ALRIGHT'
 
   return (
-    <CSSTransition in={visible} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
-      <BannerContainer>
-        <CloseButton onClick={handleDecline}>X</CloseButton>
-        <Text>
-          We use cookies to give you the best experience and to help improve our website. Please
-          read our <StyledLink to={cookieConfig.policyUrl}>Cookie Policy</StyledLink> for more
-          information. By clicking “Accept Cookies,” you agree to the storing of cookies on your
-          device to enhance site navigation and analyze site usage.
-        </Text>
-        <Options>
-          <CheckboxContainer>
-            <input readOnly id="cb-1" name="consentCookie" type="checkbox" checked />
-            <label htmlFor="cb-1">Necessary</label>
-          </CheckboxContainer>
-          <CheckboxContainer>
-            <input
-              id="cb-2"
-              name="consentCookie_analytics"
-              type="checkbox"
-              onChange={handleCheckboxClick}
-              checked={acceptedCookies.consentCookie_analytics}
-            />
-            <label htmlFor="cb-2">Analytics</label>
-          </CheckboxContainer>
-          <AcceptButton text="Accept Cookies" onClick={handleAccept} hover={colors.reddishPink} />
-        </Options>
-      </BannerContainer>
+    <CSSTransition in={isCookieBannerOpen} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
+      <>
+        <BannerContainer>
+          <Text>
+            <b>This site uses cookies</b>. Some of them are necessary while other help us improve
+            your experience.
+          </Text>
+          <Options>
+            <CheckboxContainer>
+              <CookieName>Necessary</CookieName>
+              <label className="switch">
+                <input type="checkbox" checked disabled />
+                <span className="slider round"></span>
+              </label>
+            </CheckboxContainer>
+            <CheckboxContainer>
+              <CookieName>Analytics</CookieName>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  name="consentCookie_analytics"
+                  checked={acceptedCookies.consentCookie_analytics}
+                  onChange={handleCheckboxClick}
+                />
+                <span className="slider round"></span>
+              </label>
+            </CheckboxContainer>
+          </Options>
+          <LinksBtnContainer>
+            <p>
+              <StyledLink to="/privacy-policy">Privacy Policy</StyledLink> |{' '}
+              <StyledLink to="/cookie-policy">Cookie Policy</StyledLink>
+            </p>
+            <AcceptButton text={buttonText} onClick={handleAccept} hover={colors.reddishPink} />
+          </LinksBtnContainer>
+        </BannerContainer>
+        <Overlay></Overlay>
+      </>
     </CSSTransition>
   )
 }

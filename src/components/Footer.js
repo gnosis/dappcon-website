@@ -2,22 +2,13 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { colors } from 'theme'
 import HideOnMobile from 'components/HideOnMobile'
-import DappConLogoFull from 'img/dappcon-logo-full.svg'
 import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
-  background-color: ${colors.veryLightPink};
-  padding: 29px 30px 40px 30px;
-`
-
-const StyledLogo = styled.img`
-  display: block;
-  margin-bottom: 35px;
-
-  @media screen and (max-width: 767px) {
-    width: 50%;
-    margin-bottom: 29px;
-  }
+  width: 100%;
+  position: absolute;
+  left: 12px;
+  bottom: 14px;
 `
 
 const LinksCSS = css`
@@ -33,9 +24,25 @@ const StyledExternalLink = styled.a`
   ${LinksCSS}
 `
 
+const CookieSettingsBtn = styled.button`
+  background: none;
+  border: none;
+  color: ${colors.secondaryBlack};
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+  cursor: pointer;
+`
+
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  color: ${colors.secondaryBlack};
+  font-size: 14px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const FooterColumn = styled.div`
@@ -44,49 +51,21 @@ const FooterColumn = styled.div`
   color: ${colors.secondaryBlack};
   font-size: 14px;
 
+  &:last-child {
+    flex-basis: auto;
+    margin-right: 30px;
+  }
+
   @media screen and (max-width: 767px) {
     font-size: 13px;
     display: flex;
     flex-direction: column;
     line-height: 2;
-    flex-basis: 35%;
-  }
-`
+    flex-basis: 100%;
 
-const ApplyColumn = styled(FooterColumn)`
-  flex-basis: 60%;
-  display: flex;
-
-  @media screen and (max-width: 767px) {
-    flex-basis: 52%;
-    line-height: 1;
-  }
-`
-
-const Splitter = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-`
-
-const SpeakerText = styled.p`
-  display: inline-block;
-`
-
-const SponsorText = styled.div`
-  display: inline-block;
-  margin-left: auto;
-  max-width: 263px;
-
-  @media screen and (max-width: 767px) {
-    margin-left: 0;
-    margin-top: 30px;
-  }
-`
-
-const CapitalizeOnMobile = styled.span`
-  @media screen and (max-width: 767px) {
-    text-transform: capitalize;
+    &:last-child {
+      order: -1;
+    }
   }
 `
 
@@ -98,10 +77,33 @@ const MobileSplitter = styled.br`
   }
 `
 
-const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
+const Footer = ({ setCookieBannerOpen }) => (
   <StyledFooter>
-    <StyledLogo src={DappConLogoFull} alt="Dappcon logo" />
     <ColumnsContainer>
+      <FooterColumn>
+        <p>
+          <span>{new Date().getFullYear()} DAPPCON</span>
+          <span> | </span>
+          <StyledLink to="/imprint" underline>
+            Imprint
+          </StyledLink>
+          <MobileSplitter />
+          <HideOnMobile>
+            <span> | </span>
+          </HideOnMobile>
+          <StyledLink to="/privacy-policy" underline>
+            Privacy Policy
+          </StyledLink>
+          <span> | </span>
+          <CookieSettingsBtn
+            onClick={() => {
+              setCookieBannerOpen(true)
+            }}
+          >
+            Cookie settings
+          </CookieSettingsBtn>
+        </p>
+      </FooterColumn>
       <FooterColumn>
         <p>
           <StyledExternalLink
@@ -112,8 +114,7 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           >
             info@dappcon.io
           </StyledExternalLink>
-          <Splitter> | </Splitter>
-          <MobileSplitter />
+          <span> | </span>
           <StyledExternalLink
             href="https://twitter.com/dappcon_berlin"
             target="_blank"
@@ -122,49 +123,17 @@ const Footer = ({ data: { speakerApplyLink, sponsorInfoLink } }) => (
           >
             Twitter
           </StyledExternalLink>
-          <br />
-          <br />
-          <span>{new Date().getFullYear()} DAPPCON.</span>{' '}
-          <StyledLink to="/imprint" underline>
-            Imprint.
-          </StyledLink>{' '}
-          <MobileSplitter />
-          <StyledLink to="/privacy-policy" underline>
-            Privacy Policy.
-          </StyledLink>
+          <span> | </span>
+          <StyledExternalLink
+            href="https://t.me/joinchat/EcVRsUPKJRZA9WXXtUeVbQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline
+          >
+            Telegram
+          </StyledExternalLink>
         </p>
       </FooterColumn>
-      <ApplyColumn>
-        <SpeakerText>
-          Do you want to become a speaker?
-          <br />
-          <br />
-          <StyledExternalLink href={speakerApplyLink} target="_blank" rel="noopener noreferrer" red>
-            Apply
-          </StyledExternalLink>
-        </SpeakerText>
-        <SponsorText>
-          Do you want to become a sponsor?
-          <br />
-          <br />
-          <StyledExternalLink href={sponsorInfoLink} target="_blank" rel="noopener noreferrer" red>
-            Find more info here{' '}
-          </StyledExternalLink>
-          <MobileSplitter />
-          <HideOnMobile>and </HideOnMobile>
-          <MobileSplitter />
-          <CapitalizeOnMobile>
-            <StyledExternalLink
-              href="https://drive.google.com/file/u/2/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view?usp=drive_open"
-              target="_blank"
-              rel="noopener noreferrer"
-              red
-            >
-              apply here
-            </StyledExternalLink>
-          </CapitalizeOnMobile>
-        </SponsorText>
-      </ApplyColumn>
     </ColumnsContainer>
   </StyledFooter>
 )

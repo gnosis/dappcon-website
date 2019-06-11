@@ -9,18 +9,19 @@ const BannerContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  border-top: 2px solid ${colors.black};
-  bottom: 0;
-  width: 100vw;
+  bottom: 30px;
+  left: 30px;
+  width: 410px;
+  border-radius: 10px;
   justify-content: center;
   background-color: ${colors.bgWhite};
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
   flex-wrap: wrap;
   align-items: center;
-  padding: 30px 0 40px;
+  padding: 30px;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 5;
 
   &.${TRANSITION_NAME}-enter {
     bottom: -200px;
@@ -38,32 +39,19 @@ const BannerContainer = styled.div`
   }
 `
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  color: ${colors.reddishPink};
-  font-size: 20px;
-
-  &:focus {
-    outline-color: ${colors.secondaryBlack}
-  }
-`
-
 const Text = styled.p`
   color: ${colors.black};
-  text-align: center;
-  font-size: 16px;
+  text-align: left;
+  font-size: 19px;
   line-height: normal;
-  max-width: 822px;
   margin: 0;
   flex-basis: 100%;
-  letter-spacing: 1px;
+  letter-spacing: normal;
   font-weight: 300;
-  padding: 0 15px;
+
+  b {
+    font-weight: 700;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -72,10 +60,12 @@ const StyledLink = styled(Link)`
 `
 
 const AcceptButton = styled(Button)`
-  padding: 6px 10px;
+  padding: 6px 0;
+  width: 120px;
   font-size: 16px;
-  border: 2px solid ${colors.black};
-  color: ${colors.black};
+  border: 2px solid ${colors.reddishPink};
+  color: ${colors.reddishPink};
+  margin-left: auto;
 
   @media screen and (max-width: 767px) {
     margin-top: 30px;
@@ -83,110 +73,125 @@ const AcceptButton = styled(Button)`
 `
 
 const CheckboxContainer = styled.div`
-  @media screen and (max-width: 767px) {
-    flex-basis: 50%;
-    text-align: center;
-  }
+  display: flex;
+  margin-bottom: 10px;
+`
 
-  &:first-child {
-    pointer-events: none;
-  }
-
-  /* Base for label styling */
-  [type='checkbox']:not(:checked),
-  [type='checkbox']:checked {
-    position: absolute;
-    left: -9999px;
-  }
-  [type='checkbox']:not(:checked) + label,
-  [type='checkbox']:checked + label {
-    position: relative;
-    padding-left: 50px;
-    padding-top: 7px;
-    cursor: pointer;
-    margin-bottom: 3px;
-    display: inline-block;
-    font-size: 16px;
-    color: ${colors.black};
-  }
-  /* checkbox aspect */
-  [type='checkbox']:not(:checked) + label:before,
-  [type='checkbox']:checked + label:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid ${colors.black};
-    background: transparent;
-    border-radius: 5px;
-  }
-  /* checked mark aspect */
-  [type='checkbox']:not(:checked) + label:after,
-  [type='checkbox']:checked + label:after {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 9px;
-    display: block;
-    transform: rotate(45deg);
-    height: 24px;
-    width: 9px;
-    border-bottom: 5px solid ${colors.black};
-    border-right: 5px solid ${colors.black};
-    transition: opacity 0.2s;
-  }
-  /* checked mark aspect changes */
-  [type='checkbox']:not(:checked) + label:after {
-    opacity: 0;
-  }
-  [type='checkbox']:checked + label:after {
-    opacity: 1;
-  }
-  /* disabled checkbox */
-  [type='checkbox']:disabled:not(:checked) + label:before,
-  [type='checkbox']:disabled:checked + label:before {
-    opacity: 0.8;
-  }
-  [type='checkbox']:disabled:checked + label:after {
-    opacity: 0.8;
-  }
-  [type='checkbox']:disabled + label {
-    opacity: 0.8;
-  }
-  /* accessibility */
-  [type='checkbox']:checked:focus + label:before,
-  [type='checkbox']:not(:checked):focus + label:before {
-    border: 2px solid ${colors.black};
-  }
-  /* hover style just for information */
-  label:hover:before {
-    border: 2px solid ${colors.black} !important;
-    background: #ffffff;
-  }
+const CookieName = styled.p`
+  flex-basis: 30%;
+  font-weight: bold;
+  font-size: 19px;
+  font-weight: 800;
+  margin-top: -3px;
 `
 
 const Options = styled.div`
   margin-top: 27px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 60%;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
 
-  @media screen and (max-width: 767px) {
-    width: 100%;
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
   }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px;
+    background-color: #d8d8d8;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 0;
+    bottom: -4px;
+    background-color: #000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #f5bebe;
+  }
+
+  input:disabled + .slider {
+    background-color: #d8d8d8;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+    background-color: #eb2547;
+  }
+
+  input:disabled + .slider:before {
+    background-color: #a0a0a0;
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+`
+
+const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 4, 4, 0.2);
+  z-index: 4;
+  pointer-events: none;
+`
+
+const LinksBtnContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  font-size: 11px;
 `
 
 export {
   BannerContainer,
-  CloseButton,
   Text,
   StyledLink,
   AcceptButton,
   CheckboxContainer,
   Options,
   TRANSITION_NAME,
+  CookieName,
+  Overlay,
+  LinksBtnContainer,
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import CMS from 'netlify-cms'
+import CMS from 'netlify-cms-app'
 import { StyleSheetManager } from 'styled-components'
 import { LayoutTemplate } from 'components/Layout'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
