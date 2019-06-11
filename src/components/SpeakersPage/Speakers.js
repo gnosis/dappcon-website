@@ -42,7 +42,7 @@ const StyledLink = styled(Link)`
 `
 
 const Speakers = ({ speakers, speakerApplyLink }) => (
-  <StyledSection>
+  <StyledSection id="speakers">
     <ContentWrapper>
       <MobilePageHeading text="Speakers" />
       <SpeakersContainer>

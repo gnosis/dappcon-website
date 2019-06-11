@@ -15,6 +15,6 @@ columns:
     URL: https://gnosis1.typeform.com/to/ZNV6Wf
   thirdCol:
     title: Volunteer
-    description: To volunteer at our event apply here. [Contact us](volunteer@dappcon.io) for more information.
+    description: To volunteer at our event apply here. [Contact us](mailto:volunteer@dappcon.io) for more information.
     URL: https://gnosis1.typeform.com/to/y3taxr
 ---

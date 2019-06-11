@@ -18,7 +18,7 @@ const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 let breakPointsToColor = {}
 
-const DesktopNav = class extends React.Component {
+const DesktopNav = class extends React.PureComponent {
   state = {
     navLogoColor: '',
   }
@@ -54,14 +54,8 @@ const DesktopNav = class extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      location: { pathname },
-    } = this.props
-
-    if (pathname === '/') {
-      this.initListeners()
-      this.changeColorOnScroll()
-    }
+    this.initListeners()
+    this.changeColorOnScroll()
   }
 
   componentDidUpdate(prevProps) {
@@ -72,9 +66,10 @@ const DesktopNav = class extends React.Component {
       location: { pathname: prevPath },
     } = prevProps
 
-    if (pathname === '/' && prevPath !== '/') {
-      this.initListeners()
-    } else if (prevPath === '/' && pathname !== '/') {
+    if (pathname !== prevPath) {
+      this.getBreakpointsPos()
+      this.changeColorOnScroll()
+    } else if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
       this.removeListenersAndResetAttrs()
     }
   }
@@ -84,9 +79,7 @@ const DesktopNav = class extends React.Component {
       location: { pathname },
     } = this.props
 
-    if (pathname === '/') {
-      this.removeListenersAndResetAttrs()
-    }
+    this.removeListenersAndResetAttrs()
   }
 
   setLinkRef = el => {
@@ -134,6 +127,7 @@ const DesktopNav = class extends React.Component {
     const { location, data } = this.props
     const { navLogoColor } = this.state
     const isBlack = !whiteColorSchemePages.includes(location.pathname)
+    console.log(breakPointsToColor)
 
     return (
       <>
