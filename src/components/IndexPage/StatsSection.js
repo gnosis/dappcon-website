@@ -33,7 +33,7 @@ const Paragraph = styled(Markdown)`
   display: block;
   margin: 0 auto;
   color: ${colors.secondaryBlack};
-  flex-basis: 47%;
+  flex-basis: 48%;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
@@ -43,6 +43,7 @@ const Paragraph = styled(Markdown)`
 const EnlargedParagraph = styled(Paragraph)`
   font-size: 29px;
   letter-spacing: -0.4px;
+  line-height: 1.4;
 `
 
 const MobileParagraph = styled(Paragraph)`

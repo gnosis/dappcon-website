@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: Averta, sans-serif;
+    overflow-x: hidden;
   }
 `
 
