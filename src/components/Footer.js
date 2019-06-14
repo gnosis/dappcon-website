@@ -125,7 +125,7 @@ const Footer = ({ setCookieBannerOpen }) => (
           </StyledExternalLink>
           <span> | </span>
           <StyledExternalLink
-            href="https://t.me/joinchat/EcVRsUPKJRZA9WXXtUeVbQ"
+            href="https://t.me/joinchat/EcVRsUPKJRYHbrijhd_Cbw"
             target="_blank"
             rel="noopener noreferrer"
             underline
