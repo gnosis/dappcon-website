@@ -5,6 +5,6 @@ company: Akropolis
 position: |-
   CEO &
   Founder
-image: /img/15_ana_andria.jpg
+image: /img/12_ana_andria.jpg
 ---
 
