@@ -1,8 +1,10 @@
 ---
 templateKey: speaker
 name: Joseph Lubin
-company: ConsenSys
-position: Co-Founder
+company: Founder ConsenSys
+position: |-
+  Co-Founder Ethereum  
+  Foundation
 image: /img/27_joseph_lubin.jpg
 ---
 

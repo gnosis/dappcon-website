@@ -1,6 +1,6 @@
 ---
 templateKey: speaker
-name: Ana Andria
+name: Anastasia Andrianova
 company: Akropolis
 position: |-
   CEO &
