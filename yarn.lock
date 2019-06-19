@@ -5743,10 +5743,10 @@ fuzzy@^0.1.1:
   resolved "https://registry.yarnpkg.com/fuzzy/-/fuzzy-0.1.3.tgz#4c76ec2ff0ac1a36a9dccf9a00df8623078d4ed8"
   integrity sha1-THbsL/CsGjap3M+aAN+GIweNTtg=
 
-gatsby-background-image@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.7.1.tgz#070cdb37116996cc9aec9209acab6395fc465799"
-  integrity sha512-KAr2/EqEI8/C2dq2VO1+2FC4AUQ9jjSZPq0rXgPn+TrFAAWAyi+fhTu6NDoqZ4LJ8naTbp4URlZUTNE2zvTf7A==
+gatsby-background-image@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.7.2.tgz#1e94e5492199224ab8a59e07451e9b1bb2378609"
+  integrity sha512-QZPtdLTPBCvI6ceaKZaEAu0BrNF0Wpn0Pn+AeqcAk3s6iZ6ok9Pkxhk8rIpZ3itLuIfSC0Q6gn7K5z4PAQEcvw==
   dependencies:
     "@babel/runtime" "^7.4.5"
     global "^4.4.0"
@@ -5827,10 +5827,10 @@ gatsby-plugin-layout@^1.0.15:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-netlify-cms@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.0.2.tgz#d5c4b4b5c74c72ae0c795173ccb8c93b9a499386"
-  integrity sha512-Q0S4fe5xBLuxlWa0JRCTT54wEebKLVOOcm/XDmA6OiwTKAhpXGb63CfulvmUQK6j3ptvWh9VeaAiRk7TJBa50g==
+gatsby-plugin-netlify-cms@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-4.0.3.tgz#8a84100e372a6c2cd5a7fd6ab2d753d768837ddf"
+  integrity sha512-X7h6kbcc/Txr54EYIlBmIafORBDqCazVZn0GeWz5ZFEZzt9kOgt/w0bBHU6Opyue939UsWcFxv9COz0MfoV8rA==
   dependencies:
     "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     html-webpack-exclude-assets-plugin "^0.0.7"
