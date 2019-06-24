@@ -29,9 +29,19 @@ const StyledLink = styled(Link)`
   }
 `
 
+const Text = styled.p`
+  transition: .3s color ease-in-out;
+
+  &:hover {
+    color: ${colors.black};
+  }
+`
+
 const GetInvolvedSection = ({ setCookieBannerOpen }) => (
   <Wrapper>
-    <StyledLink to="/get-involved">Get Involved</StyledLink>
+    <StyledLink to="/get-involved">
+      <Text>Get Involved</Text>
+    </StyledLink>
     <Footer setCookieBannerOpen={setCookieBannerOpen} />
   </Wrapper>
 )

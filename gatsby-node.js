@@ -58,3 +58,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.sourceNodes = ({ actions }) => {
+  // https://github.com/gatsbyjs/gatsby/issues/14460
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemark implements Node @infer {
+      frontmatter: Frontmatter!
+    }
+
+    type Frontmatter @infer {
+      image: File @fileByRelativePath
+    }
+  `
+  createTypes(typeDefs)
+}

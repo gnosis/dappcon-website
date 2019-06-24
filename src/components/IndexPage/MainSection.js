@@ -79,6 +79,7 @@ const StyledButtonLink = styled(ButtonLink)`
 
 const StyledLink = styled.a`
   color: ${colors.white};
+  transition: .3s color ease-in-out;
 
   &:focus,
   &:hover,
@@ -101,7 +102,12 @@ const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate })
     <StyledContentWrapper>
       <MainHeading>{mainTitle}</MainHeading>
       <ButtonDateContainer>
-        <StyledButtonLink href={buyTicketsLink} target="_blank" text={buttonText} />
+        <StyledButtonLink
+          href={buyTicketsLink}
+          target="_blank"
+          text={buttonText}
+          hover={colors.black}
+        />
         <StyledDate source={locationAndDate} renderers={mdRenderers} />
       </ButtonDateContainer>
     </StyledContentWrapper>
