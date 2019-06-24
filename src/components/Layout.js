@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Helmet from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
 import { StaticQuery, graphql, withPrefix } from 'gatsby'
+import { colors } from 'theme'
 import reset from 'styled-reset'
 
 import DesktopNav from 'components/DesktopNav'
@@ -32,6 +33,22 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: Averta, sans-serif;
     overflow-x: hidden;
+  }
+
+  .navBlack {
+    color: ${colors.black};
+
+    &:hover {
+      color: ${colors.reddishPink};
+    }
+  }
+
+  .navWhite {
+    color: ${colors.white};
+
+    &:hover {
+      color: ${colors.black};
+    }
   }
 `
 

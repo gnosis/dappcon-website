@@ -3,21 +3,21 @@ import { colors } from 'theme'
 import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
 
-const idToColor = {
-  main: colors.white,
-  about: colors.black,
-  photo: colors.white,
-  policy: colors.black,
-  speakers: colors.black,
-  conferenceSponsors: colors.black,
-  pageEnd: colors.white,
+const sectionIdToClass = {
+  main: 'navWhite',
+  about: 'navBlack',
+  photo: 'navWhite',
+  policy: 'navBlack',
+  speakers: 'navBlack',
+  conferenceSponsors: 'navBlack',
+  pageEnd: 'navWhite',
 }
 
 const LinkIds = ['aboutLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
 
 const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
-let breakPointsToColor = {}
+let breakPointsToClass = {}
 
 const DesktopNav = class extends React.PureComponent {
   state = {
@@ -86,11 +86,11 @@ const DesktopNav = class extends React.PureComponent {
   }
 
   getBreakpointsPos() {
-    breakPointsToColor = {}
-    Object.keys(idToColor).forEach(id => {
+    breakPointsToClass = {}
+    Object.keys(sectionIdToClass).forEach(id => {
       const elem = document.getElementById(id)
       if (elem) {
-        breakPointsToColor[elem.offsetTop] = idToColor[id]
+        breakPointsToClass[elem.offsetTop] = sectionIdToClass[id]
       }
     })
   }
@@ -99,22 +99,32 @@ const DesktopNav = class extends React.PureComponent {
     if (typeof window !== 'undefined') {
       LinkIds.forEach(id => {
         if (this[id]) {
-          Object.keys(breakPointsToColor).forEach(point => {
-            const isIntersected =
-              parseInt(window.scrollY) >
-              parseInt(point) - parseInt(this[id].offsetTop) - 0.5 * parseInt(this[id].clientHeight)
-            if (isIntersected) {
-              if (id === 'buyLink') {
-                this[id].children[0].children[0].setAttribute('stroke', breakPointsToColor[point])
-              } else if (id === 'navLogo') {
-                this.setState({
-                  navLogoColor: breakPointsToColor[point],
-                })
-              } else {
-                this[id].style.color = breakPointsToColor[point]
-              }
+          const intersectedPoint = Object.keys(breakPointsToClass)
+            .reverse()
+            .find(point => {
+              const isIntersected =
+                parseInt(window.scrollY) >
+                parseInt(point) -
+                  parseInt(this[id].offsetTop) -
+                  0.5 * parseInt(this[id].clientHeight)
+
+              return isIntersected
+            })
+
+          if (intersectedPoint) {
+            if (id === 'buyLink') {
+              this[id].children[0].children[0].setAttribute(
+                'stroke',
+                breakPointsToClass[intersectedPoint],
+              )
+            } else if (id === 'navLogo') {
+              this.setState({
+                navLogoColor: breakPointsToClass[intersectedPoint],
+              })
+            } else {
+              this[id].classList.add(breakPointsToClass[intersectedPoint])
             }
-          })
+          }
         }
       })
     }
@@ -122,13 +132,18 @@ const DesktopNav = class extends React.PureComponent {
 
   render() {
     const { location, data } = this.props
-    const { navLogoColor } = this.state
+    const { navLogoColor, linkColors } = this.state
     const isBlack = !whiteColorSchemePages.includes(location.pathname)
 
     return (
       <>
         <NavLogo fill={navLogoColor} location={location} setLinkRef={this.setLinkRef} />
-        <Navbar isBlack={isBlack} setLinkRef={this.setLinkRef} data={data} />
+        <Navbar
+          isBlack={isBlack}
+          setLinkRef={this.setLinkRef}
+          data={data}
+          linkColors={linkColors}
+        />
       </>
     )
   }
