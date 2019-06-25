@@ -40,15 +40,8 @@ const DesktopNav = class extends React.PureComponent {
 
       LinkIds.forEach(id => {
         if (this[id]) {
-          if (id === 'buyLink') {
-            this[id].children[0].children[0].setAttribute('stroke', colors.black)
-          } else if (id === 'navLogo') {
-            this.setState({
-              navLogoColor: '',
-            })
-          } else {
-            this[id].style.color = null
-          }
+          this[id].classList.add('navWhite')
+          this[id].classList.remove('navBlack')
         }
       })
     }
@@ -93,6 +86,7 @@ const DesktopNav = class extends React.PureComponent {
         breakPointsToClass[elem.offsetTop] = sectionIdToClass[id]
       }
     })
+    console.log(breakPointsToClass)
   }
 
   changeColorOnScroll = () => {
@@ -112,18 +106,11 @@ const DesktopNav = class extends React.PureComponent {
             })
 
           if (intersectedPoint) {
-            if (id === 'buyLink') {
-              this[id].children[0].children[0].setAttribute(
-                'stroke',
-                breakPointsToClass[intersectedPoint],
-              )
-            } else if (id === 'navLogo') {
-              this.setState({
-                navLogoColor: breakPointsToClass[intersectedPoint],
-              })
-            } else {
-              this[id].classList.add(breakPointsToClass[intersectedPoint])
-            }
+            const classToAdd = breakPointsToClass[intersectedPoint]
+            const classToRemove = classToAdd === 'navWhite' ? 'navBlack' : 'navWhite'
+
+            this[id].classList.add(classToAdd)
+            this[id].classList.remove(classToRemove)
           }
         }
       })
@@ -137,7 +124,7 @@ const DesktopNav = class extends React.PureComponent {
 
     return (
       <>
-        <NavLogo fill={navLogoColor} location={location} setLinkRef={this.setLinkRef} />
+        <NavLogo location={location} setLinkRef={this.setLinkRef} />
         <Navbar
           isBlack={isBlack}
           setLinkRef={this.setLinkRef}

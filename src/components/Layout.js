@@ -35,19 +35,45 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  /* navBlack and navWhite are classes for the desktop navbar,
+    see components/DesktopNav.js
+  */
   .navBlack {
     color: ${colors.black};
+    stroke: ${colors.black};
 
+    path {
+      fill: ${colors.black};
+      transition: fill .2s ease-in-out;
+    }
+    
     &:hover {
       color: ${colors.reddishPink};
+      stroke: ${colors.reddishPink};
+
+      path {
+        fill: ${colors.reddishPink};
+      }
     }
   }
 
   .navWhite {
     color: ${colors.white};
+    stroke: ${colors.white};
+
+    path {
+      fill: ${colors.white};
+      transition: fill .2s ease-in-out;
+    }
 
     &:hover {
       color: ${colors.black};
+      stroke: ${colors.black};
+      fill: ${colors.black};
+
+      path {
+        fill: ${colors.black};
+      }
     }
   }
 `
