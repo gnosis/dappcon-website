@@ -31,6 +31,11 @@ const DesktopNav = class extends React.PureComponent {
       window.addEventListener('resize', this.getBreakpointsPos)
       window.addEventListener('scroll', this.changeColorOnScroll)
     }
+    
+    // at first the page is displayed with fallback fonts,
+    // after the fonts are received, the page will resize
+    // this is to get updated positions
+    setTimeout(this.getBreakpointsPos, 2000)
   }
 
   removeListenersAndResetAttrs = () => {
@@ -60,11 +65,11 @@ const DesktopNav = class extends React.PureComponent {
       location: { pathname: prevPath },
     } = prevProps
 
-    if (pathname !== prevPath) {
-      this.getBreakpointsPos()
-      this.changeColorOnScroll()
-    } else if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
+    if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
       this.removeListenersAndResetAttrs()
+    } else if (pathname !== prevPath) {
+      this.initListeners()
+      this.changeColorOnScroll()
     }
   }
 
@@ -86,7 +91,6 @@ const DesktopNav = class extends React.PureComponent {
         breakPointsToClass[elem.offsetTop] = sectionIdToClass[id]
       }
     })
-    console.log(breakPointsToClass)
   }
 
   changeColorOnScroll = () => {
