@@ -17,6 +17,10 @@ const SponsorByTypeContainer = styled.div`
     font-size: 19px;
     font-weight: 800;
     width: 25%;
+
+    @media screen and (max-width: 767px) {
+      width: 33%;
+    }
   }
 
   position: relative;
