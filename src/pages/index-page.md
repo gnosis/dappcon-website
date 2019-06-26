@@ -35,7 +35,7 @@ programPhotoText:
   label: Program coming soon
   linkURL: /speakers
 speakers:
-  speaker1: Alex Van de Sande
+  speaker1: Joseph Lubin
   speaker2: Jorge Izquierdo
   speaker3: Matan Field
   speaker4: Constance Choi
