@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { colors } from 'theme'
 import { DappconLogoSmall } from 'components/Svg'
 
 const StyledLogoLink = styled(Link)`
@@ -15,15 +14,11 @@ const StyledLogoLink = styled(Link)`
   }
 `
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
+// const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 const NavLogo = ({ fill, location: { pathname } = {}, setLinkRef }) => (
   <StyledLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
-    <DappconLogoSmall
-      fill={
-        fill || (whiteColorSchemePages.includes(pathname) ? colors.bgWhite : colors.reddishPink)
-      }
-    />
+    <DappconLogoSmall />
   </StyledLogoLink>
 )
 
