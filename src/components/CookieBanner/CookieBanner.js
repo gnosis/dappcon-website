@@ -111,7 +111,7 @@ const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
               <StyledLink to="/privacy-policy">Privacy Policy</StyledLink> |{' '}
               <StyledLink to="/cookie-policy">Cookie Policy</StyledLink>
             </p>
-            <AcceptButton text={buttonText} onClick={handleAccept} hover={colors.reddishPink} />
+            <AcceptButton text={buttonText} onClick={handleAccept} hover={colors.black} />
           </LinksBtnContainer>
         </BannerContainer>
         <Overlay></Overlay>

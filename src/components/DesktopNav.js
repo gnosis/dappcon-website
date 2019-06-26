@@ -1,5 +1,4 @@
 import React from 'react'
-import { colors } from 'theme'
 import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
 
@@ -20,10 +19,6 @@ const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 let breakPointsToClass = {}
 
 const DesktopNav = class extends React.PureComponent {
-  state = {
-    navLogoColor: '',
-  }
-
   initListeners = () => {
     this.getBreakpointsPos()
 
@@ -123,7 +118,7 @@ const DesktopNav = class extends React.PureComponent {
 
   render() {
     const { location, data } = this.props
-    const { navLogoColor, linkColors } = this.state
+    const { linkColors } = this.state
     const isBlack = !whiteColorSchemePages.includes(location.pathname)
 
     return (
