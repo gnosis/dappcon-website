@@ -118,7 +118,6 @@ const DesktopNav = class extends React.PureComponent {
 
   render() {
     const { location, data } = this.props
-    const { linkColors } = this.state
     const isBlack = !whiteColorSchemePages.includes(location.pathname)
 
     return (
@@ -128,7 +127,6 @@ const DesktopNav = class extends React.PureComponent {
           isBlack={isBlack}
           setLinkRef={this.setLinkRef}
           data={data}
-          linkColors={linkColors}
         />
       </>
     )
