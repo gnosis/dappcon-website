@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 name: Dennison Bertram
-company: Zeppelin
+company: OpenZeppelin
 position: |-
   Developer
 
