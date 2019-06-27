@@ -1,6 +1,6 @@
 ---
 templateKey: speaker
-name: Alexandra Skrzypczak
+name: Alekandra Skrzypczak
 company: Golem Factory
 position: Co-Founder
 image: /img/aleksandra.jpg
