@@ -36,7 +36,7 @@ const ButtonLink = ({
   target = '',
   ...props
 }) => (
-  <ButtonLinkStyled target={target} href={href} hover={hover} {...props}>
+  <ButtonLinkStyled target={target} href={href} hover={hover} rel={rel} {...props}>
     {text}
   </ButtonLinkStyled>
 )
