@@ -19,11 +19,11 @@ const GetInvolvedPage = props => {
     },
     setCookieBannerOpen,
   } = props
-  const { title, columns } = data
+  const { heading, columns } = data
 
   return (
     <GetInvolvedPageTemplate
-      title={title}
+      title={heading}
       columns={Object.values(columns)}
       setCookieBannerOpen={setCookieBannerOpen}
     />
@@ -36,22 +36,22 @@ export const pageQuery = graphql`
   query {
     pageData: markdownRemark(frontmatter: { templateKey: { eq: "get-involved-page" } }) {
       frontmatter {
-        title
+        heading
         columns {
           firstCol {
             title
             description
-            URL
+            url
           }
           secondCol {
             title
             description
-            URL
+            url
           }
           thirdCol {
             title
             description
-            URL
+            url
           }
         }
       }
