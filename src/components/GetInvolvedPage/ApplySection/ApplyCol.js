@@ -84,7 +84,7 @@ const ApplyCol = ({ heading, desc, link }) => (
     <Heading>{heading}</Heading>
     <DescParagraph source={desc} renderers={markdownRenderers}></DescParagraph>
     <ButtonContainer>
-      <ApplyBtn text="APPLY" href={link} target="_blank" />
+      {heading !== 'Speaker' && <ApplyBtn text="APPLY" href={link} target="_blank" />}
       {heading === 'Sponsor' && (
         <a
           href="https://drive.google.com/file/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view"
