@@ -30,7 +30,7 @@ const ApplySection = ({ columns }) => (
   <Wrapper>
     <StyledContentWrapper>
       {columns.map(col => (
-        <ApplyCol key={col.title} heading={col.title} desc={col.description} link={col.URL} />
+        <ApplyCol key={col.title} heading={col.title} desc={col.description} link={col.url} />
       ))}
     </StyledContentWrapper>
   </Wrapper>
