@@ -44,7 +44,7 @@ const SponsorList = styled.ul`
   display: grid;
   justify-content: center;
   grid-template-columns: ${props =>
-    `repeat(${props.sponsorsAmount < 3 ? props.sponsorsAmount : 3}, 230px)`};
+    `repeat(${props.sponsorsAmount < 2 ? props.sponsorsAmount : 2}, 230px)`};
   grid-gap: 70px;
 
   @media screen and (max-width: 767px) {
