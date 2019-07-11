@@ -6,6 +6,6 @@ position: |-
   General Counsel & 
 
   CLO
-image: /img/silke-2019.jpg
+image: /img/11_silke_elrifai.jpg
 ---
 
