@@ -6,6 +6,6 @@ position: |-
   Development
 
   Team Lead
-image: /img/lefteris.jpg
+image: /img/8_lefteris_karapetsas.png
 ---
 
