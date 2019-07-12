@@ -36,6 +36,11 @@ collections:
         label: Image
         name: image
         widget: image
+      - label: Glasses Image
+        name: glassesImg
+        widget: image
+        required: true
+        hint: 'Please include glasses image or an transparent image. Otherwise, the website will crash :)'
   -
     name: sponsors
     label: Sponsors

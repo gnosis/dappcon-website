@@ -43,6 +43,7 @@ const SponsorByTypeContainer = styled.div`
 const SponsorList = styled.ul`
   display: grid;
   justify-content: center;
+  align-items: center;
   grid-template-columns: ${props =>
     `repeat(${props.sponsorsAmount < 3 ? props.sponsorsAmount : 3}, 115px)`};
   grid-gap: 70px;
