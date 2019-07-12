@@ -6,5 +6,6 @@ position: |-
   Co-Founder Ethereum  
   Foundation
 image: /img/27_joseph_lubin.jpg
+glassesImg: /img/27_joseph_lubin_glasses.png
 ---
 
