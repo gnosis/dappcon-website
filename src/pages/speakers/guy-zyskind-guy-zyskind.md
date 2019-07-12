@@ -4,5 +4,6 @@ name: Guy Zyskind
 company: Enigma
 position: CEO & Founder
 image: /img/22_guy_zyskind.png
+glassesImg: /img/22_guy_zyskind_glasses.png
 ---
 
