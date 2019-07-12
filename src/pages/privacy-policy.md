@@ -250,9 +250,15 @@ If you wish to raise a complaint on how we have handled your personal data, you 
 
 If we have not responded to you within a reasonable time or if you feel that your complaint has not been resolved to your satisfaction, you are entitled to make a complaint to the Data Protection Commissioner under the Data Protection Act which is Berliner Beauftragte für Datenschutz und Informationsfreiheit: 
 
-Berliner Beauftragte für Datenschutz und Informationsfreiheit Friedrichstr. 219 Guest entrance: Puttkamerstr. 16 – 18 (5th floor) 
+Berliner Beauftragte für Datenschutz und Informationsfreiheit  Friedrichstr. 219  
 
-Phone: 030 13889-0 Fax: 030 2155050 Email: mailbox@datenschutz-berlin.de 
+Guest entrance: Puttkamerstr. 16 – 18 (5th floor) 
+
+**Phone**: 030 13889-0  
+
+**Fax**: 030 2155050  
+
+**Email**: mailbox@datenschutz-berlin.de 
 
 You also have the right to lodge a complaint with the supervisory authority in the country of your habitual residence, place of work, or the place where you allege an infringement of one or more of our rights has taken place, if that is based in the EEA. 
 
@@ -272,8 +278,26 @@ This website is owned and operated by Gnosis Service GmbH.
 
 We are registered in Germany under registration number HRB 188071, and our registered office is located at: 
 
-Gnosis Service GmbH c/o Full Node Skalitzer Straße 85-86 10997 Berlin If you have any queries concerning your rights under this Privacy Policy, please contact our data protection officer: 
+Mareen Gläske 
+
+Gnosis Service GmbH  
+
+c/o Full Node  
+
+Skalitzer Straße 85-86  
+
+10997 Berlin  
+
+If you have any queries concerning your rights under this Privacy Policy, please contact our data protection officer: 
 
 Mareen Gläske 
 
-Gnosis Service GmbH c/o Full Node Skalitzer Straße 85-86 10997 Berlin Email: dataprotection@gnosis-gmbh.de
+Gnosis Service GmbH  
+
+c/o Full Node  
+
+Skalitzer Straße 85-86  
+
+10997 Berlin  
+
+Email: dataprotection@gnosis-gmbh.de
