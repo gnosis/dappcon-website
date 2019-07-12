@@ -51,8 +51,6 @@ const markdownRenderers = {
 
       return <Heading {...props}></Heading>
     }
-
-    return
   },
   listItem: props => <StyledLi>{props.children}</StyledLi>,
 }
