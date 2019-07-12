@@ -6,7 +6,6 @@ const SpeakersPage = props => {
   const {
     data: { speakers },
   } = props
-  console.log(speakers.edges.length)
 
   return <Speakers speakers={speakers.edges} />
 }
