@@ -44,24 +44,24 @@ const SponsorList = styled.ul`
   display: grid;
   justify-content: center;
   grid-template-columns: ${props =>
-    `repeat(${props.sponsorsAmount < 2 ? props.sponsorsAmount : 2}, 230px)`};
+    `repeat(${props.sponsorsAmount < 3 ? props.sponsorsAmount : 3}, 115px)`};
   grid-gap: 70px;
 
   @media screen and (max-width: 767px) {
     grid-gap: 20px;
     grid-template-columns: ${props =>
-      `repeat(${props.sponsorsAmount < 2 ? props.sponsorsAmount : 2}, 90px)`};
+      `repeat(${props.sponsorsAmount < 2 ? props.sponsorsAmount : 2}, 88px)`};
   }
 `
 
 const Img = styled.img`
-  max-width: 230px;
+  max-width: 115px;
   width: auto;
-  height: 80px;
+  max-height: 80px;
 
   @media screen and (max-width: 767px) {
     max-width: 88px;
-    height: 60px;
+    max-height: 60px;
   }
 `
 
