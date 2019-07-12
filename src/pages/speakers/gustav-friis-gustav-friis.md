@@ -7,5 +7,6 @@ position: |-
 
   Business Lead
 image: /img/14_gustav_friis.jpg
+glassesImg: /img/14_gustav_friis_glasses.png
 ---
 

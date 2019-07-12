@@ -4,5 +4,6 @@ name: Vanessa Slavich
 company: Celo
 position: Partner
 image: /img/18_vanessa_slavich.jpg
+glassesImg: /img/18_vanessa_slavich_glasses.png
 ---
 

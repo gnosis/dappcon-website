@@ -4,5 +4,6 @@ name: E.G Galano
 company: Infura
 position: Co-Founder
 image: /img/9w_e.g_galano.jpg
+glassesImg: /img/9w_e.g_galano_glasses.png
 ---
 
