@@ -7,5 +7,6 @@ position: |-
 
   Advocate
 image: /img/dennison_bertram.jpg
+glassesImg: /img/1w_dennison_bertram_glasses.png
 ---
 
