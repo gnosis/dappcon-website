@@ -40,13 +40,15 @@ Our details
 
 ## 2.1. When visiting our website We may collect and process Personal Data about your use of our website. This data may include: 
 
-i. the browser types and versions used; ii. the operating system used by the accessing system; 
-
-iii. the website from which an accessing system reaches our website (so-called 
-
-referrers); iv. behaviour: subpage, duration, and revisit v. the date and time of access to our website, vi. the Internet protocol address (“IP address”); vii. the Internet service provider of the accessing system; and viii. any other similar data and information that may be used in the event of 
-
-attacks on our information technology systems. 
+* the browser types and versions used
+* the operating system used by the accessing system
+* the website from which an accessing system reaches our website (so-called 
+  referrers
+* behaviour: subpage, duration, and revisit 
+* the date and time of access to our website
+* the Internet protocol address (“IP address”)
+* the Internet service provider of the accessing system and 
+* any other similar data and information that may be used in the event of attacks on our information technology systems. 
 
 This data may be processed in order to deliver the content of our website correctly, to optimize the content of our website to ensure the long-term viability of our information technology systems and website technology, and to provide law enforcement authorities with the information necessary for criminal prosecution in case of a cyber-attack. 
 
