@@ -12,19 +12,33 @@ In this Policy, “personal data” means any information relating to you as an 
 
 In this Policy, “processing” means any operation or set of operations which is performed on personal data (as defined in this Privacy Policy) or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. 
 
-1. Navigating this Policy 
+# **1. Navigating this Policy**
 
 If you are viewing this policy online, you can click on the below links to jump to the relevant section: 
 
 How We Use Personal Data 
 
-Use of Third Party Applications Sharing Your Personal Data Transferring Your data outside of the EU Existence of Automated Decision-making Data Security Your Rights as a Data Subject Storing Personal Data 
+Use of Third Party Applications  
 
-Changes to this Privacy Policy Our details 
+Sharing Your Personal Data  
 
-2. How We Use Personal Data 
+Transferring Your data outside of the EU  
 
-2.1. When visiting our website We may collect and process Personal Data about your use of our website. This data may include: 
+Existence of Automated Decision-making  
+
+Data Security  
+
+Your Rights as a Data Subject Storing Personal Data 
+
+Changes to this Privacy Policy  
+
+Our details 
+
+
+
+# **2. How We Use Personal Data** 
+
+## 2.1. When visiting our website We may collect and process Personal Data about your use of our website. This data may include: 
 
 i. the browser types and versions used; ii. the operating system used by the accessing system; 
 
@@ -38,7 +52,7 @@ This data may be processed in order to deliver the content of our website correc
 
 The legal basis for this processing is our legitimate business interests, namely monitoring and improving our website and the proper protection of our business against risks and your consent when agreeing to accept cookies 
 
-2.2. When purchasing tickets for the DappCon When purchasing tickets for the DappCon Personal Data may be collected and processed. This data may include: 
+## 2.2. When purchasing tickets for the DappCon When purchasing tickets for the DappCon Personal Data may be collected and processed. This data may include: 
 
 i. name; ii. email address iii. company; and iv. job position. 
 
@@ -46,7 +60,7 @@ This data is collected and processed for the purposes to send the data subject t
 
 The legal basis for this processing is that it is necessary to fulfil a contract with you. The ticket sale is provided by Eventbrite, please refer to section 3.1 for more information on Eventbrite. 
 
-2.3. When applying or being invited as a speaker of the DappCon We may collect and process Personal Data that you provide to us for the purpose of onboarding you as a speaker. This data may include: 
+## 2.3. When applying or being invited as a speaker of the DappCon We may collect and process Personal Data that you provide to us for the purpose of onboarding you as a speaker. This data may include: 
 
 i. your email address; ii. your name; iii. your company; iv. job position and bio v. your proposed topic or workshop; and v. a photo. 
 
@@ -56,7 +70,7 @@ to advertise the speaker on the conference website and we will only display a pi
 
 The legal basis for this processing is that it is necessary to fulfil a contract with you. 
 
-2.4. When applying as a sponsor of the DappCon We may collect and process Personal Data that you provide to us for the purpose of onboarding you as a sponsor. This data may include: 
+## 2.4. When applying as a sponsor of the DappCon We may collect and process Personal Data that you provide to us for the purpose of onboarding you as a sponsor. This data may include: 
 
 i. your email address; ii. your name; iii. your company; and iv. job position. 
 
@@ -64,19 +78,19 @@ This data is collected and processed for the purposes of evaluating and involvin
 
 The legal basis for this processing is that it is necessary to fulfil a contract with you. 
 
-2.5. Livestreaming during the conference The talks will be livestreamed during the conference. Livepeer.org will livestream them on their website https://media.livepeer.org/ . The videos will be also accessible during and after the event via our YouTube channel: https://www.youtube.com/channel/UCruCCeCNWBAM7JI-xAMtXpQ 
+## 2.5. Livestreaming during the conference The talks will be livestreamed during the conference. Livepeer.org will livestream them on their website https://media.livepeer.org/ . The videos will be also accessible during and after the event via our YouTube channel: https://www.youtube.com/channel/UCruCCeCNWBAM7JI-xAMtXpQ 
 
 If you don’t want to be filmed during the conference we will provide identification markers at the venue. Please attach the markers clearly visible to your chest to indicate that you do not consent to be filmed as an individual or in a smaller group. See section 3.3 for more information about YouTube. 
 
-2.6. Social Media Coverage The event will be featured on our social media accounts including Twitter, Facebook, Medium and reddit. For this purpose, we will take pictures and short videos during the event, which we may publish on our social media accounts. 
+## 2.6. Social Media Coverage The event will be featured on our social media accounts including Twitter, Facebook, Medium and reddit. For this purpose, we will take pictures and short videos during the event, which we may publish on our social media accounts. 
 
 We will provide identification markers at the venue. Please attach the markers clearly visible to your chest to indicate that you don’t want to appear in our social shares. See section 3.2 for more information on the social media channels. 
 
-2.7. Other uses of your Personal Data We may process any of your Personal Data where it is necessary to establish, exercise, or defend legal claims. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others 
+`2.7. Other uses of your Personal Data We may process any of your Personal Data where it is necessary to establish, exercise, or defend legal claims. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others `
 
 Further, we may process your Personal data where such processing is necessary in order for us to comply with a legal obligation to which we are subject. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights. 
 
-3. Use of Third Party Applications 
+# **3. Use of Third Party Applications** 
 
 We use the following third party applications: 
 
