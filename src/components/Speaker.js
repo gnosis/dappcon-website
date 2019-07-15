@@ -59,16 +59,13 @@ const SpeakerPhoto = styled(PreviewCompatibleImage)`
   max-width: 134px;
   max-height: 134px;
   z-index: 1;
+  pointer-events: none;
 `
 
 const GlassesImgContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-
-  ${SpeakerPhoto}:hover {
-    z-index: 2;
-  }
 
   &:hover {
     z-index: 2;
