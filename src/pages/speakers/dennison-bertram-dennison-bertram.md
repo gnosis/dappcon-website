@@ -6,7 +6,7 @@ position: |-
   Developer
 
   Advocate
-image: /img/dennison_bertram.jpg
+image: /img/1w_dennison_bertram.jpg
 glassesImg: /img/1w_dennison_bertram_glasses.png
 ---
 
