@@ -6,7 +6,6 @@ const SpeakersPage = props => {
   const {
     data: { speakers },
   } = props
-  console.log(speakers.edges.length)
 
   return <Speakers speakers={speakers.edges} />
 }
@@ -23,6 +22,15 @@ export const pageQuery = graphql`
             company
             position
             image {
+              childImageSharp {
+                # Specify the image processing specifications right in the query.
+                # Makes it trivial to update as your page's design changes.
+                fluid(maxWidth: 134, maxHeight: 134) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            glassesImg {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.

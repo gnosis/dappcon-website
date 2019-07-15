@@ -18,6 +18,7 @@ const Div = styled.div`
 `
 
 const ImageContainer = styled.div`
+  position: relative;
   width: 134px;
   height: 134px;
 
@@ -44,6 +45,33 @@ const SpeakerName = styled.span`
   }
 `
 
+const GlassesImage = styled(PreviewCompatibleImage)`
+  width: 134px;
+  height: 134px;
+
+  @media screen and (max-width: 767px) {
+    width: 64px;
+    height: 64px;
+  }
+`
+
+const SpeakerPhoto = styled(PreviewCompatibleImage)`
+  max-width: 134px;
+  max-height: 134px;
+  z-index: 1;
+  pointer-events: none;
+`
+
+const GlassesImgContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &:hover {
+    z-index: 2;
+  }
+`
+
 const Info = styled.span`
   display: block;
   font-size: 14px;
@@ -57,10 +85,13 @@ const Info = styled.span`
   }
 `
 
-const Speaker = ({ speaker: { name, image, position, company }, showInfo }) => (
+const Speaker = ({ speaker: { name, image, position, company, glassesImg }, showInfo }) => (
   <Div>
     <ImageContainer>
-      <PreviewCompatibleImage image={image} style={{ maxWidth: 134, maxHeight: 134 }} />
+      <SpeakerPhoto image={image} />
+      <GlassesImgContainer>
+        <GlassesImage image={glassesImg} />
+      </GlassesImgContainer>
     </ImageContainer>
     <SpeakerName>
       {name.substr(0, name.indexOf(' '))}
