@@ -35,7 +35,7 @@ programPhotoText:
   label: Program coming soon
   linkURL: /speakers
 speakers:
-  speaker1: Constance Choi
+  speaker1: Constance J. Choi
   speaker2: Anastasia Andrianova
   speaker3: Joseph Lubin
   speaker4: 'Christoph Jentzsch '
