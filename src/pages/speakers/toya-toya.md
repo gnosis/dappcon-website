@@ -1,6 +1,6 @@
 ---
 templateKey: speaker
-name: 'Toya '
+name: Toya Bu
 company: Nervos
 position: Community Manager
 image: /img/40_toya_bu.png
