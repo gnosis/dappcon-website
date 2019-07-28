@@ -1,6 +1,6 @@
 ---
 templateKey: speaker
-name: Martin Koeppelmann
+name: Martin Köppelmann
 company: Gnosis
 position: CEO
 image: /img/4.martin.jpeg
