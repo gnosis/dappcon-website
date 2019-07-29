@@ -1,12 +1,23 @@
 import React from 'react'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Footer from 'components/Footer'
-import MainSection from 'components/GetInvolvedPage/MainSection'
-import ApplySection from 'components/GetInvolvedPage/ApplySection'
+import ContentWrapper from 'components/ContentWrapper'
+import { colors } from 'theme'
 
-export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen }) => null
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: ${colors.reddishPink};
+`
 
-const GetInvolvedPage = props => null
+export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
+  <Container>
+    <ContentWrapper>Sup</ContentWrapper>
+  </Container>
+)
+
+const GetInvolvedPage = props => <GetInvolvedPageTemplate />
 
 export default GetInvolvedPage
 
