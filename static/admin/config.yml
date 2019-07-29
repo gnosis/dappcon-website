@@ -402,7 +402,8 @@ collections:
           -
             label: 'Page Title'
             name: title
-            widget: string
+            widget: markdown
+            hint: 'Format used here will be displayed on the website.'
           -
             label: Links
             name: links
