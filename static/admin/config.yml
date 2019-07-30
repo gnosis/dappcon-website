@@ -390,9 +390,9 @@ collections:
             name: sponsorInfoLink
             widget: string
       -
-        file: src/pages/podcasts.md
-        label: 'Podcasts Page'
-        name: podcastsPage
+        file: src/pages/podcast.md
+        label: 'Podcast Page'
+        name: podcastPage
         fields:
           -
             label: 'Template Key'

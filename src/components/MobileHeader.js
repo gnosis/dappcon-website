@@ -54,7 +54,7 @@ const burgerMenuStyle = css`
   }
 `
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
+const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/', '/podcast', '/podcast/']
 
 const Wrapper = styled.div`
   ${burgerMenuStyle}
