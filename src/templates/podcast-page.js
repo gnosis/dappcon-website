@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from 'react-markdown'
 import { graphql } from 'gatsby'
-import Footer from 'components/Footer'
+import ButtonLink from 'components/ButtonLink'
 import ContentWrapper from 'components/ContentWrapper'
 import { colors } from 'theme'
 
@@ -11,39 +12,72 @@ const Container = styled.div`
   background: ${colors.reddishPink};
 `
 
-export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
-  <Container>
-    <ContentWrapper>Sup</ContentWrapper>
+const SContentWrapper = styled(ContentWrapper)`
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+`
+
+const MdContainer = styled.div`
+  font-size: 49px;
+  color: ${colors.white};
+  font-weight: bold;
+`
+
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const SButtonLink = styled(ButtonLink)`
+  text-transform: uppercase;
+`
+
+export const GetInvolvedPageTemplate = ({ title, links }) => (
+  <Container id="main">
+    <SContentWrapper>
+      <MdContainer>
+        <Markdown source={title}></Markdown>
+      </MdContainer>
+      <LinksContainer>
+        {links.map(link => (
+          <SButtonLink key={link.link} href={link.link} text={link.btnTitle} hover={colors.black}></SButtonLink>
+        ))}
+      </LinksContainer>
+    </SContentWrapper>
   </Container>
 )
 
-const GetInvolvedPage = props => <GetInvolvedPageTemplate />
+const GetInvolvedPage = props => {
+  const {
+    data: {
+      pageData: { frontmatter },
+    },
+  } = props
+  const { title, links } = frontmatter
+
+  return <GetInvolvedPageTemplate title={title} links={links} />
+}
 
 export default GetInvolvedPage
 
-// export const pageQuery = graphql`
-//   query {
-//     pageData: markdownRemark(frontmatter: { templateKey: { eq: "get-involved-page" } }) {
-//       frontmatter {
-//         heading
-//         columns {
-//           firstCol {
-//             title
-//             description
-//             url
-//           }
-//           secondCol {
-//             title
-//             description
-//             url
-//           }
-//           thirdCol {
-//             title
-//             description
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query {
+    pageData: markdownRemark(frontmatter: { templateKey: { eq: "podcast-page" } }) {
+      frontmatter {
+        title
+        links {
+          btnTitle
+          link
+        }
+      }
+    }
+  }
+`
