@@ -1,5 +1,5 @@
 ---
-templateKey: podcasts-page
+templateKey: podcast-page
 title: |-
   Dappcon  
   Podcast

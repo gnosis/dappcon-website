@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PodcastLink from 'components/PodcastLink'
 import ContentWrapper from 'components/ContentWrapper'
 import { colors } from 'theme'
 import { Link } from 'gatsby'
@@ -47,6 +48,7 @@ const SpeakersSection = ({ speakers }) => (
   <Wrapper id="speakers">
     <ContentWrapper>
       <SpeakersContainer>
+        <PodcastLink />
         {speakers.map(({ node: { frontmatter } }, i) => (
           <Speaker key={i} speaker={frontmatter} />
         ))}
