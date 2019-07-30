@@ -103,6 +103,7 @@ const StatsSection = ({
 }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
   const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
+  console.log(aboutDappconRightCol)
 
   return (
     <Wrapper id="about">
@@ -111,7 +112,7 @@ const StatsSection = ({
           <EnlargedParagraph source={aboutDappconLeftCol} renderers={MdRenderers} />
           <Paragraph source={aboutDappconRightCol} escapeHtml={false} renderers={MdRenderers} />
         </DesktopTextContainer>
-        <MobileParagraph source={mobileText} renderers={MdRenderers} />
+        <MobileParagraph source={mobileText} escapeHtml={false} renderers={MdRenderers} />
         <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
           <StatsContainer>
             <Stat>
