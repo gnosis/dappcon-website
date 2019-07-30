@@ -61,6 +61,7 @@ const IndexPage = props => {
   speakers.edges = speakers.edges.filter(({ node }) =>
     displayedSpeakers.includes(node.frontmatter.name),
   )
+
   const sortedSponsors = sponsors.edges
     .map(sponsor => sponsor.node.frontmatter)
     .sort((a, b) => b.type - a.type)
