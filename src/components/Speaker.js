@@ -109,11 +109,16 @@ const PodcastBubbleContainer = styled.div`
     padding: 5px;
     bottom: -10px;
     right: -10px;
+
+    svg {
+    width: 15px;
+    height: 15px;
+  }
   }
 
   svg {
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
   }
 `
 
