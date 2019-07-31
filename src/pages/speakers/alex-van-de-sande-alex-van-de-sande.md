@@ -8,5 +8,6 @@ company: |-
 position: UX Designer
 image: /img/1.alex_vande_sande.jpeg
 glassesImg: /img/1.alex_vande_sande_glasses.png
+hasPodcast: true
 ---
 
