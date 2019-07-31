@@ -10,6 +10,7 @@ const Container = styled.div`
   height: 269px;
   padding: 29px 22px 19px;
   box-sizing: border-box;
+  border-radius: 8px;
 
   display: flex;
   flex-direction: column;

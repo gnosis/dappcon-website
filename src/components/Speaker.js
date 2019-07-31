@@ -59,6 +59,7 @@ const SpeakerPhoto = styled(PreviewCompatibleImage)`
   max-width: 134px;
   max-height: 134px;
   z-index: 1;
+  border-radius: 8px;
 `
 
 const GlassesImgContainer = styled.div`

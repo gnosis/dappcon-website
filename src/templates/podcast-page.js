@@ -16,7 +16,6 @@ const SContentWrapper = styled(ContentWrapper)`
   height: 100vh;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   @media screen and (max-width: 767px) {
@@ -29,6 +28,11 @@ const MdContainer = styled.div`
   font-size: 49px;
   color: ${colors.white};
   font-weight: bold;
+  width: 50%;
+
+  @media screen and (max-width: 767px) {
+    width: fit-content;
+  }
 `
 
 const LinksContainer = styled.div`
@@ -38,6 +42,11 @@ const LinksContainer = styled.div`
 
 const SButtonLink = styled(ButtonLink)`
   text-transform: uppercase;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 `
 
 export const GetInvolvedPageTemplate = ({ title, links }) => (
