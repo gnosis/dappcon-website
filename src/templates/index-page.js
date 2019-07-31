@@ -130,6 +130,7 @@ export const pageQuery = graphql`
             name
             company
             position
+            hasPodcast
             image {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
