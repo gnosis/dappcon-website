@@ -103,7 +103,6 @@ const StatsSection = ({
 }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
   const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
-  console.log(aboutDappconRightCol)
 
   return (
     <Wrapper id="about">
