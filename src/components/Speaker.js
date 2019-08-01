@@ -103,6 +103,11 @@ const PodcastBubbleContainer = styled.div`
   background: ${colors.reddishPink};
   border-radius: 50%;
 
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
   @media screen and (max-width: 767px) {
     width: 25px;
     height: 25px;
@@ -111,14 +116,9 @@ const PodcastBubbleContainer = styled.div`
     right: -10px;
 
     svg {
-    width: 15px;
-    height: 15px;
-  }
-  }
-
-  svg {
-    width: 25px;
-    height: 25px;
+      width: 15px;
+      height: 15px;
+    }
   }
 `
 
