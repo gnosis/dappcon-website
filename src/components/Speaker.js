@@ -96,9 +96,9 @@ const Speaker = ({ speaker: { name, image, position, company, glassesImg }, show
       </GlassesImgContainer>
     </ImageContainer>
     <SpeakerName>
-      {name.substr(0, name.indexOf(' '))}
+      {name.substr(0, name.lastIndexOf(' '))}
       <br />
-      {name.substr(name.indexOf(' ') + 1)}
+      {name.substr(name.lastIndexOf(' '))}
     </SpeakerName>
     <Info>
       <Markdown source={position} />
