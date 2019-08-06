@@ -3,10 +3,11 @@ templateKey: speaker
 name: Silke Noa Elrifai
 company: Gnosis
 position: |-
-  General Counsel & 
+  General Counsel/ 
 
   CLO
 image: /img/11_silke_elrifai.jpg
 glassesImg: /img/11_silke_elrifai_glasses.png
+hasPodcast: false
 ---
 
