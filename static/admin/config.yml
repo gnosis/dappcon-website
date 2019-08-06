@@ -36,11 +36,17 @@ collections:
         label: Image
         name: image
         widget: image
-      - label: Glasses Image
+      -
+        label: 'Glasses Image'
         name: glassesImg
         widget: image
         required: true
         hint: 'Please include glasses image or an transparent image. Otherwise, the website will crash :)'
+      -
+        label: 'Does speaker have podcast episode?'
+        name: hasPodcast
+        widget: boolean
+        default: false
   -
     name: sponsors
     label: Sponsors
@@ -388,3 +394,31 @@ collections:
             label: 'Sponsor Info Link'
             name: sponsorInfoLink
             widget: string
+      -
+        file: src/pages/podcast.md
+        label: 'Podcast Page'
+        name: podcastPage
+        fields:
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: podcasts-page
+          -
+            label: 'Page Title'
+            name: title
+            widget: markdown
+            hint: 'Format used here will be displayed on the website.'
+          -
+            label: Links
+            name: links
+            widget: list
+            fields:
+              -
+                label: Button title
+                name: btnTitle
+                widget: string
+              -
+                label: Link
+                name: link
+                widget: string

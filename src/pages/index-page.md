@@ -36,7 +36,7 @@ programPhotoText:
   linkURL: /speakers
 speakers:
   speaker1: Constance J. Choi
-  speaker2: Anastasia Andrianova
+  speaker2: ''
   speaker3: Joseph Lubin
   speaker4: 'Christoph Jentzsch '
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
