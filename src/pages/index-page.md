@@ -38,7 +38,7 @@ speakers:
   speaker1: Constance J. Choi
   speaker2: ''
   speaker3: Joseph Lubin
-  speaker4: 'Christoph Jentzsch '
+  speaker4: Christoph Jentzsch
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
 ---
