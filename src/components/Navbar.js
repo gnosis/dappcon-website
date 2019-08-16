@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import { TicketSVG } from 'components/Svg'
 import { colors } from 'theme'
@@ -21,7 +21,7 @@ const NavbarMenuContainer = styled.div`
   }
 `
 
-const StyledLink = styled(Link)`
+const LinkCSS = css`
   writing-mode: vertical-lr;
   margin-top: 25px;
   font-size: 19px;
@@ -36,6 +36,14 @@ const StyledLink = styled(Link)`
   }
 `
 
+const StyledLink = styled(Link)`
+  ${LinkCSS}
+`
+
+const StyledAnchor = styled.a`
+  ${LinkCSS}
+`
+
 const StyledIconLink = styled.a`
   transform: rotate(-45deg);
   margin-top: 40px;
@@ -47,9 +55,9 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
     <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={setLinkRef}>
       About
     </StyledLink>
-    {/* <StyledLink isBlack={isBlack} to="/program">
-          Programm
-        </StyledLink> */}
+    <StyledAnchor id="agendaLink" isBlack={isBlack} href="/dappcon_program_1.pdf" ref={setLinkRef}>
+      Agenda
+    </StyledAnchor>
     <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
       Speakers
     </StyledLink>

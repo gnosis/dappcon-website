@@ -108,7 +108,7 @@ export const LayoutTemplate = ({
       <GlobalStyles />
       <DesktopNav location={location} data={headerFooterData} />
       <MobileHeader location={location || {}} data={headerFooterData} />
-      {/* {!disabledInvadersPages.includes(location.pathname) && <Invaders />} */}
+      {!disabledInvadersPages.includes(location.pathname) && <Invaders />}
       <ChildrenContainer isGetInvolvedPage={isGetInvolvedPage}>
         {childElements}
         <div id="pageEnd"></div>

@@ -31,9 +31,9 @@ stats:
     description: workshops
     number: '24'
 programPhotoText:
-  isLink: false
-  label: Program coming soon
-  linkURL: /speakers
+  isLink: true
+  label: Agenda
+  linkURL: /dappcon_program_1.pdf
 speakers:
   speaker1: Constance J. Choi
   speaker2: ''

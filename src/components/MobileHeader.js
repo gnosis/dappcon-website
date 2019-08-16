@@ -90,13 +90,21 @@ const Close = styled.button`
   color: ${colors.bgWhite};
 `
 
-const StyledLink = styled(Link)`
-  font-size: 19px;
+const LinkCSS = css`
+    font-size: 19px;
   padding: 25px 0;
   text-align: center;
   color: ${colors.bgWhite};
   text-decoration: none;
   font-weight: 800;
+`
+
+const StyledLink = styled(Link)`
+  ${LinkCSS}
+`
+
+const StyledAnchor = styled.a`
+  ${LinkCSS}
 `
 
 const StyledButtonLink = styled(ButtonLink)`
@@ -133,6 +141,9 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
         <StyledLink to="/#about" onClick={() => toggleMenu(!isMenuOpen)}>
           About
         </StyledLink>
+        <StyledAnchor href="/dappcon_program_1.pdf">
+          Agenda
+        </StyledAnchor>
         <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
           Speakers
         </StyledLink>
