@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import { colors } from 'theme'
@@ -22,7 +22,7 @@ const Wrapper = styled(BackgroundImage)`
   }
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   font-weight: 800;
   color: ${colors.white};
   text-decoration: none;
@@ -51,7 +51,7 @@ const PhotoSection = ({ text }) => (
       <section id="photo">
         <Wrapper fluid={data.bg.childImageSharp.fluid}>
           {text.isLink ? (
-            <StyledLink to={text.linkURL}>{text.label}</StyledLink>
+            <StyledLink href={text.linkURL}>{text.label}</StyledLink>
           ) : (
             <h3>{text.label}</h3>
           )}
