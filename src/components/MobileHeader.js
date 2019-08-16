@@ -141,7 +141,7 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
         <StyledLink to="/#about" onClick={() => toggleMenu(!isMenuOpen)}>
           About
         </StyledLink>
-        <StyledAnchor href="/dappcon_program_1.pdf">
+        <StyledAnchor href="/agenda.pdf">
           Agenda
         </StyledAnchor>
         <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>

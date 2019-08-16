@@ -33,7 +33,7 @@ stats:
 programPhotoText:
   isLink: true
   label: Agenda
-  linkURL: /dappcon_program_1.pdf
+  linkURL: /agenda.pdf
 speakers:
   speaker1: Constance J. Choi
   speaker2: ''
