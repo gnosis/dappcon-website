@@ -9,7 +9,7 @@ install:
   - yarn config set cache-folder .yarn
   - yarn install
 script:
-  - yarn build
+  - travis_wait yarn build
 before_deploy:
   # IMPORTANT: This has to be executed here so that deploy stage can access to LATEST_TAG ENV
   # Get latest tag name
