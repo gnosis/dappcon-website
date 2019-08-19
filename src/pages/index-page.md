@@ -33,7 +33,7 @@ stats:
 programPhotoText:
   isLink: true
   label: Agenda
-  linkURL: /agenda.pdf
+  linkURL: /agenda_1.pdf
 speakers:
   speaker1: Constance J. Choi
   speaker2: ''
