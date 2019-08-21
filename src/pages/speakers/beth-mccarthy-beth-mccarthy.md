@@ -1,7 +1,7 @@
 ---
 templateKey: speaker
 name: Beth McCarthy
-company: Starfish Network
+company: DAO Incubator
 position: Co-Founder
 image: /img/60_beth_mccarthy.png
 glassesImg: /img/60_beth_mccarthy_glasses.png
