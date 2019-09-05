@@ -1,6 +1,6 @@
 ---
 templateKey: speaker
-name: Sunny Aggarawal
+name: Sunny Aggarwal
 company: Epicenter TV
 position: Co-Host
 image: /img/62_sunny-aggarwal.png
