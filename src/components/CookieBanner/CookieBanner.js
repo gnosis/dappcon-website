@@ -36,7 +36,7 @@ var cookieConfig = {
 const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
   const [acceptedCookies, setAcceptedCookies] = useState({
     consentCookie: true,
-    consentCookie_analytics: true,
+    consentCookie_analytics: false,
   })
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
         cookie.onAccept()
       }
     }
-  }, [])
+  }, [setCookieBannerOpen])
 
   const handleCheckboxClick = ({ target: { name, checked } }) => {
     setAcceptedCookies({
