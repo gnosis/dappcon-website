@@ -8,7 +8,6 @@ import reset from 'styled-reset'
 import DesktopNav from 'components/DesktopNav'
 import CookieBanner from 'components/CookieBanner'
 import MobileHeader from 'components/MobileHeader'
-import Invaders from 'components/Invaders'
 import GetInvolvedSection from 'components/GetInvolvedSection'
 
 const GlobalStyles = createGlobalStyle`
@@ -83,8 +82,6 @@ const ChildrenContainer = styled.div`
   margin-bottom: ${props => (props.isGetInvolvedPage ? 'inherit' : '100vh')};
 `
 
-const disabledInvadersPages = ['/imprint', '/cookie-policy', '/privacy-policy']
-
 export const LayoutTemplate = ({
   children,
   location = {},
@@ -108,7 +105,6 @@ export const LayoutTemplate = ({
       <GlobalStyles />
       <DesktopNav location={location} data={headerFooterData} />
       <MobileHeader location={location || {}} data={headerFooterData} />
-      {!disabledInvadersPages.includes(location.pathname) && <Invaders />}
       <ChildrenContainer isGetInvolvedPage={isGetInvolvedPage}>
         {childElements}
         <div id="pageEnd"></div>
