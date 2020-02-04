@@ -22,14 +22,14 @@ aboutDappconRightCol: >-
   attend.
 stats:
   firstStat:
-    description: days
-    number: '3'
+    description: attendees
+    number: '700'
   secondStat:
     description: speakers
-    number: '20'
+    number: '60'
   thirdStat:
-    description: workshops
-    number: '24'
+    description: dapps
+    number: '25'
 programPhotoText:
   isLink: true
   label: Agenda
