@@ -35,7 +35,7 @@ programPhotoText:
   label: Agenda
   linkURL: /agenda_2.pdf
 speakers:
-  speaker1: Constance J. Choi
+  speaker1: Cat Speaker
   speaker2: Vitalik Buterin
   speaker3: Joseph Lubin
   speaker4: Harry Halpin
