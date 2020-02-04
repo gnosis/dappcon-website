@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { colors } from 'theme'
-import PodcastLink from 'components/PodcastLink'
 import HideOnMobile from 'components/HideOnMobile'
 import ContentWrapper from 'components/ContentWrapper'
 import MobilePageHeading from 'components/MobilePageHeading'
@@ -47,7 +46,6 @@ const Speakers = ({ speakers, speakerApplyLink }) => (
     <ContentWrapper>
       <MobilePageHeading text="Speakers" />
       <SpeakersContainer>
-        <PodcastLink />
         {speakers.map(({ node: { frontmatter } }, i) => (
           <Speaker key={i} speaker={frontmatter} showInfo />
         ))}

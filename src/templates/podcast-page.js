@@ -49,11 +49,11 @@ const SButtonLink = styled(ButtonLink)`
   }
 `
 
-export const GetInvolvedPageTemplate = ({ title, links }) => (
+export const GetInvolvedPageTemplate = ({ title, links = [] }) => (
   <Container id="main">
     <SContentWrapper>
       <MdContainer>
-        <Markdown source={title}></Markdown>
+        <Markdown source="Get Involved"></Markdown>
       </MdContainer>
       <LinksContainer>
         {links.map(link => (
@@ -65,28 +65,7 @@ export const GetInvolvedPageTemplate = ({ title, links }) => (
 )
 
 const GetInvolvedPage = props => {
-  const {
-    data: {
-      pageData: { frontmatter },
-    },
-  } = props
-  const { title, links } = frontmatter
-
-  return <GetInvolvedPageTemplate title={title} links={links} />
+  return <GetInvolvedPageTemplate />
 }
 
 export default GetInvolvedPage
-
-export const pageQuery = graphql`
-  query {
-    pageData: markdownRemark(frontmatter: { templateKey: { eq: "podcast-page" } }) {
-      frontmatter {
-        title
-        links {
-          btnTitle
-          link
-        }
-      }
-    }
-  }
-`

@@ -14,7 +14,7 @@ const sectionIdToClass = {
 
 const LinkIds = ['aboutLink', 'agendaLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/', '/podcast', '/podcast/']
+const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 
 let breakPointsToClass = {}
 
