@@ -1,7 +1,6 @@
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1
-  branch: website-2020
+  name: git-gateway
+  branch: master
 media_folder: static/img
 public_folder: /img
 collections:

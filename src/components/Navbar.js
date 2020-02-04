@@ -52,8 +52,8 @@ const StyledIconLink = styled.a`
 
 const Navbar = ({ isBlack, setLinkRef, data }) => (
   <NavbarMenuContainer>
-    <StyledLink id="aboutLink" isBlack={isBlack} to="/#about" innerRef={setLinkRef}>
-      About
+    <StyledLink id="dappsLink" isBlack={isBlack} to="/#dapps" innerRef={setLinkRef}>
+      Dapps
     </StyledLink>
     <StyledAnchor id="agendaLink" isBlack={isBlack} href="/agenda_2.pdf" ref={setLinkRef}>
       Agenda

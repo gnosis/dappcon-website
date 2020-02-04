@@ -60,6 +60,7 @@ const StatsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex-direction: column;
   margin-top: 174px;
 
   @media screen and (max-width: 767px) {
@@ -116,7 +117,7 @@ const StatsSection = ({
           <StatsContainer>
             <Stat>
               <StatNumber>
-                <CountUp start={0} end={statsVisible ? +firstStat.number : 0} />
+                <CountUp start={0} end={statsVisible ? +firstStat.number : 0} suffix="+" />
               </StatNumber>
               <StatTitle>{firstStat.description}</StatTitle>
             </Stat>
