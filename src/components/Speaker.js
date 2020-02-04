@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Markdown from 'react-markdown'
 import PreviewCompatibleImage from 'components/PreviewCompatibleImage'
@@ -43,16 +42,6 @@ const SpeakerName = styled.span`
   @media screen and (max-width: 767px) {
     margin-top: 8px;
     font-size: 12px;
-  }
-`
-
-const GlassesImage = styled(PreviewCompatibleImage)`
-  width: 134px;
-  height: 134px;
-
-  @media screen and (max-width: 767px) {
-    width: 64px;
-    height: 64px;
   }
 `
 

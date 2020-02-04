@@ -123,39 +123,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
-      edges {
-        node {
-          frontmatter {
-            name
-            company
-            position
-            image {
-              childImageSharp {
-                # Specify the image processing specifications right in the query.
-                # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth: 134) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    sponsors: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "sponsor" } } }) {
-      edges {
-        node {
-          frontmatter {
-            name
-            type
-            url
-            image {
-              publicURL
-            }
-          }
-        }
-      }
-    }
   }
 `
