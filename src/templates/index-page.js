@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import MainSection from 'components/IndexPage/MainSection'
 import StatsSection from 'components/IndexPage/StatsSection'
+import DappsSection from 'components/IndexPage/DappsSection'
 import SpeakersSection from 'components/IndexPage/SpeakersSection'
 import SponsorsSection from 'components/IndexPage/SponsorsSection'
 
@@ -30,6 +31,7 @@ export const IndexPageTemplate = ({
       aboutDappconRightCol={aboutDappconRightCol}
       stats={stats}
     />
+    <DappsSection />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <SponsorsSection sponsors={sponsors} />
   </>

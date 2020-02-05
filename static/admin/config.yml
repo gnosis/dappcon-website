@@ -80,40 +80,6 @@ collections:
             label: 'Iron (Knut)'
             value: 1
   -
-    name: events
-    label: 'Program Events'
-    folder: src/pages/events
-    create: true
-    slug: '{{title}}-{{speaker}}-{{startDate}}-{{endDate}}}-{{slug}}'
-    fields:
-      -
-        label: 'Template Key'
-        name: templateKey
-        widget: hidden
-        default: event
-      -
-        label: Title
-        name: title
-        widget: string
-      -
-        label: 'Starts at'
-        name: startDate
-        widget: datetime
-        format: 'DD.MM hh:mm'
-      -
-        label: 'Ends at'
-        name: endDate
-        widget: datetime
-        format: 'DD.MM hh:mm'
-      -
-        label: Speaker
-        name: speaker
-        widget: relation
-        collection: speakers
-        searchFields:
-          - name
-        valueField: name
-  -
     name: pages
     label: Pages
     files:
@@ -276,6 +242,18 @@ collections:
             name: aboutDappconRightCol
             widget: markdown
           -
+            label: 'Participate / Stats Heading'
+            name: statsHeading
+            widget: markdown
+          -
+            label: 'Participate / Stats sentence 1'
+            name: statsSentence1
+            widget: markdown
+          -
+            label: 'Participate / Stats sentence 2'
+            name: statsSentence2
+            widget: markdown
+          -
             label: Stats
             name: stats
             widget: object
@@ -319,25 +297,6 @@ collections:
                     label: Description
                     name: description
                     widget: string
-          -
-            label: 'Program Photo Text'
-            name: programPhotoText
-            widget: object
-            fields:
-              -
-                label: Label
-                name: label
-                widget: string
-              -
-                label: 'Should we make it a link?'
-                name: isLink
-                widget: boolean
-                default: false
-              -
-                label: 'Link URL'
-                name: linkURL
-                widget: string
-                hint: 'Use a relative URL (e.g. /about)'
           -
             label: Speakers
             name: speakers
