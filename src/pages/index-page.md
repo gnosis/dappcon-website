@@ -20,6 +20,13 @@ aboutDappconRightCol: >-
   enthusiasts.<br><br> We’re giving it another go this summer and encourage
   anyone interested in the ecosystem or networking with dapp developers to
   attend.
+statsHeading: Participate in a unique conference experience!
+statsSentence1: >-
+  Organized by Gnosis, DappCon’s 3rd edition continues to unite the top minds of
+  the Ethereum space.
+statsSentence2: >-
+  Be part of an environment where blockchain comes to life, from ticket selling
+  to talk curation.
 stats:
   firstStat:
     description: attendees
@@ -30,10 +37,6 @@ stats:
   thirdStat:
     description: dapps
     number: '25'
-programPhotoText:
-  isLink: true
-  label: Agenda
-  linkURL: /agenda_2.pdf
 speakers:
   speaker1: Cat Speaker
   speaker2: Vitalik Buterin
