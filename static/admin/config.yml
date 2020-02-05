@@ -234,14 +234,6 @@ collections:
             name: buyTicketsLink
             widget: string
           -
-            label: 'About Dappcon (Left Column)'
-            name: aboutDappconLeftCol
-            widget: markdown
-          -
-            label: 'About Dappcon (Right Column)'
-            name: aboutDappconRightCol
-            widget: markdown
-          -
             label: 'Participate / Stats Heading'
             name: statsHeading
             widget: markdown
@@ -252,6 +244,14 @@ collections:
           -
             label: 'Participate / Stats sentence 2'
             name: statsSentence2
+            widget: markdown
+          -
+            label: 'Dapps Section Text / Left Column'
+            name: dappsTextLC
+            widget: markdown
+          -
+            label: 'Dapps Section Text / Right Column'
+            name: dappsTextRC
             widget: markdown
           -
             label: Stats

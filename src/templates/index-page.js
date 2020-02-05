@@ -16,7 +16,6 @@ export const IndexPageTemplate = ({
   statsSentence2,
   speakers,
   stats,
-  programPhotoText,
   locationAndDate,
   sponsors,
 }) => (
@@ -55,7 +54,6 @@ const IndexPage = props => {
     buttonText,
     speakers: indexPageSpeakers,
     stats,
-    programPhotoText,
     buyTicketsLink,
     locationAndDate,
   } = pageData
@@ -78,7 +76,6 @@ const IndexPage = props => {
       buyTicketsLink={buyTicketsLink}
       buttonText={buttonText}
       stats={stats}
-      programPhotoText={programPhotoText}
       speakers={speakers}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
