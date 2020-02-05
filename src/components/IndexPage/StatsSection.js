@@ -74,6 +74,11 @@ const Stat = styled.div`
   align-items: center;
   color: ${colors.black};
   min-width: 120px;
+  margin-top: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   @media screen and (max-width: 767px) {
     min-width: 63px;
@@ -99,32 +104,35 @@ const StatTitle = styled.span`
 
 const StatsSection = ({
   stats: { firstStat, secondStat, thirdStat },
-  aboutDappconLeftCol,
-  aboutDappconRightCol
+  statsHeading,
+  statsSentence1,
+  statsSentence2
 }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
-  const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
+  // const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
 
   return (
     <Wrapper id="about">
       <ContentWrapper>
         <SectionContainer>
           <DesktopTextContainer>
-            <EnlargedParagraph
-              source={aboutDappconLeftCol}
+            <h1>{statsHeading}</h1>
+            <Paragraph
+              source={statsSentence1}
+              escapeHtml={false}
               renderers={MdRenderers}
             />
             <Paragraph
-              source={aboutDappconRightCol}
+              source={statsSentence2}
               escapeHtml={false}
               renderers={MdRenderers}
             />
           </DesktopTextContainer>
-          <MobileParagraph
+          {/* <MobileParagraph
             source={mobileText}
             escapeHtml={false}
             renderers={MdRenderers}
-          />
+          /> */}
           <VisibilitySensor
             onChange={setStatsVisibility}
             active={!statsVisible}
