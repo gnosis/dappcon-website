@@ -12,7 +12,7 @@ const sectionIdToClass = {
   pageEnd: 'navWhite',
 }
 
-const LinkIds = ['aboutLink', 'agendaLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
+const LinkIds = ['dappsLink', 'speakersLink', 'navLogo', 'sponsorsLink', 'ticketsLink']
 
 const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
 

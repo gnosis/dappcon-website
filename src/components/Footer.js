@@ -82,7 +82,7 @@ const Footer = ({ setCookieBannerOpen }) => (
     <ColumnsContainer>
       <FooterColumn>
         <p>
-          <span>{new Date().getFullYear()} DAPPCON</span>
+          <span>2020 DAPPCON</span>
           <span> | </span>
           <StyledLink to="/imprint" underline>
             Imprint

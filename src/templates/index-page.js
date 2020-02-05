@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import MainSection from 'components/IndexPage/MainSection'
 import StatsSection from 'components/IndexPage/StatsSection'
-import PhotoSection from 'components/IndexPage/PhotoSection'
+import DappsSection from 'components/IndexPage/DappsSection'
 import SpeakersSection from 'components/IndexPage/SpeakersSection'
 import SponsorsSection from 'components/IndexPage/SponsorsSection'
 
@@ -31,7 +31,7 @@ export const IndexPageTemplate = ({
       aboutDappconRightCol={aboutDappconRightCol}
       stats={stats}
     />
-    <PhotoSection text={programPhotoText} />
+    <DappsSection />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <SponsorsSection sponsors={sponsors} />
   </>
@@ -110,16 +110,45 @@ export const pageQuery = graphql`
             number
           }
         }
-        programPhotoText {
-          isLink
-          label
-          linkURL
-        }
         speakers {
           speaker1
           speaker2
           speaker3
           speaker4
+        }
+      }
+    }
+    speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            company
+            position
+            image {
+              childImageSharp {
+                # Specify the image processing specifications right in the query.
+                # Makes it trivial to update as your page's design changes.
+                fluid(maxWidth: 134) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    sponsors: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "sponsor" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            type
+            url
+            image {
+              publicURL
+            }
+          }
         }
       }
     }

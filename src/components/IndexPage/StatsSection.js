@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import CountUp from 'react-countup'
-import styled from 'styled-components'
-import Markdown from 'react-markdown'
-import { colors } from 'theme'
-import MdRenderers from 'markdownRenderers'
-import ContentWrapper from 'components/ContentWrapper'
-import VisibilitySensor from 'react-visibility-sensor'
+import React, { useState } from "react"
+import CountUp from "react-countup"
+import styled from "styled-components"
+import Markdown from "react-markdown"
+import { colors } from "theme"
+import MdRenderers from "markdownRenderers"
+import ContentWrapper from "components/ContentWrapper"
+import VisibilitySensor from "react-visibility-sensor"
 
 const Wrapper = styled.section`
   padding: 175px 0;
@@ -16,10 +16,15 @@ const Wrapper = styled.section`
   }
 `
 
+const SectionContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
 const DesktopTextContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-basis: 50%;
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -59,12 +64,8 @@ const MobileParagraph = styled(Paragraph)`
 const StatsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 174px;
-
-  @media screen and (max-width: 767px) {
-    margin-top: 80px;
-  }
+  flex-direction: column;
+  flex-basis: 33%;
 `
 
 const Stat = styled.div`
@@ -99,7 +100,7 @@ const StatTitle = styled.span`
 const StatsSection = ({
   stats: { firstStat, secondStat, thirdStat },
   aboutDappconLeftCol,
-  aboutDappconRightCol,
+  aboutDappconRightCol
 }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
   const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
@@ -107,33 +108,61 @@ const StatsSection = ({
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <DesktopTextContainer>
-          <EnlargedParagraph source={aboutDappconLeftCol} renderers={MdRenderers} />
-          <Paragraph source={aboutDappconRightCol} escapeHtml={false} renderers={MdRenderers} />
-        </DesktopTextContainer>
-        <MobileParagraph source={mobileText} escapeHtml={false} renderers={MdRenderers} />
-        <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
-          <StatsContainer>
-            <Stat>
-              <StatNumber>
-                <CountUp start={0} end={statsVisible ? +firstStat.number : 0} />
-              </StatNumber>
-              <StatTitle>{firstStat.description}</StatTitle>
-            </Stat>
-            <Stat>
-              <StatNumber>
-                <CountUp start={0} end={statsVisible ? +secondStat.number : 0} suffix="+" />
-              </StatNumber>
-              <StatTitle>{secondStat.description}</StatTitle>
-            </Stat>
-            <Stat>
-              <StatNumber>
-                <CountUp start={0} end={statsVisible ? +thirdStat.number : 0} suffix="+" />
-              </StatNumber>
-              <StatTitle>{thirdStat.description}</StatTitle>
-            </Stat>
-          </StatsContainer>
-        </VisibilitySensor>
+        <SectionContainer>
+          <DesktopTextContainer>
+            <EnlargedParagraph
+              source={aboutDappconLeftCol}
+              renderers={MdRenderers}
+            />
+            <Paragraph
+              source={aboutDappconRightCol}
+              escapeHtml={false}
+              renderers={MdRenderers}
+            />
+          </DesktopTextContainer>
+          <MobileParagraph
+            source={mobileText}
+            escapeHtml={false}
+            renderers={MdRenderers}
+          />
+          <VisibilitySensor
+            onChange={setStatsVisibility}
+            active={!statsVisible}
+          >
+            <StatsContainer>
+              <Stat>
+                <StatNumber>
+                  <CountUp
+                    start={0}
+                    end={statsVisible ? +firstStat.number : 0}
+                    suffix="+"
+                  />
+                </StatNumber>
+                <StatTitle>{firstStat.description}</StatTitle>
+              </Stat>
+              <Stat>
+                <StatNumber>
+                  <CountUp
+                    start={0}
+                    end={statsVisible ? +secondStat.number : 0}
+                    suffix="+"
+                  />
+                </StatNumber>
+                <StatTitle>{secondStat.description}</StatTitle>
+              </Stat>
+              <Stat>
+                <StatNumber>
+                  <CountUp
+                    start={0}
+                    end={statsVisible ? +thirdStat.number : 0}
+                    suffix="+"
+                  />
+                </StatNumber>
+                <StatTitle>{thirdStat.description}</StatTitle>
+              </Stat>
+            </StatsContainer>
+          </VisibilitySensor>
+        </SectionContainer>
       </ContentWrapper>
     </Wrapper>
   )

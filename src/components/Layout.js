@@ -8,7 +8,7 @@ import reset from 'styled-reset'
 import DesktopNav from 'components/DesktopNav'
 import CookieBanner from 'components/CookieBanner'
 import MobileHeader from 'components/MobileHeader'
-import GetInvolvedSection from 'components/GetInvolvedSection'
+import TicketsSection from 'components/TicketsSection'
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -110,7 +110,7 @@ export const LayoutTemplate = ({
         <div id="pageEnd"></div>
         {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
       </ChildrenContainer>
-      <GetInvolvedSection setCookieBannerOpen={setCookieBannerOpen} />
+      <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
     </>
   )
 }

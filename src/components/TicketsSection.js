@@ -37,13 +37,13 @@ const Text = styled.p`
   }
 `
 
-const GetInvolvedSection = ({ setCookieBannerOpen }) => (
+const TicketsSection = ({ setCookieBannerOpen }) => (
   <Wrapper>
     <StyledLink to="/get-involved">
-      <Text>Get Involved</Text>
+      <Text>Tickets</Text>
     </StyledLink>
     <Footer setCookieBannerOpen={setCookieBannerOpen} />
   </Wrapper>
 )
 
-export default GetInvolvedSection
+export default TicketsSection
