@@ -33,6 +33,8 @@ const IndexPagePreview = ({ entry, fieldsMetaData }) => {
       buttonText={entry.getIn(['data', 'buttonText'])}
       locationAndDate={entry.getIn(['data', 'locationAndDate'])}
       stats={entry.getIn(['data', 'stats']).toJS()}
+      dappsTextRC={entry.getIn(['data', 'dappsTextRC'])}
+      dappsTextLC={entry.getIn(['data', 'dappsTextLC'])}
       speakers={speakers}
       sponsors={sponsors}
     />
