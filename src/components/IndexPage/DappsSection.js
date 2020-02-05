@@ -36,6 +36,8 @@ const Arrow = ({ className, style, onClick, isRightArrow }) => (
     className={className}
     style={style}
     onClick={onClick}
+    alt="Arrow"
+    onKeyDown={onClick}
   />
 )
 
