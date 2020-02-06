@@ -5,6 +5,7 @@ import StatsSection from "components/IndexPage/StatsSection"
 import DappsSection from "components/IndexPage/DappsSection"
 import SpeakersSection from "components/IndexPage/SpeakersSection"
 import SponsorsSection from "components/IndexPage/SponsorsSection"
+import MediaPartnersSection from "components/IndexPage/MediaPartnersSection"
 
 export const IndexPageTemplate = ({
   mainTitle,
@@ -36,6 +37,7 @@ export const IndexPageTemplate = ({
     />
     <DappsSection dappsTextLC={dappsTextLC} dappsTextRC={dappsTextRC} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
+    <MediaPartnersSection />
     <SponsorsSection sponsors={sponsors} />
   </>
 )
