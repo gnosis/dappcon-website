@@ -27,6 +27,16 @@ const Wrapper = styled.section`
       width: 31px;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .slick-prev {
+      left: -20px;
+    }
+
+    .slick-next {
+      right: -20px;
+    }
+  }
 `
 
 const Dapp = styled.div`
@@ -66,6 +76,11 @@ const RCText = styled(Markdown)`
   font-size: 16px;
   font-weight: 800;
   flex-basis: 33%;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 25px;
+    font-weight: 400;
+  }
 `
 
 const Arrow = ({ className, style, onClick, isRightArrow }) => (
