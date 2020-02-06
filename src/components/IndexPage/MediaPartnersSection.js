@@ -6,6 +6,10 @@ import { colors } from "theme"
 const Wrapper = styled.section`
   padding-top: 168px;
   background: ${colors.bgWhite};
+
+  @media screen and (max-width: 767px) {
+    padding-top: 128px;
+  }
 `
 
 const Container = styled.div`
@@ -17,12 +21,22 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 10px;
+    font-size: 10px;
+    height: 63px;
+  }
 `
 
 const Title = styled.h3`
   color: ${colors.bgWhite};
   font-weight: 800;
   flex-basis: 20%;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: 30%;
+  }
 `
 
 const PartnersContainer = styled.div`
@@ -36,6 +50,11 @@ const Partner = styled.div`
   height: 60px;
   background-color: ${colors.bgWhite};
   border-radius: 5px;
+
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+  }
 `
 
 const MediaPartnersSection = () => {
