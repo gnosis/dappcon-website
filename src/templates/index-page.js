@@ -1,23 +1,25 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import MainSection from 'components/IndexPage/MainSection'
-import StatsSection from 'components/IndexPage/StatsSection'
-import DappsSection from 'components/IndexPage/DappsSection'
-import SpeakersSection from 'components/IndexPage/SpeakersSection'
-import SponsorsSection from 'components/IndexPage/SponsorsSection'
+import React from "react"
+import { graphql } from "gatsby"
+import MainSection from "components/IndexPage/MainSection"
+import StatsSection from "components/IndexPage/StatsSection"
+import DappsSection from "components/IndexPage/DappsSection"
+import SpeakersSection from "components/IndexPage/SpeakersSection"
+import SponsorsSection from "components/IndexPage/SponsorsSection"
 
 export const IndexPageTemplate = ({
   mainTitle,
   aboutDappcon,
   buttonText,
   buyTicketsLink,
-  aboutDappconLeftCol,
-  aboutDappconRightCol,
+  statsHeading,
+  statsSentence1,
+  statsSentence2,
+  dappsTextRC,
+  dappsTextLC,
   speakers,
   stats,
-  programPhotoText,
   locationAndDate,
-  sponsors,
+  sponsors
 }) => (
   <>
     <MainSection
@@ -27,11 +29,12 @@ export const IndexPageTemplate = ({
       locationAndDate={locationAndDate}
     />
     <StatsSection
-      aboutDappconLeftCol={aboutDappconLeftCol}
-      aboutDappconRightCol={aboutDappconRightCol}
+      statsHeading={statsHeading}
+      statsSentence1={statsSentence1}
+      statsSentence2={statsSentence2}
       stats={stats}
     />
-    <DappsSection />
+    <DappsSection dappsTextLC={dappsTextLC} dappsTextRC={dappsTextRC} />
     {speakers && <SpeakersSection speakers={speakers.edges} />}
     <SponsorsSection sponsors={sponsors} />
   </>
@@ -42,24 +45,26 @@ const IndexPage = props => {
     data: {
       speakers,
       pageData: { frontmatter: pageData },
-      sponsors,
-    },
+      sponsors
+    }
   } = props
   const {
     mainTitle,
-    aboutDappconRightCol,
-    aboutDappconLeftCol,
+    statsHeading,
+    statsSentence1,
+    statsSentence2,
+    dappsTextLC,
+    dappsTextRC,
     buttonText,
     speakers: indexPageSpeakers,
     stats,
-    programPhotoText,
     buyTicketsLink,
-    locationAndDate,
+    locationAndDate
   } = pageData
 
   const displayedSpeakers = Object.values(indexPageSpeakers)
   speakers.edges = speakers.edges.filter(({ node }) =>
-    displayedSpeakers.includes(node.frontmatter.name),
+    displayedSpeakers.includes(node.frontmatter.name)
   )
 
   const sortedSponsors = sponsors.edges
@@ -69,12 +74,14 @@ const IndexPage = props => {
   return (
     <IndexPageTemplate
       mainTitle={mainTitle}
-      aboutDappconLeftCol={aboutDappconLeftCol}
-      aboutDappconRightCol={aboutDappconRightCol}
+      statsHeading={statsHeading}
+      statsSentence1={statsSentence1}
+      statsSentence2={statsSentence2}
       buyTicketsLink={buyTicketsLink}
+      dappsTextLC={dappsTextLC}
+      dappsTextRC={dappsTextRC}
       buttonText={buttonText}
       stats={stats}
-      programPhotoText={programPhotoText}
       speakers={speakers}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
@@ -88,13 +95,18 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    pageData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    pageData: markdownRemark(
+      frontmatter: { templateKey: { eq: "index-page" } }
+    ) {
       frontmatter {
         mainTitle
         buttonText
         buyTicketsLink
-        aboutDappconLeftCol
-        aboutDappconRightCol
+        statsHeading
+        statsSentence1
+        statsSentence2
+        dappsTextRC
+        dappsTextLC
         locationAndDate
         stats {
           firstStat {
@@ -118,7 +130,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
+    speakers: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "speaker" } } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -138,7 +152,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsors: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "sponsor" } } }) {
+    sponsors: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "sponsor" } } }
+    ) {
       edges {
         node {
           frontmatter {

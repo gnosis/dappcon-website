@@ -27,12 +27,14 @@ const IndexPagePreview = ({ entry, fieldsMetaData }) => {
   return (
     <IndexPageTemplate
       mainTitle={entry.getIn(['data', 'mainTitle'])}
-      aboutDappconLeftCol={entry.getIn(['data', 'aboutDappconLeftCol'])}
-      aboutDappconRightCol={entry.getIn(['data', 'aboutDappconRightCol'])}
+      statsHeading={entry.getIn(['data', 'statsHeading'])}
+      statsSentence1={entry.getIn(['data', 'statsSentence1'])}
+      statsSentence2={entry.getIn(['data', 'statsSentence2'])}
       buttonText={entry.getIn(['data', 'buttonText'])}
       locationAndDate={entry.getIn(['data', 'locationAndDate'])}
       stats={entry.getIn(['data', 'stats']).toJS()}
-      programPhotoText={entry.getIn(['data', 'programPhotoText'])}
+      dappsTextRC={entry.getIn(['data', 'dappsTextRC'])}
+      dappsTextLC={entry.getIn(['data', 'dappsTextLC'])}
       speakers={speakers}
       sponsors={sponsors}
     />

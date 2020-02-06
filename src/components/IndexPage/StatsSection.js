@@ -21,43 +21,43 @@ const SectionContainer = styled.div`
   justify-content: space-between;
 `
 
-const DesktopTextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
+const Heading = styled.h2`
+  font-size: 36px;
+  font-weight: 800;
 
   @media screen and (max-width: 767px) {
     display: none;
   }
+`
+
+const MobileHeading = styled.h2`
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  max-width: 230px;
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+`
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
 `
 
 const Paragraph = styled(Markdown)`
   text-align: left;
-  font-size: 19px;
+  font-size: 16px;
   line-height: normal;
   display: block;
   margin: 0 auto;
   color: ${colors.secondaryBlack};
-  flex-basis: 48%;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
-  }
-`
-
-const EnlargedParagraph = styled(Paragraph)`
-  font-size: 29px;
-  letter-spacing: -0.4px;
-  line-height: 1.4;
-`
-
-const MobileParagraph = styled(Paragraph)`
-  max-width: 688px;
-  text-align: center;
-  font-size: 12px;
-
-  @media screen and (min-width: 767px) {
-    display: none;
   }
 `
 
@@ -74,6 +74,11 @@ const Stat = styled.div`
   align-items: center;
   color: ${colors.black};
   min-width: 120px;
+  margin-top: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   @media screen and (max-width: 767px) {
     min-width: 63px;
@@ -99,32 +104,30 @@ const StatTitle = styled.span`
 
 const StatsSection = ({
   stats: { firstStat, secondStat, thirdStat },
-  aboutDappconLeftCol,
-  aboutDappconRightCol
+  statsHeading,
+  statsSentence1,
+  statsSentence2
 }) => {
   const [statsVisible, setStatsVisibility] = useState(false)
-  const mobileText = `${aboutDappconLeftCol} ${aboutDappconRightCol}`
 
   return (
     <Wrapper id="about">
       <ContentWrapper>
+        <MobileHeading>{statsHeading}</MobileHeading>
         <SectionContainer>
-          <DesktopTextContainer>
-            <EnlargedParagraph
-              source={aboutDappconLeftCol}
-              renderers={MdRenderers}
-            />
+          <TextContainer>
+            <Heading>{statsHeading}</Heading>
             <Paragraph
-              source={aboutDappconRightCol}
+              source={statsSentence1}
               escapeHtml={false}
               renderers={MdRenderers}
             />
-          </DesktopTextContainer>
-          <MobileParagraph
-            source={mobileText}
-            escapeHtml={false}
-            renderers={MdRenderers}
-          />
+            <Paragraph
+              source={statsSentence2}
+              escapeHtml={false}
+              renderers={MdRenderers}
+            />
+          </TextContainer>
           <VisibilitySensor
             onChange={setStatsVisibility}
             active={!statsVisible}
