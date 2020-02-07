@@ -28,11 +28,13 @@ stats:
   thirdStat:
     description: dapps
     number: '25'
-speakers:
+speakers2019:
   speaker1: Cat Speaker
-  speaker2: Vitalik Buterin
-  speaker3: Joseph Lubin
-  speaker4: Harry Halpin
+  speaker2: Cat Speaker
+  speaker3: Cat Speaker
+  speaker4: Cat Speaker
+  speaker5: Cat Speaker
+  speaker6: Cat Speaker
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
 ---

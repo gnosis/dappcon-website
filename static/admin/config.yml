@@ -5,9 +5,9 @@ media_folder: static/img
 public_folder: /img
 collections:
   -
-    name: speakers
-    label: Speakers
-    description: 'Speakers on the DappCon conference'
+    name: speakers2019
+    label: Speakers 2019
+    description: 'Speakers of the DappCon 2019'
     folder: src/pages/speakers
     create: true
     slug: '{{name}}-{{slug}}'
@@ -17,7 +17,7 @@ collections:
         label: 'Template Key'
         name: templateKey
         widget: hidden
-        default: speaker
+        default: speaker2019
       -
         label: Name
         name: name
@@ -298,15 +298,15 @@ collections:
                     name: description
                     widget: string
           -
-            label: Speakers
-            name: speakers
+            label: Speakers 2019
+            name: speakers2019
             widget: object
             fields:
               -
                 label: 'Speaker 1'
                 name: speaker1
                 widget: relation
-                collection: speakers
+                collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
@@ -314,7 +314,7 @@ collections:
                 label: 'Speaker 2'
                 name: speaker2
                 widget: relation
-                collection: speakers
+                collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
@@ -322,7 +322,7 @@ collections:
                 label: 'Speaker 3'
                 name: speaker3
                 widget: relation
-                collection: speakers
+                collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
@@ -330,7 +330,23 @@ collections:
                 label: 'Speaker 4'
                 name: speaker4
                 widget: relation
-                collection: speakers
+                collection: speakers2019
+                searchFields:
+                  - name
+                valueField: name
+              -
+                label: 'Speaker 5'
+                name: speaker5
+                widget: relation
+                collection: speakers2019
+                searchFields:
+                  - name
+                valueField: name
+              -
+                label: 'Speaker 6'
+                name: speaker6
+                widget: relation
+                collection: speakers2019
                 searchFields:
                   - name
                 valueField: name

@@ -20,6 +20,7 @@ const SponsorByTypeContainer = styled.div`
 
     @media screen and (max-width: 767px) {
       width: 33%;
+      font-size: 16px;
     }
   }
 
@@ -50,7 +51,7 @@ const SponsorList = styled.ul`
 
   @media screen and (max-width: 767px) {
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 88px);
+    grid-template-columns: repeat(2, 88px);
   }
 `
 

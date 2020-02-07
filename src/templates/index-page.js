@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({
   statsSentence2,
   dappsTextRC,
   dappsTextLC,
-  speakers,
+  speakers2019,
   stats,
   locationAndDate,
   sponsors
@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({
       stats={stats}
     />
     <DappsSection dappsTextLC={dappsTextLC} dappsTextRC={dappsTextRC} />
-    {speakers && <Edition2019Section speakers={speakers.edges} />}
+    {speakers2019 && <Edition2019Section speakers={speakers2019.edges} />}
     <MediaPartnersSection />
     <SponsorsSection sponsors={sponsors} />
   </>
@@ -45,7 +45,7 @@ export const IndexPageTemplate = ({
 const IndexPage = props => {
   const {
     data: {
-      speakers,
+      speakers2019,
       pageData: { frontmatter: pageData },
       sponsors
     }
@@ -58,14 +58,14 @@ const IndexPage = props => {
     dappsTextLC,
     dappsTextRC,
     buttonText,
-    speakers: indexPageSpeakers,
+    speakers2019: indexPage2019Speakers,
     stats,
     buyTicketsLink,
     locationAndDate
   } = pageData
 
-  const displayedSpeakers = Object.values(indexPageSpeakers)
-  speakers.edges = speakers.edges.filter(({ node }) =>
+  const displayedSpeakers = Object.values(indexPage2019Speakers)
+  speakers2019.edges = speakers2019.edges.filter(({ node }) =>
     displayedSpeakers.includes(node.frontmatter.name)
   )
 
@@ -84,7 +84,7 @@ const IndexPage = props => {
       dappsTextRC={dappsTextRC}
       buttonText={buttonText}
       stats={stats}
-      speakers={speakers}
+      speakers2019={speakers2019}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
     />
@@ -124,16 +124,18 @@ export const pageQuery = graphql`
             number
           }
         }
-        speakers {
+        speakers2019 {
           speaker1
           speaker2
           speaker3
           speaker4
+          speaker5
+          speaker6
         }
       }
     }
-    speakers: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "speaker" } } }
+    speakers2019: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "speaker2019" } } }
     ) {
       edges {
         node {

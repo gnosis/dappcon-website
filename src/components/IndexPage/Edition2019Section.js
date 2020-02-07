@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
+import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
 import { Link } from "gatsby"
 import Speaker from "../Speaker"
@@ -17,6 +18,10 @@ const Wrapper = styled.section`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
 `
 
 const SpeakersContainer = styled.div`
@@ -26,18 +31,35 @@ const SpeakersContainer = styled.div`
   justify-content: space-between;
   grid-template-columns: repeat(3, 100px);
   grid-row-gap: 71px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(3, 64px);
+    grid-row-gap: 41px;
+
+    margin-top: 30px;
+  }
 `
 
 const RCol = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 33%;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: row;
+    flex-basis: 100%;
+  }
 `
 
 const Heading = styled.h3`
   font-size: 28px;
   font-weight: 800;
   color: ${colors.secondaryBlack};
+`
+
+const MobileHeading = styled(Heading)`
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
 `
 
 const SLink = styled.a`
@@ -50,11 +72,16 @@ const SLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
 `
 
 const Edition2019Section = ({ speakers }) => (
   <Wrapper id="speakers">
     <ContentWrapper>
+      <MobileHeading>Edition 2019</MobileHeading>
       <Container>
         <SpeakersContainer>
           {speakers.map(({ node: { frontmatter } }, i) => (
@@ -62,7 +89,9 @@ const Edition2019Section = ({ speakers }) => (
           ))}
         </SpeakersContainer>
         <RCol>
-          <Heading>Edition 2019</Heading>
+          <HideOnMobile>
+            <Heading>Edition 2019</Heading>
+          </HideOnMobile>
           <SLink href="https://2019.dappcon.io">
             Check out the Dappcon 2019 Edition
           </SLink>
