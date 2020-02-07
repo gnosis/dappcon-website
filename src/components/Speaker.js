@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import Markdown from 'react-markdown'
-import PreviewCompatibleImage from 'components/PreviewCompatibleImage'
-import { colors } from 'theme'
+import React from "react"
+import styled from "styled-components"
+import Markdown from "react-markdown"
+import PreviewCompatibleImage from "components/PreviewCompatibleImage"
+import { colors } from "theme"
 
 const Div = styled.div`
   max-width: 135px;
@@ -19,8 +19,8 @@ const Div = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 134px;
-  height: 134px;
+  width: 100px;
+  height: 100px;
 
   @media screen and (max-width: 767px) {
     width: 64px;
@@ -68,20 +68,23 @@ const Info = styled.span`
 const Speaker = ({
   speaker: { name, image, position, company },
   showInfo,
+  hideDetails = false
 }) => (
   <Div>
     <ImageContainer>
       <SpeakerPhoto image={image} />
     </ImageContainer>
     <SpeakerName>
-      {name.substr(0, name.lastIndexOf(' '))}
+      {name.substr(0, name.lastIndexOf(" "))}
       <br />
-      {name.substr(name.lastIndexOf(' '))}
+      {name.substr(name.lastIndexOf(" "))}
     </SpeakerName>
-    <Info>
-      <Markdown source={position} />
-      <Markdown source={company} />
-    </Info>
+    {!hideDetails && (
+      <Info>
+        <Markdown source={position} />
+        <Markdown source={company} />
+      </Info>
+    )}
   </Div>
 )
 

@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import MainSection from "components/IndexPage/MainSection"
 import StatsSection from "components/IndexPage/StatsSection"
 import DappsSection from "components/IndexPage/DappsSection"
-import SpeakersSection from "components/IndexPage/SpeakersSection"
+import Edition2019Section from "components/IndexPage/Edition2019Section"
 import SponsorsSection from "components/IndexPage/SponsorsSection"
 import MediaPartnersSection from "components/IndexPage/MediaPartnersSection"
 
@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({
       stats={stats}
     />
     <DappsSection dappsTextLC={dappsTextLC} dappsTextRC={dappsTextRC} />
-    {speakers && <SpeakersSection speakers={speakers.edges} />}
+    {speakers && <Edition2019Section speakers={speakers.edges} />}
     <MediaPartnersSection />
     <SponsorsSection sponsors={sponsors} />
   </>
