@@ -5,6 +5,7 @@ heading: |-
   NFT ticket!
 columns:
   firstCol:
+    cta: BUY
     description: |-
       Full access to the 3 days conference.  
 
@@ -14,21 +15,29 @@ columns:
 
       Pay in DAI: coming soon! 
     title: BUY IN CRYPTO
+    undefined: true
     url: 'https://dappcon.io'
   secondCol:
+    cta: BUY
     description: |-
       Full access to the 3 days conference.
 
       300 EUR
     title: BUY IN FIAT
+    undefined: true
     url: 'https://dappcon.io'
   thirdCol:
-    description: |-
-      Work 50% and enjoy the full conference experience for the remaining of the time!
+    cta: CONTACT US
+    description: >-
+      Work 50% and enjoy the full conference experience for the remaining of the
+      time!
+
 
       Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
+
       for more informations
     title: BECOME A VOLUNTEER
+    undefined: true
     url: 'mailto:volunteer@dappcon.io'
 ---
 
