@@ -133,7 +133,7 @@ const SponsorsSection = ({ sponsors }) => {
           <SponsorsListByType type="Knuts" sponsors={ironSponsors} />
         </div>
         <BottomTextContainer>
-          <SLink>become a sponsor</SLink>
+          <SLink href="mailto:sponsor@dappcon.io">become a sponsor</SLink>
           <SLink>download package</SLink>
         </BottomTextContainer>
       </ContentWrapper>

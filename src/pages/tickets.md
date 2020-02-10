@@ -1,9 +1,8 @@
 ---
-templateKey: get-involved-page
+templateKey: tickets-page
 heading: |-
-  It’s Dappening!  
-  Be part of  
-  Dappcon 2019
+  Get your DappCon
+  NFT ticket!
 columns:
   firstCol:
     description: Check out our sponsorship packages and apply.

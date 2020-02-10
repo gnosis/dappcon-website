@@ -39,7 +39,7 @@ const Text = styled.p`
 
 const TicketsSection = ({ setCookieBannerOpen }) => (
   <Wrapper>
-    <StyledLink to="/get-involved">
+    <StyledLink to="/tickets">
       <Text>Tickets</Text>
     </StyledLink>
     <Footer setCookieBannerOpen={setCookieBannerOpen} />

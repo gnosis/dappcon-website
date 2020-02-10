@@ -97,7 +97,7 @@ const Edition2019Section = ({ speakers }) => (
           <SLink href="https://2019.dappcon.io">
             Check out the Dappcon 2019 Edition
           </SLink>
-          <SLink href="https://2019.dappcon.io">
+          <SLink href="https://gnosis1.typeform.com/to/u8cTBg">
             Become a speaker at DappCon 2020
           </SLink>
         </RCol>
