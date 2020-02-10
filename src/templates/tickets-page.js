@@ -24,7 +24,6 @@ export const TicketsPageTemplate = ({ title, columns, setCookieBannerOpen }) => 
 )
 
 const TicketsPage = props => {
-  console.log(props)
   const {
     data: {
       pageData: { frontmatter: data },
