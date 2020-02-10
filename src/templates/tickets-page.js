@@ -54,18 +54,21 @@ export const pageQuery = graphql`
             description
             url
             cta
+            isActive
           }
           secondCol {
             title
             description
             url
             cta
+            isActive
           }
           thirdCol {
             title
             description
             url
             cta
+            isActive
           }
         }
       }

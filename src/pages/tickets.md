@@ -8,10 +8,10 @@ columns:
     cta: BUY
     description: |-
       Full access to the 3 days conference.  
-
+      &nbsp;  
 
       Pay in ETH: ~300 EUR  
-
+      &nbsp;  
 
       Pay in DAI: coming soon! 
     isActive: true
@@ -20,9 +20,10 @@ columns:
   secondCol:
     cta: BUY
     description: |-
-      Full access to the 3 days conference.
+      Full access to the 3 days conference.  
+      &nbsp;
 
-      300 EUR
+      300 EUR  
     isActive: false
     title: BUY IN FIAT
     url: 'https://dappcon.io'
@@ -30,11 +31,10 @@ columns:
     cta: CONTACT US
     description: >-
       Work 50% and enjoy the full conference experience for the remaining of the
-      time!
-
-
+      time!  
+      &nbsp;  
+      
       Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
-
       for more informations
     isActive: true
     title: BECOME A VOLUNTEER

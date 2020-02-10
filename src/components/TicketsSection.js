@@ -1,16 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import Footer from 'components/Footer'
-import { colors } from 'theme'
-import { Link } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import { Link, StaticQuery, graphql } from 'gatsby'
+import BackgroundImage from "gatsby-background-image"
+import Footer from "components/Footer"
+import { colors } from "theme"
 
-const Wrapper = styled.section`
-  position: fixed;
+const Wrapper = styled(BackgroundImage)`
+  /* important because of gatsby-background-image defaults  */
+  position: fixed !important; 
   bottom: 0;
   width: 100%;
   height: 100vh;
   z-index: -1;
-  background-color: ${colors.reddishPink};
 `
 
 const StyledLink = styled(Link)`
@@ -30,7 +31,7 @@ const StyledLink = styled(Link)`
 `
 
 const Text = styled.p`
-  transition: .3s color ease-in-out;
+  transition: 0.3s color ease-in-out;
 
   &:hover {
     color: ${colors.black};
@@ -38,12 +39,29 @@ const Text = styled.p`
 `
 
 const TicketsSection = ({ setCookieBannerOpen }) => (
-  <Wrapper>
-    <StyledLink to="/tickets">
-      <Text>Tickets</Text>
-    </StyledLink>
-    <Footer setCookieBannerOpen={setCookieBannerOpen} />
-  </Wrapper>
+  <StaticQuery
+    query={graphql`
+      query {
+        bg: file(relativePath: { eq: "venue_photo.png" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+  >
+    {data => (
+      <Wrapper fluid={data.bg.childImageSharp.fluid}>
+        {console.log(data)}
+        <StyledLink to="/tickets">
+          <Text>Tickets</Text>
+        </StyledLink>
+        <Footer setCookieBannerOpen={setCookieBannerOpen} />
+      </Wrapper>
+    )}
+  </StaticQuery>
 )
 
 export default TicketsSection

@@ -1,14 +1,10 @@
-import React from 'react'
-import Markdown from 'react-markdown'
-import styled from 'styled-components'
-import { DownloadIcon } from 'components/Svg'
-import ButtonLink from 'components/ButtonLink'
-import { colors } from 'theme'
+import React from "react"
+import Markdown from "react-markdown"
+import styled from "styled-components"
+import { colors } from "theme"
 
-const ApplyBtn = styled(ButtonLink)`
-  max-width: 85px;
-  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  margin-right: 14px;
+const SLinkContainer = styled.a`
+  text-decoration: none;
 `
 
 const StyledLink = styled.a`
@@ -19,12 +15,13 @@ const StyledLink = styled.a`
 
 const Container = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   color: ${colors.white};
   max-width: 260px;
   padding: 14px;
   min-height: 330px;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   border: 2px solid #efefef;
   border-radius: 8px;
   box-sizing: border-box;
@@ -35,19 +32,7 @@ const Container = styled.div`
 
   &:hover {
     color: ${colors.black};
-
-    ${ApplyBtn} {
-      color: ${colors.black};
-      border-color: ${colors.black};
-    }
-
-    ${StyledLink} {
-      color: ${colors.black};
-    }
-
-    g {
-      fill: ${colors.black} !important;
-    }
+    border-color: ${colors.black}; 
   }
 `
 
@@ -71,9 +56,10 @@ const DescParagraph = styled(Markdown)`
   }
 `
 
-const ButtonContainer = styled.div`
-  display: flex;
-  max-height: 43px;
+const CallToAction = styled.p`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 `
 
 const markdownRenderers = {
@@ -81,26 +67,20 @@ const markdownRenderers = {
     <StyledLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledLink>
-  ),
+  )
 }
 
-const BuyButton = ({ heading, desc, link }) => (
-  <Container>
-    <Heading>{heading}</Heading>
-    <DescParagraph source={desc} renderers={markdownRenderers}></DescParagraph>
-    <ButtonContainer>
-      {heading !== 'Speaker' && <ApplyBtn text="APPLY" href={link} target="_blank" />}
-      {heading === 'Sponsor' && (
-        <a
-          href="https://drive.google.com/file/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <DownloadIcon />
-        </a>
-      )}
-    </ButtonContainer>
-  </Container>
+const BuyButton = ({ heading, desc, link, cta }) => (
+  <SLinkContainer href={link}>
+    <Container>
+      <Heading>{heading}</Heading>
+      <DescParagraph
+        source={desc}
+        renderers={markdownRenderers}
+      ></DescParagraph>
+      <CallToAction>{cta}</CallToAction>
+    </Container>
+  </SLinkContainer>
 )
 
 export default BuyButton
