@@ -5,18 +5,30 @@ heading: |-
   NFT ticket!
 columns:
   firstCol:
-    description: Check out our sponsorship packages and apply.
-    title: Sponsor
-    url: 'mailto:sponsor@dappcon.io'
+    description: |-
+      Full access to the 3 days conference.  
+
+
+      Pay in ETH: ~300 EUR  
+
+
+      Pay in DAI: coming soon! 
+    title: BUY IN CRYPTO
+    url: 'https://dappcon.io'
   secondCol:
-    description: Applications are closed.
-    title: Speaker
-    url: 'https://gnosis1.typeform.com/to/ZNV6Wf'
+    description: |-
+      Full access to the 3 days conference.
+
+      300 EUR
+    title: BUY IN FIAT
+    url: 'https://dappcon.io'
   thirdCol:
-    description: >-
-      Apply to volunteer at our event. For more information, contact:
-      [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
-    title: Volunteer
-    url: ' https://gnosis1.typeform.com/to/y3taxr'
+    description: |-
+      Work 50% and enjoy the full conference experience for the remaining of the time!
+
+      Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
+      for more informations
+    title: BECOME A VOLUNTEER
+    url: 'mailto:volunteer@dappcon.io'
 ---
 

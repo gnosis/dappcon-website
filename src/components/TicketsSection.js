@@ -5,7 +5,6 @@ import { colors } from 'theme'
 import { Link } from 'gatsby'
 
 const Wrapper = styled.section`
-  background-color: ${colors.reddishPink};
   position: fixed;
   bottom: 0;
   width: 100%;

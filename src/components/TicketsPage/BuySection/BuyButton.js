@@ -21,8 +21,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   color: ${colors.white};
-  flex-basis: 25%;
+  max-width: 260px;
+  padding: 14px;
+  min-height: 330px;
   transition: color 0.3s ease-in-out;
+  border: 2px solid #efefef;
+  border-radius: 8px;
+  box-sizing: border-box;
 
   g {
     transition: fill 0.3s ease-in-out;
@@ -47,8 +52,9 @@ const Container = styled.div`
 `
 
 const Heading = styled.h3`
-  font-size: 49px;
+  font-size: 36px;
   font-weight: 800;
+  min-height: 108px;
 
   @media screen and (max-width: 767px) {
     font-size: 30px;
@@ -56,8 +62,7 @@ const Heading = styled.h3`
 `
 
 const DescParagraph = styled(Markdown)`
-  font-size: 19px;
-  margin-top: 30px;
+  font-size: 16px;
   min-height: 114px;
 
   @media screen and (max-width: 767px) {
@@ -79,7 +84,7 @@ const markdownRenderers = {
   ),
 }
 
-const ApplyCol = ({ heading, desc, link }) => (
+const BuyButton = ({ heading, desc, link }) => (
   <Container>
     <Heading>{heading}</Heading>
     <DescParagraph source={desc} renderers={markdownRenderers}></DescParagraph>
@@ -98,4 +103,4 @@ const ApplyCol = ({ heading, desc, link }) => (
   </Container>
 )
 
-export default ApplyCol
+export default BuyButton

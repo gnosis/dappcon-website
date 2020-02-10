@@ -1,18 +1,30 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Footer from 'components/Footer'
 import MainSection from 'components/TicketsPage/MainSection'
-import ApplySection from 'components/TicketsPage/ApplySection'
+import BuySection from 'components/TicketsPage/BuySection'
+import { colors } from 'theme'
+
+const PageContainer = styled.div`
+  min-height: 100vh;
+  background-color: ${colors.reddishPink};
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+`
 
 export const TicketsPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
-  <>
+  <PageContainer>
     <MainSection title={title} />
-    <ApplySection columns={columns} />
+    <BuySection columns={columns} />
     <Footer setCookieBannerOpen={setCookieBannerOpen} />
-  </>
+  </PageContainer>
 )
 
 const TicketsPage = props => {
+  console.log(props)
   const {
     data: {
       pageData: { frontmatter: data },
