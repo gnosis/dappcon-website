@@ -39,6 +39,7 @@ const BuySection = ({ columns }) => (
             heading={col.title}
             desc={col.description}
             link={col.url}
+            cta={col.cta}
           />
         ) : null
       )}

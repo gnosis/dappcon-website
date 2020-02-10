@@ -1,9 +1,9 @@
-import React from 'react'
-import Markdown from 'react-markdown'
-import styled from 'styled-components'
-import { DownloadIcon } from 'components/Svg'
-import ButtonLink from 'components/ButtonLink'
-import { colors } from 'theme'
+import React from "react"
+import Markdown from "react-markdown"
+import styled from "styled-components"
+import { DownloadIcon } from "components/Svg"
+import ButtonLink from "components/ButtonLink"
+import { colors } from "theme"
 
 const ApplyBtn = styled(ButtonLink)`
   max-width: 85px;
@@ -24,7 +24,7 @@ const Container = styled.div`
   max-width: 260px;
   padding: 14px;
   min-height: 330px;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   border: 2px solid #efefef;
   border-radius: 8px;
   box-sizing: border-box;
@@ -35,6 +35,7 @@ const Container = styled.div`
 
   &:hover {
     color: ${colors.black};
+    border-color: ${colors.black};
 
     ${ApplyBtn} {
       color: ${colors.black};
@@ -81,25 +82,14 @@ const markdownRenderers = {
     <StyledLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledLink>
-  ),
+  )
 }
 
-const BuyButton = ({ heading, desc, link }) => (
+const BuyButton = ({ heading, desc, link, cta }) => (
   <Container>
     <Heading>{heading}</Heading>
     <DescParagraph source={desc} renderers={markdownRenderers}></DescParagraph>
-    <ButtonContainer>
-      {heading !== 'Speaker' && <ApplyBtn text="APPLY" href={link} target="_blank" />}
-      {heading === 'Sponsor' && (
-        <a
-          href="https://drive.google.com/file/d/1BsT4NA_tq8u4o-K3I209TDgQnUjpdYHX/view"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <DownloadIcon />
-        </a>
-      )}
-    </ButtonContainer>
+    {cta}
   </Container>
 )
 
