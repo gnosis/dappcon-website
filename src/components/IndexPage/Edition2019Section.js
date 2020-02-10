@@ -47,6 +47,7 @@ const RCol = styled.div`
   @media screen and (max-width: 767px) {
     flex-direction: row;
     flex-basis: 100%;
+    justify-content: space-between;
   }
 `
 
@@ -75,6 +76,7 @@ const SLink = styled.a`
 
   @media screen and (max-width: 767px) {
     margin-top: 20px;
+    flex-basis: 40%;
   }
 `
 
