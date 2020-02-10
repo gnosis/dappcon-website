@@ -119,6 +119,14 @@ collections:
                     label: URL
                     name: url
                     widget: string
+                  - 
+                    label: Call to action
+                    name: cta
+                    widget: string
+                  - 
+                    label: Is Active?
+                    hint: can the button be clicked?
+                    widget: boolean
               -
                 label: 'Column 2'
                 name: secondCol
@@ -136,6 +144,18 @@ collections:
                     label: URL
                     name: url
                     widget: string
+                  -
+                    label: URL
+                    name: url
+                    widget: string
+                  - 
+                    label: Call to action
+                    name: cta
+                    widget: string
+                  - 
+                    label: Is Active?
+                    hint: can the button be clicked?
+                    widget: boolean                    
               -
                 label: 'Column 3'
                 name: thirdCol
@@ -153,6 +173,18 @@ collections:
                     label: URL
                     name: url
                     widget: string
+                  -
+                    label: URL
+                    name: url
+                    widget: string
+                  - 
+                    label: Call to action
+                    name: cta
+                    widget: string
+                  - 
+                    label: Is Active?
+                    hint: can the button be clicked?
+                    widget: boolean                    
       -
         file: src/pages/privacy-policy.md
         label: 'Privacy Policy'

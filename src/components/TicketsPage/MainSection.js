@@ -22,6 +22,7 @@ const Heading = styled(Markdown)`
   font-weight: 800;
   max-width: 505px;
   z-index: 1;
+  margin-top: 135px;
 
   @media screen and (max-width: 767px) {
     font-size: 30px;
