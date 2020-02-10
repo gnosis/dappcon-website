@@ -84,7 +84,7 @@ collections:
     label: Pages
     files:
       -
-        file: src/pages/tickets-page.md
+        file: src/pages/tickets.md
         label: 'Tickets Page'
         name: tickets
         fields:
