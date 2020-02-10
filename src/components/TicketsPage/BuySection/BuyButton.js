@@ -1,14 +1,10 @@
 import React from "react"
 import Markdown from "react-markdown"
 import styled from "styled-components"
-import { DownloadIcon } from "components/Svg"
-import ButtonLink from "components/ButtonLink"
 import { colors } from "theme"
 
-const ApplyBtn = styled(ButtonLink)`
-  max-width: 85px;
-  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  margin-right: 14px;
+const SLinkContainer = styled.a`
+  text-decoration: none;
 `
 
 const StyledLink = styled.a`
@@ -19,6 +15,7 @@ const StyledLink = styled.a`
 
 const Container = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   color: ${colors.white};
   max-width: 260px;
@@ -35,20 +32,7 @@ const Container = styled.div`
 
   &:hover {
     color: ${colors.black};
-    border-color: ${colors.black};
-
-    ${ApplyBtn} {
-      color: ${colors.black};
-      border-color: ${colors.black};
-    }
-
-    ${StyledLink} {
-      color: ${colors.black};
-    }
-
-    g {
-      fill: ${colors.black} !important;
-    }
+    border-color: ${colors.black}; 
   }
 `
 
@@ -72,9 +56,10 @@ const DescParagraph = styled(Markdown)`
   }
 `
 
-const ButtonContainer = styled.div`
-  display: flex;
-  max-height: 43px;
+const CallToAction = styled.p`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 `
 
 const markdownRenderers = {
@@ -86,11 +71,16 @@ const markdownRenderers = {
 }
 
 const BuyButton = ({ heading, desc, link, cta }) => (
-  <Container>
-    <Heading>{heading}</Heading>
-    <DescParagraph source={desc} renderers={markdownRenderers}></DescParagraph>
-    {cta}
-  </Container>
+  <SLinkContainer href={link}>
+    <Container>
+      <Heading>{heading}</Heading>
+      <DescParagraph
+        source={desc}
+        renderers={markdownRenderers}
+      ></DescParagraph>
+      <CallToAction>{cta}</CallToAction>
+    </Container>
+  </SLinkContainer>
 )
 
 export default BuyButton

@@ -6,7 +6,6 @@ import BuyButton from "./BuyButton"
 
 const Wrapper = styled.div`
   background-color: ${colors.reddishPink};
-  padding-bottom: 33vh;
 `
 
 const SContentWrapper = styled(ContentWrapper)`
@@ -16,6 +15,7 @@ const SContentWrapper = styled(ContentWrapper)`
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
+    align-items: center;
 
     & > * {
       margin-bottom: 60px;
