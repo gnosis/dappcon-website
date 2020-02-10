@@ -15,7 +15,6 @@ columns:
 
       Pay in DAI: coming soon! 
     title: BUY IN CRYPTO
-    undefined: true
     url: 'https://dappcon.io'
   secondCol:
     cta: BUY
@@ -24,7 +23,6 @@ columns:
 
       300 EUR
     title: BUY IN FIAT
-    undefined: true
     url: 'https://dappcon.io'
   thirdCol:
     cta: CONTACT US
@@ -37,7 +35,6 @@ columns:
 
       for more informations
     title: BECOME A VOLUNTEER
-    undefined: true
     url: 'mailto:volunteer@dappcon.io'
 ---
 

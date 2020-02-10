@@ -53,16 +53,19 @@ export const pageQuery = graphql`
             title
             description
             url
+            cta
           }
           secondCol {
             title
             description
             url
+            cta
           }
           thirdCol {
             title
             description
             url
+            cta
           }
         }
       }
