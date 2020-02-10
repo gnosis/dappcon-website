@@ -146,11 +146,6 @@ collections:
                     name: url
                     widget: string
                   - 
-                    label: Is Active?
-                    name: isActive
-                    hint: can the button be clicked?
-                    widget: boolean
-                  - 
                     label: Call to action
                     name: cta
                     widget: string
