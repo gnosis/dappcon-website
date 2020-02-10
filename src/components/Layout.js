@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import Helmet from 'react-helmet'
-import styled, { createGlobalStyle } from 'styled-components'
-import { StaticQuery, graphql, withPrefix } from 'gatsby'
-import { colors } from 'theme'
-import reset from 'styled-reset'
+import React, { useState } from "react"
+import Helmet from "react-helmet"
+import styled, { createGlobalStyle } from "styled-components"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
+import { colors } from "theme"
+import reset from "styled-reset"
 
-import DesktopNav from 'components/DesktopNav'
-import CookieBanner from 'components/CookieBanner'
-import MobileHeader from 'components/MobileHeader'
-import TicketsSection from 'components/TicketsSection'
+import DesktopNav from "components/DesktopNav"
+import CookieBanner from "components/CookieBanner"
+import MobileHeader from "components/MobileHeader"
+import TicketsSection from "components/TicketsSection"
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -18,7 +18,9 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Averta-Regular"), url(${withPrefix('/fonts/38C995_1_0.ttf')}) format('truetype');
+    src: local("Averta-Regular"), url(${withPrefix(
+      "/fonts/38C995_1_0.ttf"
+    )}) format('truetype');
   }
 
   @font-face {
@@ -26,7 +28,9 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: local("Averta-Extrabold"), url(${withPrefix('/fonts/38C995_0_0.ttf')}) format('truetype');
+    src: local("Averta-Extrabold"), url(${withPrefix(
+      "/fonts/38C995_0_0.ttf"
+    )}) format('truetype');
   }
 
   body {
@@ -79,23 +83,23 @@ const GlobalStyles = createGlobalStyle`
 
 const ChildrenContainer = styled.div`
   position: relative;
-  margin-bottom: ${props => (props.isGetInvolvedPage ? 'inherit' : '100vh')};
+  margin-bottom: ${props => (props.isTicketsPage ? "inherit" : "100vh")};
 `
 
 export const LayoutTemplate = ({
   children,
   location = {},
   headerFooterData = {},
-  setCookieBannerOpen,
+  setCookieBannerOpen
 }) => {
-  // getInvolvedPage needs setCookieBannerOpen since the footer is rendered inside the page
-  const isGetInvolvedPage = /get-involved/.test(location.pathname)
+  // ticketsPage needs setCookieBannerOpen since the footer is rendered inside the page
+  const isTicketsPage = /tickets/.test(location.pathname)
   let childElements = children
 
-  if (isGetInvolvedPage) {
+  if (isTicketsPage) {
     childElements = React.Children.map(children, child => {
       return React.cloneElement(child, {
-        setCookieBannerOpen,
+        setCookieBannerOpen
       })
     })
   }
@@ -105,12 +109,14 @@ export const LayoutTemplate = ({
       <GlobalStyles />
       <DesktopNav location={location} data={headerFooterData} />
       <MobileHeader location={location || {}} data={headerFooterData} />
-      <ChildrenContainer isGetInvolvedPage={isGetInvolvedPage}>
+      <ChildrenContainer isTicketsPage={isTicketsPage}>
         {childElements}
         <div id="pageEnd"></div>
         {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
       </ChildrenContainer>
-      <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
+      {!isTicketsPage && (
+        <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
+      )}
     </>
   )
 }
@@ -128,7 +134,9 @@ const TemplateWrapper = props => {
               description
             }
           }
-          headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+          headerFooterData: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+          ) {
             frontmatter {
               speakerApplyLink
               sponsorInfoLink
@@ -142,25 +150,53 @@ const TemplateWrapper = props => {
           <Helmet>
             <html lang="en" />
             <title>{data.site.siteMetadata.title}</title>
-            <meta name="description" content={data.site.siteMetadata.description} />
+            <meta
+              name="description"
+              content={data.site.siteMetadata.description}
+            />
 
-            <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+            <link
+              rel="icon"
+              type="image/png"
+              href="/img/favicon-32x32.png"
+              sizes="32x32"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              href="/img/favicon-16x16.png"
+              sizes="16x16"
+            />
             <meta name="theme-color" content="#fff" />
 
             <meta property="og:type" content="website" />
             <meta property="og:title" content={data.site.siteMetadata.title} />
-            <meta property="og:description" content={data.site.siteMetadata.description} />
+            <meta
+              property="og:description"
+              content={data.site.siteMetadata.description}
+            />
             <meta property="og:url" content="https://dappcon.io" />
-            <meta property="og:image" content="https://dappcon.io/img/og-image.png" />
+            <meta
+              property="og:image"
+              content="https://dappcon.io/img/og-image.png"
+            />
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@dappcon_berlin" />
             <meta name="twitter:title" content="DAPPCON" />
-            <meta name="twitter:description" content={data.site.siteMetadata.description} />
+            <meta
+              name="twitter:description"
+              content={data.site.siteMetadata.description}
+            />
             <meta name="twitter:creator" content="@dappcon_berlin" />
-            <meta name="twitter:image:alt" content={data.site.siteMetadata.description} />
-            <meta name="twitter:image" content="https://dappcon.io/img/og-image.png" />
+            <meta
+              name="twitter:image:alt"
+              content={data.site.siteMetadata.description}
+            />
+            <meta
+              name="twitter:image"
+              content="https://dappcon.io/img/og-image.png"
+            />
           </Helmet>
           <LayoutTemplate
             {...props}

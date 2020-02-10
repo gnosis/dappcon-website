@@ -84,15 +84,15 @@ collections:
     label: Pages
     files:
       -
-        file: src/pages/get-involved.md
-        label: 'Get involved Page'
-        name: getInvolved
+        file: src/pages/tickets-page.md
+        label: 'Tickets Page'
+        name: tickets
         fields:
           -
             label: 'Template Key'
             name: templateKey
             widget: hidden
-            default: get-involved-page
+            default: tickets-page
           -
             label: 'Main Heading'
             name: heading

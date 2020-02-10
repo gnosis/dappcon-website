@@ -71,6 +71,16 @@ const BottomTextContainer = styled.div`
   justify-content: space-between;
 `
 
+const SLink = styled.a`
+  color: ${colors.reddishPink};
+  text-decoration: none;
+  font-weight: 800;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 const Sponsor = styled.li``
 
 const SponsorsListByType = ({ type, sponsors }) =>
@@ -123,8 +133,8 @@ const SponsorsSection = ({ sponsors }) => {
           <SponsorsListByType type="Knuts" sponsors={ironSponsors} />
         </div>
         <BottomTextContainer>
-          <p>become a sponsor</p>
-          <p>download package</p>
+          <SLink href="mailto:sponsor@dappcon.io">become a sponsor</SLink>
+          <SLink>download package</SLink>
         </BottomTextContainer>
       </ContentWrapper>
     </Wrapper>

@@ -54,7 +54,7 @@ const burgerMenuStyle = css`
   }
 `
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
+const whiteColorSchemePages = ['/', '/tickets', '/tickets/']
 
 const Wrapper = styled.div`
   ${burgerMenuStyle}
@@ -150,10 +150,9 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
         <StyledLink to="/#conferenceSponsors" onClick={() => toggleMenu(!isMenuOpen)}>
           Sponsors
         </StyledLink>
-        <StyledLink to="/get-involved" onClick={() => toggleMenu(!isMenuOpen)}>
-          Join
+        <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
+          Tickets
         </StyledLink>
-        <StyledButtonLink href={buyTicketsLink} target="_blank" text="Buy tickets" />
       </Menu>
     </Wrapper>
   )

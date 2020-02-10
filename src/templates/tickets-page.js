@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Footer from 'components/Footer'
-import MainSection from 'components/GetInvolvedPage/MainSection'
-import ApplySection from 'components/GetInvolvedPage/ApplySection'
+import MainSection from 'components/TicketsPage/MainSection'
+import ApplySection from 'components/TicketsPage/ApplySection'
 
-export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
+export const TicketsPageTemplate = ({ title, columns, setCookieBannerOpen }) => (
   <>
     <MainSection title={title} />
     <ApplySection columns={columns} />
@@ -12,7 +12,7 @@ export const GetInvolvedPageTemplate = ({ title, columns, setCookieBannerOpen })
   </>
 )
 
-const GetInvolvedPage = props => {
+const TicketsPage = props => {
   const {
     data: {
       pageData: { frontmatter: data },
@@ -22,7 +22,7 @@ const GetInvolvedPage = props => {
   const { heading, columns } = data
 
   return (
-    <GetInvolvedPageTemplate
+    <TicketsPageTemplate
       title={heading}
       columns={Object.values(columns)}
       setCookieBannerOpen={setCookieBannerOpen}
@@ -30,11 +30,11 @@ const GetInvolvedPage = props => {
   )
 }
 
-export default GetInvolvedPage
+export default TicketsPage
 
 export const pageQuery = graphql`
   query {
-    pageData: markdownRemark(frontmatter: { templateKey: { eq: "get-involved-page" } }) {
+    pageData: markdownRemark(frontmatter: { templateKey: { eq: "tickets-page" } }) {
       frontmatter {
         heading
         columns {

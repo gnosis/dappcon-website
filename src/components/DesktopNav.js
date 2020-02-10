@@ -14,7 +14,7 @@ const sectionIdToClass = {
 
 const LinkIds = ['dappsLink', 'speakersLink', 'navLogo', 'sponsorsLink', 'ticketsLink']
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/']
+const whiteColorSchemePages = ['/', '/tickets', '/tickets/']
 
 let breakPointsToClass = {}
 
@@ -60,7 +60,7 @@ const DesktopNav = class extends React.PureComponent {
       location: { pathname: prevPath },
     } = prevProps
 
-    if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
+    if (/tickets/.test(pathname) && !/tickets/.test(prevPath)) {
       this.removeListenersAndResetAttrs()
     } else if (pathname !== prevPath) {
       this.initListeners()
