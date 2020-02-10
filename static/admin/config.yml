@@ -125,6 +125,7 @@ collections:
                     widget: string
                   - 
                     label: Is Active?
+                    name: isActive
                     hint: can the button be clicked?
                     widget: boolean
               -
@@ -144,18 +145,20 @@ collections:
                     label: URL
                     name: url
                     widget: string
-                  -
-                    label: URL
-                    name: url
-                    widget: string
+                  - 
+                    label: Is Active?
+                    name: isActive
+                    hint: can the button be clicked?
+                    widget: boolean
                   - 
                     label: Call to action
                     name: cta
                     widget: string
                   - 
                     label: Is Active?
+                    name: isActive
                     hint: can the button be clicked?
-                    widget: boolean                    
+                    widget: boolean
               -
                 label: 'Column 3'
                 name: thirdCol
@@ -173,18 +176,15 @@ collections:
                     label: URL
                     name: url
                     widget: string
-                  -
-                    label: URL
-                    name: url
-                    widget: string
                   - 
                     label: Call to action
                     name: cta
                     widget: string
                   - 
                     label: Is Active?
+                    name: isActive
                     hint: can the button be clicked?
-                    widget: boolean                    
+                    widget: boolean
       -
         file: src/pages/privacy-policy.md
         label: 'Privacy Policy'
