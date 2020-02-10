@@ -14,6 +14,7 @@ columns:
 
 
       Pay in DAI: coming soon! 
+    isActive: true
     title: BUY IN CRYPTO
     url: 'https://dappcon.io'
   secondCol:
@@ -22,6 +23,7 @@ columns:
       Full access to the 3 days conference.
 
       300 EUR
+    isActive: false
     title: BUY IN FIAT
     url: 'https://dappcon.io'
   thirdCol:
@@ -34,6 +36,7 @@ columns:
       Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
 
       for more informations
+    isActive: true
     title: BECOME A VOLUNTEER
     url: 'mailto:volunteer@dappcon.io'
 ---
