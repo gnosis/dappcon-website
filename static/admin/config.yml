@@ -37,6 +37,32 @@ collections:
         name: image
         widget: image
   -
+    name: dapps
+    label: Dapps
+    description: 'Dapps of the DappCon 2020'
+    folder: src/pages/dapps
+    create: true
+    slug: '{{name}}-{{slug}}'
+    identifier_field: name
+    fields:
+      -
+        label: 'Template Key'
+        name: templateKey
+        widget: hidden
+        default: dapps2020
+      -
+        label: Name
+        name: name
+        widget: string
+      -
+        label: URL
+        name: url
+        widget: string
+      -
+        label: Logo
+        name: logo
+        widget: image
+  -
     name: sponsors
     label: Sponsors
     description: 'Sponsors of the DappCon conference'
