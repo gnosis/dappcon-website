@@ -4,6 +4,7 @@ import Markdown from "react-markdown"
 import { colors } from "theme"
 import ButtonLink from "components/ButtonLink"
 import ContentWrapper from "components/ContentWrapper"
+import { DappconIllus } from 'components/Svg'
 import DappConLogo from "img/1-st-section.svg"
 
 const Wrapper = styled.section`
@@ -30,7 +31,7 @@ const MainSection = ({
 }) => (
   <Wrapper id="main">
     <SContentWrapper>
-      <Img src={DappConLogo} alt="Dappcon Logo" />
+      <DappconIllus />
     </SContentWrapper>
   </Wrapper>
 )

@@ -65,7 +65,7 @@ const StatsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  flex-basis: 33%;
+  flex-basis: 35%;
 `
 
 const Stat = styled.div`

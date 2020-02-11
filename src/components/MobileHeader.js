@@ -138,15 +138,12 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
             ->
           </Close>
         </NavigationWrapper>
-        <StyledLink to="/#about" onClick={() => toggleMenu(!isMenuOpen)}>
-          About
+        <StyledLink to="/#dapps" onClick={() => toggleMenu(!isMenuOpen)}>
+          Dapps
         </StyledLink>
-        <StyledAnchor href="/agenda_2.pdf">
-          Agenda
-        </StyledAnchor>
-        <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
+        {/* <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
           Speakers
-        </StyledLink>
+        </StyledLink> */}
         <StyledLink to="/#conferenceSponsors" onClick={() => toggleMenu(!isMenuOpen)}>
           Sponsors
         </StyledLink>

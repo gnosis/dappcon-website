@@ -81,7 +81,7 @@ const LCText = styled(Markdown)`
 const RCText = styled(Markdown)`
   font-size: 16px;
   font-weight: 800;
-  flex-basis: 33%;
+  flex-basis: 27%;
 
   @media screen and (max-width: 767px) {
     margin-top: 25px;
@@ -113,7 +113,7 @@ const SLIDER_SETTINGS = {
 const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => {
 
   return (
-    <Wrapper>
+    <Wrapper id="dapps">
       <ContentWrapper>
         <Slider {...SLIDER_SETTINGS}>
           {dapps.map(dapp => (

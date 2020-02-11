@@ -34,6 +34,10 @@ const Container = styled.div`
     color: ${colors.black};
     border-color: ${colors.black}; 
   }
+
+  @media screen and (max-width: 767px) {
+    min-width: 260px;
+  }
 `
 
 const Heading = styled.h3`
