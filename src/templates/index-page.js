@@ -18,6 +18,7 @@ export const IndexPageTemplate = ({
   dappsTextRC,
   dappsTextLC,
   speakers2019,
+  dapps,
   stats,
   locationAndDate,
   sponsors
@@ -35,9 +36,13 @@ export const IndexPageTemplate = ({
       statsSentence2={statsSentence2}
       stats={stats}
     />
-    <DappsSection dappsTextLC={dappsTextLC} dappsTextRC={dappsTextRC} />
+    <DappsSection
+      dappsTextLC={dappsTextLC}
+      dappsTextRC={dappsTextRC}
+      dapps={dapps}
+    />
     {speakers2019 && <Edition2019Section speakers={speakers2019.edges} />}
-    <MediaPartnersSection />
+    {/* <MediaPartnersSection /> */}
     <SponsorsSection sponsors={sponsors} />
   </>
 )
@@ -47,7 +52,8 @@ const IndexPage = props => {
     data: {
       speakers2019,
       pageData: { frontmatter: pageData },
-      sponsors
+      sponsors,
+      dapps
     }
   } = props
   const {
@@ -73,6 +79,8 @@ const IndexPage = props => {
     .map(sponsor => sponsor.node.frontmatter)
     .sort((a, b) => b.type - a.type)
 
+  const dappsSerialized = Object.values(dapps)[0].map(({ node }) => node.frontmatter)
+
   return (
     <IndexPageTemplate
       mainTitle={mainTitle}
@@ -84,6 +92,7 @@ const IndexPage = props => {
       dappsTextRC={dappsTextRC}
       buttonText={buttonText}
       stats={stats}
+      dapps={dappsSerialized}
       speakers2019={speakers2019}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
@@ -148,6 +157,27 @@ export const pageQuery = graphql`
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
                 fluid(maxWidth: 134) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    dapps: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "dapps2020" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            name
+            url
+            logo {
+              childImageSharp {
+                # Specify the image processing specifications right in the query.
+                # Makes it trivial to update as your page's design changes.
+                fluid(maxWidth: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

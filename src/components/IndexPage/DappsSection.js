@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Markdown from "react-markdown"
 import Slider from "react-slick"
 import ContentWrapper from "components/ContentWrapper"
+import PreviewCompatibleImage from "components/PreviewCompatibleImage"
 import { colors } from "theme"
 import mdRenderers from "markdownRenderers"
 import LeftArrow from "assets/arrow-left.svg"
@@ -17,7 +18,8 @@ const Wrapper = styled.section`
   }
 
   .slick-slide > div {
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .slick-arrow {
@@ -39,16 +41,20 @@ const Wrapper = styled.section`
   }
 `
 
-const Dapp = styled.div`
+const DappContainer = styled.a`
   max-width: 100px;
   height: 100px;
-  background-color: red;
-  border-radius: 5px;
+  width: 100px;
 
   @media screen and (max-width: 767px) {
     max-width: 46px;
     height: 46px;
+    width: 46px;
   }
+`
+
+const Dapp = styled(PreviewCompatibleImage)`
+  border-radius: 5px;
 `
 
 const TextContainer = styled.div`
@@ -104,16 +110,17 @@ const SLIDER_SETTINGS = {
   prevArrow: <Arrow />
 }
 
-const DappsSection = ({ dappsTextRC, dappsTextLC }) => {
+const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => {
+
   return (
     <Wrapper>
       <ContentWrapper>
         <Slider {...SLIDER_SETTINGS}>
-          <Dapp />
-          <Dapp />
-          <Dapp />
-          <Dapp />
-          <Dapp />
+          {dapps.map(dapp => (
+            <DappContainer href={dapp.url} title={dapp.name}>
+              <Dapp key={dapp.name} image={dapp.logo} alt={dapp.name} />
+            </DappContainer>
+          ))}
         </Slider>
         <TextContainer>
           <LCText renderers={mdRenderers}>{dappsTextLC}</LCText>

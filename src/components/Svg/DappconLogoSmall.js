@@ -18,7 +18,7 @@ const DappconLogoSmall = ({ width = 31, height = 41, fill = "" }) => {
       <defs>
         <path id="ao" d="M.626.52H13.14v13.47H.626z" />
       </defs>
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none" fillRule="evenodd">
         <g transform="translate(17.913)">
           <path
             {...props}

@@ -54,7 +54,6 @@ const TicketsSection = ({ setCookieBannerOpen }) => (
   >
     {data => (
       <Wrapper fluid={data.bg.childImageSharp.fluid}>
-        {console.log(data)}
         <StyledLink to="/tickets">
           <Text>Tickets</Text>
         </StyledLink>
