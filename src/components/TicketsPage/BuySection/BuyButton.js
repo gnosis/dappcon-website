@@ -64,6 +64,7 @@ const CallToAction = styled.p`
   position: absolute;
   bottom: 10px;
   right: 10px;
+  font-weight: 800;
 `
 
 const markdownRenderers = {

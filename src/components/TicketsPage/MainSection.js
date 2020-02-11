@@ -6,6 +6,11 @@ import ContentWrapper from "components/ContentWrapper"
 
 const Wrapper = styled.section`
   background-color: ${colors.reddishPink};
+
+
+  @media screen and (max-width: 767px) {
+    margin: 100px 0;
+  }
 `
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -22,7 +27,6 @@ const Heading = styled(Markdown)`
   font-weight: 800;
   max-width: 505px;
   z-index: 1;
-  margin-top: 135px;
 
   @media screen and (max-width: 767px) {
     font-size: 30px;

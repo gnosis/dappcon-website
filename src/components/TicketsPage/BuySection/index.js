@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 const SContentWrapper = styled(ContentWrapper)`
   display: flex;
   justify-content: space-between;
-  margin-top: 106px;
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
