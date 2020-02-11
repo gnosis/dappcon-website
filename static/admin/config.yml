@@ -8,7 +8,7 @@ collections:
     name: speakers2019
     label: Speakers 2019
     description: 'Speakers of the DappCon 2019'
-    folder: src/pages/speakers
+    folder: src/pages/speakers2019
     create: true
     slug: '{{name}}-{{slug}}'
     identifier_field: name
