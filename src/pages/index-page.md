@@ -34,8 +34,8 @@ speakers2019:
   speaker1: Vitalik Buterin
   speaker2: Constance J. Choi
   speaker3: Joseph Lubin
-  speaker4: Cat Speaker
-  speaker5: Cat Speaker
+  speaker4: Aleksandra Skrzypczak
+  speaker5: Austin Griffith
   speaker6: Alexey Akhunov
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
