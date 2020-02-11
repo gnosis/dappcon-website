@@ -3,6 +3,7 @@ import Navbar from 'components/Navbar'
 import NavLogo from 'components/NavLogo'
 
 const sectionIdToClass = {
+  main: 'navBlack',
   about: 'navBlack',
   photo: 'navWhite',
   policy: 'navBlack',
