@@ -54,7 +54,7 @@ const burgerMenuStyle = css`
   }
 `
 
-const whiteColorSchemePages = ['/', '/tickets', '/tickets/']
+const whiteColorSchemePages = ['/tickets', '/tickets/']
 
 const Wrapper = styled.div`
   ${burgerMenuStyle}
@@ -91,7 +91,7 @@ const Close = styled.button`
 `
 
 const LinkCSS = css`
-    font-size: 19px;
+  font-size: 19px;
   padding: 25px 0;
   text-align: center;
   color: ${colors.bgWhite};
