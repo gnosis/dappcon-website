@@ -8,8 +8,7 @@ import BerlinLandscapeSvg from 'img/berlin_cityscape.svg'
 
 const Wrapper = styled.section`
   height: 100vh;
-  position: relative;
-  background-color: ${colors.reddishPink};
+  background: ${colors.bgWhite};
 `
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -98,20 +97,8 @@ const mdRenderers = {
 }
 
 const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
-  <Wrapper id="main">
-    <StyledContentWrapper>
-      <MainHeading>{mainTitle}</MainHeading>
-      <ButtonDateContainer>
-        <StyledButtonLink
-          href={buyTicketsLink}
-          target="_blank"
-          text={buttonText}
-          hover={colors.black}
-        />
-        <StyledDate source={locationAndDate} renderers={mdRenderers} />
-      </ButtonDateContainer>
-    </StyledContentWrapper>
-    <BerlinImg src={BerlinLandscapeSvg} alt="cityscape" />
+  <Wrapper>
+
   </Wrapper>
 )
 
