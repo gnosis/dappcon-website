@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import Markdown from 'react-markdown'
-import { colors } from 'theme'
-import ButtonLink from 'components/ButtonLink'
-import ContentWrapper from 'components/ContentWrapper'
-import DappConLogo from 'img/1-st-section.svg'
+import React from "react"
+import styled from "styled-components"
+import Markdown from "react-markdown"
+import { colors } from "theme"
+import ButtonLink from "components/ButtonLink"
+import ContentWrapper from "components/ContentWrapper"
+import DappConLogo from "img/1-st-section.svg"
 
 const Wrapper = styled.section`
   height: 100vh;
@@ -14,9 +14,24 @@ const Wrapper = styled.section`
   justify-content: center;
 `
 
-const MainSection = ({ mainTitle, buttonText, buyTicketsLink, locationAndDate }) => (
+const SContentWrapper = styled(ContentWrapper)`
+  width: 100%;
+`
+
+const Img = styled.img`
+  width: 100%;
+`
+
+const MainSection = ({
+  mainTitle,
+  buttonText,
+  buyTicketsLink,
+  locationAndDate
+}) => (
   <Wrapper id="main">
-    <img src={DappConLogo} alt="Dappcon Logo" />
+    <SContentWrapper>
+      <Img src={DappConLogo} alt="Dappcon Logo" />
+    </SContentWrapper>
   </Wrapper>
 )
 

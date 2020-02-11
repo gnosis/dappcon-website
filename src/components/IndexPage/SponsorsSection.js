@@ -75,6 +75,7 @@ const SLink = styled.a`
   color: ${colors.reddishPink};
   text-decoration: none;
   font-weight: 800;
+  flex-basis: 30%;
 
   &:hover {
     text-decoration: underline;
