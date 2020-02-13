@@ -7,13 +7,13 @@ columns:
   firstCol:
     cta: BUY
     description: |-
-      Full access to the 3 days conference.  
+      Full access to the 3-day conference\
       &nbsp;  
 
-      Pay in ETH: ~300 EUR  
+      Pay in ETH: ~300 EUR\
       &nbsp;  
 
-      Pay in DAI: coming soon! 
+      Pay in DAI: Coming Soon!
     isActive: true
     title: BUY IN CRYPTO
     url: 'https://dappcon.io'
