@@ -18,7 +18,7 @@ columns:
     title: BUY IN CRYPTO
     url: 'https://dappcon.io'
   secondCol:
-    cta: BUY
+    cta: COMING SOON
     description: |-
       Full access to the 3 days conference.  
       &nbsp;
@@ -31,11 +31,10 @@ columns:
     cta: CONTACT US
     description: >-
       Work 50% and enjoy the full conference experience for the remaining of the
-      time!  
-      &nbsp;  
-      
-      Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io)
-      for more informations
+      time!   &nbsp;  
+
+      Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io) for more
+      informations
     isActive: true
     title: BECOME A VOLUNTEER
     url: 'mailto:volunteer@dappcon.io'
