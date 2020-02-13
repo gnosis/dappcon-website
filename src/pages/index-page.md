@@ -3,14 +3,14 @@ templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
 locationAndDate: |-
-  21-23 August 2019 
+  8-10 September, 2020
 
-  [Technical University Berlin](https://goo.gl/maps/pfWLb43gLgyzPgFk6)
-buyTicketsLink: 'https://www.weezevent.com/dappcon-2'
+  radialsystem, Berlin
+buyTicketsLink: 'https://jovial-heyrovsky-9e9a9c.netlify.com/tickets'
 statsHeading: Participate in a unique conference experience!
 statsSentence1: >-
-  Organized by Gnosis, DappCon’s 3rd edition continues to unite the top minds of
-  the Ethereum space.
+  **Organized by [Gnosis](https://gnosis.io/), DappCon’s third edition continues
+  to unite the top minds in the Ethereum and peer-to-peer ecosystem.**
 statsSentence2: >-
   Be part of an environment where blockchain comes to life, from ticket selling
   to talk curation.
