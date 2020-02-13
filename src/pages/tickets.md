@@ -20,10 +20,10 @@ columns:
   secondCol:
     cta: COMING SOON
     description: |-
-      Full access to the 3 days conference.  
+      Full access to the 3-day conference\
       &nbsp;
 
-      300 EUR  
+      300 EUR
     isActive: false
     title: BUY IN FIAT
     url: 'https://dappcon.io'
