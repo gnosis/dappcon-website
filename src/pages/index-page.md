@@ -18,8 +18,8 @@ dappsTextLC: >-
   [Submit](https://gnosis1.typeform.com/to/ZLw5in) your Dapp to be part of
   DappCon
 dappsTextRC: >-
-  Apply directly with a use case to leverage your Dapp during the conference and
-  test it with 700+ participants!
+  Apply with your dapp’s conference use case, and get it directly in the hands
+  of 700+ participants!
 stats:
   firstStat:
     description: attendees
