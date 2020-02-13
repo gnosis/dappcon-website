@@ -12,8 +12,8 @@ statsSentence1: >-
   Organized by [Gnosis](https://gnosis.io/), DappCon’s third edition continues
   to unite the top minds in the Ethereum and peer-to-peer ecosystem.
 statsSentence2: >-
-  Be part of an environment where blockchain comes to life, from ticket selling
-  to talk curation.
+  Be part of an environment where decentralized tech comes to life, from ticket
+  sales to program curation.
 dappsTextLC: >-
   [Submit](https://gnosis1.typeform.com/to/ZLw5in) your Dapp to be part of
   DappCon
