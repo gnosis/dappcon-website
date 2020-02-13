@@ -12,7 +12,7 @@ statsHeading: >-
   decentralized applications.
 statsSentence1: >-
   Organized by [Gnosis](https://gnosis.io/), DappCon’s third edition continues
-  to unite the top minds in the Ethereum and peer-to-peer ecosystem.
+  to unite the top minds in the Ethereum ecosystem.
 statsSentence2: >-
   Be part of an environment where decentralized tech comes to life, from ticket
   sales to program curation.
