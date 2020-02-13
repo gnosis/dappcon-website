@@ -15,7 +15,7 @@ statsSentence2: >-
   Be part of an environment where blockchain comes to life, from ticket sales to
   program curation.
 dappsTextLC: >-
-  [Submit](https://gnosis1.typeform.com/to/ZLw5in) your Dapp to be part of
+  [Apply](https://gnosis1.typeform.com/to/ZLw5in) to have your Dapp featured at
   DappCon
 dappsTextRC: >-
   Apply with your dapp’s use case, and get it directly in the hands of 700+
