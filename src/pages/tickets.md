@@ -30,8 +30,8 @@ columns:
   thirdCol:
     cta: CONTACT US
     description: >-
-      Work 50% and enjoy the full conference experience for the remaining of the
-      time!   &nbsp;  
+      **Work 1 out of 3 days and enjoy the full conference for the remaining
+      days! Contact us at volunteer@dappcon.io for more information.**   &nbsp;\
 
       Contact us at [volunteer@dappcon.io](mailto:volunteer@dappcon.io) for more
       informations
