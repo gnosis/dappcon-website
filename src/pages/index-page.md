@@ -7,7 +7,9 @@ locationAndDate: |-
 
   radialsystem, Berlin
 buyTicketsLink: 'https://jovial-heyrovsky-9e9a9c.netlify.com/tickets'
-statsHeading: Participate in a unique conference experience!
+statsHeading: >-
+  This year, we’re all about immersion—testing the sky-high limits of
+  decentralized applications.
 statsSentence1: >-
   Organized by [Gnosis](https://gnosis.io/), DappCon’s third edition continues
   to unite the top minds in the Ethereum and peer-to-peer ecosystem.
