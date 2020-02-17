@@ -1,30 +1,30 @@
-# if: (branch = develop) OR (branch = master) OR (tag IS present)
-# dist: xenial
-# language: node_js
-# node_js: '11'
-# cache:
-#   directories:
-#   - "node_modules"
-# install:
-#   - yarn config set cache-folder .yarn
-#   - yarn install
-# script:
-#   - travis_wait yarn build
-# before_deploy:
-#   # IMPORTANT: This has to be executed here so that deploy stage can access to LATEST_TAG ENV
-#   # Get latest tag name
-#   - export LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-# deploy:
-#   # Staging deployment
-#   - provider: s3
-#     bucket: $STAGING_BUCKET_NAME
-#     access_key_id: $AWS_ACCESS_KEY_ID
-#     secret_access_key: $AWS_SECRET_ACCESS_KEY
-#     skip_cleanup: true
-#     local_dir: public
-#     upload-dir: current
-#     on:
-#       branch: develop
+if: (branch = develop) OR (branch = master) OR (tag IS present)
+dist: xenial
+language: node_js
+node_js: '11'
+cache:
+  directories:
+  - "node_modules"
+install:
+  - yarn config set cache-folder .yarn
+  - yarn install
+script:
+  - travis_wait yarn build
+before_deploy:
+  # IMPORTANT: This has to be executed here so that deploy stage can access to LATEST_TAG ENV
+  # Get latest tag name
+  - export LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+deploy:
+  # Staging deployment
+  - provider: s3
+    bucket: $STAGING_BUCKET_NAME
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    skip_cleanup: true
+    local_dir: public
+    upload-dir: current
+    on:
+      branch: develop
 #   # Production deployment - MANUAL Tagged commits
 #   - provider: s3
 #     bucket: $STAGING_BUCKET_NAME

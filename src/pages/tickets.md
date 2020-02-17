@@ -32,10 +32,10 @@ columns:
       Work 1 out of 3 days and enjoy the full conference for the remaining
       days!  &nbsp
 
-        Contact us at volunteer@dappcon.io for more informations
+      Contact us at volunteer@dappcon.io for more information
     isActive: true
     isMintbase: false
     title: BECOME A VOLUNTEER
-    url: 'mailto:volunteer@dappcon.io'
+    url: 'https://gnosis1.typeform.com/to/KyJIgW'
 ---
 

@@ -7,6 +7,8 @@ const SLinkContainer = styled.a`
   text-decoration: none;
 `
 
+const SBtnContainer = styled.div``
+
 const StyledLink = styled.a`
   color: ${colors.white};
   text-decoration: underline;
@@ -75,7 +77,7 @@ const markdownRenderers = {
   )
 }
 
-const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
+const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
   const handleOpen = useCallback((e) => {
     e.preventDefault()
 
@@ -92,15 +94,16 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
       }
     })
   }, [])
+  const BtnContainerComponent = isActive ? SLinkContainer : SBtnContainer
 
   return (
-    <SLinkContainer href={link} onClick={isMintbase ? handleOpen : () => {}}>
+    <BtnContainerComponent href={link} onClick={isMintbase ? handleOpen : () => {}}>
       <Container>
         <Heading>{heading}</Heading>
         <DescParagraph source={desc} renderers={markdownRenderers} />
         <CallToAction>{cta}</CallToAction>
       </Container>
-    </SLinkContainer>
+    </BtnContainerComponent>
   )
 }
 
