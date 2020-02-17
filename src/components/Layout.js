@@ -128,6 +128,8 @@ export const LayoutTemplate = ({
       {!isTicketsPage && (
         <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
       )}
+      {/* required for mintbase  */}
+      <div id="mintbase-app"></div>
     </>
   )
 }

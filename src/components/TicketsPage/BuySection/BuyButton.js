@@ -80,13 +80,13 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
     e.preventDefault()
 
     window.renderGroups.runApp({
-      contract: "0x148ecaddef2201c42571999d3c3499d72365ed03",
+      contract: "0x202d2f33449bf46d6d32ae7644ada130876461a4",
       finishedUrl: "",
       buttonText: "NFT.Kred",
       twitterHandle: "@NFT_NYC",
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       hideAvailable: false,
-      isTest: true,
+      isTest: false,
       initialized: function() {
         // Do something when the app has loaded
       }
