@@ -8,6 +8,7 @@ import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
   padding-top: 222px;
+  padding-bottom: 100px;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
@@ -92,13 +93,13 @@ const Edition2019Section = ({ speakers }) => (
         </SpeakersContainer>
         <RCol>
           <HideOnMobile>
-            <Heading>Edition 2019</Heading>
+            <Heading>2019 Edition</Heading>
           </HideOnMobile>
           <SLink href="https://2019.dappcon.io">
-            Check out the Dappcon 2019 Edition
+            Check out the DappCon 2019 Edition
           </SLink>
           <SLink href="https://gnosis1.typeform.com/to/u8cTBg">
-            Become a speaker at DappCon 2020
+            Want to become a speaker at DappCon 2020? Submit your proposal today
           </SLink>
         </RCol>
       </Container>
