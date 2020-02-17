@@ -82,8 +82,8 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
     window.renderGroups.runApp({
       contract: "0x202d2f33449bf46d6d32ae7644ada130876461a4",
       finishedUrl: "",
-      buttonText: "NFT.Kred",
-      twitterHandle: "@NFT_NYC",
+      buttonText: "NFT.DappCon2020",
+      twitterHandle: "@dappcon_berlin",
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       hideAvailable: false,
       isTest: false,
@@ -92,7 +92,6 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
       }
     })
   }, [])
-  console.log(heading, isMintbase)
 
   return (
     <SLinkContainer href={link} onClick={isMintbase ? handleOpen : () => {}}>

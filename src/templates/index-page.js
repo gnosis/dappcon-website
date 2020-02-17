@@ -43,7 +43,7 @@ export const IndexPageTemplate = ({
     />
     {speakers2019 && <Edition2019Section speakers={speakers2019.edges} />}
     {/* <MediaPartnersSection /> */}
-    <SponsorsSection sponsors={sponsors} />
+    {/* <SponsorsSection sponsors={sponsors} /> */}
   </>
 )
 
