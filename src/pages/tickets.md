@@ -7,8 +7,11 @@ columns:
   firstCol:
     cta: BUY
     description: |-
-      Full access to the 3-day conference\
-      Pay in ETH: ~300 EUR&nbsp;  Pay in DAI: Coming Soon!
+      Full access to the 3-day conference  &nbsp
+
+        Pay in ETH: ~300 EUR  &nbsp
+
+        Pay in DAI: Coming Soon!
     isActive: true
     isMintbase: true
     title: BUY IN CRYPTO
@@ -16,8 +19,9 @@ columns:
   secondCol:
     cta: COMING SOON
     description: |-
-      Full access to the 3-day conference\
-      &nbsp; 300 EUR
+      Full access to the 3-day conference  &nbsp
+
+        300 EUR
     isActive: false
     isMintbase: false
     title: BUY IN FIAT
@@ -25,10 +29,10 @@ columns:
   thirdCol:
     cta: CONTACT US
     description: >-
-      Work 1 out of 3 days and enjoy the full conference for the remaining days!
-      &nbsp; &nbsp; \
+      Work 1 out of 3 days and enjoy the full conference for the remaining
+      days!  &nbsp
 
-      Contact us at volunteer@dappcon.io for more informations
+        Contact us at volunteer@dappcon.io for more informations
     isActive: true
     isMintbase: false
     title: BECOME A VOLUNTEER
