@@ -8,7 +8,7 @@ columns:
     cta: BUY
     description: |-
       Full access to the 3-day conference\
-      Pay in ETH: ~300 EUR<br/> Pay in DAI: Coming!
+      Pay in ETH: ~300 EUR&nbsp;  Pay in DAI: Coming Soon!
     isActive: true
     isMintbase: true
     title: BUY IN CRYPTO
