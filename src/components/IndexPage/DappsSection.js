@@ -117,7 +117,7 @@ const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => {
       <ContentWrapper>
         <Slider {...SLIDER_SETTINGS}>
           {dapps.map(dapp => (
-            <DappContainer href={dapp.url} title={dapp.name}>
+            <DappContainer key={dapp.url} href={dapp.url} title={dapp.name}>
               <Dapp key={dapp.name} image={dapp.logo} alt={dapp.name} />
             </DappContainer>
           ))}

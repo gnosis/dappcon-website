@@ -39,17 +39,21 @@ const StyledLink = styled(Link)`
   ${LinkCSS}
 `
 
+const SExternalLink = styled.a`
+  ${LinkCSS}
+`
+
 const Navbar = ({ isBlack, setLinkRef, data }) => (
   <NavbarMenuContainer>
     <StyledLink id="dappsLink" isBlack={isBlack} to="/#dapps" innerRef={setLinkRef}>
       Dapps
     </StyledLink>
-    {/* <StyledLink id="speakersLink" isBlack={isBlack} to="/speakers" innerRef={setLinkRef}>
+    <StyledLink id="speakersLink" isBlack={isBlack} to="/#edition2019" innerRef={setLinkRef}>
       Speakers
-    </StyledLink> */}
-    <StyledLink id="sponsorsLink" isBlack={isBlack} to="/#conferenceSponsors" innerRef={setLinkRef}>
-      Sponsors
     </StyledLink>
+    <SExternalLink id="sponsorsLink" isBlack={isBlack} href="/DappCon2020SponsorshipPackages.pdf" target="_blank" ref={setLinkRef}>
+      Sponsors
+    </SExternalLink>
     <StyledLink id="ticketsLink" isBlack={isBlack} to="/tickets" innerRef={setLinkRef}>
       Tickets
     </StyledLink>

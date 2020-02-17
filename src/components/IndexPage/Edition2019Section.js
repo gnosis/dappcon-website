@@ -81,7 +81,7 @@ const SLink = styled.a`
 `
 
 const Edition2019Section = ({ speakers }) => (
-  <Wrapper id="speakers">
+  <Wrapper id="edition2019">
     <ContentWrapper>
       <MobileHeading>Edition 2019</MobileHeading>
       <Container>
