@@ -25,10 +25,9 @@ columns:
     url: 'https://dappcon.io'
   thirdCol:
     cta: CONTACT US
-    description: |-
+    description: >-
       Work 1 out of 3 days and enjoy the full conference for the remaining days!
-      &nbsp;\
-      Contact us at volunteer@dappcon.io for more informations
+      &nbsp; &nbsp; Contact us at volunteer@dappcon.io for more informations
     isActive: true
     isMintbase: false
     title: BECOME A VOLUNTEER
