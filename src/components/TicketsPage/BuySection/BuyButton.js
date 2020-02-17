@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 import Markdown from "react-markdown"
 import styled from "styled-components"
 import { colors } from "theme"
@@ -32,7 +32,7 @@ const Container = styled.div`
 
   &:hover {
     color: ${colors.black};
-    border-color: ${colors.black}; 
+    border-color: ${colors.black};
   }
 
   @media screen and (max-width: 767px) {
@@ -75,17 +75,34 @@ const markdownRenderers = {
   )
 }
 
-const BuyButton = ({ heading, desc, link, cta }) => (
-  <SLinkContainer href={link}>
-    <Container>
-      <Heading>{heading}</Heading>
-      <DescParagraph
-        source={desc}
-        renderers={markdownRenderers}
-      ></DescParagraph>
-      <CallToAction>{cta}</CallToAction>
-    </Container>
-  </SLinkContainer>
-)
+const BuyButton = ({ heading, desc, link, cta, isMintbase }) => {
+  const handleOpen = useCallback((e) => {
+    e.preventDefault()
+
+    window.renderGroups.runApp({
+      contract: "0x148ecaddef2201c42571999d3c3499d72365ed03",
+      finishedUrl: "",
+      buttonText: "NFT.Kred",
+      twitterHandle: "@NFT_NYC",
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      hideAvailable: false,
+      isTest: true,
+      initialized: function() {
+        // Do something when the app has loaded
+      }
+    })
+  }, [])
+  console.log(heading, isMintbase)
+
+  return (
+    <SLinkContainer href={link} onClick={isMintbase ? handleOpen : () => {}}>
+      <Container>
+        <Heading>{heading}</Heading>
+        <DescParagraph source={desc} renderers={markdownRenderers} />
+        <CallToAction>{cta}</CallToAction>
+      </Container>
+    </SLinkContainer>
+  )
+}
 
 export default BuyButton

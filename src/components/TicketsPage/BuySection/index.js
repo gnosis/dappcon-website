@@ -39,6 +39,8 @@ const BuySection = ({ columns }) => (
             desc={col.description}
             link={col.url}
             cta={col.cta}
+            isMintbase={col.isMintbase}
+            isActive={col.isActive}
           />
         ) : null
       )}
