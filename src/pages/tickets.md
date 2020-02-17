@@ -37,10 +37,10 @@ columns:
       &nbsp;\
 
       Contact us at volunteer@dappcon.io for more
-      informations
+      information
     isActive: true
     isMintbase: false
     title: BECOME A VOLUNTEER
-    url: 'mailto:volunteer@dappcon.io'
+    url: 'https://gnosis1.typeform.com/to/KyJIgW'
 ---
 
