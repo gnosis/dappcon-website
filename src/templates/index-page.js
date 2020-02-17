@@ -1,23 +1,27 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import MainSection from 'components/IndexPage/MainSection'
-import StatsSection from 'components/IndexPage/StatsSection'
-import PhotoSection from 'components/IndexPage/PhotoSection'
-import SpeakersSection from 'components/IndexPage/SpeakersSection'
-import SponsorsSection from 'components/IndexPage/SponsorsSection'
+import React from "react"
+import { graphql } from "gatsby"
+import MainSection from "components/IndexPage/MainSection"
+import StatsSection from "components/IndexPage/StatsSection"
+import DappsSection from "components/IndexPage/DappsSection"
+import Edition2019Section from "components/IndexPage/Edition2019Section"
+import SponsorsSection from "components/IndexPage/SponsorsSection"
+import MediaPartnersSection from "components/IndexPage/MediaPartnersSection"
 
 export const IndexPageTemplate = ({
   mainTitle,
   aboutDappcon,
   buttonText,
   buyTicketsLink,
-  aboutDappconLeftCol,
-  aboutDappconRightCol,
-  speakers,
+  statsHeading,
+  statsSentence1,
+  statsSentence2,
+  dappsTextRC,
+  dappsTextLC,
+  speakers2019,
+  dapps,
   stats,
-  programPhotoText,
   locationAndDate,
-  sponsors,
+  sponsors
 }) => (
   <>
     <MainSection
@@ -27,55 +31,69 @@ export const IndexPageTemplate = ({
       locationAndDate={locationAndDate}
     />
     <StatsSection
-      aboutDappconLeftCol={aboutDappconLeftCol}
-      aboutDappconRightCol={aboutDappconRightCol}
+      statsHeading={statsHeading}
+      statsSentence1={statsSentence1}
+      statsSentence2={statsSentence2}
       stats={stats}
     />
-    <PhotoSection text={programPhotoText} />
-    {speakers && <SpeakersSection speakers={speakers.edges} />}
-    <SponsorsSection sponsors={sponsors} />
+    <DappsSection
+      dappsTextLC={dappsTextLC}
+      dappsTextRC={dappsTextRC}
+      dapps={dapps}
+    />
+    {speakers2019 && <Edition2019Section speakers={speakers2019.edges} />}
+    {/* <MediaPartnersSection /> */}
+    {/* <SponsorsSection sponsors={sponsors} /> */}
   </>
 )
 
 const IndexPage = props => {
   const {
     data: {
-      speakers,
+      speakers2019,
       pageData: { frontmatter: pageData },
       sponsors,
-    },
+      dapps
+    }
   } = props
   const {
     mainTitle,
-    aboutDappconRightCol,
-    aboutDappconLeftCol,
+    statsHeading,
+    statsSentence1,
+    statsSentence2,
+    dappsTextLC,
+    dappsTextRC,
     buttonText,
-    speakers: indexPageSpeakers,
+    speakers2019: indexPage2019Speakers,
     stats,
-    programPhotoText,
     buyTicketsLink,
-    locationAndDate,
+    locationAndDate
   } = pageData
 
-  const displayedSpeakers = Object.values(indexPageSpeakers)
-  speakers.edges = speakers.edges.filter(({ node }) =>
-    displayedSpeakers.includes(node.frontmatter.name),
+  const displayedSpeakers = Object.values(indexPage2019Speakers)
+  speakers2019.edges = speakers2019.edges.filter(({ node }) =>
+    displayedSpeakers.includes(node.frontmatter.name)
   )
 
   const sortedSponsors = sponsors.edges
     .map(sponsor => sponsor.node.frontmatter)
     .sort((a, b) => b.type - a.type)
 
+  const dappsSerialized = Object.values(dapps)[0].map(({ node }) => node.frontmatter)
+
   return (
     <IndexPageTemplate
       mainTitle={mainTitle}
-      aboutDappconLeftCol={aboutDappconLeftCol}
-      aboutDappconRightCol={aboutDappconRightCol}
+      statsHeading={statsHeading}
+      statsSentence1={statsSentence1}
+      statsSentence2={statsSentence2}
       buyTicketsLink={buyTicketsLink}
+      dappsTextLC={dappsTextLC}
+      dappsTextRC={dappsTextRC}
       buttonText={buttonText}
       stats={stats}
-      programPhotoText={programPhotoText}
-      speakers={speakers}
+      dapps={dappsSerialized}
+      speakers2019={speakers2019}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
     />
@@ -88,13 +106,18 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    pageData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    pageData: markdownRemark(
+      frontmatter: { templateKey: { eq: "index-page" } }
+    ) {
       frontmatter {
         mainTitle
         buttonText
         buyTicketsLink
-        aboutDappconLeftCol
-        aboutDappconRightCol
+        statsHeading
+        statsSentence1
+        statsSentence2
+        dappsTextRC
+        dappsTextLC
         locationAndDate
         stats {
           firstStat {
@@ -110,27 +133,25 @@ export const pageQuery = graphql`
             number
           }
         }
-        programPhotoText {
-          isLink
-          label
-          linkURL
-        }
-        speakers {
+        speakers2019 {
           speaker1
           speaker2
           speaker3
           speaker4
+          speaker5
+          speaker6
         }
       }
     }
-    speakers: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "speaker" } } }) {
+    speakers2019: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "speaker2019" } } }
+    ) {
       edges {
         node {
           frontmatter {
             name
             company
             position
-            hasPodcast
             image {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
@@ -140,11 +161,23 @@ export const pageQuery = graphql`
                 }
               }
             }
-            glassesImg {
+          }
+        }
+      }
+    }
+    dapps: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "dapps2020" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            name
+            url
+            logo {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth: 134, maxHeight: 134) {
+                fluid(maxWidth: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -153,7 +186,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsors: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "sponsor" } } }) {
+    sponsors: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "sponsor" } } }
+    ) {
       edges {
         node {
           frontmatter {

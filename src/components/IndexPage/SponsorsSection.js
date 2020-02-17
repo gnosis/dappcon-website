@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import ContentWrapper from 'components/ContentWrapper'
-import { colors } from 'theme'
+import React from "react"
+import styled from "styled-components"
+import ContentWrapper from "components/ContentWrapper"
+import { colors } from "theme"
 
 const Wrapper = styled.section`
   padding: 120px 0 95px;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
-    padding-bottom: 50px;
+    padding: 30px 0 50px;
   }
 `
 
@@ -20,6 +20,7 @@ const SponsorByTypeContainer = styled.div`
 
     @media screen and (max-width: 767px) {
       width: 33%;
+      font-size: 16px;
     }
   }
 
@@ -30,7 +31,7 @@ const SponsorByTypeContainer = styled.div`
 
   &:not(:last-child) {
     &:after {
-      content: '';
+      content: "";
       width: 100%;
       border-bottom: solid 1px #979797;
       position: absolute;
@@ -43,15 +44,14 @@ const SponsorByTypeContainer = styled.div`
 const SponsorList = styled.ul`
   display: grid;
   justify-content: center;
+  direction: rtl;
   align-items: center;
-  grid-template-columns: ${props =>
-    `repeat(${props.sponsorsAmount < 3 ? props.sponsorsAmount : 3}, 115px)`};
+  grid-template-columns: repeat(3, 115px);
   grid-gap: 70px;
 
   @media screen and (max-width: 767px) {
     grid-gap: 20px;
-    grid-template-columns: ${props =>
-      `repeat(${props.sponsorsAmount < 2 ? props.sponsorsAmount : 2}, 88px)`};
+    grid-template-columns: repeat(2, 88px);
   }
 `
 
@@ -63,6 +63,22 @@ const Img = styled.img`
   @media screen and (max-width: 767px) {
     max-width: 88px;
     max-height: 60px;
+  }
+`
+
+const BottomTextContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const SLink = styled.a`
+  color: ${colors.reddishPink};
+  text-decoration: none;
+  font-weight: 800;
+  flex-basis: 30%;
+
+  &:hover {
+    text-decoration: underline;
   }
 `
 
@@ -111,10 +127,16 @@ const SponsorsSection = ({ sponsors }) => {
   return (
     <Wrapper id="conferenceSponsors">
       <ContentWrapper>
-        <SponsorsListByType type="Unicorns" sponsors={goldSponsors} />
-        <SponsorsListByType type="Whales" sponsors={silverSponsors} />
-        <SponsorsListByType type="Kitties" sponsors={bronzeSponsors} />
-        <SponsorsListByType type="Knuts" sponsors={ironSponsors} />
+        <div>
+          <SponsorsListByType type="Unicorns" sponsors={goldSponsors} />
+          <SponsorsListByType type="Whales" sponsors={silverSponsors} />
+          <SponsorsListByType type="Kitties" sponsors={bronzeSponsors} />
+          <SponsorsListByType type="Knuts" sponsors={ironSponsors} />
+        </div>
+        <BottomTextContainer>
+          <SLink href="mailto:sponsor@dappcon.io">become a sponsor</SLink>
+          <SLink>download package</SLink>
+        </BottomTextContainer>
       </ContentWrapper>
     </Wrapper>
   )

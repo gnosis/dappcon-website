@@ -3,42 +3,40 @@ templateKey: index-page
 mainTitle: Developer Conference for Ethereum Dapps & Infrastructure
 buttonText: BUY TICKETS
 locationAndDate: |-
-  21-23 August 2019 
+  8-10 September, 2020
 
-  [Technical University Berlin](https://goo.gl/maps/pfWLb43gLgyzPgFk6)
-buyTicketsLink: 'https://www.weezevent.com/dappcon-2'
-aboutDappconLeftCol: >-
-  DappCon is a nonprofit global developer conference organized by
-  [Gnosis](https://gnosis.io). Join us at DappCon and get exclusive access to
-  the [EthBerlin](https://ethberlinzwei.com/index.html) conference and
-  [TEGG](http://tegg.io/) during [Berlin Blockchain
-  week](https://blockchainweek.berlin/calendar/).
-aboutDappconRightCol: >-
-  DappCon focuses on decentralized applications, tooling, and foundational
-  infrastructure on Ethereum. Last year [DappCon 2018](https://2018.dappcon.io)
-  brought together more than 600 Ethereum developers, researchers and
-  enthusiasts.<br><br> We’re giving it another go this summer and encourage
-  anyone interested in the ecosystem or networking with dapp developers to
-  attend.
+  radialsystem, Berlin
+buyTicketsLink: 'https://jovial-heyrovsky-9e9a9c.netlify.com/tickets'
+statsHeading: Participate in a unique conference experience!
+statsSentence1: >-
+  Organized by [Gnosis](https://gnosis.io/), DappCon’s third edition continues
+  to unite the top minds in the Ethereum ecosystem.
+statsSentence2: >-
+  Be part of an environment where blockchain comes to life, from ticket sales to
+  program curation.
+dappsTextLC: >-
+  [Apply](https://gnosis1.typeform.com/to/ZLw5in) to have your Dapp featured at
+  DappCon
+dappsTextRC: >-
+  Apply with your dapp’s use case, and get it directly in the hands of 700+
+  participants!
 stats:
   firstStat:
-    description: days
-    number: '3'
+    description: attendees
+    number: '700'
   secondStat:
     description: speakers
-    number: '20'
+    number: '60'
   thirdStat:
-    description: workshops
-    number: '24'
-programPhotoText:
-  isLink: true
-  label: Agenda
-  linkURL: /agenda.pdf
-speakers:
-  speaker1: Constance J. Choi
-  speaker2: ''
+    description: dapps
+    number: '25'
+speakers2019:
+  speaker1: Vitalik Buterin
+  speaker2: Constance J. Choi
   speaker3: Joseph Lubin
-  speaker4: Christoph Jentzsch
+  speaker4: Aleksandra Skrzypczak
+  speaker5: Austin Griffith
+  speaker6: Alexey Akhunov
 speakerApplyLink: 'https://gnosis1.typeform.com/to/ZNV6Wf'
 sponsorInfoLink: 'https://drive.google.com/file/d/1CkDUdEA5ChA0RylTzUtplVQQiJiUfTnn/view '
 ---

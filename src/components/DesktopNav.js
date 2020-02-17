@@ -1,20 +1,28 @@
-import React from 'react'
-import Navbar from 'components/Navbar'
-import NavLogo from 'components/NavLogo'
+import React from "react"
+import Navbar from "components/Navbar"
+import NavLogo from "components/NavLogo"
 
 const sectionIdToClass = {
-  main: 'navWhite',
-  about: 'navBlack',
-  photo: 'navWhite',
-  policy: 'navBlack',
-  speakers: 'navBlack',
-  conferenceSponsors: 'navBlack',
-  pageEnd: 'navWhite',
+  main: "navBlack",
+  about: "navBlack",
+  photo: "navWhite",
+  policy: "navBlack",
+  speakers: "navBlack",
+  conferenceSponsors: "navBlack",
+  pageEnd: "navWhite"
 }
 
-const LinkIds = ['aboutLink', 'agendaLink', 'speakersLink', 'buyLink', 'navLogo', 'sponsorsLink', 'joinLink']
+const LinkIds = [
+  "dappsLink",
+  "speakersLink",
+  "navLogo",
+  "sponsorsLink",
+  "ticketsLink",
+  "tgLink",
+  "twitterLink"
+]
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/', '/podcast', '/podcast/']
+const whiteColorSchemePages = ["/", "/tickets", "/tickets/"]
 
 let breakPointsToClass = {}
 
@@ -22,11 +30,11 @@ const DesktopNav = class extends React.PureComponent {
   initListeners = () => {
     this.getBreakpointsPos()
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', this.getBreakpointsPos)
-      window.addEventListener('scroll', this.changeColorOnScroll)
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", this.getBreakpointsPos)
+      window.addEventListener("scroll", this.changeColorOnScroll)
     }
-    
+
     // at first the page is displayed with fallback fonts,
     // after the fonts are received, the page will resize
     // this is to get updated positions
@@ -34,14 +42,14 @@ const DesktopNav = class extends React.PureComponent {
   }
 
   removeListenersAndResetAttrs = () => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.getBreakpointsPos)
-      window.removeEventListener('scroll', this.changeColorOnScroll)
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.getBreakpointsPos)
+      window.removeEventListener("scroll", this.changeColorOnScroll)
 
       LinkIds.forEach(id => {
         if (this[id]) {
-          this[id].classList.add('navWhite')
-          this[id].classList.remove('navBlack')
+          this[id].classList.add("navWhite")
+          this[id].classList.remove("navBlack")
         }
       })
     }
@@ -54,13 +62,13 @@ const DesktopNav = class extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     const {
-      location: { pathname },
+      location: { pathname }
     } = this.props
     const {
-      location: { pathname: prevPath },
+      location: { pathname: prevPath }
     } = prevProps
 
-    if (/get-involved/.test(pathname) && !/get-involved/.test(prevPath)) {
+    if (/tickets/.test(pathname) && !/tickets/.test(prevPath)) {
       this.removeListenersAndResetAttrs()
     } else if (pathname !== prevPath) {
       this.initListeners()
@@ -89,7 +97,7 @@ const DesktopNav = class extends React.PureComponent {
   }
 
   changeColorOnScroll = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       LinkIds.forEach(id => {
         if (this[id]) {
           const intersectedPoint = Object.keys(breakPointsToClass)
@@ -106,7 +114,8 @@ const DesktopNav = class extends React.PureComponent {
 
           if (intersectedPoint) {
             const classToAdd = breakPointsToClass[intersectedPoint]
-            const classToRemove = classToAdd === 'navWhite' ? 'navBlack' : 'navWhite'
+            const classToRemove =
+              classToAdd === "navWhite" ? "navBlack" : "navWhite"
 
             this[id].classList.add(classToAdd)
             this[id].classList.remove(classToRemove)
@@ -123,18 +132,14 @@ const DesktopNav = class extends React.PureComponent {
     return (
       <>
         <NavLogo location={location} setLinkRef={this.setLinkRef} />
-        <Navbar
-          isBlack={isBlack}
-          setLinkRef={this.setLinkRef}
-          data={data}
-        />
+        <Navbar isBlack={isBlack} setLinkRef={this.setLinkRef} data={data} />
       </>
     )
   }
 }
 
 DesktopNav.defaultProps = {
-  location: {},
+  location: {}
 }
 
 export default DesktopNav

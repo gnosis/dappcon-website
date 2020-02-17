@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
-import { slide as Menu } from 'react-burger-menu'
-import { Link } from 'gatsby'
-import { MobileMenuIcon, DappconLogoSmall } from 'components/Svg'
-import ButtonLink from 'components/ButtonLink'
-import { colors } from 'theme'
+import React, { useState } from "react"
+import styled, { css } from "styled-components"
+import { slide as Menu } from "react-burger-menu"
+import { Link } from "gatsby"
+import { MobileMenuIcon, DappconLogoSmall } from "components/Svg"
+import ButtonLink from "components/ButtonLink"
+import { colors } from "theme"
 
 const burgerMenuStyle = css`
   .bm-burger-button {
@@ -54,7 +54,7 @@ const burgerMenuStyle = css`
   }
 `
 
-const whiteColorSchemePages = ['/', '/get-involved', '/get-involved/', '/podcast', '/podcast/']
+const whiteColorSchemePages = ["/tickets", "/tickets/"]
 
 const Wrapper = styled.div`
   ${burgerMenuStyle}
@@ -91,7 +91,7 @@ const Close = styled.button`
 `
 
 const LinkCSS = css`
-    font-size: 19px;
+  font-size: 19px;
   padding: 25px 0;
   text-align: center;
   color: ${colors.bgWhite};
@@ -119,17 +119,29 @@ const StyledButtonLink = styled(ButtonLink)`
   text-transform: uppercase;
 `
 
-const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } }) => {
+const MobileHeader = ({
+  location: { pathname } = {},
+  data: { buyTicketsLink }
+}) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
     <Wrapper>
       <IconWrapper onClick={() => toggleMenu(!isMenuOpen)}>
         <MobileMenuIcon
-          fill={whiteColorSchemePages.includes(pathname) ? colors.bgWhite : colors.reddishPink}
+          fill={
+            whiteColorSchemePages.includes(pathname)
+              ? colors.bgWhite
+              : colors.reddishPink
+          }
         />
       </IconWrapper>
-      <Menu isOpen={isMenuOpen} right customBurgerIcon={false} customCrossIcon={false}>
+      <Menu
+        isOpen={isMenuOpen}
+        right
+        customBurgerIcon={false}
+        customCrossIcon={false}
+      >
         <NavigationWrapper>
           <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
             <DappconLogoSmall fill={colors.bgWhite} />
@@ -138,22 +150,22 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
             ->
           </Close>
         </NavigationWrapper>
-        <StyledLink to="/#about" onClick={() => toggleMenu(!isMenuOpen)}>
-          About
+        <StyledLink to="/#dapps" onClick={() => toggleMenu(!isMenuOpen)}>
+          Dapps
         </StyledLink>
-        <StyledAnchor href="/agenda.pdf">
-          Agenda
-        </StyledAnchor>
-        <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
+        <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>
           Speakers
         </StyledLink>
-        <StyledLink to="/#conferenceSponsors" onClick={() => toggleMenu(!isMenuOpen)}>
+        <StyledAnchor
+          href="/DappCon2020SponsorshipPackages.pdf"
+          target="_blank"
+          onClick={() => toggleMenu(!isMenuOpen)}
+        >
           Sponsors
+        </StyledAnchor>
+        <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
+          Tickets
         </StyledLink>
-        <StyledLink to="/get-involved" onClick={() => toggleMenu(!isMenuOpen)}>
-          Join
-        </StyledLink>
-        <StyledButtonLink href={buyTicketsLink} target="_blank" text="Buy tickets" />
       </Menu>
     </Wrapper>
   )

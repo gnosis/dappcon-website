@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
-import Helmet from 'react-helmet'
-import styled, { createGlobalStyle } from 'styled-components'
-import { StaticQuery, graphql, withPrefix } from 'gatsby'
-import { colors } from 'theme'
-import reset from 'styled-reset'
+import React, { useState } from "react"
+import Helmet from "react-helmet"
+import styled, { createGlobalStyle } from "styled-components"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
+import { colors } from "theme"
+import reset from "styled-reset"
 
-import DesktopNav from 'components/DesktopNav'
-import CookieBanner from 'components/CookieBanner'
-import MobileHeader from 'components/MobileHeader'
-import Invaders from 'components/Invaders'
-import GetInvolvedSection from 'components/GetInvolvedSection'
+import DesktopNav from "components/DesktopNav"
+import CookieBanner from "components/CookieBanner"
+import MobileHeader from "components/MobileHeader"
+import TicketsSection from "components/TicketsSection"
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -19,7 +18,9 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local("Averta-Regular"), url(${withPrefix('/fonts/38C995_1_0.ttf')}) format('truetype');
+    src: local("Averta-Regular"), url(${withPrefix(
+      "/fonts/38C995_1_0.ttf"
+    )}) format('truetype');
   }
 
   @font-face {
@@ -27,7 +28,9 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: local("Averta-Extrabold"), url(${withPrefix('/fonts/38C995_0_0.ttf')}) format('truetype');
+    src: local("Averta-Extrabold"), url(${withPrefix(
+      "/fonts/38C995_0_0.ttf"
+    )}) format('truetype');
   }
 
   body {
@@ -40,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
   */
   .navBlack {
     color: ${colors.black};
-    stroke: ${colors.black};
+    fill: ${colors.black};
 
     path {
       fill: ${colors.black};
@@ -49,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
     
     &:hover {
       color: ${colors.reddishPink};
-      stroke: ${colors.reddishPink};
+      fill: ${colors.reddishPink};
 
       path {
         fill: ${colors.reddishPink};
@@ -59,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
 
   .navWhite {
     color: ${colors.white};
-    stroke: ${colors.white};
+    fill: ${colors.white};
 
     path {
       fill: ${colors.white};
@@ -76,29 +79,38 @@ const GlobalStyles = createGlobalStyle`
       }
     }
   }
+
+	.st0{fill:#141314;}
+	.st1{font-family:'Averta';font-weight: 800;}
+	.st2{font-size:72px;}
+	.st3{font-size:16px;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;}
+	.st5{filter:url(#Adobe_OpacityMaskFilter);}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st7{mask:url(#b_1_);fill-rule:evenodd;clip-rule:evenodd;}
+	.st8{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st9{mask:url(#d_1_);fill-rule:evenodd;clip-rule:evenodd;}
 `
 
 const ChildrenContainer = styled.div`
   position: relative;
-  margin-bottom: ${props => (props.isGetInvolvedPage ? 'inherit' : '100vh')};
+  margin-bottom: ${props => (props.isTicketsPage ? "inherit" : "100vh")};
 `
-
-const disabledInvadersPages = ['/imprint', '/cookie-policy', '/privacy-policy']
 
 export const LayoutTemplate = ({
   children,
   location = {},
   headerFooterData = {},
-  setCookieBannerOpen,
+  setCookieBannerOpen
 }) => {
-  // getInvolvedPage needs setCookieBannerOpen since the footer is rendered inside the page
-  const isGetInvolvedPage = /get-involved/.test(location.pathname)
+  // ticketsPage needs setCookieBannerOpen since the footer is rendered inside the page
+  const isTicketsPage = /tickets/.test(location.pathname)
   let childElements = children
 
-  if (isGetInvolvedPage) {
+  if (isTicketsPage) {
     childElements = React.Children.map(children, child => {
       return React.cloneElement(child, {
-        setCookieBannerOpen,
+        setCookieBannerOpen
       })
     })
   }
@@ -108,13 +120,16 @@ export const LayoutTemplate = ({
       <GlobalStyles />
       <DesktopNav location={location} data={headerFooterData} />
       <MobileHeader location={location || {}} data={headerFooterData} />
-      {!disabledInvadersPages.includes(location.pathname) && <Invaders />}
-      <ChildrenContainer isGetInvolvedPage={isGetInvolvedPage}>
+      <ChildrenContainer isTicketsPage={isTicketsPage}>
         {childElements}
         <div id="pageEnd"></div>
         {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
       </ChildrenContainer>
-      <GetInvolvedSection setCookieBannerOpen={setCookieBannerOpen} />
+      {!isTicketsPage && (
+        <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
+      )}
+      {/* required for mintbase  */}
+      <div id="mintbase-app"></div>
     </>
   )
 }
@@ -132,7 +147,9 @@ const TemplateWrapper = props => {
               description
             }
           }
-          headerFooterData: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+          headerFooterData: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+          ) {
             frontmatter {
               speakerApplyLink
               sponsorInfoLink
@@ -146,25 +163,56 @@ const TemplateWrapper = props => {
           <Helmet>
             <html lang="en" />
             <title>{data.site.siteMetadata.title}</title>
-            <meta name="description" content={data.site.siteMetadata.description} />
+            <meta
+              name="description"
+              content={data.site.siteMetadata.description}
+            />
 
-            <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+            <link
+              rel="icon"
+              type="image/png"
+              href="/img/favicon-32x32.png"
+              sizes="32x32"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              href="/img/favicon-16x16.png"
+              sizes="16x16"
+            />
             <meta name="theme-color" content="#fff" />
 
             <meta property="og:type" content="website" />
             <meta property="og:title" content={data.site.siteMetadata.title} />
-            <meta property="og:description" content={data.site.siteMetadata.description} />
+            <meta
+              property="og:description"
+              content={data.site.siteMetadata.description}
+            />
             <meta property="og:url" content="https://dappcon.io" />
-            <meta property="og:image" content="https://dappcon.io/img/og-image.png" />
+            <meta
+              property="og:image"
+              content="https://dappcon.io/img/og-image.png"
+            />
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@dappcon_berlin" />
             <meta name="twitter:title" content="DAPPCON" />
-            <meta name="twitter:description" content={data.site.siteMetadata.description} />
+            <meta
+              name="twitter:description"
+              content={data.site.siteMetadata.description}
+            />
             <meta name="twitter:creator" content="@dappcon_berlin" />
-            <meta name="twitter:image:alt" content={data.site.siteMetadata.description} />
-            <meta name="twitter:image" content="https://dappcon.io/img/og-image.png" />
+            <meta
+              name="twitter:image:alt"
+              content={data.site.siteMetadata.description}
+            />
+            <meta
+              name="twitter:image"
+              content="https://dappcon.io/img/og-image.png"
+            />
+            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fruntime.js?alt=media&token=83829758-30e4-451d-9804-83fa95f1cbdc"></script>
+            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fmain.js?alt=media&token=eea92974-87be-4311-a977-e9d9f9f22dff"></script>
+            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fbig.js?alt=media&token=3b30aab0-48f3-4109-88a7-43249821a140"></script>
           </Helmet>
           <LayoutTemplate
             {...props}
