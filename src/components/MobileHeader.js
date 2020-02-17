@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
-import { slide as Menu } from 'react-burger-menu'
-import { Link } from 'gatsby'
-import { MobileMenuIcon, DappconLogoSmall } from 'components/Svg'
-import ButtonLink from 'components/ButtonLink'
-import { colors } from 'theme'
+import React, { useState } from "react"
+import styled, { css } from "styled-components"
+import { slide as Menu } from "react-burger-menu"
+import { Link } from "gatsby"
+import { MobileMenuIcon, DappconLogoSmall } from "components/Svg"
+import ButtonLink from "components/ButtonLink"
+import { colors } from "theme"
 
 const burgerMenuStyle = css`
   .bm-burger-button {
@@ -54,7 +54,7 @@ const burgerMenuStyle = css`
   }
 `
 
-const whiteColorSchemePages = ['/tickets', '/tickets/']
+const whiteColorSchemePages = ["/tickets", "/tickets/"]
 
 const Wrapper = styled.div`
   ${burgerMenuStyle}
@@ -119,17 +119,29 @@ const StyledButtonLink = styled(ButtonLink)`
   text-transform: uppercase;
 `
 
-const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } }) => {
+const MobileHeader = ({
+  location: { pathname } = {},
+  data: { buyTicketsLink }
+}) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
     <Wrapper>
       <IconWrapper onClick={() => toggleMenu(!isMenuOpen)}>
         <MobileMenuIcon
-          fill={whiteColorSchemePages.includes(pathname) ? colors.bgWhite : colors.reddishPink}
+          fill={
+            whiteColorSchemePages.includes(pathname)
+              ? colors.bgWhite
+              : colors.reddishPink
+          }
         />
       </IconWrapper>
-      <Menu isOpen={isMenuOpen} right customBurgerIcon={false} customCrossIcon={false}>
+      <Menu
+        isOpen={isMenuOpen}
+        right
+        customBurgerIcon={false}
+        customCrossIcon={false}
+      >
         <NavigationWrapper>
           <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
             <DappconLogoSmall fill={colors.bgWhite} />
@@ -141,12 +153,16 @@ const MobileHeader = ({ location: { pathname } = {}, data: { buyTicketsLink } })
         <StyledLink to="/#dapps" onClick={() => toggleMenu(!isMenuOpen)}>
           Dapps
         </StyledLink>
-        {/* <StyledLink to="/speakers" onClick={() => toggleMenu(!isMenuOpen)}>
+        <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>
           Speakers
-        </StyledLink> */}
-        <StyledLink to="/#conferenceSponsors" onClick={() => toggleMenu(!isMenuOpen)}>
-          Sponsors
         </StyledLink>
+        <StyledAnchor
+          href="/DappCon2020SponsorshipPackages.pdf"
+          target="_blank"
+          onClick={() => toggleMenu(!isMenuOpen)}
+        >
+          Sponsors
+        </StyledAnchor>
         <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
           Tickets
         </StyledLink>

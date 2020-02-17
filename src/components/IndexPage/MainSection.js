@@ -5,7 +5,6 @@ import { colors } from "theme"
 import ButtonLink from "components/ButtonLink"
 import ContentWrapper from "components/ContentWrapper"
 import { DappconIllus } from 'components/Svg'
-import DappConLogo from "img/1-st-section.svg"
 
 const Wrapper = styled.section`
   height: 100vh;

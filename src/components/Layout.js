@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
   */
   .navBlack {
     color: ${colors.black};
-    stroke: ${colors.black};
+    fill: ${colors.black};
 
     path {
       fill: ${colors.black};
@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
     
     &:hover {
       color: ${colors.reddishPink};
-      stroke: ${colors.reddishPink};
+      fill: ${colors.reddishPink};
 
       path {
         fill: ${colors.reddishPink};
@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
 
   .navWhite {
     color: ${colors.white};
-    stroke: ${colors.white};
+    fill: ${colors.white};
 
     path {
       fill: ${colors.white};

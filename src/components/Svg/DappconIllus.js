@@ -1,44 +1,49 @@
 import React from "react"
 
-const DappconIllus = ({ width = 870, height = 311, fill = "#000", ...props }) => (
+const DappconIllus = ({
+  width = 814,
+  height = 311,
+  fill = "#000",
+  ...props
+}) => (
   <svg
     version="1.1"
     id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
-    viewBox="0 0 870 311"
-    style={{enableBackground: '0 0 870 311'}}
+    viewBox="0 0 814 311"
+    style={{ enableBackground: "0 0 814 311" }}
   >
     <g>
-      <text transform="matrix(1 0 0 1 0 115)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 29.1882 115)" class="st0 st1 st2">
         D
       </text>
-      <text transform="matrix(1 0 0 1 158 115)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 172.5167 115)" class="st0 st1 st2">
         A
       </text>
-      <text transform="matrix(1 0 0 1 4 224)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 29.2961 224)" class="st0 st1 st2">
         C
       </text>
-      <text transform="matrix(1 0 0 1 538 115)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 541.968 115)" class="st0 st1 st2">
         P
       </text>
-      <text transform="matrix(1 0 0 1 690 115)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 679.9999 115)" class="st0 st1 st2">
         P
       </text>
-      <text transform="matrix(1 0 0 1 155 224)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 168.4122 224)" class="st0 st1 st2">
         O
       </text>
-      <text transform="matrix(1 0 0 1 532 224)" className="st0 st1 st2">
+      <text transform="matrix(1 0 0 1 537.3958 224)" class="st0 st1 st2">
         N
       </text>
-      <text transform="matrix(1 0 0 1 638 186)" className="st1 st3">
-        8 - 10 Sept. 2020
+      <text transform="matrix(1 0 0 1 638 186)" class="st3 st4">
+        8 - 10 September, 2020
       </text>
-      <text transform="matrix(1 0 0 1 760.7659 186)" className="st1 st3">
+      <text transform="matrix(1 0 0 1 760.7659 186)" class="st3 st4">
         {" "}
       </text>
-      <text transform="matrix(1 0 0 1 638 206)" className="st1 st3">
+      <text transform="matrix(1 0 0 1 638 206)" class="st3 st4">
         at Radialsystem, Berlin
       </text>
       <path

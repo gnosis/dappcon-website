@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
 `
 
 const LinksCSS = css`
-  color: ${props => (props.red ? colors.reddishPink : colors.secondaryBlack)};
+  color: ${colors.bgWhite};
   text-decoration: ${props => (props.underline ? 'underline' : 'none')};
 `
 
@@ -27,7 +27,7 @@ const StyledExternalLink = styled.a`
 const CookieSettingsBtn = styled.button`
   background: none;
   border: none;
-  color: ${colors.secondaryBlack};
+  color: ${colors.bgWhite};
   text-decoration: underline;
   font-size: 14px;
   padding: 0;
@@ -37,7 +37,7 @@ const CookieSettingsBtn = styled.button`
 const ColumnsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  color: ${colors.secondaryBlack};
+  color: ${colors.bgWhite};
   font-size: 14px;
 
   @media screen and (max-width: 767px) {
@@ -48,7 +48,7 @@ const ColumnsContainer = styled.div`
 const FooterColumn = styled.div`
   flex-basis: 40%;
   line-height: normal;
-  color: ${colors.secondaryBlack};
+  color: ${colors.bgWhite};
   font-size: 14px;
 
   &:last-child {
