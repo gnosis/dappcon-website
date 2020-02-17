@@ -18,9 +18,7 @@ columns:
     cta: COMING SOON
     description: |-
       Full access to the 3-day conference\
-      &nbsp;
-
-      300 EUR
+      &nbsp; 300 EUR
     isActive: false
     isMintbase: false
     title: BUY IN FIAT
