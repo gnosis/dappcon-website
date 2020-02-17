@@ -191,7 +191,7 @@ const TemplateWrapper = props => {
             <meta property="og:url" content="https://dappcon.io" />
             <meta
               property="og:image"
-              content="https://dappcon.io/img/og-image.png"
+              content="/img/og-image.png"
             />
 
             <meta name="twitter:card" content="summary_large_image" />
@@ -208,7 +208,7 @@ const TemplateWrapper = props => {
             />
             <meta
               name="twitter:image"
-              content="https://dappcon.io/img/og-image.png"
+              content="/img/og-image.png"
             />
             <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fruntime.js?alt=media&token=83829758-30e4-451d-9804-83fa95f1cbdc"></script>
             <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fmain.js?alt=media&token=eea92974-87be-4311-a977-e9d9f9f22dff"></script>
