@@ -55,6 +55,7 @@ export const pageQuery = graphql`
             url
             cta
             isActive
+            isMintbase
           }
           secondCol {
             title
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
             url
             cta
             isActive
+            isMintbase
           }
           thirdCol {
             title
@@ -69,6 +71,7 @@ export const pageQuery = graphql`
             url
             cta
             isActive
+            isMintbase
           }
         }
       }

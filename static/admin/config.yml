@@ -4,410 +4,336 @@ backend:
 media_folder: static/img
 public_folder: /img
 collections:
-  -
-    name: speakers2019
+  - name: speakers2019
     label: Speakers 2019
-    description: 'Speakers of the DappCon 2019'
+    description: "Speakers of the DappCon 2019"
     folder: src/pages/speakers2019
     create: true
-    slug: '{{name}}-{{slug}}'
+    slug: "{{name}}-{{slug}}"
     identifier_field: name
     fields:
-      -
-        label: 'Template Key'
+      - label: "Template Key"
         name: templateKey
         widget: hidden
         default: speaker2019
-      -
-        label: Name
+      - label: Name
         name: name
         widget: string
-      -
-        label: Company
+      - label: Company
         name: company
         widget: markdown
-        hint: 'Format used here will be displayed on the website. Please dont use long lines'
-      -
-        label: Position
+        hint: "Format used here will be displayed on the website. Please dont use long lines"
+      - label: Position
         name: position
         widget: markdown
-        hint: 'Format used here will be displayed on the website. Please dont use long lines'
-      -
-        label: Image
+        hint: "Format used here will be displayed on the website. Please dont use long lines"
+      - label: Image
         name: image
         widget: image
-  -
-    name: dapps
+  - name: dapps
     label: Dapps
-    description: 'Dapps of the DappCon 2020'
+    description: "Dapps of the DappCon 2020"
     folder: src/pages/dapps
     create: true
-    slug: '{{name}}-{{slug}}'
+    slug: "{{name}}-{{slug}}"
     identifier_field: name
     fields:
-      -
-        label: 'Template Key'
+      - label: "Template Key"
         name: templateKey
         widget: hidden
         default: dapps2020
-      -
-        label: Name
+      - label: Name
         name: name
         widget: string
-      -
-        label: URL
+      - label: URL
         name: url
         widget: string
-      -
-        label: Logo
+      - label: Logo
         name: logo
         widget: image
-  -
-    name: sponsors
+  - name: sponsors
     label: Sponsors
-    description: 'Sponsors of the DappCon conference'
+    description: "Sponsors of the DappCon conference"
     folder: src/pages/sponsors
     create: true
-    slug: '{{name}}-{{slug}}'
+    slug: "{{name}}-{{slug}}"
     identifier_field: name
     fields:
-      -
-        label: 'Template Key'
+      - label: "Template Key"
         name: templateKey
         widget: hidden
         default: sponsor
-      -
-        label: 'Sponsor Name'
+      - label: "Sponsor Name"
         name: name
         widget: string
-      -
-        label: Image
+      - label: Image
         name: image
         widget: image
-      -
-        label: 'Website URL'
+      - label: "Website URL"
         name: url
         widget: string
-      -
-        label: 'Sponsorship package type'
+      - label: "Sponsorship package type"
         name: type
         widget: select
         options:
-          -
-            label: 'Gold (Unicorn)'
+          - label: "Gold (Unicorn)"
             value: 4
-          -
-            label: 'Silver (Whale)'
+          - label: "Silver (Whale)"
             value: 3
-          -
-            label: 'Bronze (Kitty)'
+          - label: "Bronze (Kitty)"
             value: 2
-          -
-            label: 'Iron (Knut)'
+          - label: "Iron (Knut)"
             value: 1
-  -
-    name: pages
+  - name: pages
     label: Pages
     files:
-      -
-        file: src/pages/tickets.md
-        label: 'Tickets Page'
+      - file: src/pages/tickets.md
+        label: "Tickets Page"
         name: tickets
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: tickets-page
-          -
-            label: 'Main Heading'
+          - label: "Main Heading"
             name: heading
             widget: markdown
-          -
-            label: Columns
+          - label: Columns
             name: columns
             widget: object
             fields:
-              -
-                label: 'Column 1'
+              - label: "Column 1"
                 name: firstCol
                 widget: object
                 fields:
-                  -
-                    label: Title
+                  - label: Title
                     name: title
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: markdown
-                  -
-                    label: URL
+                  - label: URL
                     name: url
                     widget: string
-                  - 
-                    label: Call to action
+                  - label: Call to action
                     name: cta
                     widget: string
-                  - 
-                    label: Is Active?
+                  - label: Is Active?
                     name: isActive
                     hint: can the button be clicked?
                     widget: boolean
-              -
-                label: 'Column 2'
+                  - label: Is Mintbase button?
+                    name: isMintbase
+                    hint: does this button activate mintbase (NFT)?
+                    widget: boolean
+              - label: "Column 2"
                 name: secondCol
                 widget: object
                 fields:
-                  -
-                    label: Title
+                  - label: Title
                     name: title
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: markdown
-                  -
-                    label: URL
+                  - label: URL
                     name: url
                     widget: string
-                  - 
-                    label: Call to action
+                  - label: Call to action
                     name: cta
                     widget: string
-                  - 
-                    label: Is Active?
+                  - label: Is Active?
                     name: isActive
                     hint: can the button be clicked?
                     widget: boolean
-              -
-                label: 'Column 3'
+                  - label: Is Mintbase button?
+                    name: isMintbase
+                    hint: does this button activate mintbase (NFT)?
+                    widget: boolean
+              - label: "Column 3"
                 name: thirdCol
                 widget: object
                 fields:
-                  -
-                    label: Title
+                  - label: Title
                     name: title
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: markdown
-                  -
-                    label: URL
+                  - label: URL
                     name: url
                     widget: string
-                  - 
-                    label: Call to action
+                  - label: Call to action
                     name: cta
                     widget: string
-                  - 
-                    label: Is Active?
+                  - label: Is Active?
                     name: isActive
                     hint: can the button be clicked?
                     widget: boolean
-      -
-        file: src/pages/privacy-policy.md
-        label: 'Privacy Policy'
+                  - label: Is Mintbase button?
+                    name: isMintbase
+                    hint: does this button activate mintbase (NFT)?
+                    widget: boolean
+      - file: src/pages/privacy-policy.md
+        label: "Privacy Policy"
         name: privacyPolicy
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: privacy-policy-page
-          -
-            label: Title
+          - label: Title
             name: title
             widget: string
-          -
-            label: Body
+          - label: Body
             name: body
             widget: markdown
-      -
-        file: src/pages/cookie-policy.md
-        label: 'Cookie Policy'
+      - file: src/pages/cookie-policy.md
+        label: "Cookie Policy"
         name: cookiePolicy
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: cookie-policy-page
-          -
-            label: Title
+          - label: Title
             name: title
             widget: string
-          -
-            label: Body
+          - label: Body
             name: body
             widget: markdown
-      -
-        file: src/pages/imprint.md
+      - file: src/pages/imprint.md
         label: Imprint
         name: imprint
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: imprint-page
-          -
-            label: Title
+          - label: Title
             name: title
             widget: string
-          -
-            label: Body
+          - label: Body
             name: body
             widget: markdown
-      -
-        file: src/pages/index-page.md
-        label: 'Landing Page'
+      - file: src/pages/index-page.md
+        label: "Landing Page"
         name: landingPage
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: index-page
-          -
-            label: 'Main Title'
+          - label: "Main Title"
             name: mainTitle
             widget: string
-          -
-            label: 'Button Text'
+          - label: "Button Text"
             name: buttonText
             widget: string
-          -
-            label: 'Location and Date'
+          - label: "Location and Date"
             name: locationAndDate
             widget: markdown
-          -
-            label: 'Buy Tickets Link'
+          - label: "Buy Tickets Link"
             name: buyTicketsLink
             widget: string
-          -
-            label: 'Participate / Stats Heading'
+          - label: "Participate / Stats Heading"
             name: statsHeading
             widget: markdown
-          -
-            label: 'Participate / Stats sentence 1'
+          - label: "Participate / Stats sentence 1"
             name: statsSentence1
             widget: markdown
-          -
-            label: 'Participate / Stats sentence 2'
+          - label: "Participate / Stats sentence 2"
             name: statsSentence2
             widget: markdown
-          -
-            label: 'Dapps Section Text / Left Column'
+          - label: "Dapps Section Text / Left Column"
             name: dappsTextLC
             widget: markdown
-          -
-            label: 'Dapps Section Text / Right Column'
+          - label: "Dapps Section Text / Right Column"
             name: dappsTextRC
             widget: markdown
-          -
-            label: Stats
+          - label: Stats
             name: stats
             widget: object
             fields:
-              -
-                label: 'First Stat'
+              - label: "First Stat"
                 name: firstStat
                 widget: object
                 fields:
-                  -
-                    label: Number
+                  - label: Number
                     name: number
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: string
-              -
-                label: 'Second Stat'
+              - label: "Second Stat"
                 name: secondStat
                 widget: object
                 fields:
-                  -
-                    label: Number
+                  - label: Number
                     name: number
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: string
-              -
-                label: 'Third Stat'
+              - label: "Third Stat"
                 name: thirdStat
                 widget: object
                 fields:
-                  -
-                    label: Number
+                  - label: Number
                     name: number
                     widget: string
-                  -
-                    label: Description
+                  - label: Description
                     name: description
                     widget: string
-          -
-            label: Speakers 2019
+          - label: Speakers 2019
             name: speakers2019
             widget: object
             fields:
-              -
-                label: 'Speaker 1'
+              - label: "Speaker 1"
                 name: speaker1
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-              -
-                label: 'Speaker 2'
+              - label: "Speaker 2"
                 name: speaker2
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-              -
-                label: 'Speaker 3'
+              - label: "Speaker 3"
                 name: speaker3
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-              -
-                label: 'Speaker 4'
+              - label: "Speaker 4"
                 name: speaker4
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-              -
-                label: 'Speaker 5'
+              - label: "Speaker 5"
                 name: speaker5
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-              -
-                label: 'Speaker 6'
+              - label: "Speaker 6"
                 name: speaker6
                 widget: relation
                 collection: speakers2019
                 searchFields:
                   - name
                 valueField: name
-          -
-            label: 'Speaker Apply Link'
+          - label: "Speaker Apply Link"
             name: speakerApplyLink
             widget: string
-          -
-            label: 'Sponsor Info Link'
+          - label: "Sponsor Info Link"
             name: sponsorInfoLink
             widget: string
