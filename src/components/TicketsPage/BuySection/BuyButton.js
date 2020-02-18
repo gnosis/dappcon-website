@@ -7,7 +7,9 @@ const SLinkContainer = styled.a`
   text-decoration: none;
 `
 
-const SBtnContainer = styled.div``
+const SBtnContainer = styled.div`
+  cursor: ${p => (p.isMintbase ? "pointer" : "initial")};
+`
 
 const StyledLink = styled.a`
   color: ${colors.white};
@@ -78,7 +80,7 @@ const markdownRenderers = {
 }
 
 const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
-  const handleOpen = useCallback((e) => {
+  const handleOpen = useCallback(e => {
     e.preventDefault()
 
     window.renderGroups.runApp({
@@ -94,10 +96,15 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
       }
     })
   }, [])
-  const BtnContainerComponent = isActive ? SLinkContainer : SBtnContainer
+  const BtnContainerComponent =
+    isActive && !isMintbase ? SLinkContainer : SBtnContainer
 
   return (
-    <BtnContainerComponent href={link} onClick={isMintbase ? handleOpen : () => {}}>
+    <BtnContainerComponent
+      href={link}
+      onClick={isMintbase ? handleOpen : () => {}}
+      isMintbase={isMintbase}
+    >
       <Container>
         <Heading>{heading}</Heading>
         <DescParagraph source={desc} renderers={markdownRenderers} />
