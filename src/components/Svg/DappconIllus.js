@@ -17,25 +17,25 @@ const DappconIllus = ({
     {...props}
   >
     <g>
-      <text transform="matrix(1 0 0 1 29.1882 115)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 29.1882 115)" className="st0 st1 st2">
         D
       </text>
-      <text transform="matrix(1 0 0 1 172.5167 115)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 172.5167 115)" className="st0 st1 st2">
         A
       </text>
-      <text transform="matrix(1 0 0 1 29.2961 224)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 29.2961 224)" className="st0 st1 st2">
         C
       </text>
-      <text transform="matrix(1 0 0 1 541.968 115)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 541.968 115)" className="st0 st1 st2">
         P
       </text>
-      <text transform="matrix(1 0 0 1 679.9999 115)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 679.9999 115)" className="st0 st1 st2">
         P
       </text>
-      <text transform="matrix(1 0 0 1 168.4122 224)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 168.4122 224)" className="st0 st1 st2">
         O
       </text>
-      <text transform="matrix(1 0 0 1 537.3958 224)" className="st0 st1 st2 hoverable">
+      <text transform="matrix(1 0 0 1 537.3958 224)" className="st0 st1 st2">
         N
       </text>
       <text transform="matrix(1 0 0 1 638 186)" className="st3 st4">

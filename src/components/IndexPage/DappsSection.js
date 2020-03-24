@@ -10,7 +10,7 @@ import LeftArrow from "assets/arrow-left.svg"
 import RightArrow from "assets/arrow-right.svg"
 
 const Wrapper = styled.section`
-  padding-top: 168px;
+  padding-top: 200px;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {

@@ -7,8 +7,8 @@ import { Link } from "gatsby"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
-  padding-top: 222px;
-  padding-bottom: 100px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
