@@ -12,7 +12,7 @@ const Wrapper = styled.section`
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
-    padding-top: 70px;
+    padding-top: 100px;
   }
 `
 
