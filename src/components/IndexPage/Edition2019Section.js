@@ -3,7 +3,6 @@ import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
 import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
-import { Link } from "gatsby"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
@@ -84,7 +83,7 @@ const SLink = styled.a`
 const Edition2019Section = ({ speakers }) => (
   <Wrapper id="edition2019">
     <ContentWrapper>
-      <MobileHeading>Edition 2019</MobileHeading>
+      <MobileHeading>Speakers 2019</MobileHeading>
       <Container>
         <SpeakersContainer>
           {speakers.map(({ node: { frontmatter } }, i) => (
@@ -93,7 +92,7 @@ const Edition2019Section = ({ speakers }) => (
         </SpeakersContainer>
         <RCol>
           <HideOnMobile>
-            <Heading>2019 Edition</Heading>
+            <Heading>Speakers 2019</Heading>
           </HideOnMobile>
           <SLink href="https://2019.dappcon.io">
             Check out the DappCon 2019 Edition

@@ -18,34 +18,26 @@ const Wrapper = styled.section`
 
 const SectionContainer = styled.div`
   display: flex;
+  flex-direction: column;
+`
+
+const Row = styled.div`
+  display: flex;
   justify-content: space-between;
+  
+  &:not(:first-child) {
+    margin-top: 45px;
+  }
 `
 
 const Heading = styled.h2`
   font-size: 36px;
   font-weight: 800;
+  flex-basis: 50%;
 
   @media screen and (max-width: 767px) {
-    display: none;
+    font-size: 20px;
   }
-`
-
-const MobileHeading = styled.h2`
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 30px;
-  max-width: 230px;
-
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
-`
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-basis: 50%;
 `
 
 const Paragraph = styled(Markdown)`
@@ -53,35 +45,27 @@ const Paragraph = styled(Markdown)`
   font-size: 16px;
   line-height: normal;
   display: block;
-  margin: 0 auto;
   color: ${colors.secondaryBlack};
+  flex-basis: 50%;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
   }
 `
 
-const StatsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  flex-basis: 35%;
-`
-
 const Stat = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   color: ${colors.black};
-  min-width: 120px;
-  margin-top: 30px;
+  width: 217px;
 
   &:first-child {
     margin-top: 0;
   }
 
   @media screen and (max-width: 767px) {
-    min-width: 63px;
+    width: 84px;
   }
 `
 
@@ -98,7 +82,7 @@ const StatTitle = styled.span`
   font-weight: 800;
 
   @media screen and (max-width: 767px) {
-    font-size: 12px;
+    font-size: 8.6px;
   }
 `
 
@@ -113,26 +97,10 @@ const StatsSection = ({
   return (
     <Wrapper id="about">
       <ContentWrapper>
-        <MobileHeading>{statsHeading}</MobileHeading>
-        <SectionContainer>
-          <TextContainer>
-            <Heading>{statsHeading}</Heading>
-            <Paragraph
-              source={statsSentence1}
-              escapeHtml={false}
-              renderers={MdRenderers}
-            />
-            <Paragraph
-              source={statsSentence2}
-              escapeHtml={false}
-              renderers={MdRenderers}
-            />
-          </TextContainer>
-          <VisibilitySensor
-            onChange={setStatsVisibility}
-            active={!statsVisible}
-          >
-            <StatsContainer>
+        <VisibilitySensor onChange={setStatsVisibility} active={!statsVisible}>
+          <SectionContainer>
+            <Row>
+              <Heading>{statsHeading}</Heading>
               <Stat>
                 <StatNumber>
                   <CountUp
@@ -143,6 +111,13 @@ const StatsSection = ({
                 </StatNumber>
                 <StatTitle>{firstStat.description}</StatTitle>
               </Stat>
+            </Row>
+            <Row>
+              <Paragraph
+                source={statsSentence1}
+                escapeHtml={false}
+                renderers={MdRenderers}
+              />
               <Stat>
                 <StatNumber>
                   <CountUp
@@ -153,6 +128,13 @@ const StatsSection = ({
                 </StatNumber>
                 <StatTitle>{secondStat.description}</StatTitle>
               </Stat>
+            </Row>
+            <Row>
+              <Paragraph
+                source={statsSentence2}
+                escapeHtml={false}
+                renderers={MdRenderers}
+              />
               <Stat>
                 <StatNumber>
                   <CountUp
@@ -163,9 +145,9 @@ const StatsSection = ({
                 </StatNumber>
                 <StatTitle>{thirdStat.description}</StatTitle>
               </Stat>
-            </StatsContainer>
-          </VisibilitySensor>
-        </SectionContainer>
+            </Row>
+          </SectionContainer>
+        </VisibilitySensor>
       </ContentWrapper>
     </Wrapper>
   )
