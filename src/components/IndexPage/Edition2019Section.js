@@ -6,11 +6,11 @@ import { colors } from "theme"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
-  padding: 200px 0;
+  padding-top: 200px;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
-    padding: 120px 0;
+    padding-top: 120px;
   }
 `
 

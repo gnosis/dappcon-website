@@ -4,11 +4,11 @@ import ContentWrapper from "components/ContentWrapper"
 import { colors } from "theme"
 
 const Wrapper = styled.section`
-  padding-top: 168px;
+  padding: 200px 0;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
-    padding-top: 128px;
+    padding: 120px 0;
   }
 `
 

@@ -42,7 +42,7 @@ export const IndexPageTemplate = ({
       dapps={dapps}
     />
     {speakers2019 && <Edition2019Section speakers={speakers2019} />}
-    {/* <MediaPartnersSection /> */}
+    <MediaPartnersSection />
     {/* <SponsorsSection sponsors={sponsors} /> */}
   </>
 )
