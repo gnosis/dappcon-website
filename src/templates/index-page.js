@@ -41,7 +41,7 @@ export const IndexPageTemplate = ({
       dappsTextRC={dappsTextRC}
       dapps={dapps}
     />
-    {speakers2019 && <Edition2019Section speakers={speakers2019.edges} />}
+    {speakers2019 && <Edition2019Section speakers={speakers2019} />}
     {/* <MediaPartnersSection /> */}
     {/* <SponsorsSection sponsors={sponsors} /> */}
   </>
@@ -70,16 +70,24 @@ const IndexPage = props => {
     locationAndDate
   } = pageData
 
-  const displayedSpeakers = Object.values(indexPage2019Speakers)
-  speakers2019.edges = speakers2019.edges.filter(({ node }) =>
-    displayedSpeakers.includes(node.frontmatter.name)
-  )
+  const displayedSpeakersNames = Object.values(indexPage2019Speakers)
+  let displayed2019Speakers = []
+  for (let name of displayedSpeakersNames) {
+    const speaker = speakers2019.edges.find(({ node }) => node.frontmatter.name === name)
+
+    if (speaker) {
+      displayed2019Speakers.push(speaker)
+    }
+  }
+
 
   const sortedSponsors = sponsors.edges
     .map(sponsor => sponsor.node.frontmatter)
     .sort((a, b) => b.type - a.type)
 
-  const dappsSerialized = Object.values(dapps)[0].map(({ node }) => node.frontmatter)
+  const dappsSerialized = Object.values(dapps)[0].map(
+    ({ node }) => node.frontmatter
+  )
 
   return (
     <IndexPageTemplate
@@ -93,7 +101,7 @@ const IndexPage = props => {
       buttonText={buttonText}
       stats={stats}
       dapps={dappsSerialized}
-      speakers2019={speakers2019}
+      speakers2019={displayed2019Speakers}
       locationAndDate={locationAndDate}
       sponsors={sortedSponsors}
     />
