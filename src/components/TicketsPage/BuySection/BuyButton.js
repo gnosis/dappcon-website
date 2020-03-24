@@ -29,6 +29,7 @@ const Container = styled.div`
   border: 2px solid #efefef;
   border-radius: 8px;
   box-sizing: border-box;
+  pointer-events: ${p => p.isActive ? 'all' : 'none'};
 
   g {
     transition: fill 0.3s ease-in-out;
@@ -105,7 +106,7 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
       onClick={isMintbase ? handleOpen : () => {}}
       isMintbase={isMintbase}
     >
-      <Container>
+      <Container isActive={isActive}>
         <Heading>{heading}</Heading>
         <DescParagraph source={desc} renderers={markdownRenderers} />
         <CallToAction>{cta}</CallToAction>
