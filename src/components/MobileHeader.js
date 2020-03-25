@@ -2,7 +2,13 @@ import React, { useState } from "react"
 import styled, { css } from "styled-components"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
-import { MobileMenuIcon, DappconLogoSmall } from "components/Svg"
+import {
+  MobileMenuIcon,
+  DappconLogoSmall,
+  TelegramIcon,
+  TwitterIcon,
+  EmailIcon
+} from "components/Svg"
 import ButtonLink from "components/ButtonLink"
 import { colors } from "theme"
 
@@ -37,7 +43,6 @@ const burgerMenuStyle = css`
   }
   .bm-item {
     display: inline-block;
-    text-transform: uppercase;
   }
   .bm-menu-wrap {
     z-index: 1050;
@@ -91,9 +96,9 @@ const Close = styled.button`
 `
 
 const LinkCSS = css`
-  font-size: 19px;
-  padding: 25px 0;
-  text-align: center;
+  font-size: 37px;
+  padding: 25px 15px;
+  text-align: left;
   color: ${colors.bgWhite};
   text-decoration: none;
   font-weight: 800;
@@ -107,16 +112,15 @@ const StyledAnchor = styled.a`
   ${LinkCSS}
 `
 
-const StyledButtonLink = styled(ButtonLink)`
-  padding: 17px 73px;
-  display: block;
-  margin: 0 auto;
-  font-size: 12px;
-  border-width: 3px;
-  margin-top: 25px;
-  box-sizing: border-box;
-  width: 230px;
-  text-transform: uppercase;
+const SIconsContainer = styled.div`
+  margin-top: 12px;
+  margin-left: 15px;
+`
+
+const SImgLink = styled.a`
+  &:not(:first-child) {
+    margin-left: 46px;
+  }
 `
 
 const MobileHeader = ({
@@ -166,6 +170,20 @@ const MobileHeader = ({
         <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
           Tickets
         </StyledLink>
+        <SIconsContainer>
+          <SImgLink href="https://twitter.com/dappcon_berlin" target="_blank">
+            <TwitterIcon fill={colors.white} />
+          </SImgLink>
+          <SImgLink
+            href="https://t.me/joinchat/EcVRsUPKJRYHbrijhd_Cbw"
+            target="_blank"
+          >
+            <TelegramIcon fill={colors.white} />
+          </SImgLink>
+          <SImgLink href="mailto:info@dappcon.io" target="_blank">
+            <EmailIcon fill={colors.white} />
+          </SImgLink>
+        </SIconsContainer>
       </Menu>
     </Wrapper>
   )

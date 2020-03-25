@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
-import { TelegramIcon, TwitterIcon } from "components/Svg"
+import { TelegramIcon, TwitterIcon, EmailIcon } from "components/Svg"
 import { colors } from "theme"
 
 const NavbarMenuContainer = styled.div`
@@ -101,6 +101,15 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
       id="tgLink"
     >
       <TelegramIcon fill={isBlack ? colors.black : colors.white} />
+    </SImgLink>
+    <SImgLink
+      isBlack={isBlack}
+      href="mailto:info@dappcon.io"
+      target="_blank"
+      ref={setLinkRef}
+      id="emailLink"
+    >
+      <EmailIcon fill={isBlack ? colors.black : colors.white} />
     </SImgLink>
   </NavbarMenuContainer>
 )
