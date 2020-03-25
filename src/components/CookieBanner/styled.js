@@ -24,7 +24,7 @@ const BannerContainer = styled.div`
   z-index: 5;
 
   &.${TRANSITION_NAME}-enter {
-    bottom: -200px;
+    bottom: -250px;
   }
   &.${TRANSITION_NAME}-enter-active {
     bottom: 0;
@@ -34,7 +34,7 @@ const BannerContainer = styled.div`
     bottom: 0;
   }
   &.${TRANSITION_NAME}-exit-active {
-    bottom: -200px;
+    bottom: -250px;
     transition: all 300ms ease-out;
   }
 
