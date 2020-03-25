@@ -19,7 +19,8 @@ const LinkIds = [
   "sponsorsLink",
   "ticketsLink",
   "tgLink",
-  "twitterLink"
+  "twitterLink",
+  "emailLink"
 ]
 
 const whiteColorSchemePages = ["/", "/tickets", "/tickets/"]
