@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import ContentWrapper from "components/ContentWrapper"
@@ -9,20 +9,39 @@ const Wrapper = styled.section`
   min-height: 100vh;
   background: ${colors.bgWhite};
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  padding: 200px 0;
 `
 
 const DappsPage = props => {
   const {
     data: { dapps }
   } = props
+  const [expandedDapp, setExpandedDapp] = useState()
 
-  console.log(dapps)
+  const handleExpandClick = dappUrl => {
+    setExpandedDapp(currentlyExpanded => {
+      // same dapp clicked
+      if (dappUrl === currentlyExpanded) {
+        return undefined
+      }
+
+      return dappUrl
+    })
+  }
 
   return (
     <Wrapper id="dapps">
-      <ContentWrapper>test</ContentWrapper>
+      <ContentWrapper>
+        {dapps.edges.map(dapp => (
+          <Dapp
+            key={dapp.node.frontmatter.url}
+            dapp={dapp.node.frontmatter}
+            isExpanded={dapp.node.frontmatter.url === expandedDapp}
+            onExpand={handleExpandClick}
+          />
+        ))}
+      </ContentWrapper>
     </Wrapper>
   )
 }
@@ -39,11 +58,13 @@ export const pageQuery = graphql`
           frontmatter {
             name
             url
+            desc_short
+            desc_long
             logo {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
                 # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth: 120, maxHeight: 134) {
+                fluid(maxWidth: 120, maxHeight: 120) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

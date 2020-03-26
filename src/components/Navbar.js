@@ -54,7 +54,7 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
     <StyledLink
       id="dappsLink"
       isBlack={isBlack}
-      to="/#dapps"
+      to="/dapps"
       innerRef={setLinkRef}
     >
       Dapps
