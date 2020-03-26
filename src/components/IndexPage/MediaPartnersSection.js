@@ -44,11 +44,12 @@ const Title = styled.h3`
 const PartnersContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-basis: 65%;
 `
 
 const Partner = styled.a`
-  height: 60px;
+  max-height: 60px;
 
   @media screen and (max-width: 767px) {
     height: 30px;
@@ -75,7 +76,7 @@ const MediaPartnersSection = () => {
     query {
       epicenter: file(relativePath: { eq: "epicenter_logo.png" }) {
         childImageSharp {
-          fixed(quality: 100, height: 60) {
+          fixed(quality: 100, height: 48) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }
