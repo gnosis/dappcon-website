@@ -153,7 +153,7 @@ const MobileHeader = ({
             ->
           </Close>
         </NavigationWrapper>
-        <StyledLink to="/#dapps" onClick={() => toggleMenu(!isMenuOpen)}>
+        <StyledLink to="/dapps" onClick={() => toggleMenu(!isMenuOpen)}>
           Dapps
         </StyledLink>
         <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>

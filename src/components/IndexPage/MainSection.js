@@ -87,7 +87,7 @@ const MainSection = ({
 }) => (
   <Wrapper id="main">
     <SContentWrapper>
-      <Link to="/tickets">
+      <Link to="/tickets" style={{ textDecoration: "none" }}>
         <SDappconIllus />
       </Link>
     </SContentWrapper>
