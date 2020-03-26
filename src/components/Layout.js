@@ -79,17 +79,6 @@ const GlobalStyles = createGlobalStyle`
       }
     }
   }
-
-	.st0{fill:#141314;}
-	.st1{font-family:'Averta';font-weight: 800;}
-	.st2{font-size:72px;}
-	.st3{font-size:16px;}
-	.st4{fill-rule:evenodd;clip-rule:evenodd;}
-	.st5{filter:url(#Adobe_OpacityMaskFilter);}
-	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st7{mask:url(#b_1_);fill-rule:evenodd;clip-rule:evenodd;}
-	.st8{filter:url(#Adobe_OpacityMaskFilter_1_);}
-	.st9{mask:url(#d_1_);fill-rule:evenodd;clip-rule:evenodd;}
 `
 
 const ChildrenContainer = styled.div`

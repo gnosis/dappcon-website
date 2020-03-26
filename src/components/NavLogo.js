@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { DappconLogoSmall } from 'components/Svg'
 
-const StyledLogoLink = styled(Link)`
+const SLogoLink = styled(Link)`
   position: fixed;
   top: 22px;
   left: 25px;
@@ -15,9 +15,9 @@ const StyledLogoLink = styled(Link)`
 `
 
 const NavLogo = ({ setLinkRef }) => (
-  <StyledLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
+  <SLogoLink id="navLogo" to="/" title="Logo" innerRef={setLinkRef}>
     <DappconLogoSmall />
-  </StyledLogoLink>
+  </SLogoLink>
 )
 
 export default NavLogo

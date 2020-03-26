@@ -1,14 +1,16 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 import ContentWrapper from "components/ContentWrapper"
+import Image from "components/PreviewCompatibleImage"
 import { colors } from "theme"
 
 const Wrapper = styled.section`
-  padding-top: 168px;
+  padding: 200px 0;
   background: ${colors.bgWhite};
 
   @media screen and (max-width: 767px) {
-    padding-top: 128px;
+    padding: 120px 0;
   }
 `
 
@@ -35,37 +37,72 @@ const Title = styled.h3`
   flex-basis: 20%;
 
   @media screen and (max-width: 767px) {
-    flex-basis: 30%;
+    flex-basis: 25%;
   }
 `
 
 const PartnersContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  flex-basis: 60%;
+  align-items: center;
+  flex-basis: 65%;
 `
 
-const Partner = styled.div`
-  width: 60px;
-  height: 60px;
-  background-color: ${colors.bgWhite};
-  border-radius: 5px;
+const Partner = styled.a`
+  max-height: 60px;
 
   @media screen and (max-width: 767px) {
-    width: 30px;
     height: 30px;
+
+    /* important is needed for overwriting gatsby styles  */
+    &:first-child {
+      & > div {
+        width: 146px !important;
+        height: 30px !important;
+      }
+    }
+
+    &:nth-child(2) {
+      & > div {
+        width: 30px !important;
+        height: 30px !important;
+      }
+    }
   }
 `
 
 const MediaPartnersSection = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      epicenter: file(relativePath: { eq: "epicenter_logo.png" }) {
+        childImageSharp {
+          fixed(quality: 100, height: 48) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+      intoTheEther: file(relativePath: { eq: "ETHHUB_Podcast_3000px.png" }) {
+        childImageSharp {
+          fixed(quality: 100, height: 60) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Wrapper>
       <ContentWrapper>
         <Container>
           <Title>Media Partners</Title>
           <PartnersContainer>
-            <Partner />
-            <Partner />
+            <Partner href="https://epicenter.tv/" target="_blank" rel="noopener noreferrer">
+              <Image image={data.epicenter} />
+            </Partner>
+            <Partner href="https://podcast.ethhub.io/" target="_blank" rel="noopener noreferrer">
+              <Image image={data.intoTheEther} />
+            </Partner>
           </PartnersContainer>
         </Container>
       </ContentWrapper>

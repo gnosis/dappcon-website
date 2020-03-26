@@ -8,6 +8,7 @@ const sectionIdToClass = {
   photo: "navWhite",
   policy: "navBlack",
   speakers: "navBlack",
+  dapps: "navBlack",
   conferenceSponsors: "navBlack",
   pageEnd: "navWhite"
 }
@@ -19,7 +20,8 @@ const LinkIds = [
   "sponsorsLink",
   "ticketsLink",
   "tgLink",
-  "twitterLink"
+  "twitterLink",
+  "emailLink"
 ]
 
 const whiteColorSchemePages = ["/", "/tickets", "/tickets/"]

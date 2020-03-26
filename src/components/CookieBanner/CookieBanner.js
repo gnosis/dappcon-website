@@ -78,7 +78,7 @@ const CookieBanner = ({ isCookieBannerOpen, setCookieBannerOpen, }) => {
   const buttonText = acceptedCookies.consentCookie_analytics ? 'AGREE' : 'ALRIGHT'
 
   return (
-    <CSSTransition in={isCookieBannerOpen} classNames={TRANSITION_NAME} timeout={300} unmountOnExit>
+    <CSSTransition in={isCookieBannerOpen} classNames={TRANSITION_NAME} timeout={500} unmountOnExit>
       <>
         <BannerContainer>
           <Text>
