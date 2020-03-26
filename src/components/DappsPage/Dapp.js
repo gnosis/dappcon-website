@@ -92,8 +92,8 @@ const Dapp = ({ dapp, onExpand, isExpanded }) => {
         <UnmountClosed isOpened={isExpanded}>
           <SMarkdown
             source={dapp.desc_long}
-            parserOptions={{ commonmark: true }}
             renderers={mdRenderers}
+            escapeHtml={false}
           />
         </UnmountClosed>
       </SInfoContainer>
