@@ -110,25 +110,22 @@ const SLIDER_SETTINGS = {
   prevArrow: <Arrow />
 }
 
-const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => {
-
-  return (
-    <Wrapper id="dapps">
-      <ContentWrapper>
-        <Slider {...SLIDER_SETTINGS}>
-          {dapps.map(dapp => (
-            <DappContainer key={dapp.url} href={dapp.url} title={dapp.name}>
-              <Dapp key={dapp.name} image={dapp.logo} alt={dapp.name} />
-            </DappContainer>
-          ))}
-        </Slider>
-        <TextContainer>
-          <LCText renderers={mdRenderers}>{dappsTextLC}</LCText>
-          <RCText renderers={mdRenderers}>{dappsTextRC}</RCText>
-        </TextContainer>
-      </ContentWrapper>
-    </Wrapper>
-  )
-}
+const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => (
+  <Wrapper id="dapps">
+    <ContentWrapper>
+      <Slider {...SLIDER_SETTINGS}>
+        {dapps.map(dapp => (
+          <DappContainer key={dapp.url} href={dapp.url} title={dapp.name}>
+            <Dapp key={dapp.name} image={dapp.logo} alt={dapp.name} />
+          </DappContainer>
+        ))}
+      </Slider>
+      <TextContainer>
+        <LCText renderers={mdRenderers}>{dappsTextLC}</LCText>
+        <RCText renderers={mdRenderers}>{dappsTextRC}</RCText>
+      </TextContainer>
+    </ContentWrapper>
+  </Wrapper>
+)
 
 export default DappsSection

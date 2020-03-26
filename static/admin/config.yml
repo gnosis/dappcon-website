@@ -48,6 +48,12 @@ collections:
       - label: URL
         name: url
         widget: string
+      - label: Short description
+        name: desc_short
+        widget: markdown
+      - label: Long description
+        name: desc_long
+        widget: markdown
       - label: Logo
         name: logo
         widget: image
