@@ -8,6 +8,7 @@ const sectionIdToClass = {
   photo: "navWhite",
   policy: "navBlack",
   speakers: "navBlack",
+  dapps: "navBlack",
   conferenceSponsors: "navBlack",
   pageEnd: "navWhite"
 }

@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Markdown from "react-markdown"
 import { colors } from "theme"
-import ButtonLink from "components/ButtonLink"
 import ContentWrapper from "components/ContentWrapper"
 import { DappconIllus } from "components/Svg"
 import { Link } from "gatsby"
@@ -16,10 +14,6 @@ const Wrapper = styled.section`
 `
 
 const SContentWrapper = styled(ContentWrapper)`
-  width: 100%;
-`
-
-const Img = styled.img`
   width: 100%;
 `
 
