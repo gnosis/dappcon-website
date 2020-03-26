@@ -70,7 +70,7 @@ const SDescShort = styled.p`
 
 const SMobileGetStartedBtn = styled(ButtonLink)`
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 `
 
 const SExpandBtn = styled.button`
