@@ -11,6 +11,10 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   padding: 200px 0;
+
+  .ReactCollapse--collapse {
+    transition: height 500ms;
+  }
 `
 
 const DappsPage = props => {
