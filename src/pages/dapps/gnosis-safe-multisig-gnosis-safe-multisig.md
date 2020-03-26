@@ -7,7 +7,8 @@ desc_long: >-
   Gnosis Safe is the most trusted platform to manage digital assets on Ethereum.
   At Dappcon you will be able to capture, collect and trade collectibles from
   your favorite Crypto OGs within your Safe.&nbsp;  
-
+  <br />
+  <br />
   Create your own Gnosis Safe:
   [https://gnosis-safe.io/](https://gnosis-safe.io/)
 logo: /img/gnosis_safe_app.png
