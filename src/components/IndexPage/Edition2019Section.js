@@ -99,7 +99,7 @@ const Edition2019Section = ({ speakers }) => (
             Check out the DappCon 2019 Edition
           </SLink>
           <SLink href="https://gnosis1.typeform.com/to/u8cTBg">
-            Want to become a speaker at DappCon 2020? Submit your proposal today
+            Submit your proposal today to become a speaker at DappCon 2020
           </SLink>
         </RCol>
       </Container>

@@ -7,11 +7,11 @@ const SContainer = styled.div`
   position: absolute;
   top: 200px;
   background: ${colors.black};
-  width: 50%;
+  width: 57%;
   display: flex;
   justify-content: flex-end;
   z-index: 10;
-  left: ${p => (p.isOpen ? 0 : "-50%")};
+  left: ${p => (p.isOpen ? 0 : "-57%")};
   transition: left 0.3s ease-in-out;
 
   @media screen and (max-width: 1000px) {
@@ -61,7 +61,7 @@ const Video2019 = () => {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <SButton onClick={handleClick}>
+        <SButton onClick={handleClick} isOpen={isOpen}>
           {isOpen ? "Close video" : "Play video"}
         </SButton>
       </SContainer>
