@@ -88,7 +88,7 @@ const Edition2019Section = ({ speakers }) => (
       <Container>
         <SpeakersContainer>
           {speakers.map(({ node: { frontmatter } }, i) => (
-            <Speaker key={i} speaker={frontmatter} hideDetails />
+            <Speaker key={i} speaker={frontmatter} hideDetails disabled />
           ))}
         </SpeakersContainer>
         <RCol>
