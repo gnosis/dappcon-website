@@ -37,6 +37,11 @@ const SButton = styled.button`
   cursor: pointer;
   outline: 0;
   border: 0;
+  transition: background .3s ease-in-out;
+
+  &:hover, &:focus {
+    background: ${colors.black}
+  }
 `
 
 const Video2019 = () => {
