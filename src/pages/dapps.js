@@ -19,9 +19,10 @@ const Wrapper = styled.section`
 
 const DappsPage = props => {
   const {
-    data: { dapps }
+    data: { dapps },
+    location,
   } = props
-  const [expandedDapp, setExpandedDapp] = useState()
+  const [expandedDapp, setExpandedDapp] = useState(location.state.dappUrl)
 
   const handleExpandClick = dappUrl => {
     setExpandedDapp(currentlyExpanded => {
