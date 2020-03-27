@@ -3,41 +3,45 @@ import styled from 'styled-components'
 import { colors } from 'theme'
 
 const ButtonLinkStyled = styled.a`
-  background: transparent;
+  background: ${colors.reddishPink};
   border-radius: 8px;
-  border: 3px solid ${colors.white};
-  font-size: 20px;
+  border: none;
+  font-size: 16px;
   font-weight: 800;
+  height: 44px;
+  box-sizing: border-box;
   color: ${colors.white};
-  padding: 10px 18px;
-  transition: color 0.2s, border-color 0.2s;
+  padding: 12px 18px;
+  width: 136px;
+  line-height: normal;
+  transition: background-color 0.2s, border-color 0.2s;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
 
   &:hover {
-    color: ${props => props.hover};
+    background-color: ${props => props.hover};
     border-color: ${props => props.hover};
   }
 
   &:focus {
     outline: 0;
-    color: ${colors.black};
-    border-color: ${colors.black};
+    background-color: ${props => props.hover};
+    border-color: ${props => props.hover};
   }
 `
 
 const ButtonLink = ({
-  text,
+  children,
   href = '',
   onClick = () => ({}),
-  hover = colors.veryLightPink,
+  hover = colors.black,
   rel = 'noopener noreferrer',
   target = '',
   ...props
 }) => (
   <ButtonLinkStyled target={target} href={href} hover={hover} rel={rel} {...props}>
-    {text}
+    {children}
   </ButtonLinkStyled>
 )
 

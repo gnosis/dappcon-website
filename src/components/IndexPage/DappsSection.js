@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Markdown from "react-markdown"
+import { Link } from "gatsby"
 import Slider from "react-slick"
 import ContentWrapper from "components/ContentWrapper"
 import PreviewCompatibleImage from "components/PreviewCompatibleImage"
@@ -41,7 +42,7 @@ const Wrapper = styled.section`
   }
 `
 
-const DappContainer = styled.a`
+const DappContainer = styled(Link)`
   max-width: 100px;
   height: 100px;
   width: 100px;
@@ -115,7 +116,12 @@ const DappsSection = ({ dappsTextRC, dappsTextLC, dapps }) => (
     <ContentWrapper>
       <Slider {...SLIDER_SETTINGS}>
         {dapps.map(dapp => (
-          <DappContainer key={dapp.url} href={dapp.url} title={dapp.name}>
+          <DappContainer
+            key={dapp.url}
+            state={{ dappUrl: dapp.url }}
+            to="/dapps"
+            title={dapp.name}
+          >
             <Dapp key={dapp.name} image={dapp.logo} alt={dapp.name} />
           </DappContainer>
         ))}

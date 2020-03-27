@@ -7,14 +7,16 @@ desc_short: >-
   and earn credit for beer and other cool swag!
 desc_long: >-
   Trustlines will help people and projects connect for UX testing of Dapps. We
-  will create a small, incentivized credit network for this purpose.\
-
+  will create a small, incentivized credit network for this purpose.  
+  <br />
+  <br />
   This means that you as an individual can both learn about exciting new Dapps,
   and earn UX testing credit while contributing your time! As a project or a
   company looking for testers, you will have an easier time attracting new
   people to test your Dapp. The UX testing credit can then be exchanged for more
-  testing, or unique prices only redeemable with Trustlines.\
-
-  Download: \[https://trustlines.app/](https://trustlines.app/)
+  testing, or unique prices only redeemable with Trustlines.  
+  <br />
+  <br />
+  Download: [https://trustlines.app/](https://trustlines.app/)
 logo: /img/trustlines.png
 ---

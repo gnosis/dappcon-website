@@ -9,7 +9,6 @@ import {
   TwitterIcon,
   EmailIcon
 } from "components/Svg"
-import ButtonLink from "components/ButtonLink"
 import { colors } from "theme"
 
 const burgerMenuStyle = css`
@@ -43,12 +42,17 @@ const burgerMenuStyle = css`
   }
   .bm-item {
     display: inline-block;
+
+    &:focus {
+      color: ${colors.black};
+      outline: none;
+    }
   }
   .bm-menu-wrap {
     z-index: 1050;
     top: 0;
     /* important because react-burger-menu adds width: 300px style attr */
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 1000px) {
       width: 100vw !important;
     }
   }
@@ -64,7 +68,7 @@ const whiteColorSchemePages = ["/tickets", "/tickets/"]
 const Wrapper = styled.div`
   ${burgerMenuStyle}
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `
@@ -154,7 +158,7 @@ const MobileHeader = ({
             ->
           </Close>
         </NavigationWrapper>
-        <StyledLink to="/#dapps" onClick={() => toggleMenu(!isMenuOpen)}>
+        <StyledLink to="/dapps" onClick={() => toggleMenu(!isMenuOpen)}>
           Dapps
         </StyledLink>
         <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>

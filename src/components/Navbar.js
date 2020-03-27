@@ -16,7 +16,7 @@ const NavbarMenuContainer = styled.div`
   height: 404px;
   z-index: 1;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 999px) {
     display: none;
   }
 `
@@ -54,7 +54,7 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
     <StyledLink
       id="dappsLink"
       isBlack={isBlack}
-      to="/#dapps"
+      to="/dapps"
       innerRef={setLinkRef}
     >
       Dapps

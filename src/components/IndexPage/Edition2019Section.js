@@ -3,11 +3,13 @@ import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
 import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
+import Video2019 from "./Video2019"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
   padding-top: 200px;
   background: ${colors.bgWhite};
+  position: relative;
 
   @media screen and (max-width: 767px) {
     padding-top: 120px;
@@ -86,7 +88,7 @@ const Edition2019Section = ({ speakers }) => (
       <Container>
         <SpeakersContainer>
           {speakers.map(({ node: { frontmatter } }, i) => (
-            <Speaker key={i} speaker={frontmatter} hideDetails />
+            <Speaker key={i} speaker={frontmatter} hideDetails disabled />
           ))}
         </SpeakersContainer>
         <RCol>
@@ -97,11 +99,12 @@ const Edition2019Section = ({ speakers }) => (
             Check out the DappCon 2019 Edition
           </SLink>
           <SLink href="https://gnosis1.typeform.com/to/u8cTBg">
-            Want to become a speaker at DappCon 2020? Submit your proposal today
+            Submit your proposal today to become a speaker at DappCon 2020
           </SLink>
         </RCol>
       </Container>
     </ContentWrapper>
+    <Video2019 />
   </Wrapper>
 )
 
