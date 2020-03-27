@@ -22,7 +22,7 @@ const SLogo = styled.div`
   height: 120px;
   & > div {
     width: 120px;
-  height: 120px;
+    height: 120px;
     border-radius: 8px;
   }
 `
@@ -86,9 +86,10 @@ const SExpandBtn = styled.button`
   letter-spacing: -0.55px;
   color: ${colors.secondaryBlack};
   cursor: pointer;
-  transition: color .3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     color: ${colors.reddishPink};
   }
 
@@ -102,59 +103,57 @@ const SExpandBtnMobile = styled(SExpandBtn)`
   margin-top: 24px;
 `
 
-const Dapp = ({ dapp, onExpand, isExpanded }) => {
-  return (
-    <>
-      <SContainer>
-        <SLogo>
-          <Image image={dapp.logo} />
-        </SLogo>
-        <SInfoContainer>
-          <SInfoHeader>
-            <STitle>{dapp.name}</STitle>
-            <ShowOnMobile>
-              <SMobileGetStartedBtn target="_blank" href={dapp.url}>
-                Get started
-              </SMobileGetStartedBtn>
-            </ShowOnMobile>
-            <HideOnMobile>
-              <SDescShort>{dapp.desc_short}</SDescShort>
-              <SExpandBtn onClick={() => onExpand(dapp.url)}>
-                {isExpanded ? "Reduce" : "Read more"}
-              </SExpandBtn>
-            </HideOnMobile>
-          </SInfoHeader>
+const Dapp = ({ dapp, onExpand, isExpanded }) => (
+  <>
+    <SContainer>
+      <SLogo>
+        <Image image={dapp.logo} />
+      </SLogo>
+      <SInfoContainer>
+        <SInfoHeader>
+          <STitle>{dapp.name}</STitle>
+          <ShowOnMobile>
+            <SMobileGetStartedBtn target="_blank" href={dapp.url}>
+              Get started
+            </SMobileGetStartedBtn>
+          </ShowOnMobile>
           <HideOnMobile>
-            <UnmountClosed isOpened={isExpanded}>
-              <SMarkdown
-                source={dapp.desc_long}
-                renderers={mdRenderers}
-                escapeHtml={false}
-              />
-            </UnmountClosed>
+            <SDescShort>{dapp.desc_short}</SDescShort>
+            <SExpandBtn onClick={() => onExpand(dapp.url)}>
+              {isExpanded ? "Reduce" : "Read more"}
+            </SExpandBtn>
           </HideOnMobile>
-        </SInfoContainer>
+        </SInfoHeader>
         <HideOnMobile>
-          <ButtonLink target="_blank" href={dapp.url}>
-            Get started
-          </ButtonLink>
+          <UnmountClosed isOpened={isExpanded}>
+            <SMarkdown
+              source={dapp.desc_long}
+              renderers={mdRenderers}
+              escapeHtml={false}
+            />
+          </UnmountClosed>
         </HideOnMobile>
-      </SContainer>
-      <ShowOnMobile>
-        <SDescShort>{dapp.desc_short}</SDescShort>
-        <SExpandBtnMobile onClick={() => onExpand(dapp.url)}>
-          {isExpanded ? "Reduce" : "Read more"}
-        </SExpandBtnMobile>
-        <UnmountClosed isOpened={isExpanded}>
-          <SMarkdown
-            source={dapp.desc_long}
-            renderers={mdRenderers}
-            escapeHtml={false}
-          />
-        </UnmountClosed>
-      </ShowOnMobile>
-    </>
-  )
-}
+      </SInfoContainer>
+      <HideOnMobile>
+        <ButtonLink target="_blank" href={dapp.url}>
+          Get started
+        </ButtonLink>
+      </HideOnMobile>
+    </SContainer>
+    <ShowOnMobile>
+      <SDescShort>{dapp.desc_short}</SDescShort>
+      <SExpandBtnMobile onClick={() => onExpand(dapp.url)}>
+        {isExpanded ? "Reduce" : "Read more"}
+      </SExpandBtnMobile>
+      <UnmountClosed isOpened={isExpanded}>
+        <SMarkdown
+          source={dapp.desc_long}
+          renderers={mdRenderers}
+          escapeHtml={false}
+        />
+      </UnmountClosed>
+    </ShowOnMobile>
+  </>
+)
 
 export default Dapp
