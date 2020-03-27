@@ -16,7 +16,7 @@ const NavbarMenuContainer = styled.div`
   height: 404px;
   z-index: 1;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 999px) {
     display: none;
   }
 `

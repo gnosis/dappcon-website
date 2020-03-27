@@ -47,7 +47,7 @@ const burgerMenuStyle = css`
     z-index: 1050;
     top: 0;
     /* important because react-burger-menu adds width: 300px style attr */
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 1000px) {
       width: 100vw !important;
     }
   }
@@ -63,7 +63,7 @@ const whiteColorSchemePages = ["/tickets", "/tickets/"]
 const Wrapper = styled.div`
   ${burgerMenuStyle}
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `
