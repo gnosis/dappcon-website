@@ -22,7 +22,7 @@ const DappsPage = props => {
     data: { dapps },
     location,
   } = props
-  const [expandedDapp, setExpandedDapp] = useState(location.state.dappUrl)
+  const [expandedDapp, setExpandedDapp] = useState(location.state ? location.state.dappUrl : undefined)
 
   const handleExpandClick = dappUrl => {
     setExpandedDapp(currentlyExpanded => {
