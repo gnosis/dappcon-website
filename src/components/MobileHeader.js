@@ -42,6 +42,11 @@ const burgerMenuStyle = css`
   }
   .bm-item {
     display: inline-block;
+
+    &:focus {
+      color: ${colors.black};
+      outline: none;
+    }
   }
   .bm-menu-wrap {
     z-index: 1050;

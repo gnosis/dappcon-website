@@ -8,12 +8,7 @@ import ContentWrapper from "components/ContentWrapper"
 import VisibilitySensor from "react-visibility-sensor"
 
 const Wrapper = styled.section`
-  padding-top: 200px;
   background: ${colors.bgWhite};
-
-  @media screen and (max-width: 767px) {
-    padding-top: 120px;
-  }
 `
 
 const SectionContainer = styled.div`
