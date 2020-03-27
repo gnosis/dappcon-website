@@ -14,20 +14,20 @@ const ButtonLinkStyled = styled.a`
   padding: 12px 18px;
   width: 136px;
   line-height: normal;
-  transition: color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
 
   &:hover {
-    color: ${props => props.hover};
+    background-color: ${props => props.hover};
     border-color: ${props => props.hover};
   }
 
   &:focus {
     outline: 0;
-    color: ${colors.black};
-    border-color: ${colors.black};
+    background-color: ${props => props.hover};
+    border-color: ${props => props.hover};
   }
 `
 
@@ -35,7 +35,7 @@ const ButtonLink = ({
   children,
   href = '',
   onClick = () => ({}),
-  hover = colors.veryLightPink,
+  hover = colors.black,
   rel = 'noopener noreferrer',
   target = '',
   ...props

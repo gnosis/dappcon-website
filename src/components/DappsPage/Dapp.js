@@ -86,6 +86,15 @@ const SExpandBtn = styled.button`
   letter-spacing: -0.55px;
   color: ${colors.secondaryBlack};
   cursor: pointer;
+  transition: color .3s ease-in-out;
+
+  &:focus, &:hover {
+    color: ${colors.reddishPink};
+  }
+
+  &:focus {
+    outline: none;
+  }
 `
 
 const SExpandBtnMobile = styled(SExpandBtn)`
