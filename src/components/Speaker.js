@@ -9,7 +9,7 @@ const Div = styled.div`
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: ${colors.reddishPink};
+    color: ${p => p.disabled ? '' : colors.reddishPink};
   }
 
   @media screen and (max-width: 767px) {
@@ -36,8 +36,6 @@ const SpeakerName = styled.span`
   line-height: normal;
   letter-spacing: normal;
   white-space: nowrap;
-
-  color: ${props => props.red && colors.reddishPink};
 
   @media screen and (max-width: 767px) {
     margin-top: 8px;
@@ -68,9 +66,10 @@ const Info = styled.span`
 const Speaker = ({
   speaker: { name, image, position, company },
   showInfo,
+  disabled = false,
   hideDetails = false
 }) => (
-  <Div>
+  <Div disabled={disabled}>
     <ImageContainer>
       <SpeakerPhoto image={image} />
     </ImageContainer>

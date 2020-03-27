@@ -47,7 +47,7 @@ const DappconIllus = ({
       <text transform="matrix(1 0 0 1 638 206)" className="st3 st4">
         at Radialsystem, Berlin
       </text>
-      <text transform="matrix(1 0 0 1 335.6661 101.6777)" class="st4 st10 tickets-text">TICKETS</text>
+      <text transform="matrix(1 0 0 1 335.6661 101.6777)" class="st1 st4 st10 tickets-text">TICKETS</text>
       <path
         className="st4 hoverable"
         d="M382.8,6.2l-1.5,2.3l-3.1,4.7l-3.1,4.7l-3.1,4.7l-3.1,4.7l-3,4.7l-4.5,7.1l-6,9.5l-5.9,9.5l-5.9,9.5l-5.9,9.5
