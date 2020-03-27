@@ -3,11 +3,13 @@ import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
 import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
+import Video2019 from "./Video2019"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
   padding-top: 200px;
   background: ${colors.bgWhite};
+  position: relative;
 
   @media screen and (max-width: 767px) {
     padding-top: 120px;
@@ -102,6 +104,7 @@ const Edition2019Section = ({ speakers }) => (
         </RCol>
       </Container>
     </ContentWrapper>
+    <Video2019 />
   </Wrapper>
 )
 
