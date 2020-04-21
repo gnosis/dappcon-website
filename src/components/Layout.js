@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import styled, { createGlobalStyle } from "styled-components"
 import { StaticQuery, graphql, withPrefix } from "gatsby"
 import { colors } from "theme"
@@ -117,8 +117,6 @@ export const LayoutTemplate = ({
       {!isTicketsPage && (
         <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
       )}
-      {/* required for mintbase  */}
-      <div id="mintbase-app"></div>
     </>
   )
 }
@@ -199,9 +197,6 @@ const TemplateWrapper = props => {
               name="twitter:image"
               content="/img/og-image.png"
             />
-            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fruntime.js?alt=media&token=83829758-30e4-451d-9804-83fa95f1cbdc"></script>
-            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fmain.js?alt=media&token=eea92974-87be-4311-a977-e9d9f9f22dff"></script>
-            <script crossOrigin src="https://firebasestorage.googleapis.com/v0/b/thing-1d2be.appspot.com/o/packages%2Fbig.js?alt=media&token=3b30aab0-48f3-4109-88a7-43249821a140"></script>
           </Helmet>
           <LayoutTemplate
             {...props}
