@@ -88,31 +88,35 @@ const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
     isActive && !isMintbase ? SLinkContainer : SBtnContainer
 
   return (
-    <BtnContainerComponent
-      href={link}
-      onClick={
-        isMintbase
-          ? () => {
-              setIsMintbaseModalOpen(true)
-            }
-          : () => {}
-      }
-      isMintbase={isMintbase}
-    >
-      <Container isActive={isActive}>
-        <Heading>{heading}</Heading>
-        <DescParagraph source={desc} renderers={markdownRenderers} />
-        <CallToAction>{cta}</CallToAction>
-      </Container>
-      <Mintbase
-        contract="0x202d2f33449bf46d6d32ae7644ada130876461a4"
-        show={isMintbaseModalOpen}
-        handleClose={setIsMintbaseModalOpen}
-        dark="rgba(60, 60, 60, 1)"
-        darker="rgba(12, 12, 12, 1)"
-        darkAlpha="rgba(60, 60, 60, 0.8)"
-      />
-    </BtnContainerComponent>
+    <>
+      <BtnContainerComponent
+        href={link}
+        onClick={
+          isMintbase
+            ? () => {
+                setIsMintbaseModalOpen(true)
+              }
+            : () => {}
+        }
+        isMintbase={isMintbase}
+      >
+        <Container isActive={isActive}>
+          <Heading>{heading}</Heading>
+          <DescParagraph source={desc} renderers={markdownRenderers} />
+          <CallToAction>{cta}</CallToAction>
+        </Container>
+      </BtnContainerComponent>
+      {isMintbase && (
+        <Mintbase
+          contract="0x202d2f33449bf46d6d32ae7644ada130876461a4"
+          show={isMintbaseModalOpen}
+          handleClose={setIsMintbaseModalOpen}
+          dark="rgba(60, 60, 60, 1)"
+          darker="rgba(12, 12, 12, 1)"
+          darkAlpha="rgba(60, 60, 60, 0.8)"
+        />
+      )}
+    </>
   )
 }
 
