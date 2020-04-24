@@ -23,6 +23,7 @@ deploy:
     skip_cleanup: true
     local_dir: public
     upload-dir: current
+    region: $AWS_DEFAULT_REGION
     on:
       branch: develop
   # Production deployment - MANUAL Tagged commits
@@ -33,6 +34,7 @@ deploy:
     skip_cleanup: true
     local_dir: public
     upload-dir: releases/$LATEST_TAG
+    region: $AWS_DEFAULT_REGION
     on:
       tags: true
   - provider: script
@@ -48,6 +50,7 @@ deploy:
     skip_cleanup: true
     local_dir: public
     upload-dir: releases/$LATEST_TAG
+    region: $AWS_DEFAULT_REGION
     on:
       branch: master
   - provider: script

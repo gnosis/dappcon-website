@@ -1,5 +1,6 @@
-import React, { useCallback } from "react"
+import React, { useState } from "react"
 import Markdown from "react-markdown"
+import Mintbase from "mintbase-bridge"
 import styled from "styled-components"
 import { colors } from "theme"
 
@@ -8,7 +9,7 @@ const SLinkContainer = styled.a`
 `
 
 const SBtnContainer = styled.div`
-  cursor: ${p => (p.isMintbase ? "pointer" : "initial")};
+  cursor: ${(p) => (p.isMintbase ? "pointer" : "initial")};
 `
 
 const StyledLink = styled.a`
@@ -29,7 +30,7 @@ const Container = styled.div`
   border: 2px solid #efefef;
   border-radius: 8px;
   box-sizing: border-box;
-  pointer-events: ${p => p.isActive ? 'all' : 'none'};
+  pointer-events: ${(p) => (p.isActive ? "all" : "none")};
 
   g {
     transition: fill 0.3s ease-in-out;
@@ -73,45 +74,49 @@ const CallToAction = styled.p`
 `
 
 const markdownRenderers = {
-  link: props => (
+  link: (props) => (
     <StyledLink href={props.href} target="_blank" rel="noopener noreferrer">
       {props.children}
     </StyledLink>
-  )
+  ),
 }
 
 const BuyButton = ({ heading, desc, link, cta, isMintbase, isActive }) => {
-  const handleOpen = useCallback(e => {
-    e.preventDefault()
+  const [isMintbaseModalOpen, setIsMintbaseModalOpen] = useState(false)
 
-    window.renderGroups.runApp({
-      contract: "0x202d2f33449bf46d6d32ae7644ada130876461a4",
-      finishedUrl: "",
-      buttonText: "NFT.DappCon2020",
-      twitterHandle: "@dappcon_berlin",
-      backgroundColor: "rgba(0, 0, 0, 0.8)",
-      hideAvailable: false,
-      isTest: false,
-      initialized: function() {
-        // Do something when the app has loaded
-      }
-    })
-  }, [])
   const BtnContainerComponent =
     isActive && !isMintbase ? SLinkContainer : SBtnContainer
 
   return (
-    <BtnContainerComponent
-      href={link}
-      onClick={isMintbase ? handleOpen : () => {}}
-      isMintbase={isMintbase}
-    >
-      <Container isActive={isActive}>
-        <Heading>{heading}</Heading>
-        <DescParagraph source={desc} renderers={markdownRenderers} />
-        <CallToAction>{cta}</CallToAction>
-      </Container>
-    </BtnContainerComponent>
+    <>
+      <BtnContainerComponent
+        href={link}
+        onClick={
+          isMintbase
+            ? () => {
+                setIsMintbaseModalOpen(true)
+              }
+            : () => {}
+        }
+        isMintbase={isMintbase}
+      >
+        <Container isActive={isActive}>
+          <Heading>{heading}</Heading>
+          <DescParagraph source={desc} renderers={markdownRenderers} />
+          <CallToAction>{cta}</CallToAction>
+        </Container>
+      </BtnContainerComponent>
+      {isMintbase && (
+        <Mintbase
+          contract="0x202d2f33449bf46d6d32ae7644ada130876461a4"
+          show={isMintbaseModalOpen}
+          handleClose={setIsMintbaseModalOpen}
+          dark="rgba(60, 60, 60, 1)"
+          darker="rgba(12, 12, 12, 1)"
+          darkAlpha="rgba(60, 60, 60, 0.8)"
+        />
+      )}
+    </>
   )
 }
 
