@@ -26,7 +26,7 @@ columns:
         Recognized media can apply for a free press pass. Please send an email to media@dappcon.io
     isActive: true
     isMintbase: false
-    title: APPLY FOR A PRESS PASS
+    title: APPLY FOR PRESS PASS
     url: media@dappcon.io
   thirdCol:
     cta: CONTACT US
