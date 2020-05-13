@@ -24,7 +24,7 @@ columns:
       Full access to the 3-day conference  &nbsp
 
         Recognized media can apply for a free press pass. Please send an email to media@dappcon.io
-    isActive: false
+    isActive: true
     isMintbase: false
     title: APPLY FOR A PRESS PASS
     url: media@dappcon.io
