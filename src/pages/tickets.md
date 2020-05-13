@@ -16,7 +16,7 @@ columns:
         Pay in DAI: Coming Soon!
     isActive: true
     isMintbase: true
-    title: BUY IN CRYPTO & FIAT
+    title: BUY TICKET
     url: https://dappcon.io
   secondCol:
     cta: CONTACT US
