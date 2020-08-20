@@ -83,23 +83,23 @@ const GlobalStyles = createGlobalStyle`
 
 const ChildrenContainer = styled.div`
   position: relative;
-  margin-bottom: ${props => (props.isTicketsPage ? "inherit" : "100vh")};
+  margin-bottom: ${(props) => (props.isTicketsPage ? "inherit" : "100vh")};
 `
 
 export const LayoutTemplate = ({
   children,
   location = {},
   headerFooterData = {},
-  setCookieBannerOpen
+  setCookieBannerOpen,
 }) => {
   // ticketsPage needs setCookieBannerOpen since the footer is rendered inside the page
   const isTicketsPage = /tickets/.test(location.pathname)
   let childElements = children
 
   if (isTicketsPage) {
-    childElements = React.Children.map(children, child => {
+    childElements = React.Children.map(children, (child) => {
       return React.cloneElement(child, {
-        setCookieBannerOpen
+        setCookieBannerOpen,
       })
     })
   }
@@ -114,14 +114,14 @@ export const LayoutTemplate = ({
         <div id="pageEnd"></div>
         {/* ^ is needed for changing color of the nav, see DesktopNav.js */}
       </ChildrenContainer>
-      {!isTicketsPage && (
+      {/* {!isTicketsPage && (
         <TicketsSection setCookieBannerOpen={setCookieBannerOpen} />
-      )}
+      )} */}
     </>
   )
 }
 
-const TemplateWrapper = props => {
+const TemplateWrapper = (props) => {
   const [isCookieBannerOpen, setCookieBannerOpen] = useState(false)
 
   return (
@@ -145,7 +145,7 @@ const TemplateWrapper = props => {
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <div>
           <Helmet>
             <html lang="en" />
@@ -176,10 +176,7 @@ const TemplateWrapper = props => {
               content={data.site.siteMetadata.description}
             />
             <meta property="og:url" content="https://dappcon.io" />
-            <meta
-              property="og:image"
-              content="/img/og-image.png"
-            />
+            <meta property="og:image" content="/img/og-image.png" />
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@dappcon_berlin" />
@@ -193,10 +190,7 @@ const TemplateWrapper = props => {
               name="twitter:image:alt"
               content={data.site.siteMetadata.description}
             />
-            <meta
-              name="twitter:image"
-              content="/img/og-image.png"
-            />
+            <meta name="twitter:image" content="/img/og-image.png" />
           </Helmet>
           <LayoutTemplate
             {...props}

@@ -21,7 +21,7 @@ export const IndexPageTemplate = ({
   dapps,
   stats,
   locationAndDate,
-  sponsors
+  sponsors,
 }) => (
   <>
     <MainSection
@@ -30,7 +30,7 @@ export const IndexPageTemplate = ({
       buyTicketsLink={buyTicketsLink}
       locationAndDate={locationAndDate}
     />
-    <StatsSection
+    {/* <StatsSection
       statsHeading={statsHeading}
       statsSentence1={statsSentence1}
       statsSentence2={statsSentence2}
@@ -43,18 +43,18 @@ export const IndexPageTemplate = ({
     />
     {speakers2019 && <Edition2019Section speakers={speakers2019} />}
     <MediaPartnersSection />
-    {/* <SponsorsSection sponsors={sponsors} /> */}
+    <SponsorsSection sponsors={sponsors} /> */}
   </>
 )
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const {
     data: {
       speakers2019,
       pageData: { frontmatter: pageData },
       sponsors,
-      dapps
-    }
+      dapps,
+    },
   } = props
   const {
     mainTitle,
@@ -67,22 +67,23 @@ const IndexPage = props => {
     speakers2019: indexPage2019Speakers,
     stats,
     buyTicketsLink,
-    locationAndDate
+    locationAndDate,
   } = pageData
 
   const displayedSpeakersNames = Object.values(indexPage2019Speakers)
   let displayed2019Speakers = []
   for (let name of displayedSpeakersNames) {
-    const speaker = speakers2019.edges.find(({ node }) => node.frontmatter.name === name)
+    const speaker = speakers2019.edges.find(
+      ({ node }) => node.frontmatter.name === name
+    )
 
     if (speaker) {
       displayed2019Speakers.push(speaker)
     }
   }
 
-
   const sortedSponsors = sponsors.edges
-    .map(sponsor => sponsor.node.frontmatter)
+    .map((sponsor) => sponsor.node.frontmatter)
     .sort((a, b) => b.type - a.type)
 
   const dappsSerialized = Object.values(dapps)[0].map(

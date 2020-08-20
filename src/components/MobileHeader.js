@@ -7,7 +7,7 @@ import {
   DappconLogoSmall,
   TelegramIcon,
   TwitterIcon,
-  EmailIcon
+  EmailIcon,
 } from "components/Svg"
 import { colors } from "theme"
 
@@ -129,7 +129,7 @@ const SImgLink = styled.a`
 
 const MobileHeader = ({
   location: { pathname } = {},
-  data: { buyTicketsLink }
+  data: { buyTicketsLink },
 }) => {
   const [isMenuOpen, toggleMenu] = useState(false)
 
@@ -158,7 +158,7 @@ const MobileHeader = ({
             ->
           </Close>
         </NavigationWrapper>
-        <StyledLink to="/dapps" onClick={() => toggleMenu(!isMenuOpen)}>
+        {/* <StyledLink to="/dapps" onClick={() => toggleMenu(!isMenuOpen)}>
           Dapps
         </StyledLink>
         <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>
@@ -173,7 +173,7 @@ const MobileHeader = ({
         </StyledAnchor>
         <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
           Tickets
-        </StyledLink>
+        </StyledLink> */}
         <SIconsContainer>
           <SImgLink href="https://twitter.com/dappcon_berlin" target="_blank">
             <TwitterIcon fill={colors.white} />
