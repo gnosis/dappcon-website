@@ -83,7 +83,8 @@ const GlobalStyles = createGlobalStyle`
 
 const ChildrenContainer = styled.div`
   position: relative;
-  margin-bottom: ${(props) => (props.isTicketsPage ? "inherit" : "100vh")};
+  /* margin-bottom: ${(props) =>
+    props.isTicketsPage ? "inherit" : "100vh"}; */
 `
 
 export const LayoutTemplate = ({

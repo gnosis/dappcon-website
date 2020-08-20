@@ -163,15 +163,15 @@ const MobileHeader = ({
         </StyledLink>
         <StyledLink to="/#edition2019" onClick={() => toggleMenu(!isMenuOpen)}>
           Speakers
-        </StyledLink>
+        </StyledLink> */}
         <StyledAnchor
-          href="/DappCon2020SponsorshipPackages.pdf"
+          href="https://2019.dappcon.io"
           target="_blank"
           onClick={() => toggleMenu(!isMenuOpen)}
         >
-          Sponsors
+          Dappcon 2019
         </StyledAnchor>
-        <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
+        {/* <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
           Tickets
         </StyledLink> */}
         <SIconsContainer>
