@@ -22,12 +22,12 @@ const DappconIllus = ({
         d="M0.051 0.022L7.845 0.022 7.845 58.397 0.051 58.397z"
       />
     </defs>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <text
         fill="#141314"
-        font-family="Averta-Extrabold, Averta"
-        font-size="139.716"
-        font-weight="600"
+        fontFamily="Averta-Extrabold, Averta"
+        fontSize="139.716"
+        fontWeight="600"
         transform="translate(0 -11) translate(25 .618)"
       >
         <tspan x="0" y="137.143">
@@ -36,9 +36,9 @@ const DappconIllus = ({
       </text>
       <text
         fill="#000"
-        font-family="Averta-Extrabold, Averta"
-        font-size="20"
-        font-weight="600"
+        fontFamily="Averta-Extrabold, Averta"
+        fontSize="20"
+        fontWeight="600"
         transform="translate(0 -11)"
       >
         <tspan x=".741" y="236">
@@ -50,10 +50,10 @@ const DappconIllus = ({
       </text>
       <text
         fill="#000"
-        font-family="Averta-Extrabold, Averta"
-        font-size="20"
-        font-weight="600"
-        letter-spacing="-.8"
+        fontFamily="Averta-Extrabold, Averta"
+        fontSize="20"
+        fontWeight="600"
+        letterSpacing="-.8"
         transform="translate(0 -11)"
       >
         <tspan x=".741" y="212.676">

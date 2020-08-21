@@ -1,11 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import MainSection from "components/IndexPage/MainSection"
-import StatsSection from "components/IndexPage/StatsSection"
-import DappsSection from "components/IndexPage/DappsSection"
+import CovidUpdateSection from "components/IndexPage/CovidUpdateSection"
 import Edition2019Section from "components/IndexPage/Edition2019Section"
-import SponsorsSection from "components/IndexPage/SponsorsSection"
-import MediaPartnersSection from "components/IndexPage/MediaPartnersSection"
 
 export const IndexPageTemplate = ({
   mainTitle,
@@ -41,6 +38,7 @@ export const IndexPageTemplate = ({
       dappsTextRC={dappsTextRC}
       dapps={dapps}
     /> */}
+    <CovidUpdateSection />
     {speakers2019 && <Edition2019Section speakers={speakers2019} />}
     {/* <MediaPartnersSection />
     <SponsorsSection sponsors={sponsors} /> */}
