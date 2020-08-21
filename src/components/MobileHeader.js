@@ -2,13 +2,7 @@ import React, { useState } from "react"
 import styled, { css } from "styled-components"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
-import {
-  MobileMenuIcon,
-  DappconLogoSmall,
-  TelegramIcon,
-  TwitterIcon,
-  EmailIcon,
-} from "components/Svg"
+import { MobileMenuIcon, DappconLogoSmall } from "components/Svg"
 import { colors } from "theme"
 
 const burgerMenuStyle = css`
@@ -171,23 +165,27 @@ const MobileHeader = ({
         >
           Dappcon 2019
         </StyledAnchor>
-        {/* <StyledLink to="/tickets" onClick={() => toggleMenu(!isMenuOpen)}>
-          Tickets
-        </StyledLink> */}
-        <SIconsContainer>
-          <SImgLink href="https://twitter.com/dappcon_berlin" target="_blank">
-            <TwitterIcon fill={colors.white} />
-          </SImgLink>
-          <SImgLink
-            href="https://t.me/joinchat/EcVRsUPKJRYHbrijhd_Cbw"
-            target="_blank"
-          >
-            <TelegramIcon fill={colors.white} />
-          </SImgLink>
-          <SImgLink href="mailto:info@dappcon.io" target="_blank">
-            <EmailIcon fill={colors.white} />
-          </SImgLink>
-        </SIconsContainer>
+        <StyledAnchor
+          href="https://twitter.com/dappcon_berlin"
+          target="_blank"
+          onClick={() => toggleMenu(!isMenuOpen)}
+        >
+          Twitter
+        </StyledAnchor>
+        <StyledAnchor
+          href="https://t.me/joinchat/EcVRsUPKJRYHbrijhd_Cbw"
+          target="_blank"
+          onClick={() => toggleMenu(!isMenuOpen)}
+        >
+          Telegram
+        </StyledAnchor>
+        <StyledAnchor
+          href="mailto:info@dappcon.i"
+          target="_blank"
+          onClick={() => toggleMenu(!isMenuOpen)}
+        >
+          E-mail
+        </StyledAnchor>
       </Menu>
     </Wrapper>
   )

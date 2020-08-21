@@ -2,7 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { colors } from "theme"
 import ContentWrapper from "components/ContentWrapper"
-import { DappconIllus } from "components/Svg"
+import ShowOnMobile from "components/ShowOnMobile"
+import HideOnMobile from "components/HideOnMobile"
+import { DappconIllus, DappconIllusMobile } from "components/Svg"
 import { Link } from "gatsby"
 
 const Wrapper = styled.section`
@@ -29,7 +31,8 @@ const SDappconIllus = styled(DappconIllus)`
     font-size: 72px;
   }
   .st3 {
-    font-size: 16px;
+    font-size: 26px;
+    font-weight: 800;
   }
   .st4 {
     fill-rule: evenodd;
@@ -83,13 +86,16 @@ const MainSection = ({
   mainTitle,
   buttonText,
   buyTicketsLink,
-  locationAndDate
+  locationAndDate,
 }) => (
   <Wrapper id="main">
     <SContentWrapper>
-      <Link to="/tickets" style={{ textDecoration: "none" }}>
+      <HideOnMobile>
         <SDappconIllus />
-      </Link>
+      </HideOnMobile>
+      <ShowOnMobile>
+        <DappconIllusMobile />
+      </ShowOnMobile>
     </SContentWrapper>
   </Wrapper>
 )

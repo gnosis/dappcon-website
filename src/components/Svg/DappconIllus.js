@@ -39,7 +39,13 @@ const DappconIllus = ({
         N
       </text>
       <text transform="matrix(1 0 0 1 638 186)" className="st3 st4">
-        Postponed to 2021
+        Postponed
+      </text>
+      <text transform="matrix(1 0 0 1 760.7659 186)" className="st3 st4">
+        {" "}
+      </text>
+      <text transform="matrix(1 0 0 1 638 206)" className="st3 st4">
+        to 2021
       </text>
       <path
         className="st4 hoverable"
