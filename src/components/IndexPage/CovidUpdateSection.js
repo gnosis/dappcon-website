@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
 import { colors } from "theme"
-import Video2019 from "./Video2019"
 
 const Wrapper = styled.section`
   background: ${colors.bgWhite};

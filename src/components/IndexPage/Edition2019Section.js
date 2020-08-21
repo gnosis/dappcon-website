@@ -10,7 +10,7 @@ import Speaker from "../Speaker"
 const Wrapper = styled.section`
   background: ${colors.bgWhite};
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 `
 
 const Container = styled.div`
