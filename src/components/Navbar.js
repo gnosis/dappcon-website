@@ -25,14 +25,14 @@ const LinkCSS = css`
   writing-mode: vertical-lr;
   margin-top: 25px;
   font-size: 19px;
-  color: ${props => (props.isBlack ? colors.black : colors.white)};
+  color: ${(props) => (props.isBlack ? colors.black : colors.white)};
   text-decoration: none;
   padding-right: 10px;
   font-weight: 800;
   transition: color 0.3s ease-out;
 
   &:hover {
-    color: ${props => (props.isBlack ? colors.reddishPink : colors.black)};
+    color: ${(props) => (props.isBlack ? colors.reddishPink : colors.black)};
   }
 `
 
@@ -51,7 +51,7 @@ const SImgLink = styled.a`
 
 const Navbar = ({ isBlack, setLinkRef, data }) => (
   <NavbarMenuContainer>
-    <StyledLink
+    {/* <StyledLink
       id="dappsLink"
       isBlack={isBlack}
       to="/dapps"
@@ -83,7 +83,7 @@ const Navbar = ({ isBlack, setLinkRef, data }) => (
       innerRef={setLinkRef}
     >
       Tickets
-    </StyledLink>
+    </StyledLink> */}
     <SImgLink
       isBlack={isBlack}
       href="https://twitter.com/dappcon_berlin"

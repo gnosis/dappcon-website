@@ -1,19 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import ContentWrapper from "components/ContentWrapper"
+import ShowOnMobile from "components/ShowOnMobile"
 import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
+import PlayButtonSvg from "assets/play-btn.svg"
 import Video2019 from "./Video2019"
 import Speaker from "../Speaker"
 
 const Wrapper = styled.section`
-  padding-top: 200px;
   background: ${colors.bgWhite};
   position: relative;
-
-  @media screen and (max-width: 767px) {
-    padding-top: 120px;
-  }
+  padding-bottom: 200px;
 `
 
 const Container = styled.div`
@@ -44,6 +42,7 @@ const SpeakersContainer = styled.div`
 const RCol = styled.div`
   display: flex;
   flex-direction: column;
+  flex-basis: 33%;
 
   @media screen and (max-width: 767px) {
     flex-direction: row;
@@ -52,55 +51,106 @@ const RCol = styled.div`
   }
 `
 
-const Heading = styled.h3`
-  font-size: 28px;
+const SVideoBtn = styled.a`
+  display: flex;
+  flex-direction: column;
+  color: ${colors.reddishPink};
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 12px;
   font-weight: 800;
-  color: ${colors.secondaryBlack};
-`
-
-const MobileHeading = styled(Heading)`
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
+  height: 100%;
 `
 
 const SLink = styled.a`
-  color: ${colors.reddishPink};
+  border: solid 5px #000000;
+  font-size: 32px;
+  color: ${colors.black};
   text-decoration: none;
-  margin-top: 62px;
-  max-width: 228px;
   font-weight: 800;
+  padding: 10px;
+  line-height: normal;
 
   &:hover {
-    text-decoration: underline;
+    border-color: ${colors.reddishPink};
+    color: ${colors.reddishPink};
   }
 
   @media screen and (max-width: 767px) {
     margin-top: 20px;
-    flex-basis: 40%;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
   }
 `
+
+const SText = styled.p`
+  margin-top: 25px;
+  line-height: normal;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 0;
+  }
+`
+
+const AboutDappConText = () => (
+  <SText>
+    DappCon is a nonprofit conference for the Ethereum ecosystem, focusing on
+    decentralized tooling, foundational infrastructure and technical
+    collaboration.
+    <br />
+    <br />
+    Organized by developers, for developers, Dappcon provides the opportunity
+    for co-creating the future of dapps while engaging the community in open
+    critical discussions and experiential learning.
+  </SText>
+)
 
 const Edition2019Section = ({ speakers }) => (
   <Wrapper id="edition2019">
     <ContentWrapper>
-      <MobileHeading>Speakers 2019</MobileHeading>
+      <ShowOnMobile>
+        <AboutDappConText />
+      </ShowOnMobile>
       <Container>
         <SpeakersContainer>
-          {speakers.map(({ node: { frontmatter } }, i) => (
-            <Speaker key={i} speaker={frontmatter} hideDetails disabled />
-          ))}
+          {speakers.map(({ node: { frontmatter } }, i) => {
+            if (i === 2) {
+              return (
+                <React.Fragment key={i}>
+                  <HideOnMobile>
+                    <Speaker
+                      key={i}
+                      speaker={frontmatter}
+                      hideDetails
+                      disabled
+                    />
+                  </HideOnMobile>
+                  <ShowOnMobile>
+                    <SVideoBtn
+                      href="https://youtu.be/ZoqTK6nJI9k"
+                      target="_blank"
+                    >
+                      <img src={PlayButtonSvg} alt="Play video" />
+                      Play
+                      <br />
+                      video
+                    </SVideoBtn>
+                  </ShowOnMobile>
+                </React.Fragment>
+              )
+            }
+
+            return (
+              <Speaker key={i} speaker={frontmatter} hideDetails disabled />
+            )
+          })}
         </SpeakersContainer>
         <RCol>
+          <SLink href="https://2019.dappcon.io">Check out Dappcon2019</SLink>
           <HideOnMobile>
-            <Heading>Speakers 2019</Heading>
+            <AboutDappConText />
           </HideOnMobile>
-          <SLink href="https://2019.dappcon.io">
-            Check out the DappCon 2019 Edition
-          </SLink>
-          <SLink href="https://gnosis1.typeform.com/to/u8cTBg">
-            Submit your proposal today to become a speaker at DappCon 2020
-          </SLink>
         </RCol>
       </Container>
     </ContentWrapper>

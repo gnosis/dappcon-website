@@ -38,16 +38,15 @@ const DappconIllus = ({
       <text transform="matrix(1 0 0 1 537.3958 224)" className="st0 st1 st2">
         N
       </text>
-      <text transform="matrix(1 0 0 1 638 186)" className="st3 st4">
-        8 - 10 September 2020
+      <text transform="matrix(1 0 0 1 657 192)" className="st1 st3">
+        Postponed
       </text>
-      <text transform="matrix(1 0 0 1 760.7659 186)" className="st3 st4">
+      <text transform="matrix(1 0 0 1 779.7659 186)" className="st1 st3">
         {" "}
       </text>
-      <text transform="matrix(1 0 0 1 638 206)" className="st3 st4">
-        at Radialsystem, Berlin
+      <text transform="matrix(1 0 0 1 657 224)" className="st1 st3">
+        to 2021
       </text>
-      <text transform="matrix(1 0 0 1 335.6661 101.6777)" class="st1 st4 st10 tickets-text">TICKETS</text>
       <path
         className="st4 hoverable"
         d="M382.8,6.2l-1.5,2.3l-3.1,4.7l-3.1,4.7l-3.1,4.7l-3.1,4.7l-3,4.7l-4.5,7.1l-6,9.5l-5.9,9.5l-5.9,9.5l-5.9,9.5
