@@ -8,7 +8,6 @@ import reset from "styled-reset"
 import DesktopNav from "components/DesktopNav"
 import CookieBanner from "components/CookieBanner"
 import MobileHeader from "components/MobileHeader"
-import TicketsSection from "components/TicketsSection"
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
