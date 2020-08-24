@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
 import { MobileMenuIcon, DappconLogoSmall } from "components/Svg"
+import RightArrow from "assets/arrow-right.svg"
 import { colors } from "theme"
 
 const burgerMenuStyle = css`
@@ -90,35 +91,31 @@ const Close = styled.button`
   font-size: 22px;
   background: transparent;
   border: none;
-  color: ${colors.bgWhite};
 `
 
 const LinkCSS = css`
   font-size: 37px;
   padding: 25px 15px;
   text-align: left;
-  color: ${colors.bgWhite};
+  color: ${colors.black};
   text-decoration: none;
   font-weight: 800;
 `
 
-const StyledLink = styled(Link)`
-  ${LinkCSS}
-`
+const Arrow = ({ className, style, onClick, isRightArrow }) => (
+  <img
+    src={RightArrow}
+    className={className}
+    style={style}
+    onClick={onClick}
+    width="24px"
+    alt="Arrow"
+    onKeyDown={onClick}
+  />
+)
 
 const StyledAnchor = styled.a`
   ${LinkCSS}
-`
-
-const SIconsContainer = styled.div`
-  margin-top: 12px;
-  margin-left: 15px;
-`
-
-const SImgLink = styled.a`
-  &:not(:first-child) {
-    margin-left: 46px;
-  }
 `
 
 const MobileHeader = ({
@@ -146,10 +143,10 @@ const MobileHeader = ({
       >
         <NavigationWrapper>
           <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
-            <DappconLogoSmall fill={colors.bgWhite} />
+            <DappconLogoSmall fill={colors.black} />
           </Link>
           <Close type="button" onClick={() => toggleMenu(!isMenuOpen)}>
-            ->
+            <Arrow />
           </Close>
         </NavigationWrapper>
         {/* <StyledLink to="/dapps" onClick={() => toggleMenu(!isMenuOpen)}>

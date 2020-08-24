@@ -30,8 +30,8 @@ const SLink = styled.a`
   box-sizing: border-box;
 
   &:hover {
-    text-decoration: underline;
     color: ${colors.reddishPink};
+    border-color: ${colors.reddishPink};
   }
 
   @media screen and (max-width: 767px) {
