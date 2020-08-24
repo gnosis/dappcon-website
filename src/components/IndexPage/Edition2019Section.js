@@ -4,6 +4,7 @@ import ContentWrapper from "components/ContentWrapper"
 import ShowOnMobile from "components/ShowOnMobile"
 import HideOnMobile from "components/HideOnMobile"
 import { colors } from "theme"
+import PlayButtonSvg from "assets/play-btn.svg"
 import Video2019 from "./Video2019"
 import Speaker from "../Speaker"
 
@@ -48,6 +49,17 @@ const RCol = styled.div`
     flex-basis: 100%;
     justify-content: space-between;
   }
+`
+
+const SVideoBtn = styled.a`
+  display: flex;
+  flex-direction: column;
+  color: ${colors.reddishPink};
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  height: 100%;
 `
 
 const SLink = styled.a`
@@ -102,9 +114,37 @@ const Edition2019Section = ({ speakers }) => (
       </ShowOnMobile>
       <Container>
         <SpeakersContainer>
-          {speakers.map(({ node: { frontmatter } }, i) => (
-            <Speaker key={i} speaker={frontmatter} hideDetails disabled />
-          ))}
+          {speakers.map(({ node: { frontmatter } }, i) => {
+            if (i === 2) {
+              return (
+                <React.Fragment key={i}>
+                  <HideOnMobile>
+                    <Speaker
+                      key={i}
+                      speaker={frontmatter}
+                      hideDetails
+                      disabled
+                    />
+                  </HideOnMobile>
+                  <ShowOnMobile>
+                    <SVideoBtn
+                      href="https://youtu.be/ZoqTK6nJI9k"
+                      target="_blank"
+                    >
+                      <img src={PlayButtonSvg} alt="Play video" />
+                      Play
+                      <br />
+                      video
+                    </SVideoBtn>
+                  </ShowOnMobile>
+                </React.Fragment>
+              )
+            }
+
+            return (
+              <Speaker key={i} speaker={frontmatter} hideDetails disabled />
+            )
+          })}
         </SpeakersContainer>
         <RCol>
           <SLink href="https://2019.dappcon.io">Check out Dappcon2019</SLink>

@@ -38,13 +38,13 @@ const DappconIllus = ({
       <text transform="matrix(1 0 0 1 537.3958 224)" className="st0 st1 st2">
         N
       </text>
-      <text transform="matrix(1 0 0 1 657 192)" class="st1 st3">
+      <text transform="matrix(1 0 0 1 657 192)" className="st1 st3">
         Postponed
       </text>
-      <text transform="matrix(1 0 0 1 779.7659 186)" class="st1 st3">
+      <text transform="matrix(1 0 0 1 779.7659 186)" className="st1 st3">
         {" "}
       </text>
-      <text transform="matrix(1 0 0 1 657 224)" class="st1 st3">
+      <text transform="matrix(1 0 0 1 657 224)" className="st1 st3">
         to 2021
       </text>
       <path
