@@ -72,7 +72,7 @@ const SLink = styled.a`
   line-height: normal;
 
   &:hover {
-    text-decoration: underline;
+    border-color: ${colors.reddishPink};
     color: ${colors.reddishPink};
   }
 
