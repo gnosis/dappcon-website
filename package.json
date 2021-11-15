@@ -1,7 +1,7 @@
 {
   "name": "dappcon-conference-website",
   "description": "A website for Developer Conference for Ethereum Dapps & Infrastructure.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Gnosis",
   "dependencies": {
     "babel-plugin-styled-components": "1.11.1",
