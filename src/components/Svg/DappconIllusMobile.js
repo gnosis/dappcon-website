@@ -45,7 +45,7 @@ const DappconIllus = ({
           Postponed{" "}
         </tspan>{" "}
         <tspan x=".741" y="261">
-          to 2021
+          to 2022
         </tspan>
       </text>
       <text

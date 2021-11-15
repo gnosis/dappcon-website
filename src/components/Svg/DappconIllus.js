@@ -45,7 +45,7 @@ const DappconIllus = ({
         {" "}
       </text>
       <text transform="matrix(1 0 0 1 657 224)" className="st1 st3">
-        to 2021
+        to 2022
       </text>
       <path
         className="st4 hoverable"

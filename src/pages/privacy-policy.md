@@ -40,8 +40,7 @@ Our details
 
 * the browser types and versions used
 * the operating system used by the accessing system
-* the website from which an accessing system reaches our website (so-called 
-  referrers
+* the website from which an accessing system reaches our website (so-called  referrers
 * behaviour: subpage, duration, and revisit 
 * the date and time of access to our website
 * the Internet protocol address (“IP address”)
@@ -114,7 +113,7 @@ We use the following third party applications:
 * Reddit: https://www.redditinc.com/policies/privacy-policy 
 * Medium: https://medium.com/policy/medium-privacy-policy-f03bf92035c9 
 
-## 3.2. Livepeer.org 
+## 3.2. Livepeer.org
 
 The talks will be livestreamed during the conference. The videos will be accessible during the event via https://media.livepeer.org/ Livepeer.org purpose and privacy policy can be accessed under the following links: https://livepeer.org/ https://livepeer.org/privacy-policy/ 
 
@@ -124,7 +123,7 @@ The talks will be livestreamed during the conference. The videos will be accessi
 
 YouTube’s purpose and privacy policy can be accessed under the following links: https://www.youtube.com/yt/about/ https://policies.google.com/privacy?hl=en 
 
-## 3.4. Typeform 
+## 3.4. Typeform
 
 We use typeform for the registration and submission process. Typeform allows to create customized forms for several purposes. 
 
@@ -132,13 +131,13 @@ Further information and the applicable data protection provisions of typeform pl
 
 Typeform’s purpose and function is further explained under the following Link https://www.typeform.com/product/. 
 
-## 3.5. Google Suite 
+## 3.5. Google Suite
 
 We use the Google Suite to store and manage the speaker, sponsor and participant data. Google Suite, it purpose and function is further explained under the following Link https://gsuite.google.com/ . 
 
 For further information and the applicable data protection provisions of Weezevent please visit https://policies.google.com/privacy?hl=en . 
 
-# 4. Sharing Your Personal Data 
+# 4. Sharing Your Personal Data
 
 We may pass your information to our Business Partners, administration centres, third party service providers, agents, subcontractors and other associated organisations for the purposes of completing tasks and providing our services to you. 
 
@@ -146,35 +145,35 @@ In addition, when we use any other third-party service providers, we will disclo
 
 In addition, we may transfer your personal information to a third party as part of a sale of some, or all, of our business and assets or as part of any business restructuring or reorganisation, or if we are under a duty to disclose or share your personal data in order to comply with any legal obligation. However, we will take steps to ensure that your privacy rights continue to be protected. 
 
-# 5. Transferring Your data outside of the EU 
+# 5. Transferring Your data outside of the EU
 
 We store the speaker, sponsor and participant information in our Google Suite, which is based in the US. Google is certified under the EU-US Privacy Shield. 
 
-# 6. Existence of Automated Decision-making 
+# 6. Existence of Automated Decision-making
 
 We do not use automatic decision-making or profiling when processing Personal Data. 
 
-# 7. Data Security 
+# 7. Data Security
 
 We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality. 
 
 We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so. 
 
-# 8. Your Rights as a Data Subject 
+# 8. Your Rights as a Data Subject
 
 You have certain rights under applicable legislation, and in particular under Regulation EU 2016/679 (General Data Protection Regulation or ‘GDPR’). We explain these below. You can find out more about the GDPR and your rights by accessing the European Commission’s website. 
 
-## Right Information and access 
+## Right Information and access
 
 You have a right to be informed about the processing of your personal data (and if you did not give it to us, information as to the source) and this Privacy Policy intends to provide the information. Of course, if you have any further questions you can contact us on the above details. 
 
-## Right to rectification 
+## Right to rectification
 
 You have the right to have any inaccurate personal information about you rectified and to have any incomplete personal information about you completed. You may also request that we restrict the processing of that information. 
 
 The accuracy of your information is important to us. If you do not want us to use your Personal Information in the manner set out in this Privacy Policy, or need to advise us of any changes to your personal information, or would like any more information about the way in which we collect and use your Personal Information, please contact us at the above details. 
 
-## Right to erasure (right to be ‘forgotten’) 
+## Right to erasure (right to be ‘forgotten’)
 
 You have the general right to request the erasure of your personal information in the following circumstances: 
 
@@ -212,15 +211,15 @@ You have a right to restrict processing of your personal information, such as wh
 
 You also have the right to object to processing of your personal information under certain circumstances, such as where the processing is based on your consent and you withdraw that consent. This may impact the services we can provide and we will explain this to you if you decide to exercise this right. 
 
-## Right to data portability 
+## Right to data portability
 
 Where the legal basis for our processing is your consent or the processing is necessary for the performance of a contract to which you are party or in order to take steps at your request prior to entering into a contract, you have a right to receive the personal information you provided to us in a structured, commonly used and machine-readable format, or ask us to send it to another person. 
 
-## Right to freedom from automated decision-making 
+## Right to freedom from automated decision-making
 
 As explained above, we do not use automated decision-making, but where any automated decision- making takes place, you have the right in this case to express your point of view and to contest the decision, as well as request that decisions based on automated processing concerning you or significantly affecting you and based on your personal data are made by natural persons, not only by computers. 
 
-## Right to object to direct marketing (‘opting out’) 
+## Right to object to direct marketing (‘opting out’)
 
 You have a choice about whether or not you wish to receive information from us. 
 
@@ -234,19 +233,19 @@ You can change your marketing preferences at any time by contacting us on the ab
 
 Please note that any administrative or service-related communications (to offer our services, or notify you of an update to this Privacy Policy or applicable terms of business, etc.) will solely be directed at our clients or business partners, and such communications generally do not offer an option to unsubscribe as they are necessary to provide the services requested. Therefore, please be aware that your ability to opt-out from receiving marketing and promotional materials does not change our right to contact you regarding your use of our website or as part of a contractual relationship we may have with you. 
 
-## Right to request access 
+## Right to request access
 
 You also have a right to access information we hold about you. We are happy to provide you with details of your Personal Information that we hold or process. To protect your personal information, we follow set storage and disclosure procedures, which mean that we will require proof of identity from you prior to disclosing such information. You can exercise this right at any time by contacting us on the above details. 
 
-## Right to withdraw consent 
+## Right to withdraw consent
 
 Where the legal basis for processing your personal information is your consent, you have the right to withdraw that consent at any time by contacting us on the above details. 
 
-## Raising a complaint about how we have handled your personal data 
+## Raising a complaint about how we have handled your personal data
 
 If you wish to raise a complaint on how we have handled your personal data, you can contact us as set out above and we will then investigate the matter. 
 
-## Right to lodge a complaint with a relevant supervisory authority 
+## Right to lodge a complaint with a relevant supervisory authority
 
 If we have not responded to you within a reasonable time or if you feel that your complaint has not been resolved to your satisfaction, you are entitled to make a complaint to the Data Protection Commissioner under the Data Protection Act which is Berliner Beauftragte für Datenschutz und Informationsfreiheit: 
 
@@ -262,7 +261,7 @@ Guest entrance: Puttkamerstr. 16 – 18 (5th floor)
 
 You also have the right to lodge a complaint with the supervisory authority in the country of your habitual residence, place of work, or the place where you allege an infringement of one or more of our rights has taken place, if that is based in the EEA. 
 
-# 9. Storing Personal Data 
+# 9. Storing Personal Data
 
 We retain your information only for as long as is necessary for the purposes for which we process the information as set out in this policy. 
 
@@ -272,7 +271,7 @@ However, we may retain your Personal Data for a longer period of time where such
 
 We may make changes to this Policy from time to time. Where we do so, we will notify those who have a business relationship with us or who are subscribed to our emailing lists directly of the changes and change the ‘Last updated’ date above. We encourage you to review the Policy whenever you access or use our website to stay informed about our information practices and the choices available to you. If you do not agree to the revised Policy, you should discontinue your use of this website. 
 
-# 11. Our details 
+# 11. Our details
 
 This website is owned and operated by Gnosis Service GmbH. 
 

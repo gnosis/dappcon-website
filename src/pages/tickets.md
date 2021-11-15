@@ -11,21 +11,23 @@ columns:
 
         Pay in ETH: ~300 EUR  &nbsp
 
+        Pay in EUR: 300 EUR
+
         Pay in DAI: Coming Soon!
     isActive: true
     isMintbase: true
-    title: BUY IN CRYPTO
-    url: 'https://dappcon.io'
+    title: BUY TICKET
+    url: https://dappcon.io
   secondCol:
-    cta: COMING SOON
-    description: |-
+    cta: CONTACT US
+    description: >-
       Full access to the 3-day conference  &nbsp
 
-        300 EUR
-    isActive: false
+        Recognized media can apply for a free press pass. Please send an email to media@dappcon.io
+    isActive: true
     isMintbase: false
-    title: BUY IN FIAT
-    url: 'https://dappcon.io'
+    title: APPLY FOR A PRESS PASS
+    url: media@dappcon.io
   thirdCol:
     cta: CONTACT US
     description: >-
@@ -36,6 +38,5 @@ columns:
     isActive: true
     isMintbase: false
     title: BECOME A VOLUNTEER
-    url: 'https://gnosis1.typeform.com/to/KyJIgW'
+    url: https://gnosis1.typeform.com/to/KyJIgW
 ---
-
