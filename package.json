@@ -24,7 +24,7 @@
     "js-cookie": "2.2.1",
     "mintbase-bridge": "0.0.11",
     "netlify-cms-app": "2.12.19",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "parcel-bundler": "1.12.4",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
