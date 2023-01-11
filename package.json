@@ -19,7 +19,7 @@
     "gatsby-remark-images": "3.3.25",
     "gatsby-remark-relative-images": "0.3.0",
     "gatsby-source-filesystem": "2.3.24",
-    "gatsby-transformer-remark": "2.8.28",
+    "gatsby-transformer-remark": "5.25.1",
     "gatsby-transformer-sharp": "2.5.13",
     "js-cookie": "2.2.1",
     "mintbase-bridge": "0.0.11",
